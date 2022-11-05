@@ -5,10 +5,10 @@
 const { modul } = require('./module');
 const { baileys, boom, chalk, fs, figlet, FileType, path, pino, process, PhoneNumber } = modul;
 const { Boom } = boom
-const { default: kaylaConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, generateWAMessage, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = baileys
+const { default: baymaxConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, generateWAMessage, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = baileys
 const { color, bgcolor } = require('./lib/color')
 const { uncache, nocache } = require('./lib/loader')
-const { state } = useSingleFileAuthState(`./BayMax.json`)
+const { state } = useSingleFileAuthState(`./baymax.json`)
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep, reSize } = require('./lib/myfunc')
 
@@ -23,7 +23,7 @@ nocache('../index.js', module => console.log(color('[ UPDATE ]', 'cyan'), color(
 
 async function kaylaBot() {
 const { version, isLatest } = await fetchLatestBaileysVersion()
-const baymax = kaylaConnect({
+const baymax = baymaxConnect({
 logger: pino({ level: 'silent' }),
 printQRInTerminal: true,
 browser: ['baymax Bot WhatsApp (2022)','Safari','1.0.0'],
@@ -419,4 +419,4 @@ baymax.relayMessage(jid, template.message, { messageId: template.key.id })
 return baymax
 }
 
-baymaxBot()
+kaylaBot()
