@@ -8,7 +8,7 @@ const { Boom } = boom
 const { default: baymaxConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, generateWAMessage, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = baileys
 const { color, bgcolor } = require('./lib/color')
 const { uncache, nocache } = require('./lib/loader')
-const { state } = useSingleFileAuthState(`./baymax.json`)
+const { state } = useSingleFileAuthState(`./kayla.json`)
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep, reSize } = require('./lib/myfunc')
 
@@ -21,7 +21,7 @@ nocache('../baymax.js', module => console.log(color('[ UPDATE ]', 'cyan'), color
 require('./index.js')
 nocache('../index.js', module => console.log(color('[ UPDATE ]', 'cyan'), color(`'${module}'`, 'green'), 'File Is Update!!!'))
 
-async function kaylaBot() {
+async function baymaxBot() {
 const { version, isLatest } = await fetchLatestBaileysVersion()
 const baymax = baymaxConnect({
 logger: pino({ level: 'silent' }),
@@ -358,12 +358,12 @@ const { connection, lastDisconnect } = update
 if (connection === 'close') {
 let reason = new Boom(lastDisconnect?.error)?.output.statusCode
 if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); baymax.logout(); }
-else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting...."); kaylaBot(); }
-else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); kaylaBot(); }
+else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting...."); baymaxBot(); }
+else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); baymaxBot(); }
 else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); baymax.logout(); }
 else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Scan Again And Run.`); baymax.logout(); }
-else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); kaylaBot(); }
-else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); kaylaBot(); }
+else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); baymaxBot(); }
+else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); baymaxBot(); }
 else baymax.end(`Unknown DisconnectReason: ${reason}|${connection}`)
 }
 console.log('Connected...', update)
@@ -419,4 +419,4 @@ baymax.relayMessage(jid, template.message, { messageId: template.key.id })
 return baymax
 }
 
-kaylaBot()
+baymaxBot()
