@@ -1,6 +1,6 @@
 /* Created By BayMax Bot WhatsApp */
 /* WhatsApp Creator Di Bawah */
-/* wa.me/6287705048235 */
+/* wa.me/6281390368580 */
 
 const { modul } = require('./module');
 const { baileys, boom, chalk, fs, figlet, FileType, path, pino, process, PhoneNumber } = modul;
@@ -419,4 +419,4 @@ BayMax.relayMessage(jid, template.message, { messageId: template.key.id })
 return BayMax
 }
 
-kaylaBot()
+BayMaxBot()
