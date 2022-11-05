@@ -1,6 +1,6 @@
-/* Created By BayMax Bot WhatsApp */
+/* Created By baymax Bot WhatsApp */
 /* WhatsApp Creator Di Bawah */
-/* wa.me/6281390368580 */
+/* wa.me/6287705048235 */
 
 const { modul } = require('./module');
 const { baileys, boom, chalk, fs, figlet, FileType, path, pino, process, PhoneNumber } = modul;
@@ -16,41 +16,41 @@ const owner = JSON.parse(fs.readFileSync('./database/owner.json'))
 
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 
-require('./BayMax.js')
-nocache('../BayMax.js', module => console.log(color('[ UPDATE ]', 'cyan'), color(`'${module}'`, 'green'), 'File Is Update!!!'))
+require('./baymax.js')
+nocache('../baymax.js', module => console.log(color('[ UPDATE ]', 'cyan'), color(`'${module}'`, 'green'), 'File Is Update!!!'))
 require('./index.js')
 nocache('../index.js', module => console.log(color('[ UPDATE ]', 'cyan'), color(`'${module}'`, 'green'), 'File Is Update!!!'))
 
 async function kaylaBot() {
 const { version, isLatest } = await fetchLatestBaileysVersion()
-const BayMax = kaylaConnect({
+const baymax = kaylaConnect({
 logger: pino({ level: 'silent' }),
 printQRInTerminal: true,
-browser: ['BayMax Bot WhatsApp (2022)','Safari','1.0.0'],
+browser: ['baymax Bot WhatsApp (2022)','Safari','1.0.0'],
 auth: state,
 version
 })
 
-store.bind(BayMax.ev)
+store.bind(baymax.ev)
 
-console.log(color(figlet.textSync(`BayMax`, {
+console.log(color(figlet.textSync(`baymax`, {
 font: 'Standard',
 horizontalLayout: 'default',
 vertivalLayout: 'default',
 whitespaceBreak: false
 }), 'green'))
 
-BayMax.ws.on('CB:Blocklist', json => {
+baymax.ws.on('CB:Blocklist', json => {
 if (blocked.length > 2) return
 for (let i of json[1].blocklist) {
 blocked.push(i.replace('c.us','s.whatsapp.net'))}})
 
-BayMax.ws.on('CB:call', async (json) => {
+baymax.ws.on('CB:call', async (json) => {
 const callerId = json.content[0].attrs['call-creator']
 const idCall = json.content[0].attrs['call-id']
 const Id = json.attrs.id
 const T = json.attrs.t
-BayMax.sendNode({
+baymax.sendNode({
   tag: 'call',
     attrs: {
       from: '6285798145596@s.whatsapp.net',
@@ -70,45 +70,45 @@ BayMax.sendNode({
     ]
 })
 if (json.content[0].tag == 'offer') {
-let qutsnya = await BayMax.sendContact(callerId, owner)
-await BayMax.sendMessage(callerId, { text: `Sistem Otomatis Block!!!\nJangan Menelpon Bot!!!\nSilahkan Hubungi Owner Untuk Dibuka!!!`}, { quoted : qutsnya })
+let qutsnya = await baymax.sendContact(callerId, owner)
+await baymax.sendMessage(callerId, { text: `Sistem Otomatis Block!!!\nJangan Menelpon Bot!!!\nSilahkan Hubungi Owner Untuk Dibuka!!!`}, { quoted : qutsnya })
 await sleep(8000)
-await BayMax.updateBlockStatus(callerId, "block")
+await baymax.updateBlockStatus(callerId, "block")
 }
 })
 
-BayMax.ev.on('messages.upsert', async chatUpdate => {
+baymax.ev.on('messages.upsert', async chatUpdate => {
 try {
 kay = chatUpdate.messages[0]
 if (!kay.message) return
 kay.message = (Object.keys(kay.message)[0] === 'ephemeralMessage') ? kay.message.ephemeralMessage.message : kay.message
 if (kay.key && kay.key.remoteJid === 'status@broadcast') return
-if (!BayMax.public && !kay.key.fromMe && chatUpdate.type === 'notify') return
+if (!baymax.public && !kay.key.fromMe && chatUpdate.type === 'notify') return
 if (kay.key.id.startsWith('BAE5') && kay.key.id.length === 16) return
-m = smsg(BayMax, kay, store)
-require('./BayMax')(BayMax, m, chatUpdate, store)
+m = smsg(baymax, kay, store)
+require('./baymax')(baymax, m, chatUpdate, store)
 } catch (err) {
 console.log(err)}})
 
-BayMax.ev.on('group-participants.update', async (anu) => {
+baymax.ev.on('group-participants.update', async (anu) => {
 console.log(anu)
 try {
-let metadata = await BayMax.groupMetadata(anu.id)
+let metadata = await baymax.groupMetadata(anu.id)
 let participants = anu.participants
 let memb = metadata.participants.length
 for (let num of participants) {
 try {
-ppuser = await BayMax.profilePictureUrl(num, 'image')
+ppuser = await baymax.profilePictureUrl(num, 'image')
 } catch {
 ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 }
 try {
-ppgroup = await BayMax.profilePictureUrl(anu.id, 'image')
+ppgroup = await baymax.profilePictureUrl(anu.id, 'image')
 } catch {
 ppgroup = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 }
 if (anu.action == 'add') {
-BayMax.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Hello Sis @${num.split("@")[0]}, Welcome To The Group ${metadata.subject}, I Hope You Enjoy It, Sis`, 
+baymax.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Hello Sis @${num.split("@")[0]}, Welcome To The Group ${metadata.subject}, I Hope You Enjoy It, Sis`, 
 jpegThumbnail: await reSize(ppuser, 200, 200), 
 contextInfo: {
 "mentionedJid": [num],
@@ -123,7 +123,7 @@ contextInfo: {
 "sourceUrl": 'https://chat.whatsapp.com/CswK4kvQD1u7SfSmsYfMHZ'
 }}})
 } else if (anu.action == 'remove') {
-BayMax.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Goodbye Sis @${num.split("@")[0]}, I Hope You Feel At Home In Nature`,
+baymax.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Goodbye Sis @${num.split("@")[0]}, I Hope You Feel At Home In Nature`,
 jpegThumbnail: await reSize(ppuser, 200, 200), 
 contextInfo: {
 "mentionedJid": [num],
@@ -144,7 +144,7 @@ console.log(err)
 }
 })
 
-BayMax.decodeJid = (jid) => {
+baymax.decodeJid = (jid) => {
 if (!jid) return jid
 if (/:\d+@/gi.test(jid)) {
 let decode = jidDecode(jid) || {}
@@ -152,44 +152,44 @@ return decode.user && decode.server && decode.user + '@' + decode.server || jid
 } else return jid
 }
 
-BayMax.ev.on('contacts.update', update => {
+baymax.ev.on('contacts.update', update => {
 for (let contact of update) {
-let id = BayMax.decodeJid(contact.id)
+let id = baymax.decodeJid(contact.id)
 if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
 }
 })
 
-BayMax.getName = (jid, withoutContact  = false) => {
-id = BayMax.decodeJid(jid)
-withoutContact = BayMax.withoutContact || withoutContact 
+baymax.getName = (jid, withoutContact  = false) => {
+id = baymax.decodeJid(jid)
+withoutContact = baymax.withoutContact || withoutContact 
 let v
 if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
 v = store.contacts[id] || {}
-if (!(v.name || v.subject)) v = BayMax.groupMetadata(id) || {}
+if (!(v.name || v.subject)) v = baymax.groupMetadata(id) || {}
 resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
 })
 else v = id === '0@s.whatsapp.net' ? {
 id,
 name: 'WhatsApp'
-} : id === BayMax.decodeJid(BayMax.user.id) ?
-BayMax.user :
+} : id === baymax.decodeJid(baymax.user.id) ?
+baymax.user :
 (store.contacts[id] || {})
 return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
 }
 
-BayMax.parseMention = (text = '') => {
+baymax.parseMention = (text = '') => {
 return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net')
 }
 
-BayMax.sendContact = async (jid, kon, quoted = '', opts = {}) => {
+baymax.sendContact = async (jid, kon, quoted = '', opts = {}) => {
 let list = []
 for (let i of kon) {
 list.push({
-displayName: await BayMax.getName(i + '@s.whatsapp.net'),
+displayName: await baymax.getName(i + '@s.whatsapp.net'),
 vcard: `BEGIN:VCARD\n
 VERSION:3.0\n
-N:${await BayMax.getName(i + '@s.whatsapp.net')}\n
-FN:${await BayMax.getName(i + '@s.whatsapp.net')}\n
+N:${await baymax.getName(i + '@s.whatsapp.net')}\n
+FN:${await baymax.getName(i + '@s.whatsapp.net')}\n
 item1.TEL;waid=${i}:${i}\n
 item1.X-ABLabel:Ponsel\n
 item2.EMAIL;type=INTERNET:tesheroku123@gmail.com\n
@@ -201,11 +201,11 @@ item4.X-ABLabel:Region\n
 END:VCARD`
 })
 }
-BayMax.sendMessage(jid, { contacts: { displayName: `${list.length} Kontak`, contacts: list }, ...opts }, { quoted })
+baymax.sendMessage(jid, { contacts: { displayName: `${list.length} Kontak`, contacts: list }, ...opts }, { quoted })
 }
 
-BayMax.setStatus = (status) => {
-BayMax.query({
+baymax.setStatus = (status) => {
+baymax.query({
 tag: 'iq',
 attrs: {
 to: '@s.whatsapp.net',
@@ -221,14 +221,14 @@ content: Buffer.from(status, 'utf-8')
 return status
 }
 
-BayMax.public = true
+baymax.public = true
 
-BayMax.sendImage = async (jid, path, caption = '', quoted = '', options) => {
+baymax.sendImage = async (jid, path, caption = '', quoted = '', options) => {
 let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-return await BayMax.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
+return await baymax.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
 }
 
-BayMax.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
+baymax.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
 let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
 let buffer
 if (options && (options.packname || options.author)) {
@@ -236,11 +236,11 @@ buffer = await writeExifImg(buff, options)
 } else {
 buffer = await imageToWebp(buff)
 }
-await BayMax.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+await baymax.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
 return buffer
 }
 
-BayMax.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
+baymax.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
 let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
 let buffer
 if (options && (options.packname || options.author)) {
@@ -248,11 +248,11 @@ buffer = await writeExifVid(buff, options)
 } else {
 buffer = await videoToWebp(buff)
 }
-await BayMax.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+await baymax.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
 return buffer
 }
 
-BayMax.copyNForward = async (jid, message, forceForward = false, options = {}) => {
+baymax.copyNForward = async (jid, message, forceForward = false, options = {}) => {
 let vtype
 if (options.readViewOnce) {
 message.message = message.message && message.message.ephemeralMessage && message.message.ephemeralMessage.message ? message.message.ephemeralMessage.message : (message.message || undefined)
@@ -282,11 +282,11 @@ contextInfo: {
 }
 } : {})
 } : {})
-await BayMax.relayMessage(jid, waMessage.message, { messageId:  waMessage.key.id })
+await baymax.relayMessage(jid, waMessage.message, { messageId:  waMessage.key.id })
 return waMessage
 }
 
-BayMax.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
+baymax.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
 let quoted = message.msg ? message.msg : message
 let mime = (message.msg || message).mimetype || ''
 let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
@@ -301,7 +301,7 @@ await fs.writeFileSync(trueFileName, buffer)
 return trueFileName
 }
 
-BayMax.downloadMediaMessage = async (message) => {
+baymax.downloadMediaMessage = async (message) => {
 let mime = (message.msg || message).mimetype || ''
 let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
 const stream = await downloadContentFromMessage(message, messageType)
@@ -312,7 +312,7 @@ buffer = Buffer.concat([buffer, chunk])
 return buffer
 }
 
-BayMax.getFile = async (PATH, save) => {
+baymax.getFile = async (PATH, save) => {
 let res
 let data = Buffer.isBuffer(PATH) ? PATH : /^data:.*?\/.*?;base64,/i.test(PATH) ? Buffer.from(PATH.split`,`[1], 'base64') : /^https?:\/\//.test(PATH) ? await (res = await getBuffer(PATH)) : fs.existsSync(PATH) ? (filename = PATH, fs.readFileSync(PATH)) : typeof PATH === 'string' ? PATH : Buffer.alloc(0)
 let type = await FileType.fromBuffer(data) || {
@@ -327,8 +327,8 @@ size: await getSizeMedia(data),
 ...type,
 data}}
 
-BayMax.sendMedia = async (jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
-let types = await BayMax.getFile(path, true)
+baymax.sendMedia = async (jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
+let types = await baymax.getFile(path, true)
 let { mime, ext, res, data, filename } = types
 if (res && res.status !== 200 || file.length <= 65536) {
 try { throw { json: JSON.parse(file.toString()) } }
@@ -346,30 +346,30 @@ else if (/image/.test(mime)) type = 'image'
 else if (/video/.test(mime)) type = 'video'
 else if (/audio/.test(mime)) type = 'audio'
 else type = 'document'
-await BayMax.sendMessage(jid, { [type]: { url: pathFile }, caption, mimetype, fileName, ...options }, { quoted, ...options })
+await baymax.sendMessage(jid, { [type]: { url: pathFile }, caption, mimetype, fileName, ...options }, { quoted, ...options })
 return fs.promises.unlink(pathFile)}
 
-BayMax.sendText = (jid, text, quoted = '', options) => BayMax.sendMessage(jid, { text: text, ...options }, { quoted })
+baymax.sendText = (jid, text, quoted = '', options) => baymax.sendMessage(jid, { text: text, ...options }, { quoted })
 
-BayMax.serializeM = (m) => smsg(BayMax, m, store)
+baymax.serializeM = (m) => smsg(baymax, m, store)
 
-BayMax.ev.on('connection.update', async (update) => {
+baymax.ev.on('connection.update', async (update) => {
 const { connection, lastDisconnect } = update	
 if (connection === 'close') {
 let reason = new Boom(lastDisconnect?.error)?.output.statusCode
-if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); BayMax.logout(); }
+if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); baymax.logout(); }
 else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting...."); kaylaBot(); }
 else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); kaylaBot(); }
-else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); BayMax.logout(); }
-else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Scan Again And Run.`); BayMax.logout(); }
+else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); baymax.logout(); }
+else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Scan Again And Run.`); baymax.logout(); }
 else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); kaylaBot(); }
 else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); kaylaBot(); }
-else BayMax.end(`Unknown DisconnectReason: ${reason}|${connection}`)
+else baymax.end(`Unknown DisconnectReason: ${reason}|${connection}`)
 }
 console.log('Connected...', update)
 })
 
-BayMax.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
+baymax.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
 let buttonMessage = {
 text,
 footer,
@@ -377,11 +377,11 @@ buttons,
 headerType: 2,
 ...options
 }
-BayMax.sendMessage(jid, buttonMessage, { quoted, ...options })
+baymax.sendMessage(jid, buttonMessage, { quoted, ...options })
 }
 
-BayMax.sendKatalog = async (jid , title = '' , desc = '', gam , options = {}) =>{
-let message = await prepareWAMessageMedia({ image: gam }, { upload: BayMax.waUploadToServer })
+baymax.sendKatalog = async (jid , title = '' , desc = '', gam , options = {}) =>{
+let message = await prepareWAMessageMedia({ image: gam }, { upload: baymax.waUploadToServer })
 const tod = generateWAMessageFromContent(jid,
 {"productMessage": {
 "product": {
@@ -398,10 +398,10 @@ const tod = generateWAMessageFromContent(jid,
 "businessOwnerJid": `6287705048235@s.whatsapp.net`
 }
 }, options)
-return BayMax.relayMessage(jid, tod.message, {messageId: tod.key.id})
+return baymax.relayMessage(jid, tod.message, {messageId: tod.key.id})
 } 
 
-BayMax.send5ButLoc = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
+baymax.send5ButLoc = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
 var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
 templateMessage: {
 hydratedTemplate: {
@@ -413,10 +413,10 @@ hydratedTemplate: {
 }
 }
 }), options)
-BayMax.relayMessage(jid, template.message, { messageId: template.key.id })
+baymax.relayMessage(jid, template.message, { messageId: template.key.id })
 }
 
-return BayMax
+return baymax
 }
 
-BayMaxBot()
+baymaxBot()
