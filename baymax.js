@@ -529,13 +529,26 @@ const mark = "0@s.whatsapp.net"
 const timestamp = speed()
 const latensi = speed() - timestamp
 const butlocNye = [
-{buttonId: `${prefix}owner`, buttonText: {displayText: '饾棦饾棯饾棥饾棙饾棩'}, type: 1},
+{buttonId: `${prefix}owner`, buttonText: {displayText: 'OWNER'}, type: 1},
 {buttonId: `${prefix}allmenu`, buttonText: {displayText: 'ALLMENU'}, type: 1}
 ]
 const buttonLocnya = {
 location: { jpegThumbnail: ppnyauser } ,
 caption: `Hai Kak @${sender.split("@")[0]} 
 饾槡饾槩饾樅饾槩 BayMax 饾槈饾槹饾樀 饾槥饾槱饾槩饾樀饾槾饾槇饾槺饾槺 饾槧饾槩饾槸饾槰 饾槈饾槳饾槾饾槩 饾様饾槮饾槷饾槪饾槩饾槸饾樀饾樁 饾槇饾槸饾槬饾槩 饾様饾槮饾槷饾槪饾樁饾槩饾樀 饾槡饾樀饾槳饾槫饾槵饾槮饾槼, 饾構饾槹饾樃饾槸饾槶饾槹饾槩饾槬 饾槤饾槳饾槬饾槮饾槹/饾槇饾樁饾槬饾槳饾槹 饾槢饾槳饾槵饾樀饾槹饾槵, 饾構饾槹饾樃饾槸饾槶饾槹饾槩饾槬 饾槤饾槳饾槬饾槮饾槹/饾槇饾樁饾槬饾槳饾槹 饾槧饾槹饾樁饾樀饾樁饾槪饾槮, 饾様饾槮饾槷饾槪饾樁饾槩饾樀 饾槗饾槹饾槰饾槹 饾槢饾槮饾樄饾樀 饾槜饾槼饾槹/饾槜饾槱饾槹饾樀饾槹饾槹饾樄饾樅/饾槍饾槺饾槱饾槹饾樀饾槹360, 饾構饾槩饾槸 饾槗饾槩饾槳饾槸-饾槶饾槩饾槳饾槸.
+
+Nama ${itsMebaymax ? 'Owner' : 'User'} : ${pushname}
+Nomor ${itsMebaymax ? 'Owner' : 'User'} : ${sender.split("@")[0]}
+Jumlah User : ${pendaftar.length} User
+Status : ${itsMebaymax ? 'Owner' : 'User'}
+Status Premium : ${isPrem ? 'Premium User' : 'Free User'}
+Runtime Bot : ${runtime(process.uptime())}
+Speed Bot : ${latensi.toFixed(4)} 饾構饾槮饾樀饾槳饾槵
+Otw Tahun Baru : ${jhari} 饾懐饾拏饾挀饾拪 ${jjam} 饾懕饾拏饾拵 ${jmenit} 饾懘饾拞饾拸饾拪饾挄 ${jdetik} 饾懌饾拞饾挄饾拪饾拰
+Otw Idul Fitri : ${hahari} 饾懐饾拏饾挀饾拪 ${hajam} 饾懕饾拏饾拵 ${hamenit} 饾懘饾拞饾拸饾拪饾挄 ${hadetik} 饾懌饾拞饾挄饾拪饾拰
+Otw Idul Adha : ${hihari} 饾懐饾拏饾挀饾拪 ${hijam} 饾懕饾拏饾拵 ${himenit} 饾懘饾拞饾拸饾拪饾挄 ${hidetik} 饾懌饾拞饾挄饾拪饾拰
+Otw Ultah Creator : ${gushari} 饾懐饾拏饾挀饾拪 ${gusjam} 饾懕饾拏饾拵 ${gusmenit} 饾懘饾拞饾拸饾拪饾挄 ${gusdetik} 饾懌饾拞饾挄饾拪饾拰`,
+mentions : [sender, botzbaymax, mark],
 footer: `Created By @${botzbaymax.split("@")[0]}
 WhatsApp By @${mark.split("@")[0]}`,
 buttons: butlocNye,
