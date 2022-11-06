@@ -940,12 +940,14 @@ const seactions = [{
 title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀𝐖𝐀𝐇`,
 rows: [
 {title: `𝗔𝗟𝗟 𝗠𝗘𝗡𝗨`, rowId: `${prefix}allmenu`},
-{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗙𝗥𝗘𝗘 𝗙𝗜𝗥𝗘`, rowId: `${prefix}topupdmff`},
-{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗠𝗢𝗕𝗜𝗟𝗘 𝗟𝗘𝗚𝗘𝗡𝗗`, rowId: `${prefix}mldiamond`},
-{title: `💎 𝗧𝗢𝗣𝗨𝗣  𝗣𝗨𝗕𝗚`, rowId: `${prefix}dmpubg`},
-{title: `💳 𝗧𝗢𝗣𝗨𝗣 𝗦𝗔𝗟𝗗𝗢`, rowId: `${prefix}topupsaldo`},
-{title: `📌 𝗦𝗨𝗡𝗧𝗜𝗞 𝗙𝗢𝗟𝗟𝗢𝗪𝗘𝗥`, rowId: `${prefix}wollowersig`},
+{title: `𝗧𝗢𝗣𝗨𝗣 𝗙𝗥𝗘𝗘 𝗙𝗜𝗥𝗘`, rowId: `${prefix}freefiremenu`},
+{title: `𝗧𝗢𝗣𝗨𝗣 𝗠𝗢𝗕𝗜𝗟𝗘 𝗟𝗘𝗚𝗘𝗡𝗗`, rowId: `${prefix}mobiledm`},
+{title: `𝗧𝗢𝗣𝗨𝗣  𝗣𝗨𝗕𝗚`, rowId: `${prefix}pubg`},
+{title: `𝗧𝗢𝗣𝗨𝗣 𝗖𝗔𝗟 𝗢𝗙 𝗗𝗨𝗧𝗬`, rowId: `${prefix}calof`},
+{title: `𝗧𝗢𝗣𝗨𝗣 𝗘-𝗪𝗔𝗟𝗟𝗘`, rowId: `${prefix}saldo`},
+{title: `𝗞𝗘𝗕𝗨𝗧𝗨𝗛𝗔𝗡 𝗦𝗢𝗦𝗜𝗔𝗟 𝗠𝗘𝗗𝗜𝗔`, rowId: `${prefix}suntik`},
 {title: `𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}ownermenu`},
+{title: `𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨`, rowId: `${prefix}downloadmenu`},
 ]}]
 const listMenuMessage = { 
 text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
@@ -994,9 +996,9 @@ mentionedJid:[sender],
 }
 })
 break
-case 'mllist':
+case 'downloadmenu':
 sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${mllist(prefix, hituet)}`,
+text: `Hai Kak @${sender.split("@")[0]}\n\n${downloadmenu(prefix, hituet)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
@@ -1013,9 +1015,9 @@ mentionedJid:[sender],
 }
 })
 break
-case 'pubglist':
+case 'calof':
 sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${pubglist(prefix, hituet)}`,
+text: `Hai Kak @${sender.split("@")[0]}\n\n${cutof(prefix, hituet)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
@@ -1032,9 +1034,47 @@ mentionedJid:[sender],
 }
 })
 break
-case 'topupsaldo':
+case 'mobiledm':
 sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${topupsaldo(prefix, hituet)}`,
+text: `Hai Kak @${sender.split("@")[0]}\n\n${mobiledm(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyauser,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'pubg':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${pubg(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyauser,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'saldo':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${saldo(prefix, hituet)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
