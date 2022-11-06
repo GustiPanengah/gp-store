@@ -939,31 +939,6 @@ baymax.sendImage(m.chat, buff, `${getkaydata.response}`, m)
 const seactions = [{
 title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀𝐖𝐀𝐇`,
 rows: [
-{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗦𝗔𝗟𝗗𝗢`, rowId: `${prefix}randfotomenu`, description: "TopUp Saldo!"},
-{title: `💎 𝗦𝗨𝗡𝗧𝗜𝗞 𝗙𝗢𝗟𝗢𝗪𝗘𝗥`, rowId: `${prefix}randfotomenu`, description: "Buy Wollowers!"},
-{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗠𝗢𝗕𝗜𝗟𝗘 𝗟𝗘𝗚𝗘𝗡𝗗`, rowId: `${prefix}randfotomenu`, description: "TopUp mobile Legend!"},
-{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗣𝗨𝗕𝗚`, rowId: `${prefix}randfotomenu`, description: "TopUp Pubg!"},
-{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗙𝗥𝗘𝗘 𝗙𝗜𝗥𝗘`, rowId: `${prefix}randfotomenu`, description: "TopUp FreeFire!"},
-]}]
-const listMenuMessage = { 
-text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
-mentions: [sender],
-footer: fake,
-buttonText: '𝗟𝗜𝗦𝗧 𝗧𝗢𝗣𝗨𝗣',
-sections: seactions,
-listType: 1}
-
-switch (command) {
-case 'shutdown':
-if (!itsMebaymax) return reply(mess.owner)
-reply(`Bye...`)
-await sleep(3000)
-process.exit()
-break
-
-const seactions = [{
-title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀𝐖𝐀𝐇`,
-rows: [
 {title: `𝗔𝗟𝗟 𝗠𝗘𝗡𝗨`, rowId: `${prefix}allmenu`},
 {title: `𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}ownermenu`},
 {title: `𝗢𝗧𝗛𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}othermenu`},
@@ -1977,44 +1952,29 @@ Makasih Yang Udah ${command} Semoga Rezeki Nya Di Limpahkan Sama Allah SWT.`, me
 }
 break
 case 'topupff': case 'topupml': case 'topupsaldo':{
-const seactiones = [
-{
-title: `LIST TOPUP FREEFIRE`,
+const seactions = [{
+title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀𝐖𝐀𝐇`,
 rows: [
-{title: `50 DIAMOND = 10k`, rowId: `${prefix}topupff 50`},
-{title: `70 DIAMOND = 13K`, rowId: `${prefix}topupff 70`},
-{title: `100 DIAMOND = 16K`, rowId: `${prefix}topupff 100`},
-{title: `140 DIAMOND = 21K`, rowId: `${prefix}topupff 140`},
-]
-},
-{
-title: `LIST PREMIUM`,
-rows: [
-{title: `1 MINGGU`, rowId: `${prefix}premkay 1minggu`},
-{title: `1 BULAN`, rowId: `${prefix}premkay 1bulan`},
-{title: `1 TAHUN`, rowId: `${prefix}premkay 1tahun`},
-{title: `PERMANENT`, rowId: `${prefix}premkay permanent`},
-]
-},
-{
-title: `LIST JADI OWNER`,
-rows: [
-{title: `1 MINGGU`, rowId: `${prefix}ownkay 1minggu`},
-{title: `1 BULAN`, rowId: `${prefix}ownkay 1bulan`},
-{title: `1 TAHUN`, rowId: `${prefix}ownkay 1tahun`},
-{title: `PERMANENT`, rowId: `${prefix}ownkay permanent`},
-]
-}
-]
-const listSw = { 
-text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
+{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗦𝗔𝗟𝗗𝗢`, rowId: `${prefix}saldo`, description: "TopUp Saldo!"},
+{title: `💎 𝗦𝗨𝗡𝗧𝗜𝗞 𝗙𝗢𝗟𝗢𝗪𝗘𝗥`, rowId: `${prefix}wollowers`, description: "followers!"},
+{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗠𝗢𝗕𝗜𝗟𝗘 𝗟𝗘𝗚𝗘𝗡𝗗`, rowId: `${prefix}randfotomenu`, description: "TopUp mobile Legend!"},
+{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗣𝗨𝗕𝗚`, rowId: `${prefix}randfotomenu`, description: "pubg!"},
+{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗙𝗥𝗘𝗘 𝗙𝗜𝗥𝗘`, rowId: `${prefix}freefire`, description: "TopUp FreeFire!"},
+]}]
+const listMenuMessage = { 
+text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
 mentions: [sender],
-footer: `Mau ${command} ya? Silahkan Pilih Di Bawah Ini`,
-buttonText: 'TOPUP',
-sections: seactiones,
+footer: fake,
+buttonText: '𝗟𝗜𝗦𝗧 𝗧𝗢𝗣𝗨𝗣',
+sections: seactions,
 listType: 1}
-baymax.sendMessage(from, listSw, { quoted: m })
-}
+
+switch (command) {
+case 'shutdown':
+if (!itsMebaymax) return reply(mess.owner)
+reply(`Bye...`)
+await sleep(3000)
+process.exit()
 break
 case 'topupff':
 if ((args[0]) == '50'){
