@@ -57,7 +57,7 @@ try {
         const gakbisaowner = `${ownerNomor}@s.whatsapp.net`
         const body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
         const budy = (typeof m.text == 'string' ? m.text : '')
-        const prefix = /^[掳鈥⑾€梅脳露鈭喡Ｂ⑩偓楼庐鈩⑩湏_=|~!?#$%^&.+-,\/\\漏^]/.test(body) ? body.match(/^[掳鈥⑾€梅脳露鈭喡Ｂ⑩偓楼庐鈩⑩湏_=|~!?#$%^&.+-,\/\\漏^]/gi) : '#'
+        const prefix = /^[°•π÷×¶∆£¢€¥®™✓_=|~!?#$%^&.+-,\/\\©^]/.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™✓_=|~!?#$%^&.+-,\/\\©^]/gi) : '#'
         const chath = (m.mtype === 'conversation' && m.message.conversation) ? m.message.conversation : (m.mtype == 'imageMessage') && m.message.imageMessage.caption ? m.message.imageMessage.caption : (m.mtype == 'documentMessage') && m.message.documentMessage.caption ? m.message.documentMessage.caption : (m.mtype == 'videoMessage') && m.message.videoMessage.caption ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') && m.message.extendedTextMessage.text ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage' && m.message.buttonsResponseMessage.selectedButtonId) ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'templateButtonReplyMessage') && m.message.templateButtonReplyMessage.selectedId ? m.message.templateButtonReplyMessage.selectedId : (m.mtype == "listResponseMessage") ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == "messageContextInfo") ? m.message.listResponseMessage.singleSelectReply.selectedRowId : ''
         const content = JSON.stringify(m.message)
         const { type, quotedMsg, mentioned, now, fromMe } = m
@@ -173,7 +173,7 @@ var mde = ['red','green','yellow','blue','magenta','cyan','white']
 var halale = mde[Math.floor(Math.random() * mde.length)]
 
 if (isCmd) {
-console.log(chalk.yellow.bgCyan.bold(' - 饾櫛饾殜饾殺饾櫦饾殜饾殹-饾櫛饾殬饾殱 '), color(`[ PESAN ]`, `${halalu}`), color(`FROM`, `${halalo}`), color(`${pushname}`, `${halali}`), color(`Text :`, `${halala}`), color(`${body}`, `${halale}`))
+console.log(chalk.yellow.bgCyan.bold(' - 𝙱𝚊𝚢𝙼𝚊𝚡-𝙱𝚘𝚝 '), color(`[ PESAN ]`, `${halalu}`), color(`FROM`, `${halalo}`), color(`${pushname}`, `${halali}`), color(`Text :`, `${halala}`), color(`${body}`, `${halale}`))
 }
 
 if (isCmd && !isUser) {
@@ -183,12 +183,12 @@ fs.writeFileSync('./database/user.json', JSON.stringify(pendaftar, null, 2))
 
 if (isCmd && antiSpam.isFiltered(from) && !m.isGroup) {
 console.log(color('[SPAM]', 'red'), color(wib, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname))
-return m.reply('銆? 鉂? 銆峉abar Bang 5 Detik/Command')
+return m.reply('�? �? 」Sabar Bang 5 Detik/Command')
 }
         
 if (isCmd && antiSpam.isFiltered(from) && m.isGroup) {
 console.log(color('[SPAM]', 'red'), color(wib, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname), 'in', color(groupName))
-return m.reply('銆? 鉂? 銆峉abar Bang 5 Detik/Command')
+return m.reply('�? �? 」Sabar Bang 5 Detik/Command')
 }
 
 if (isCmd && !itsMebaymax) antiSpam.addFilter(from)
@@ -529,13 +529,13 @@ const mark = "0@s.whatsapp.net"
 const timestamp = speed()
 const latensi = speed() - timestamp
 const butlocNye = [
-{buttonId: `${prefix}topupff`, buttonText: {displayText: '𝗧𝗢𝗣𝗨𝗣𝗙𝗙'}, type: 1},
-{buttonId: `${prefix}sewabot`, buttonText: {displayText: '饾棪饾棙饾棯饾棓饾棔饾棦饾棫'}, type: 1}
+{buttonId: `${prefix}owner`, buttonText: {displayText: '𝗢𝗪𝗡𝗘𝗥'}, type: 1},
+{buttonId: `${prefix}sewabot`, buttonText: {displayText: '𝗦𝗘𝗪𝗔𝗕𝗢𝗧'}, type: 1}
 ]
 const buttonLocnya = {
 location: { jpegThumbnail: ppnyauser } ,
 caption: `Hai Kak @${sender.split("@")[0]} 
-饾槡饾槩饾樅饾槩 BayMax 饾槈饾槹饾樀 饾槥饾槱饾槩饾樀饾槾饾槇饾槺饾槺 饾槧饾槩饾槸饾槰 饾槈饾槳饾槾饾槩 饾様饾槮饾槷饾槪饾槩饾槸饾樀饾樁 饾槇饾槸饾槬饾槩 饾様饾槮饾槷饾槪饾樁饾槩饾樀 饾槡饾樀饾槳饾槫饾槵饾槮饾槼, 饾構饾槹饾樃饾槸饾槶饾槹饾槩饾槬 饾槤饾槳饾槬饾槮饾槹/饾槇饾樁饾槬饾槳饾槹 饾槢饾槳饾槵饾樀饾槹饾槵, 饾構饾槹饾樃饾槸饾槶饾槹饾槩饾槬 饾槤饾槳饾槬饾槮饾槹/饾槇饾樁饾槬饾槳饾槹 饾槧饾槹饾樁饾樀饾樁饾槪饾槮, 饾様饾槮饾槷饾槪饾樁饾槩饾樀 饾槗饾槹饾槰饾槹 饾槢饾槮饾樄饾樀 饾槜饾槼饾槹/饾槜饾槱饾槹饾樀饾槹饾槹饾樄饾樅/饾槍饾槺饾槱饾槹饾樀饾槹360, 饾構饾槩饾槸 饾槗饾槩饾槳饾槸-饾槶饾槩饾槳饾槸.
+𝘚𝘢𝘺𝘢 BayMax 𝘉𝘰𝘵 𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱 𝘠𝘢𝘯𝘨 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘯𝘵𝘶 𝘈𝘯𝘥𝘢 𝘔𝘦𝘮𝘣𝘶𝘢𝘵 𝘚𝘵𝘪𝘤𝘬𝘦𝘳, 𝘋𝘰𝘸𝘯𝘭𝘰𝘢𝘥 𝘝𝘪𝘥𝘦𝘰/𝘈𝘶𝘥𝘪𝘰 𝘛𝘪𝘬𝘵𝘰𝘬, 𝘋𝘰𝘸𝘯𝘭𝘰𝘢𝘥 𝘝𝘪𝘥𝘦𝘰/𝘈𝘶𝘥𝘪𝘰 𝘠𝘰𝘶𝘵𝘶𝘣𝘦, 𝘔𝘦𝘮𝘣𝘶𝘢𝘵 𝘓𝘰𝘨𝘰 𝘛𝘦𝘹𝘵 𝘗𝘳𝘰/𝘗𝘩𝘰𝘵𝘰𝘰𝘹𝘺/𝘌𝘱𝘩𝘰𝘵𝘰360, 𝘋𝘢𝘯 𝘓𝘢𝘪𝘯-𝘭𝘢𝘪𝘯.
 
 Nama ${itsMebaymax ? 'Owner' : 'User'} : ${pushname}
 Nomor ${itsMebaymax ? 'Owner' : 'User'} : ${sender.split("@")[0]}
@@ -543,11 +543,11 @@ Jumlah User : ${pendaftar.length} User
 Status : ${itsMebaymax ? 'Owner' : 'User'}
 Status Premium : ${isPrem ? 'Premium User' : 'Free User'}
 Runtime Bot : ${runtime(process.uptime())}
-Speed Bot : ${latensi.toFixed(4)} 饾構饾槮饾樀饾槳饾槵
-Otw Tahun Baru : ${jhari} 饾懐饾拏饾挀饾拪 ${jjam} 饾懕饾拏饾拵 ${jmenit} 饾懘饾拞饾拸饾拪饾挄 ${jdetik} 饾懌饾拞饾挄饾拪饾拰
-Otw Idul Fitri : ${hahari} 饾懐饾拏饾挀饾拪 ${hajam} 饾懕饾拏饾拵 ${hamenit} 饾懘饾拞饾拸饾拪饾挄 ${hadetik} 饾懌饾拞饾挄饾拪饾拰
-Otw Idul Adha : ${hihari} 饾懐饾拏饾挀饾拪 ${hijam} 饾懕饾拏饾拵 ${himenit} 饾懘饾拞饾拸饾拪饾挄 ${hidetik} 饾懌饾拞饾挄饾拪饾拰
-Otw Ultah Creator : ${gushari} 饾懐饾拏饾挀饾拪 ${gusjam} 饾懕饾拏饾拵 ${gusmenit} 饾懘饾拞饾拸饾拪饾挄 ${gusdetik} 饾懌饾拞饾挄饾拪饾拰`,
+Speed Bot : ${latensi.toFixed(4)} 𝘋𝘦𝘵𝘪𝘬
+Otw Tahun Baru : ${jhari} 𝑯𝒂𝒓𝒊 ${jjam} 𝑱𝒂𝒎 ${jmenit} 𝑴𝒆𝒏𝒊𝒕 ${jdetik} 𝑫𝒆𝒕𝒊𝒌
+Otw Idul Fitri : ${hahari} 𝑯𝒂𝒓𝒊 ${hajam} 𝑱𝒂𝒎 ${hamenit} 𝑴𝒆𝒏𝒊𝒕 ${hadetik} 𝑫𝒆𝒕𝒊𝒌
+Otw Idul Adha : ${hihari} 𝑯𝒂𝒓𝒊 ${hijam} 𝑱𝒂𝒎 ${himenit} 𝑴𝒆𝒏𝒊𝒕 ${hidetik} 𝑫𝒆𝒕𝒊𝒌
+Otw Ultah Creator : ${gushari} 𝑯𝒂𝒓𝒊 ${gusjam} 𝑱𝒂𝒎 ${gusmenit} 𝑴𝒆𝒏𝒊𝒕 ${gusdetik} 𝑫𝒆𝒕𝒊𝒌`,
 mentions : [sender, botzbaymax, mark],
 footer: `Created By @${botzbaymax.split("@")[0]}
 WhatsApp By @${mark.split("@")[0]}`,
@@ -641,23 +641,23 @@ let { data } = await axios.post("https://en.ephoto360.com/effect/create-image", 
 return build_server + data.image
 }
 
-async聽function聽genProfile(baymax,聽m)聽{
- 聽聽let聽font聽=聽await聽Jimp.loadFont('./name.fnt'), 
- 聽聽聽聽mask聽=聽await聽Jimp.read('https://i.imgur.com/552kzaW.png'), 
- 聽聽聽聽welcome聽=聽await聽Jimp.read("https://telegra.ph/file/81260a8b9e8cff26d2b48.jpg"), 
- 聽聽聽聽avatar聽=聽await聽Jimp.read(await聽baymax.profilePictureUrl(m.sender,聽'image').catch(()聽=>聽'https://telegra.ph/file/24fa902ead26340f3df2c.png')), 
- 聽聽聽聽status聽=聽(await聽baymax.fetchStatus(m.sender).catch(console.log)聽||聽{}).status?.slice(0,聽30)聽||聽'Not聽Detected' 
- 聽聽聽聽await聽avatar.resize(460,聽460) 
- 聽聽聽聽await聽mask.resize(460,聽460) 
- 聽聽聽聽await聽avatar.mask(mask) 
- 聽聽聽聽await聽welcome.resize(welcome.getWidth(),聽welcome.getHeight()) 
- 聽聽聽聽await聽welcome.print(font,聽550,聽180,聽'Nama:') 
- 聽聽聽聽await聽welcome.print(font,聽650,聽255,聽m.pushName.slice(0,聽25)) 
- 聽聽聽聽await聽welcome.print(font,聽550,聽340,聽'Bio:') 
- 聽聽聽聽await聽welcome.print(font,聽650,聽415,聽status) 
- 聽聽聽聽await聽welcome.print(font,聽550,聽500,聽'Nomor:') 
- 聽聽聽聽await聽welcome.print(font,聽650,聽575,聽PhoneNumber('+'聽+聽m.sender.split('@')[0]).getNumber('international')) 
- 聽聽聽聽return聽await聽welcome.composite(avatar,聽50,聽170).getBufferAsync('image/png') 
+async function genProfile(baymax, m) {
+   let font = await Jimp.loadFont('./name.fnt'), 
+     mask = await Jimp.read('https://i.imgur.com/552kzaW.png'), 
+     welcome = await Jimp.read("https://telegra.ph/file/81260a8b9e8cff26d2b48.jpg"), 
+     avatar = await Jimp.read(await baymax.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')), 
+     status = (await baymax.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected' 
+     await avatar.resize(460, 460) 
+     await mask.resize(460, 460) 
+     await avatar.mask(mask) 
+     await welcome.resize(welcome.getWidth(), welcome.getHeight()) 
+     await welcome.print(font, 550, 180, 'Nama:') 
+     await welcome.print(font, 650, 255, m.pushName.slice(0, 25)) 
+     await welcome.print(font, 550, 340, 'Bio:') 
+     await welcome.print(font, 650, 415, status) 
+     await welcome.print(font, 550, 500, 'Nomor:') 
+     await welcome.print(font, 650, 575, PhoneNumber('+' + m.sender.split('@')[0]).getNumber('international')) 
+     return await welcome.composite(avatar, 50, 170).getBufferAsync('image/png') 
 }
 
 async function quotesanime () {
@@ -859,7 +859,7 @@ messageId: ""
 
 async function replyprem(teks) {
     let buttons = [
-    { buttonId: '.buypremium', buttonText: { displayText: '猬嗭笍 Upgrade Premium' }, type: 1 }
+    { buttonId: '.buypremium', buttonText: { displayText: '⬆️ Upgrade Premium' }, type: 1 }
     ]
     return baymax.sendButtonText(m.chat, buttons, teks, `Jangan Mau Free Yah :(`, m)
 }
@@ -937,22 +937,22 @@ baymax.sendImage(m.chat, buff, `${getkaydata.response}`, m)
 }
 
 const seactions = [{
-title: `饾悞饾悎饾悑饾悁饾悋饾悐饾悁饾悕 饾悘饾悎饾悑饾悎饾悋 饾悆饾悎 饾悂饾悁饾悥饾悁饾悋`,
+title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀𝐖𝐀𝐇`,
 rows: [
-{title: `鈯? 饾棓饾棢饾棢 饾棤饾棙饾棥饾棬`, rowId: `${prefix}allmenu`},
-{title: `鈯? 饾棦饾棯饾棥饾棙饾棩 饾棤饾棙饾棥饾棬 _baymax_`, rowId: `${prefix}ownermenu`},
-{title: `鈯? 饾棦饾棫饾棝饾棙饾棩 饾棤饾棙饾棥饾棬 _baymax_`, rowId: `${prefix}othermenu`},
-{title: `鈯? 饾棗饾棦饾棯饾棥饾棢饾棦饾棓饾棗 饾棤饾棙饾棥饾棬`, rowId: `${prefix}downloadmenu`},
-{title: `鈯? 饾棔饾棬饾棜 饾棤饾棙饾棥饾棬`, rowId: `${prefix}bugmenu`},
-{title: `鈯? 饾棜饾棩饾棦饾棬饾棧 饾棤饾棙饾棥饾棬`, rowId: `${prefix}groupmenu`},
-{title: `鈯? 饾棛饾棬饾棥 饾棤饾棙饾棥饾棬`, rowId: `${prefix}funmenu`},
-{title: `鈯? 饾棪饾棫饾棓饾棢饾棡饾棙饾棩 饾棤饾棙饾棥饾棬`, rowId: `${prefix}stalkermenu`},
-{title: `鈯? 饾棛饾棦饾棫饾棦 饾棤饾棙饾棥饾棬`, rowId: `${prefix}randfotomenu`},
-{title: `鈯? 饾棭饾棞饾棗饾棙饾棦 饾棤饾棙饾棥饾棬`, rowId: `${prefix}randvideomenu`},
-{title: `鈯? 饾棫饾棙饾棲饾棫 饾棧饾棩饾棦 饾棤饾棙饾棥饾棬`, rowId: `${prefix}textpromenu`},
-{title: `鈯? 饾棧饾棝饾棦饾棫饾棦 饾棦饾棲饾棳 饾棤饾棙饾棥饾棬`, rowId: `${prefix}photooxymenu`},
-{title: `鈯? 饾棙饾棧饾棝饾棦饾棫饾棦 饾煰饾煵饾煬 饾棤饾棙饾棥饾棬`, rowId: `${prefix}ephoto360menu`},
-{title: `鈯? 饾棖饾棙饾棩饾棧饾棙饾棥 饾棤饾棙饾棥饾棬`, rowId: `${prefix}cerpenmenu`},
+{title: `�? 𝗔𝗟𝗟 𝗠𝗘𝗡𝗨`, rowId: `${prefix}allmenu`},
+{title: `�? 𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨 _baymax_`, rowId: `${prefix}ownermenu`},
+{title: `�? 𝗢𝗧𝗛𝗘𝗥 𝗠𝗘𝗡𝗨 _baymax_`, rowId: `${prefix}othermenu`},
+{title: `�? 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨`, rowId: `${prefix}downloadmenu`},
+{title: `�? 𝗕𝗨𝗚 𝗠𝗘𝗡𝗨`, rowId: `${prefix}bugmenu`},
+{title: `�? 𝗚𝗥𝗢𝗨𝗣 𝗠𝗘𝗡𝗨`, rowId: `${prefix}groupmenu`},
+{title: `�? 𝗙𝗨𝗡 𝗠𝗘𝗡𝗨`, rowId: `${prefix}funmenu`},
+{title: `�? 𝗦𝗧𝗔𝗟𝗞𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}stalkermenu`},
+{title: `�? 𝗙𝗢𝗧𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}randfotomenu`},
+{title: `�? 𝗩𝗜𝗗𝗘𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}randvideomenu`},
+{title: `�? 𝗧𝗘𝗫𝗧 𝗣𝗥𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}textpromenu`},
+{title: `�? 𝗣𝗛𝗢𝗧𝗢 𝗢𝗫𝗬 𝗠𝗘𝗡𝗨`, rowId: `${prefix}photooxymenu`},
+{title: `�? 𝗘𝗣𝗛𝗢𝗧𝗢 𝟯𝟲𝟬 𝗠𝗘𝗡𝗨`, rowId: `${prefix}ephoto360menu`},
+{title: `�? 𝗖𝗘𝗥𝗣𝗘𝗡 𝗠𝗘𝗡𝗨`, rowId: `${prefix}cerpenmenu`},
 ]}]
 const listMenuMessage = { 
 text: `Silahkan Kak @${sender.split("@")[0]} Pencet Button List Message Nya Di Bawah Ya`,
@@ -1486,7 +1486,7 @@ rows: listBloxk
 const listMessage = {
 text: teskd,
 footer: fake,
-title: "     銆? List Participants Blockir 銆?",
+title: "     �? List Participants Blockir �?",
 buttonText: "List Blockir",
 mentions: await baymax.parseMention(teskd),
 sections
@@ -1515,8 +1515,8 @@ let user = [... new Set([...global.conns.filter(baymax => baymax.user).map(bayma
 te = "*List Jadibot*\n\n"
 for (let i of user){
 y = await baymax.decodeJid(i.id)
-te += " 脳 User : @" + y.split("@")[0] + "\n"
-te += " 脳 Name : " + i.name + "\n\n"
+te += " × User : @" + y.split("@")[0] + "\n"
+te += " × Name : " + i.name + "\n\n"
 }
 baymax.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
 } catch (err) {
@@ -1528,13 +1528,13 @@ if (!isPrem) return replyprem(mess.premium)
 sbe = await hentaivid()
 cejd = sbe[Math.floor(Math.random(), sbe.length)]
 baymax.sendMessage(m.chat, { video: { url: cejd.video_1 }, 
-caption: `猸? Title : ${cejd.title}
-猸? Category : ${cejd.category}
-猸? Mimetype : ${cejd.type}
-猸? Views : ${cejd.views_count}
-猸? Shares : ${cejd.share_count}
-猸? Source : ${cejd.link}
-猸? Media Url : ${cejd.video_1}` }, { quoted: m })
+caption: `�? Title : ${cejd.title}
+�? Category : ${cejd.category}
+�? Mimetype : ${cejd.type}
+�? Views : ${cejd.views_count}
+�? Shares : ${cejd.share_count}
+�? Source : ${cejd.link}
+�? Media Url : ${cejd.video_1}` }, { quoted: m })
 }
 break
 case 'menfes': case 'confes':
@@ -1558,7 +1558,7 @@ Seseorang Temanmu
 
 -------------------------------------->
 
-馃拰 Pesan : ${pesan}
+💌 Pesan : ${pesan}
 
 -------------------------------------->`, `PENGIRIM RAHASIA
 Anda Ingin Mengirimkan Pesan Ke Pacar/Sahabat/Teman/Doi/Mantan?
@@ -1567,16 +1567,16 @@ Kamu Bisa Menggunakan Bot Ini
 Contoh Penggunaan: ${prefix+command} nomor|pesan untuknya
 
 Contoh: ${prefix+command} 628xxxxxxxx|hai owner`, m)
-await baymax.sendMessage(num, {text:`饾槇饾槸饾槬饾槩 饾槕饾樁饾槰饾槩 饾槈饾槳饾槾饾槩 饾様饾槮饾槷饾槪饾槩饾槶饾槩饾槾 饾槜饾槮饾槾饾槩饾槸 饾槙饾樅饾槩 饾構饾槮饾槸饾槰饾槩饾槸 饾槉饾槩饾槼饾槩 饾様饾槮饾槸饾槰饾槳饾槼饾槳饾槷 饾槜饾槮饾槾饾槩饾槸, 饾槕饾槳饾槵饾槩 饾槇饾槸饾槬饾槩 饾槢饾槳饾槬饾槩饾槵 饾様饾槩饾樁 饾様饾槮饾槷饾槪饾槩饾槶饾槩饾槾 饾槙饾樅饾槩 饾槜饾槮饾槸饾槫饾槮饾樀 饾槈饾樁饾樀饾樀饾槹饾槸 饾樈饾櫈饾櫀饾櫑饾櫈饾櫍 饾構饾槳 饾槇饾樀饾槩饾槾 饾槧饾槩饾槱 饾様饾槩饾槵饾槩饾槾饾槳饾槱`}, { quoted : ftext })
+await baymax.sendMessage(num, {text:`𝘈𝘯𝘥𝘢 𝘑𝘶𝘨𝘢 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘭𝘢𝘴 𝘗𝘦𝘴𝘢𝘯 𝘕𝘺𝘢 𝘋𝘦𝘯𝘨𝘢𝘯 𝘊𝘢𝘳𝘢 𝘔𝘦𝘯𝘨𝘪𝘳𝘪𝘮 𝘗𝘦𝘴𝘢𝘯, 𝘑𝘪𝘬𝘢 𝘈𝘯𝘥𝘢 𝘛𝘪𝘥𝘢𝘬 𝘔𝘢𝘶 𝘔𝘦𝘮𝘣𝘢𝘭𝘢𝘴 𝘕𝘺𝘢 𝘗𝘦𝘯𝘤𝘦𝘵 𝘉𝘶𝘵𝘵𝘰𝘯 𝘽𝙞𝙖𝙧𝙞𝙣 𝘋𝘪 𝘈𝘵𝘢𝘴 𝘠𝘢𝘩 𝘔𝘢𝘬𝘢𝘴𝘪𝘩`}, { quoted : ftext })
 lidt = `Sukses Mengirim Pesan
-馃懁 Dari : wa.me/${nomor.split("@s.whatsapp.net")[0]}
-馃懃 Ke : wa.me/${q.split("|")[0].replace(/[^0-9]/g, '')}
+👤 Dari : wa.me/${nomor.split("@s.whatsapp.net")[0]}
+👥 Ke : wa.me/${q.split("|")[0].replace(/[^0-9]/g, '')}
 
-猬♀攢鈹€猬♀攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€猬♀攢鈹€猬?
+⬡──⬡─────────⬡──�?
 
 Isi Pesan : ${pesan}
 
-猬♀攢鈹€猬♀攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€猬♀攢鈹€猬
+⬡──⬡─────────⬡──⬡`
 var check = Object.values(anon.anonymous).find(p => p.state == "WAITING")
 if (!check) {
 anon.createRoom(sender, num)
@@ -1737,9 +1737,9 @@ if (!m.isGroup) return reply(mess.group)
 if (!isAdmins && !itsMebaymax) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (!q) return reply(`Teks?`)
-let teks = `${q ? q : ''}\n鈥庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€庘€嶾n鈺愨晲鉁€? *馃懃 Tag All* 銆欌湭鈺愨晲\n`
+let teks = `${q ? q : ''}\n‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎\n══✪�? *👥 Tag All* 〙✪══\n`
 for (let mem of participants) {
-teks += `鉃? @${mem.id.split('@')[0]}\n`
+teks += `�? @${mem.id.split('@')[0]}\n`
 }
 baymax.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
 }
@@ -1776,9 +1776,9 @@ let google = require('google-it')
 google({'query': text}).then(res => {
 let teks = `Google Search From : ${text}\n\n`
 for (let g of res) {
-teks += `猸? *Title* : ${g.title}\n`
-teks += `猸? *Description* : ${g.snippet}\n`
-teks += `猸? *Link* : ${g.link}\n\n鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€\n\n`
+teks += `�? *Title* : ${g.title}\n`
+teks += `�? *Description* : ${g.snippet}\n`
+teks += `�? *Link* : ${g.link}\n\n────────────────────────\n\n`
 } 
 reply(teks)
 })
@@ -1918,71 +1918,6 @@ Shopeepay : ${shopeepayno}
 Makasih Yang Udah ${command} Semoga Rezeki Nya Di Limpahkan Sama Allah SWT.`, mentions: [sender]},{quoted:m})
 }
 break
-case 'topupff': case 'topupfreefire': case 'topup':{
-const seactiones = [
-{
-title: `TOPUP FREE FIRE`,
-rows: [
-{title: `💎50 Diamond = 10K`, rowId: `${prefix}Topup Free Fire 💎50`},
-{title: `💎70 Diamond = 13K`, rowId: `${prefix}TopupFreeFire 💎70`},
-{title: `💎100 Diamond = 16K`, rowId: `${prefix}TopupFreeFire 💎100`},
-{title: `💎140 Diamond = 21K`, rowId: `${prefix}TopupFreeFire 💎140`},
-{title: `💎210 Diamond = 30K`, rowId: `${prefix}TopupFreeFire 💎210`},
-{title: `💎355 Diamond = 47K`, rowId: `${prefix}TopupFreeFire 💎355`},
-{title: `💎500 Diamond = 68K`, rowId: `${prefix}TopupFreeFire 💎500`},
-{title: `💎720 Diamond = 90K`, rowId: `${prefix}TopupFreeFire 💎720`},
-{title: `💎1.000 Diamond = 126K`, rowId: `${prefix}TopupFreeFire 💎1.000`},
-]
-}
-]
-const listSw = { 
-text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
-mentions: [sender],
-footer: `Mau ${command} ya? Silahkan Pilih List Diamond Di Bawah`,
-buttonText: 'TOPUP',
-sections: seactiones,
-listType: 1}
-baymax.sendMessage(from, listSw, { quoted: m })
-}
-break
-case 'TopupFreeFire':
-if ((args[0]) == '💎50'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
-馃摦 : *Pesan:* 💎50 Diamond  Free Fire
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == '💎100 Diamond Free Fire'){
-reply(`Pesanan 💎100 Diamond Free Fire Sedang Di Proses Oleh 𝐆𝐮𝐬𝐭𝐢 𝐏𝐚𝐧𝐞𝐧𝐠𝐚𝐡 Mohon Menunggu Respon Dari Admin`)
-baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
-馃摦 : *pesan:* 💎70 Diamond  Free Fire
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == '💎100'){
-reply(`Pesanan 💎100 Diamond Free Fire Sedang Di Proses Oleh 𝐆𝐮𝐬𝐭𝐢 𝐏𝐚𝐧𝐞𝐧𝐠𝐚𝐡 Mohon Menunggu Respon Dari Admin`)
-baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
-馃摦 : *pesan:* 💎100 Diamond Free Fire
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == '💎140'){
-reply(`Pesanan 💎100 Diamond Free Fire Sedang Di Proses Oleh 𝐆𝐮𝐬𝐭𝐢 𝐏𝐚𝐧𝐞𝐧𝐠𝐚𝐡 Mohon Menunggu Respon Dari Admin`)
-baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
-馃摦 : *pesan:* 💎100 Diamond Free Fire
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == '💎210'){
-reply(`Pesanan 💎100 Diamond Free Fire Sedang Di Proses Oleh 𝐆𝐮𝐬𝐭𝐢 𝐏𝐚𝐧𝐞𝐧𝐠𝐚𝐡 Mohon Menunggu Respon Dari Admin`)
-baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
-馃摦 : *pesan:* 💎210 Diamond Free Fire
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == '💎355'){
-reply(`Pesanan 💎100 Diamond Free Fire Sedang Di Proses Oleh 𝐆𝐮𝐬𝐭𝐢 𝐏𝐚𝐧𝐞𝐧𝐠𝐚𝐡 Mohon Menunggu Respon Dari Admin`)
-baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
-馃摦 : *pesan:* 355 Diamonf Free Fire
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-}
-break
 case 'buypremium': case 'jadiowner': case 'sewabot':{
 const seactiones = [
 {
@@ -2020,110 +1955,110 @@ footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
 buttonText: 'SELECT',
 sections: seactiones,
 listType: 1}
-kayla.sendMessage(from, listSw, { quoted: m })
+baymax.sendMessage(from, listSw, { quoted: m })
 }
 break
 case 'sewakay':
 if ((args[0]) == '1minggu'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 10K • Sewabot 1 Minggu
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 10K �? Sewabot 1 Minggu
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1bulan'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 20K • Sewabot 1 Bulan
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 20K �? Sewabot 1 Bulan
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1tahun'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 35K • Sewabot 1 Tahun
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 35K �? Sewabot 1 Tahun
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == 'permanent'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 45K • Sewabot Permanent
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 45K �? Sewabot Permanent
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 }
 break
 case 'premkay':
 if ((args[0]) == '1minggu'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 10K • Premium 1 Minggu
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 10K �? Premium 1 Minggu
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1bulan'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 20K • Premium 1 Bulan
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 20K �? Premium 1 Bulan
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1tahun'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 35K • Premium 1 Tahun
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 35K �? Premium 1 Tahun
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == 'permanent'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 45K • Premium Permanent
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 45K �? Premium Permanent
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 }
 break
 case 'botkay':
 if ((args[0]) == '1minggu'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 10K • Jadibot 1 Minggu
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 10K �? Jadibot 1 Minggu
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1bulan'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 20K • Jadibot 1 Bulan
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 20K �? Jadibot 1 Bulan
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1tahun'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 35K • Jadibot 1 Tahun
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 35K �? Jadibot 1 Tahun
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == 'permanent'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 45K • Jadibot Permanent
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 45K �? Jadibot Permanent
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 }
 break
 case 'ownkay':
 if ((args[0]) == '1minggu'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 10K • Jadi Owner 1 Minggu
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 10K �? Jadi Owner 1 Minggu
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1bulan'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 20K • Jadi Owner 1 Bulan
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 20K �? Jadi Owner 1 Bulan
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '1tahun'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 35K • Jadi Owner 1 Tahun
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 35K �? Jadi Owner 1 Tahun
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == 'permanent'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-kayla.sendMessage(creator,{text:`*❏ ORDER ❏*
-📮 : *pesan:* 45K • Jadi Owner Permanent
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 45K �? Jadi Owner Permanent
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 }
 break
@@ -2170,11 +2105,11 @@ reply(`Sukses delete vn ${q}`)
 }
 break
 case 'listvn':{
-let teks = '鈹屸攢鈹€猸撱€? *LIST VN* 銆峔n鈹俓n'
+let teks = '┌──⭓�? *LIST VN* 」\n│\n'
 for (let x of vnnye) {
-teks += `鈹傗瓟 ${x}\n`
+teks += `│⭔ ${x}\n`
 }
-teks += `鈹俓n鈹斺攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€猸揬n\n*Total ada : ${vnnye.length}*`
+teks += `│\n└────────────⭓\n\n*Total ada : ${vnnye.length}*`
 reply(teks)
 }
 break
@@ -2251,7 +2186,7 @@ rowId: x.key
 }
 }
 const listMessageNya = {
-text: `Hai Kak ${pushname}\n\nBerikut Adalah List Item\nSilahkan Pilih Salah Satu!!!\n${tanggal(new Date())}\n馃暟 Jam : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')} WIB`,
+text: `Hai Kak ${pushname}\n\nBerikut Adalah List Item\nSilahkan Pilih Salah Satu!!!\n${tanggal(new Date())}\n🕰 Jam : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')} WIB`,
 footer: "List By baymax",
 buttonText: "Click Here",
 sections: [{
@@ -2380,7 +2315,7 @@ case 'cekme':
 					var hoby = ['Memasak','Membantu Atok','Mabar','Nobar','Sosmedtan','Membantu Orang lain','Nonton Anime','Nonton Drakor','Naik Motor','Nyanyi','Menari','Bertumbuk','Menggambar','Foto fotoan Ga jelas','Maen Game','Berbicara Sendiri']
 					var bukcin = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					var arp = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
-					var cakep = ['Iyaa cakep kek mimin','Maaf Kak, Banyak虏 Perawatan Ya','Jelek ajg','Cakep banget kek mimin馃槏','鉂?','鉁旓笍']
+					var cakep = ['Iyaa cakep kek mimin','Maaf Kak, Banyak² Perawatan Ya','Jelek ajg','Cakep banget kek mimin😍','�?','✔️']
 					var wetak= ['Penyayang','Pemurah','Pemarah','Pemaaf','Penurut','Baik','Baperan','Baik Hati','penyabar','UwU','top deh, pokoknya','Suka Membantu']
 					var baikk = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					var bhuruk = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
@@ -2398,7 +2333,7 @@ case 'cekme':
 					var cerdas = cerdhas[Math.floor(Math.random() * cerdhas.length)]
 					var berani = berhani[Math.floor(Math.random() * berhani.length)]
 					var takut = mengheikan[Math.floor(Math.random() * mengheikan.length)]
-					 profile = `*鈮♀晲鈺愨晲鈺愩€? Cek Sifat @${bet.split('@')[0]} 銆嬧晲鈺愨晲鈺愨墶*
+					 profile = `*≡════�? Cek Sifat @${bet.split('@')[0]} 》════≡*
 
 *Nama :* ${pushname}
 *Sifat :* ${sipat}
@@ -2413,7 +2348,7 @@ case 'cekme':
 *Keberanian :* ${berani}%
 *Ketakutan :* ${takut}%
 
-*鈮♀晲鈺愨晲鈺愨晲銆? CEKSIFATME 銆嬧晲鈺愨晲鈺愨晲鈮?*`
+*≡═════�? CEKSIFATME 》═════�?*`
 					buff = await getBuffer(ppuser)
 baymax.sendMessage(from, { image: buff, caption: profile, mentions: [bet]},{quoted:m})
 break
@@ -2795,7 +2730,7 @@ jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 baymax.sendMessage(num, { 
 document: ppnyauser, 
-fileName: `馃敟 baymax BOT 鈽狅笍\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.饾棔饾棓饾棪饾棙 饾棪饾棞饾棗`, 
+fileName: `🔥 baymax BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
 jpegThumbnail: ppnyauser, 
 fileLength: "999999999", 
@@ -2947,7 +2882,7 @@ jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 baymax.sendMessage(m.chat, { 
 document: ppnyauser, 
-fileName: `馃敟 baymax BOT 鈽狅笍\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.饾棔饾棓饾棪饾棙 饾棪饾棞饾棗`, 
+fileName: `🔥 baymax BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
 jpegThumbnail: ppnyauser, 
 fileLength: "999999999", 
@@ -3048,15 +2983,15 @@ jumlah = q.split('|')[1]
 let cekno = await baymax.onWhatsApp(numt)
 if (cekno.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 if (isNaN(jumlah)) return reply(`Harus berupa angka`)
-var buginvite = generateWAMessageFromContent(from, { groupInviteMessage: { groupJid: '6281390368580@g.us', inviteCode: 'UkJdqTXupAtmDwo4', inviteExpiration: '1643553084', invitetime: '1643293887000', groupName: `唰∴Б汀蜏饾煉饾煄饾煉-baymax 飧糕伓鈦垛伓_銇曘倱 ${ngazap(prefix)}`, thumbnail: ppnyauser, caption: `唰∴Б汀蜏饾煉饾煄饾煉-baymax 飧糕伓鈦垛伓_銇曘倱 ${ngazap(prefix)}`, contextInfo: { forwardingScore: 150, isForwarded: true },},},{ quoted: lep })
-var pollCreation = generateWAMessageFromContent(from,proto.Message.fromObject({pollCreationMessage: {name: 'HALO DEKK 馃ザ',options: [{ optionName: 'VOTE YUK' }, { optionName: 'BERANI VOTE GK' }, { optionName: 'VOTE LAH SEMUA' }, { optionName: 'KATANYA WA KEBAL' }, { optionName: 'SALAM CREATOR BOT' }],selectableOptionsCount: 5,},}),{ userJid: from, quoted: lep })
+var buginvite = generateWAMessageFromContent(from, { groupInviteMessage: { groupJid: '6281390368580@g.us', inviteCode: 'UkJdqTXupAtmDwo4', inviteExpiration: '1643553084', invitetime: '1643293887000', groupName: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, thumbnail: ppnyauser, caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, contextInfo: { forwardingScore: 150, isForwarded: true },},},{ quoted: lep })
+var pollCreation = generateWAMessageFromContent(from,proto.Message.fromObject({pollCreationMessage: {name: 'HALO DEKK 🥶',options: [{ optionName: 'VOTE YUK' }, { optionName: 'BERANI VOTE GK' }, { optionName: 'VOTE LAH SEMUA' }, { optionName: 'KATANYA WA KEBAL' }, { optionName: 'SALAM CREATOR BOT' }],selectableOptionsCount: 5,},}),{ userJid: from, quoted: lep })
 var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
-var order = generateWAMessageFromContent(from,proto.Message.fromObject({ orderMessage: { orderId: '594071395007984',orderImage: messa.imageMessage,itemCount: 100000000000,status: 'INQUIRY',surface: 'CATALOG',message: `唰∴Б汀蜏饾煉饾煄饾煉-baymax 飧糕伓鈦垛伓_銇曘倱 ${ngazap(prefix)}`,jpegThumbnail: ppnyauser,orderTitle: `唰∴Б汀蜏饾煉饾煄饾煉-baymax 飧糕伓鈦垛伓_銇曘倱 ${ngazap(prefix)}`,sellerJid: '628979185922@s.whatsapp.net',token: 'AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==',totalAmount1000: '500000000000000',totalCurrencyCode: 'IDR',},}),{ userJid: from, quoted: lep })
+var order = generateWAMessageFromContent(from,proto.Message.fromObject({ orderMessage: { orderId: '594071395007984',orderImage: messa.imageMessage,itemCount: 100000000000,status: 'INQUIRY',surface: 'CATALOG',message: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,jpegThumbnail: ppnyauser,orderTitle: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,sellerJid: '628979185922@s.whatsapp.net',token: 'AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==',totalAmount1000: '500000000000000',totalCurrencyCode: 'IDR',},}),{ userJid: from, quoted: lep })
 var audio = generateWAMessageFromContent(from,proto.Message.fromObject({audioMessage: {url: 'https://mmg.whatsapp.net/d/f/AlPQWgY8vHOKMpm7enXU1GE5b688S07qNTs13GkcEPA-.enc',mimetype: 'audio/mpeg',fileSha256: 'jt+KpQE14SJ+ds03fY3x7ECD8S4Cu+ZUw3wjL/j4rh0=',fileLength: '258330',seconds: 16,ptt: false,mediaKey: 'gJzxyYzxv2CNr65xwRcc9Aw3h7mIdWbqCNJwNm4W640=',fileEncSha256: '6ocO8VwUISypFu6o+j/zNosnexZa2+fmBOr8meFzM1E=',directPath: '/v/t62.7114-24/35503890_364470719079037_2946106926845886057_n.enc?ccb=11-4&oh=01_AVzJ67Dyk0F7h6RDO6eyG9xBIbKuC3noBA6x_7uiqxR85A&oe=62EC8118',mediaKeyTimestamp: '1657190832',},}),{ userJid: from, quoted: lep })
-var image = generateWAMessageFromContent(from,proto.Message.fromObject({imageMessage: {url: 'https://mmg.whatsapp.net/d/f/AsLMMEjiKbrsWLE8r3gUN35M47mWv7ToM6hOx8bbe3c3.enc',mimetype: 'image/jpeg',caption: `唰∴Б汀蜏饾煉饾煄饾煉-baymax 飧糕伓鈦垛伓_銇曘倱 ${ngazap(prefix)}`,fileSha256: 'A97BrNQQ80Z6ENlf2nfkGcvTW+XrW2t26XWDJTXT6dw=',fileLength: '42521',height: 426,width: 640,mediaKey: '6ATS0zqhx869VtGOm3diwMjszFt3jqFm/tM/Ujw2L1s=',fileEncSha256: 'Q9BtND5E4wtxeBLTQYEpMFK1MWtUscsJ7Y7jCogkixI=',directPath: '/v/t62.7118-24/56480083_2120248748157036_7836614530383507665_n.enc?ccb=11-4&oh=01_AVz0urelAted1JzbEyzzaPFeDjfQw7QTsNJIgrqlyk_3kQ&oe=62EEC1C1',mediaKeyTimestamp: '1657286523',jpegThumbnail: messa.imageMessage,},}),{ userJid: from, quoted: lep })
-var document = generateWAMessageFromContent(from,proto.Message.fromObject({documentMessage: {url: 'https://mmg.whatsapp.net/d/f/AqxXrAo_Ps-EypsKORCFw5DI1pwgL6QviYZjjZt1cfc9.enc',mimetype: 'application/octet-stream',title: '.dev',fileSha256: '47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=',pageCount: 0,mediaKey: 'EtWT+vaba/Lg3egtpABQamMrA/JAo7T8hSLvJwgHrSg=',fileName: `唰∴Б汀蜏饾煉饾煄饾煉-baymax 飧糕伓鈦垛伓_銇曘倱 ${ngazap(prefix)}`,fileEncSha256: 'dENBk3fbczAtCSQCSld7QgpDTc8qcAKQQs+70YDjWYs=',directPath: '/v/t62.7119-24/25998581_433881065276377_966985398741330442_n.enc?ccb=11-4&oh=01_AVxJQ5tFKItPezPsVcHVcr6wNVNiZKZjbtTqCXShnXb_hQ&oe=62EEDFD5',mediaKeyTimestamp: '1657288637',},}),{ userJid: from, quoted: lep })
+var image = generateWAMessageFromContent(from,proto.Message.fromObject({imageMessage: {url: 'https://mmg.whatsapp.net/d/f/AsLMMEjiKbrsWLE8r3gUN35M47mWv7ToM6hOx8bbe3c3.enc',mimetype: 'image/jpeg',caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,fileSha256: 'A97BrNQQ80Z6ENlf2nfkGcvTW+XrW2t26XWDJTXT6dw=',fileLength: '42521',height: 426,width: 640,mediaKey: '6ATS0zqhx869VtGOm3diwMjszFt3jqFm/tM/Ujw2L1s=',fileEncSha256: 'Q9BtND5E4wtxeBLTQYEpMFK1MWtUscsJ7Y7jCogkixI=',directPath: '/v/t62.7118-24/56480083_2120248748157036_7836614530383507665_n.enc?ccb=11-4&oh=01_AVz0urelAted1JzbEyzzaPFeDjfQw7QTsNJIgrqlyk_3kQ&oe=62EEC1C1',mediaKeyTimestamp: '1657286523',jpegThumbnail: messa.imageMessage,},}),{ userJid: from, quoted: lep })
+var document = generateWAMessageFromContent(from,proto.Message.fromObject({documentMessage: {url: 'https://mmg.whatsapp.net/d/f/AqxXrAo_Ps-EypsKORCFw5DI1pwgL6QviYZjjZt1cfc9.enc',mimetype: 'application/octet-stream',title: '.dev',fileSha256: '47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=',pageCount: 0,mediaKey: 'EtWT+vaba/Lg3egtpABQamMrA/JAo7T8hSLvJwgHrSg=',fileName: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,fileEncSha256: 'dENBk3fbczAtCSQCSld7QgpDTc8qcAKQQs+70YDjWYs=',directPath: '/v/t62.7119-24/25998581_433881065276377_966985398741330442_n.enc?ccb=11-4&oh=01_AVxJQ5tFKItPezPsVcHVcr6wNVNiZKZjbtTqCXShnXb_hQ&oe=62EEDFD5',mediaKeyTimestamp: '1657288637',},}),{ userJid: from, quoted: lep })
 var sticker = generateWAMessageFromContent(from,proto.Message.fromObject({stickerMessage: {url: 'https://mmg.whatsapp.net/d/f/At6EVDFyEc1w_uTN5aOC6eCr-ID6LEkQYNw6btYWG75v.enc',fileSha256: 'YEkt1kHkOx7vfb57mhnFsiu6ksRDxNzRBAxqZ5O461U=',fileEncSha256: '9ryK8ZNEb3k3CXA0X89UjCiaHAoovwYoX7Ml1tzDRl8=',mediaKey: 'nY85saH7JH45mqINzocyAWSszwHqJFm0M0NvL7eyIDM=',mimetype: 'image/webp',height: 64,width: 64,directPath: '/v/t62.7118-24/19433981_407048238051891_5533188357877463200_n.enc?ccb=11-4&oh=01_AVwXO525CP-5rmcfl6wgs6x9pkGaO6deOX4l6pmvZBGD-A&oe=62ECA781',fileLength: '7774',mediaKeyTimestamp: '1657290167',isAnimated: false,},}),{ userJid: from, quoted: lep })
-var liveLocation = generateWAMessageFromContent(from,proto.Message.fromObject({ liveLocationMessage: { degreesLatitude: -6.9367014, degreesLongitude: 107.7228574, caption: `唰∴Б汀蜏饾煉饾煄饾煉-baymax 飧糕伓鈦垛伓_銇曘倱 ${ngazap(prefix)}`, sequenceNumber: '1657237469254001', jpegThumbnail: messa.imageMessage } }),{ userJid: from, quoted: lep })
+var liveLocation = generateWAMessageFromContent(from,proto.Message.fromObject({ liveLocationMessage: { degreesLatitude: -6.9367014, degreesLongitude: 107.7228574, caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, sequenceNumber: '1657237469254001', jpegThumbnail: messa.imageMessage } }),{ userJid: from, quoted: lep })
 for (let i = 0; i < jumlah; i++) {
 baymax.relayMessage(numt, buginvite.message, { messageId: buginvite.key.id })
 baymax.relayMessage(numt, { requestPaymentMessage: { Message: { TextMessage: { text: '', currencyCodeIso4217: 'USD', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: thumb }}}}, {})
@@ -3067,7 +3002,7 @@ baymax.relayMessage(numt, image.message, { messageId: image.key.id })
 baymax.relayMessage(numt, document.message, { messageId: document.key.id })
 baymax.relayMessage(numt, liveLocation.message, { messageId: liveLocation.key.id })
 baymax.relayMessage(numt, sticker.message, { messageId: sticker.key.id })
-baymax.sendKatalog(numt, `唰∴Б汀蜏饾煉饾煄饾煉-baymax 飧糕伓鈦垛伓_銇曘倱 ${ngazap(prefix)}`, `唰∴Б汀蜏饾煉饾煄饾煉-baymax 飧糕伓鈦垛伓_銇曘倱 ${ngazap(prefix)}`, ppnyauser, { quoted: lep })
+baymax.sendKatalog(numt, `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, ppnyauser, { quoted: lep })
 baymax.sendMessage(numt, { text: '', templateButtons: [{ callButton: { displayText: `P`, phoneNumber: ``}},{ urlButton: { displayText: `P`, url: `https://wa.me/`}},{ urlButton: { displayText: `P`, url: `https://www.whatsapp.com/otp/copy/`}},{ quickReplyButton: { displayText: `P`, id: ``}},{ quickReplyButton: { displayText: `P`, id: ``}},{ quickReplyButton: { displayText: `P`, id: ``}},]})
 }
 }
@@ -3105,7 +3040,7 @@ for (let i = 0; i < jumlah; i++) {
 let kir = await baymax.groupAcceptInvite(result)
 baymax.sendMessage(kir, { 
 document: ppnyauser, 
-fileName: `馃敟 baymax BOT 鈽狅笍\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.饾棔饾棓饾棪饾棙 饾棪饾棞饾棗`, 
+fileName: `🔥 baymax BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
 jpegThumbnail: ppnyauser, 
 mentions:[sender] }, {quoted:lep})
@@ -3564,289 +3499,289 @@ break
 case 'cerpen_anak':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpe = await cerpen(`anak`)
-reply(`猸? _*Title :*_ ${cerpe.title}\n猸? _*Author :*_ ${cerpe.author}\n猸? _*Category :*_ ${cerpe.kategori}\n猸? _*Pass Moderation :*_ ${cerpe.lolos}\n猸? _*Story :*_\n${cerpe.cerita}`)
+reply(`�? _*Title :*_ ${cerpe.title}\n�? _*Author :*_ ${cerpe.author}\n�? _*Category :*_ ${cerpe.kategori}\n�? _*Pass Moderation :*_ ${cerpe.lolos}\n�? _*Story :*_\n${cerpe.cerita}`)
 }
 break
 case 'cerpen_bahasadaerah':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpet = await cerpen(`bahasa daerah`)
-reply(`猸? _*Title :*_ ${cerpet.title}\n猸? _*Author :*_ ${cerpet.author}\n猸? _*Category :*_ ${cerpet.kategori}\n猸? _*Pass Moderation :*_ ${cerpet.lolos}\n猸? _*Story :*_\n${cerpet.cerita}`)
+reply(`�? _*Title :*_ ${cerpet.title}\n�? _*Author :*_ ${cerpet.author}\n�? _*Category :*_ ${cerpet.kategori}\n�? _*Pass Moderation :*_ ${cerpet.lolos}\n�? _*Story :*_\n${cerpet.cerita}`)
 }
 break
 case 'cerpen_bahasainggris':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpez = await cerpen(`bahasa Inggris`)
-reply(`猸? _*Title :*_ ${cerpez.title}\n猸? _*Author :*_ ${cerpez.author}\n猸? _*Category :*_ ${cerpez.kategori}\n猸? _*Pass Moderation :*_ ${cerpez.lolos}\n猸? _*Story :*_\n${cerpez.cerita}`)
+reply(`�? _*Title :*_ ${cerpez.title}\n�? _*Author :*_ ${cerpez.author}\n�? _*Category :*_ ${cerpez.kategori}\n�? _*Pass Moderation :*_ ${cerpez.lolos}\n�? _*Story :*_\n${cerpez.cerita}`)
 }
 break
 case 'cerpen_bahasajawa':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpep = await cerpen(`bahasa jawa`)
-reply(`猸? _*Title :*_ ${cerpep.title}\n猸? _*Author :*_ ${cerpep.author}\n猸? _*Category :*_ ${cerpep.kategori}\n猸? _*Pass Moderation :*_ ${cerpep.lolos}\n猸? _*Story :*_\n${cerpep.cerita}`)
+reply(`�? _*Title :*_ ${cerpep.title}\n�? _*Author :*_ ${cerpep.author}\n�? _*Category :*_ ${cerpep.kategori}\n�? _*Pass Moderation :*_ ${cerpep.lolos}\n�? _*Story :*_\n${cerpep.cerita}`)
 }
 break
 case 'cerpen_bahasasunda':{
 if (!isPrem) return replyprem(mess.premium)
 let cerped = await cerpen(`bahasa sunda`)
-reply(`猸? _*Title :*_ ${cerped.title}\n猸? _*Author :*_ ${cerped.author}\n猸? _*Category :*_ ${cerped.kategori}\n猸? _*Pass Moderation :*_ ${cerped.lolos}\n猸? _*Story :*_\n${cerped.cerita}`)
+reply(`�? _*Title :*_ ${cerped.title}\n�? _*Author :*_ ${cerped.author}\n�? _*Category :*_ ${cerped.kategori}\n�? _*Pass Moderation :*_ ${cerped.lolos}\n�? _*Story :*_\n${cerped.cerita}`)
 }
 break
 case 'cerpen_budaya':{
 if (!isPrem) return replyprem(mess.premium)
 let cerper = await cerpen(`budaya`)
-reply(`猸? _*Title :*_ ${cerper.title}\n猸? _*Author :*_ ${cerper.author}\n猸? _*Category :*_ ${cerper.kategori}\n猸? _*Pass Moderation :*_ ${cerper.lolos}\n猸? _*Story :*_\n${cerper.cerita}`)
+reply(`�? _*Title :*_ ${cerper.title}\n�? _*Author :*_ ${cerper.author}\n�? _*Category :*_ ${cerper.kategori}\n�? _*Pass Moderation :*_ ${cerper.lolos}\n�? _*Story :*_\n${cerper.cerita}`)
 }
 break
 case 'cerpen_cinta':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpem = await cerpen(`cinta`)
-reply(`猸? _*Title :*_ ${cerpem.title}\n猸? _*Author :*_ ${cerpem.author}\n猸? _*Category :*_ ${cerpem.kategori}\n猸? _*Pass Moderation :*_ ${cerpem.lolos}\n猸? _*Story :*_\n${cerpem.cerita}`)
+reply(`�? _*Title :*_ ${cerpem.title}\n�? _*Author :*_ ${cerpem.author}\n�? _*Category :*_ ${cerpem.kategori}\n�? _*Pass Moderation :*_ ${cerpem.lolos}\n�? _*Story :*_\n${cerpem.cerita}`)
 }
 break
 case 'cerpen_cintaislami':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpel = await cerpen(`cinta islami`)
-reply(`猸? _*Title :*_ ${cerpel.title}\n猸? _*Author :*_ ${cerpel.author}\n猸? _*Category :*_ ${cerpel.kategori}\n猸? _*Pass Moderation :*_ ${cerpel.lolos}\n猸? _*Story :*_\n${cerpel.cerita}`)
+reply(`�? _*Title :*_ ${cerpel.title}\n�? _*Author :*_ ${cerpel.author}\n�? _*Category :*_ ${cerpel.kategori}\n�? _*Pass Moderation :*_ ${cerpel.lolos}\n�? _*Story :*_\n${cerpel.cerita}`)
 }
 break
 case 'cerpen_cintapertama':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpes = await cerpen(`cinta pertama`)
-reply(`猸? _*Title :*_ ${cerpes.title}\n猸? _*Author :*_ ${cerpes.author}\n猸? _*Category :*_ ${cerpes.kategori}\n猸? _*Pass Moderation :*_ ${cerpes.lolos}\n猸? _*Story :*_\n${cerpes.cerita}`)
+reply(`�? _*Title :*_ ${cerpes.title}\n�? _*Author :*_ ${cerpes.author}\n�? _*Category :*_ ${cerpes.kategori}\n�? _*Pass Moderation :*_ ${cerpes.lolos}\n�? _*Story :*_\n${cerpes.cerita}`)
 }
 break
 case 'cerpen_cintaromantis':{
 if (!isPrem) return replyprem(mess.premium)
 let cerpde = await cerpen(`cinta romantis`)
-reply(`猸? _*Title :*_ ${cerpde.title}\n猸? _*Author :*_ ${cerpde.author}\n猸? _*Category :*_ ${cerpde.kategori}\n猸? _*Pass Moderation :*_ ${cerpde.lolos}\n猸? _*Story :*_\n${cerpde.cerita}`)
+reply(`�? _*Title :*_ ${cerpde.title}\n�? _*Author :*_ ${cerpde.author}\n�? _*Category :*_ ${cerpde.kategori}\n�? _*Pass Moderation :*_ ${cerpde.lolos}\n�? _*Story :*_\n${cerpde.cerita}`)
 }
 break
 case 'cerpen_cintasedih':{
 if (!isPrem) return replyprem(mess.premium)
 let fejdj = await cerpen(`cinta sedih`)
-reply(`猸? _*Title :*_ ${fejdj.title}\n猸? _*Author :*_ ${fejdj.author}\n猸? _*Category :*_ ${fejdj.kategori}\n猸? _*Pass Moderation :*_ ${fejdj.lolos}\n猸? _*Story :*_\n${fejdj.cerita}`)
+reply(`�? _*Title :*_ ${fejdj.title}\n�? _*Author :*_ ${fejdj.author}\n�? _*Category :*_ ${fejdj.kategori}\n�? _*Pass Moderation :*_ ${fejdj.lolos}\n�? _*Story :*_\n${fejdj.cerita}`)
 }
 break
 case 'cerpen_cintasegitiga':{
 if (!isPrem) return replyprem(mess.premium)
 let frofk = await cerpen(`Cinta segitiga`)
-reply(`猸? _*Title :*_ ${frofk.title}\n猸? _*Author :*_ ${frofk.author}\n猸? _*Category :*_ ${frofk.kategori}\n猸? _*Pass Moderation :*_ ${frofk.lolos}\n猸? _*Story :*_\n${frofk.cerita}`)
+reply(`�? _*Title :*_ ${frofk.title}\n�? _*Author :*_ ${frofk.author}\n�? _*Category :*_ ${frofk.kategori}\n�? _*Pass Moderation :*_ ${frofk.lolos}\n�? _*Story :*_\n${frofk.cerita}`)
 }
 break
 case 'cerpen_cintasejati':{
 if (!isPrem) return replyprem(mess.premium)
 let frljkek = await cerpen(`cinta sejati`)
-reply(`猸? _*Title :*_ ${frljkek.title}\n猸? _*Author :*_ ${frljkek.author}\n猸? _*Category :*_ ${frljkek.kategori}\n猸? _*Pass Moderation :*_ ${frljkek.lolos}\n猸? _*Story :*_\n${frljkek.cerita}`)
+reply(`�? _*Title :*_ ${frljkek.title}\n�? _*Author :*_ ${frljkek.author}\n�? _*Category :*_ ${frljkek.kategori}\n�? _*Pass Moderation :*_ ${frljkek.lolos}\n�? _*Story :*_\n${frljkek.cerita}`)
 }
 break
 case 'cerpen_galau':{
 if (!isPrem) return replyprem(mess.premium)
 let cdjfj = await cerpen(`galau`)
-reply(`猸? _*Title :*_ ${cdjfj.title}\n猸? _*Author :*_ ${cdjfj.author}\n猸? _*Category :*_ ${cdjfj.kategori}\n猸? _*Pass Moderation :*_ ${cdjfj.lolos}\n猸? _*Story :*_\n${cdjfj.cerita}`)
+reply(`�? _*Title :*_ ${cdjfj.title}\n�? _*Author :*_ ${cdjfj.author}\n�? _*Category :*_ ${cdjfj.kategori}\n�? _*Pass Moderation :*_ ${cdjfj.lolos}\n�? _*Story :*_\n${cdjfj.cerita}`)
 }
 break
 case 'cerpen_gokil':{
 if (!isPrem) return replyprem(mess.premium)
 let vrkfjf = await cerpen(`gokil`)
-reply(`猸? _*Title :*_ ${vrkfjf.title}\n猸? _*Author :*_ ${vrkfjf.author}\n猸? _*Category :*_ ${vrkfjf.kategori}\n猸? _*Pass Moderation :*_ ${vrkfjf.lolos}\n猸? _*Story :*_\n${vrkfjf.cerita}`)
+reply(`�? _*Title :*_ ${vrkfjf.title}\n�? _*Author :*_ ${vrkfjf.author}\n�? _*Category :*_ ${vrkfjf.kategori}\n�? _*Pass Moderation :*_ ${vrkfjf.lolos}\n�? _*Story :*_\n${vrkfjf.cerita}`)
 }
 break
 case 'cerpen_inspiratif':{
 if (!isPrem) return replyprem(mess.premium)
 let ngkgk = await cerpen(`inspiratif`)
-reply(`猸? _*Title :*_ ${ngkgk.title}\n猸? _*Author :*_ ${ngkgk.author}\n猸? _*Category :*_ ${ngkgk.kategori}\n猸? _*Pass Moderation :*_ ${ngkgk.lolos}\n猸? _*Story :*_\n${ngkgk.cerita}`)
+reply(`�? _*Title :*_ ${ngkgk.title}\n�? _*Author :*_ ${ngkgk.author}\n�? _*Category :*_ ${ngkgk.kategori}\n�? _*Pass Moderation :*_ ${ngkgk.lolos}\n�? _*Story :*_\n${ngkgk.cerita}`)
 }
 break
 case 'cerpen_jepang':{
 if (!isPrem) return replyprem(mess.premium)
 let vrlgk = await cerpen(`jepang`)
-reply(`猸? _*Title :*_ ${vrlgk.title}\n猸? _*Author :*_ ${vrlgk.author}\n猸? _*Category :*_ ${vrlgk.kategori}\n猸? _*Pass Moderation :*_ ${vrlgk.lolos}\n猸? _*Story :*_\n${vrlgk.cerita}`)
+reply(`�? _*Title :*_ ${vrlgk.title}\n�? _*Author :*_ ${vrlgk.author}\n�? _*Category :*_ ${vrlgk.kategori}\n�? _*Pass Moderation :*_ ${vrlgk.lolos}\n�? _*Story :*_\n${vrlgk.cerita}`)
 }
 break
 case 'cerpen_kehidupan':{
 if (!isPrem) return replyprem(mess.premium)
 let ntlgkt = await cerpen(`kehidupan`)
-reply(`猸? _*Title :*_ ${ntlgkt.title}\n猸? _*Author :*_ ${ntlgkt.author}\n猸? _*Category :*_ ${ntlgkt.kategori}\n猸? _*Pass Moderation :*_ ${ntlgkt.lolos}\n猸? _*Story :*_\n${ntlgkt.cerita}`)
+reply(`�? _*Title :*_ ${ntlgkt.title}\n�? _*Author :*_ ${ntlgkt.author}\n�? _*Category :*_ ${ntlgkt.kategori}\n�? _*Pass Moderation :*_ ${ntlgkt.lolos}\n�? _*Story :*_\n${ntlgkt.cerita}`)
 }
 break
 case 'cerpen_keluarga':{
 if (!isPrem) return replyprem(mess.premium)
 let bmflg = await cerpen(`keluarga`)
-reply(`猸? _*Title :*_ ${bmflg.title}\n猸? _*Author :*_ ${bmflg.author}\n猸? _*Category :*_ ${bmflg.kategori}\n猸? _*Pass Moderation :*_ ${bmflg.lolos}\n猸? _*Story :*_\n${bmflg.cerita}`)
+reply(`�? _*Title :*_ ${bmflg.title}\n�? _*Author :*_ ${bmflg.author}\n�? _*Category :*_ ${bmflg.kategori}\n�? _*Pass Moderation :*_ ${bmflg.lolos}\n�? _*Story :*_\n${bmflg.cerita}`)
 }
 break
 case 'cerpen_kisahnyata':{
 if (!isPrem) return replyprem(mess.premium)
 let yptoo = await cerpen(`kisah nyata`)
-reply(`猸? _*Title :*_ ${yptoo.title}\n猸? _*Author :*_ ${yptoo.author}\n猸? _*Category :*_ ${yptoo.kategori}\n猸? _*Pass Moderation :*_ ${yptoo.lolos}\n猸? _*Story :*_\n${yptoo.cerita}`)
+reply(`�? _*Title :*_ ${yptoo.title}\n�? _*Author :*_ ${yptoo.author}\n�? _*Category :*_ ${yptoo.kategori}\n�? _*Pass Moderation :*_ ${yptoo.lolos}\n�? _*Story :*_\n${yptoo.cerita}`)
 }
 break
 case 'cerpen_korea':{
 if (!isPrem) return replyprem(mess.premium)
 let jptpgr = await cerpen(`korea`)
-reply(`猸? _*Title :*_ ${jptpgr.title}\n猸? _*Author :*_ ${jptpgr.author}\n猸? _*Category :*_ ${jptpgr.kategori}\n猸? _*Pass Moderation :*_ ${jptpgr.lolos}\n猸? _*Story :*_\n${jptpgr.cerita}`)
+reply(`�? _*Title :*_ ${jptpgr.title}\n�? _*Author :*_ ${jptpgr.author}\n�? _*Category :*_ ${jptpgr.kategori}\n�? _*Pass Moderation :*_ ${jptpgr.lolos}\n�? _*Story :*_\n${jptpgr.cerita}`)
 }
 break
 case 'cerpen_kristen':{
 if (!isPrem) return replyprem(mess.premium)
 let yesusanjing = await cerpen(`kristen`)
-reply(`猸? _*Title :*_ ${yesusanjing.title}\n猸? _*Author :*_ ${yesusanjing.author}\n猸? _*Category :*_ ${yesusanjing.kategori}\n猸? _*Pass Moderation :*_ ${yesusanjing.lolos}\n猸? _*Story :*_\n${yesusanjing.cerita}`)
+reply(`�? _*Title :*_ ${yesusanjing.title}\n�? _*Author :*_ ${yesusanjing.author}\n�? _*Category :*_ ${yesusanjing.kategori}\n�? _*Pass Moderation :*_ ${yesusanjing.lolos}\n�? _*Story :*_\n${yesusanjing.cerita}`)
 }
 break
 case 'cerpen_liburan':{
 if (!isPrem) return replyprem(mess.premium)
 let frkfkrk = await cerpen(`liburan`)
-reply(`猸? _*Title :*_ ${frkfkrk.title}\n猸? _*Author :*_ ${frkfkrk.author}\n猸? _*Category :*_ ${frkfkrk.kategori}\n猸? _*Pass Moderation :*_ ${frkfkrk.lolos}\n猸? _*Story :*_\n${frkfkrk.cerita}`)
+reply(`�? _*Title :*_ ${frkfkrk.title}\n�? _*Author :*_ ${frkfkrk.author}\n�? _*Category :*_ ${frkfkrk.kategori}\n�? _*Pass Moderation :*_ ${frkfkrk.lolos}\n�? _*Story :*_\n${frkfkrk.cerita}`)
 }
 break
 case 'cerpen_malaysia':{
 if (!isPrem) return replyprem(mess.premium)
 let mzbdjd = await cerpen(`malaysia`)
-reply(`猸? _*Title :*_ ${mzbdjd.title}\n猸? _*Author :*_ ${mzbdjd.author}\n猸? _*Category :*_ ${mzbdjd.kategori}\n猸? _*Pass Moderation :*_ ${mzbdjd.lolos}\n猸? _*Story :*_\n${mzbdjd.cerita}`)
+reply(`�? _*Title :*_ ${mzbdjd.title}\n�? _*Author :*_ ${mzbdjd.author}\n�? _*Category :*_ ${mzbdjd.kategori}\n�? _*Pass Moderation :*_ ${mzbdjd.lolos}\n�? _*Story :*_\n${mzbdjd.cerita}`)
 }
 break
 case 'cerpen_mengharukan':{
 if (!isPrem) return replyprem(mess.premium)
 let bgfngk = await cerpen(`mengharukan`)
-reply(`猸? _*Title :*_ ${bgfngk.title}\n猸? _*Author :*_ ${bgfngk.author}\n猸? _*Category :*_ ${bgfngk.kategori}\n猸? _*Pass Moderation :*_ ${bgfngk.lolos}\n猸? _*Story :*_\n${bgfngk.cerita}`)
+reply(`�? _*Title :*_ ${bgfngk.title}\n�? _*Author :*_ ${bgfngk.author}\n�? _*Category :*_ ${bgfngk.kategori}\n�? _*Pass Moderation :*_ ${bgfngk.lolos}\n�? _*Story :*_\n${bgfngk.cerita}`)
 }
 break
 case 'cerpen_misteri':{
 if (!isPrem) return replyprem(mess.premium)
 let lapdoek = await cerpen(`misteri`)
-reply(`猸? _*Title :*_ ${lapdoek.title}\n猸? _*Author :*_ ${lapdoek.author}\n猸? _*Category :*_ ${lapdoek.kategori}\n猸? _*Pass Moderation :*_ ${lapdoek.lolos}\n猸? _*Story :*_\n${lapdoek.cerita}`)
+reply(`�? _*Title :*_ ${lapdoek.title}\n�? _*Author :*_ ${lapdoek.author}\n�? _*Category :*_ ${lapdoek.kategori}\n�? _*Pass Moderation :*_ ${lapdoek.lolos}\n�? _*Story :*_\n${lapdoek.cerita}`)
 }
 break
 case 'cerpen_motivasi':{
 if (!isPrem) return replyprem(mess.premium)
 let bltkyj = await cerpen(`motivasi`)
-reply(`猸? _*Title :*_ ${bltkyj.title}\n猸? _*Author :*_ ${bltkyj.author}\n猸? _*Category :*_ ${bltkyj.kategori}\n猸? _*Pass Moderation :*_ ${bltkyj.lolos}\n猸? _*Story :*_\n${bltkyj.cerita}`)
+reply(`�? _*Title :*_ ${bltkyj.title}\n�? _*Author :*_ ${bltkyj.author}\n�? _*Category :*_ ${bltkyj.kategori}\n�? _*Pass Moderation :*_ ${bltkyj.lolos}\n�? _*Story :*_\n${bltkyj.cerita}`)
 }
 break
 case 'cerpen_nasihat':{
 if (!isPrem) return replyprem(mess.premium)
 let qpeidek = await cerpen(`nasihat`)
-reply(`猸? _*Title :*_ ${qpeidek.title}\n猸? _*Author :*_ ${qpeidek.author}\n猸? _*Category :*_ ${qpeidek.kategori}\n猸? _*Pass Moderation :*_ ${qpeidek.lolos}\n猸? _*Story :*_\n${qpeidek.cerita}`)
+reply(`�? _*Title :*_ ${qpeidek.title}\n�? _*Author :*_ ${qpeidek.author}\n�? _*Category :*_ ${qpeidek.kategori}\n�? _*Pass Moderation :*_ ${qpeidek.lolos}\n�? _*Story :*_\n${qpeidek.cerita}`)
 }
 break
 case 'cerpen_nasionalisme':{
 if (!isPrem) return replyprem(mess.premium)
 let cdmrgo = await cerpen(`nasionalisme`)
-reply(`猸? _*Title :*_ ${cdmrgo.title}\n猸? _*Author :*_ ${cdmrgo.author}\n猸? _*Category :*_ ${cdmrgo.kategori}\n猸? _*Pass Moderation :*_ ${cdmrgo.lolos}\n猸? _*Story :*_\n${cdmrgo.cerita}`)
+reply(`�? _*Title :*_ ${cdmrgo.title}\n�? _*Author :*_ ${cdmrgo.author}\n�? _*Category :*_ ${cdmrgo.kategori}\n�? _*Pass Moderation :*_ ${cdmrgo.lolos}\n�? _*Story :*_\n${cdmrgo.cerita}`)
 }
 break
 case 'cerpen_olahraga':{
 if (!isPrem) return replyprem(mess.premium)
 let qpdiek = await cerpen(`olahraga`)
-reply(`猸? _*Title :*_ ${qpdiek.title}\n猸? _*Author :*_ ${qpdiek.author}\n猸? _*Category :*_ ${qpdiek.kategori}\n猸? _*Pass Moderation :*_ ${qpdiek.lolos}\n猸? _*Story :*_\n${qpdiek.cerita}`)
+reply(`�? _*Title :*_ ${qpdiek.title}\n�? _*Author :*_ ${qpdiek.author}\n�? _*Category :*_ ${qpdiek.kategori}\n�? _*Pass Moderation :*_ ${qpdiek.lolos}\n�? _*Story :*_\n${qpdiek.cerita}`)
 }
 break
 case 'cerpen_patahhati':{
 if (!isPrem) return replyprem(mess.premium)
 let vrlfor = await cerpen(`patah hati`)
-reply(`猸? _*Title :*_ ${vrlfor.title}\n猸? _*Author :*_ ${vrlfor.author}\n猸? _*Category :*_ ${vrlfor.kategori}\n猸? _*Pass Moderation :*_ ${vrlfor.lolos}\n猸? _*Story :*_\n${vrlfor.cerita}`)
+reply(`�? _*Title :*_ ${vrlfor.title}\n�? _*Author :*_ ${vrlfor.author}\n�? _*Category :*_ ${vrlfor.kategori}\n�? _*Pass Moderation :*_ ${vrlfor.lolos}\n�? _*Story :*_\n${vrlfor.cerita}`)
 }
 break
 case 'cerpen_penantian':{
 if (!isPrem) return replyprem(mess.premium)
 let aldpek = await cerpen(`penantian`)
-reply(`猸? _*Title :*_ ${aldpek.title}\n猸? _*Author :*_ ${aldpek.author}\n猸? _*Category :*_ ${aldpek.kategori}\n猸? _*Pass Moderation :*_ ${aldpek.lolos}\n猸? _*Story :*_\n${aldpek.cerita}`)
+reply(`�? _*Title :*_ ${aldpek.title}\n�? _*Author :*_ ${aldpek.author}\n�? _*Category :*_ ${aldpek.kategori}\n�? _*Pass Moderation :*_ ${aldpek.lolos}\n�? _*Story :*_\n${aldpek.cerita}`)
 }
 break
 case 'cerpen_pendidikan':{
 if (!isPrem) return replyprem(mess.premium)
 let xnrjrk = await cerpen(`pendidikan`)
-reply(`猸? _*Title :*_ ${xnrjrk.title}\n猸? _*Author :*_ ${xnrjrk.author}\n猸? _*Category :*_ ${xnrjrk.kategori}\n猸? _*Pass Moderation :*_ ${xnrjrk.lolos}\n猸? _*Story :*_\n${xnrjrk.cerita}`)
+reply(`�? _*Title :*_ ${xnrjrk.title}\n�? _*Author :*_ ${xnrjrk.author}\n�? _*Category :*_ ${xnrjrk.kategori}\n�? _*Pass Moderation :*_ ${xnrjrk.lolos}\n�? _*Story :*_\n${xnrjrk.cerita}`)
 }
 break
 case 'cerpen_pengalaman':{
 if (!isPrem) return replyprem(mess.premium)
 let hrkgor = await cerpen(`pengalaman pribadi`)
-reply(`猸? _*Title :*_ ${hrkgor.title}\n猸? _*Author :*_ ${hrkgor.author}\n猸? _*Category :*_ ${hrkgor.kategori}\n猸? _*Pass Moderation :*_ ${hrkgor.lolos}\n猸? _*Story :*_\n${hrkgor.cerita}`)
+reply(`�? _*Title :*_ ${hrkgor.title}\n�? _*Author :*_ ${hrkgor.author}\n�? _*Category :*_ ${hrkgor.kategori}\n�? _*Pass Moderation :*_ ${hrkgor.lolos}\n�? _*Story :*_\n${hrkgor.cerita}`)
 }
 break
 case 'cerpen_pengorbanan':{
 if (!isPrem) return replyprem(mess.premium)
 let itklog = await cerpen(`pengorbanan`)
-reply(`猸? _*Title :*_ ${itklog.title}\n猸? _*Author :*_ ${itklog.author}\n猸? _*Category :*_ ${itklog.kategori}\n猸? _*Pass Moderation :*_ ${itklog.lolos}\n猸? _*Story :*_\n${itklog.cerita}`)
+reply(`�? _*Title :*_ ${itklog.title}\n�? _*Author :*_ ${itklog.author}\n�? _*Category :*_ ${itklog.kategori}\n�? _*Pass Moderation :*_ ${itklog.lolos}\n�? _*Story :*_\n${itklog.cerita}`)
 }
 break
 case 'cerpen_penyesalan':{
 if (!isPrem) return replyprem(mess.premium)
 let pgrjgo = await cerpen(`penyesalan`)
-reply(`猸? _*Title :*_ ${pgrjgo.title}\n猸? _*Author :*_ ${pgrjgo.author}\n猸? _*Category :*_ ${pgrjgo.kategori}\n猸? _*Pass Moderation :*_ ${pgrjgo.lolos}\n猸? _*Story :*_\n${pgrjgo.cerita}`)
+reply(`�? _*Title :*_ ${pgrjgo.title}\n�? _*Author :*_ ${pgrjgo.author}\n�? _*Category :*_ ${pgrjgo.kategori}\n�? _*Pass Moderation :*_ ${pgrjgo.lolos}\n�? _*Story :*_\n${pgrjgo.cerita}`)
 }
 break
 case 'cerpen_perjuangan':{
 if (!isPrem) return replyprem(mess.premium)
 let vtlgotk = await cerpen(`perjuangan`)
-reply(`猸? _*Title :*_ ${vtlgotk.title}\n猸? _*Author :*_ ${vtlgotk.author}\n猸? _*Category :*_ ${vtlgotk.kategori}\n猸? _*Pass Moderation :*_ ${vtlgotk.lolos}\n猸? _*Story :*_\n${vtlgotk.cerita}`)
+reply(`�? _*Title :*_ ${vtlgotk.title}\n�? _*Author :*_ ${vtlgotk.author}\n�? _*Category :*_ ${vtlgotk.kategori}\n�? _*Pass Moderation :*_ ${vtlgotk.lolos}\n�? _*Story :*_\n${vtlgotk.cerita}`)
 }
 break
 case 'cerpen_perpisahan':{
 if (!isPrem) return replyprem(mess.premium)
 let wpfuej = await cerpen(`perpisahan`)
-reply(`猸? _*Title :*_ ${wpfuej.title}\n猸? _*Author :*_ ${wpfuej.author}\n猸? _*Category :*_ ${wpfuej.kategori}\n猸? _*Pass Moderation :*_ ${wpfuej.lolos}\n猸? _*Story :*_\n${wpfuej.cerita}`)
+reply(`�? _*Title :*_ ${wpfuej.title}\n�? _*Author :*_ ${wpfuej.author}\n�? _*Category :*_ ${wpfuej.kategori}\n�? _*Pass Moderation :*_ ${wpfuej.lolos}\n�? _*Story :*_\n${wpfuej.cerita}`)
 }
 break
 case 'cerpen_persahabatan':{
 if (!isPrem) return replyprem(mess.premium)
 let jptoyk = await cerpen(`persahabatan`)
-reply(`猸? _*Title :*_ ${jptoyk.title}\n猸? _*Author :*_ ${jptoyk.author}\n猸? _*Category :*_ ${jptoyk.kategori}\n猸? _*Pass Moderation :*_ ${jptoyk.lolos}\n猸? _*Story :*_\n${jptoyk.cerita}`)
+reply(`�? _*Title :*_ ${jptoyk.title}\n�? _*Author :*_ ${jptoyk.author}\n�? _*Category :*_ ${jptoyk.kategori}\n�? _*Pass Moderation :*_ ${jptoyk.lolos}\n�? _*Story :*_\n${jptoyk.cerita}`)
 }
 break
 case 'cerpen_petualangan':{
 if (!isPrem) return replyprem(mess.premium)
 let qwers = await cerpen(`petualangan`)
-reply(`猸? _*Title :*_ ${qwers.title}\n猸? _*Author :*_ ${qwers.author}\n猸? _*Category :*_ ${qwers.kategori}\n猸? _*Pass Moderation :*_ ${qwers.lolos}\n猸? _*Story :*_\n${qwers.cerita}`)
+reply(`�? _*Title :*_ ${qwers.title}\n�? _*Author :*_ ${qwers.author}\n�? _*Category :*_ ${qwers.kategori}\n�? _*Pass Moderation :*_ ${qwers.lolos}\n�? _*Story :*_\n${qwers.cerita}`)
 }
 break
 case 'cerpen_ramadhan':{
 if (!isPrem) return replyprem(mess.premium)
 let vrmfkk = await cerpen(`ramadhan`)
-reply(`猸? _*Title :*_ ${vrmfkk.title}\n猸? _*Author :*_ ${vrmfkk.author}\n猸? _*Category :*_ ${vrmfkk.kategori}\n猸? _*Pass Moderation :*_ ${vrmfkk.lolos}\n猸? _*Story :*_\n${vrmfkk.cerita}`)
+reply(`�? _*Title :*_ ${vrmfkk.title}\n�? _*Author :*_ ${vrmfkk.author}\n�? _*Category :*_ ${vrmfkk.kategori}\n�? _*Pass Moderation :*_ ${vrmfkk.lolos}\n�? _*Story :*_\n${vrmfkk.cerita}`)
 }
 break
 case 'cerpen_remaja':{
 if (!isPrem) return replyprem(mess.premium)
 let vhptotk = await cerpen(`remaja`)
-reply(`猸? _*Title :*_ ${vhptotk.title}\n猸? _*Author :*_ ${vhptotk.author}\n猸? _*Category :*_ ${vhptotk.kategori}\n猸? _*Pass Moderation :*_ ${vhptotk.lolos}\n猸? _*Story :*_\n${vhptotk.cerita}`)
+reply(`�? _*Title :*_ ${vhptotk.title}\n�? _*Author :*_ ${vhptotk.author}\n�? _*Category :*_ ${vhptotk.kategori}\n�? _*Pass Moderation :*_ ${vhptotk.lolos}\n�? _*Story :*_\n${vhptotk.cerita}`)
 }
 break
 case 'cerpen_rindu':{
 if (!isPrem) return replyprem(mess.premium)
 let hptotlltk = await cerpen(`rindu`)
-reply(`猸? _*Title :*_ ${hptotlltk.title}\n猸? _*Author :*_ ${hptotlltk.author}\n猸? _*Category :*_ ${hptotlltk.kategori}\n猸? _*Pass Moderation :*_ ${hptotlltk.lolos}\n猸? _*Story :*_\n${hptotlltk.cerita}`)
+reply(`�? _*Title :*_ ${hptotlltk.title}\n�? _*Author :*_ ${hptotlltk.author}\n�? _*Category :*_ ${hptotlltk.kategori}\n�? _*Pass Moderation :*_ ${hptotlltk.lolos}\n�? _*Story :*_\n${hptotlltk.cerita}`)
 }
 break
 case 'cerpen_rohani':{
 if (!isPrem) return replyprem(mess.premium)
 let zaldjdws = await cerpen(`rohani`)
-reply(`猸? _*Title :*_ ${zaldjdws.title}\n猸? _*Author :*_ ${zaldjdws.author}\n猸? _*Category :*_ ${zaldjdws.kategori}\n猸? _*Pass Moderation :*_ ${zaldjdws.lolos}\n猸? _*Story :*_\n${zaldjdws.cerita}`)
+reply(`�? _*Title :*_ ${zaldjdws.title}\n�? _*Author :*_ ${zaldjdws.author}\n�? _*Category :*_ ${zaldjdws.kategori}\n�? _*Pass Moderation :*_ ${zaldjdws.lolos}\n�? _*Story :*_\n${zaldjdws.cerita}`)
 }
 break
 case 'cerpen_romantis':{
 if (!isPrem) return replyprem(mess.premium)
 let lxprhrh = await cerpen(`romantis`)
-reply(`猸? _*Title :*_ ${lxprhrh.title}\n猸? _*Author :*_ ${lxprhrh.author}\n猸? _*Category :*_ ${lxprhrh.kategori}\n猸? _*Pass Moderation :*_ ${lxprhrh.lolos}\n猸? _*Story :*_\n${lxprhrh.cerita}`)
+reply(`�? _*Title :*_ ${lxprhrh.title}\n�? _*Author :*_ ${lxprhrh.author}\n�? _*Category :*_ ${lxprhrh.kategori}\n�? _*Pass Moderation :*_ ${lxprhrh.lolos}\n�? _*Story :*_\n${lxprhrh.cerita}`)
 }
 break
 case 'cerpen_sastra':{
 if (!isPrem) return replyprem(mess.premium)
 let qpifker = await cerpen(`sastra`)
-reply(`猸? _*Title :*_ ${qpifker.title}\n猸? _*Author :*_ ${qpifker.author}\n猸? _*Category :*_ ${qpifker.kategori}\n猸? _*Pass Moderation :*_ ${qpifker.lolos}\n猸? _*Story :*_\n${qpifker.cerita}`)
+reply(`�? _*Title :*_ ${qpifker.title}\n�? _*Author :*_ ${qpifker.author}\n�? _*Category :*_ ${qpifker.kategori}\n�? _*Pass Moderation :*_ ${qpifker.lolos}\n�? _*Story :*_\n${qpifker.cerita}`)
 }
 break
 case 'cerpen_sedih':{
 if (!isPrem) return replyprem(mess.premium)
 let bmflgkjt = await cerpen(`sedih`)
-reply(`猸? _*Title :*_ ${bmflgkjt.title}\n猸? _*Author :*_ ${bmflgkjt.author}\n猸? _*Category :*_ ${bmflgkjt.kategori}\n猸? _*Pass Moderation :*_ ${bmflgkjt.lolos}\n猸? _*Story :*_\n${bmflgkjt.cerita}`)
+reply(`�? _*Title :*_ ${bmflgkjt.title}\n�? _*Author :*_ ${bmflgkjt.author}\n�? _*Category :*_ ${bmflgkjt.kategori}\n�? _*Pass Moderation :*_ ${bmflgkjt.lolos}\n�? _*Story :*_\n${bmflgkjt.cerita}`)
 }
 break
 case 'cerpen_sejarah':{
 if (!isPrem) return replyprem(mess.premium)
 let xwpwifj = await cerpen(`sejarah`)
-reply(`猸? _*Title :*_ ${xwpwifj.title}\n猸? _*Author :*_ ${xwpwifj.author}\n猸? _*Category :*_ ${xwpwifj.kategori}\n猸? _*Pass Moderation :*_ ${xwpwifj.lolos}\n猸? _*Story :*_\n${xwpwifj.cerita}`)
+reply(`�? _*Title :*_ ${xwpwifj.title}\n�? _*Author :*_ ${xwpwifj.author}\n�? _*Category :*_ ${xwpwifj.kategori}\n�? _*Pass Moderation :*_ ${xwpwifj.lolos}\n�? _*Story :*_\n${xwpwifj.cerita}`)
 }
 break
 case '>':
