@@ -530,7 +530,7 @@ const timestamp = speed()
 const latensi = speed() - timestamp
 const butlocNye = [
 {buttonId: `${prefix}owner`, buttonText: {displayText: '𝗢𝗪𝗡𝗘𝗥'}, type: 1},
-{buttonId: `${prefix}sewabot`, buttonText: {displayText: '𝗦𝗘𝗪𝗔𝗕𝗢𝗧'}, type: 1}
+{buttonId: `${prefix}topupmenu`, buttonText: {displayText: '𝗧𝗢𝗣𝗨𝗣'}, type: 1}
 ]
 const buttonLocnya = {
 location: { jpegThumbnail: ppnyauser } ,
@@ -940,25 +940,26 @@ const seactions = [{
 title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀𝐖𝐀𝐇`,
 rows: [
 {title: `�? 𝗔𝗟𝗟 𝗠𝗘𝗡𝗨`, rowId: `${prefix}allmenu`},
-{title: `�? 𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨 _baymax_`, rowId: `${prefix}ownermenu`},
-{title: `�? 𝗢𝗧𝗛𝗘𝗥 𝗠𝗘𝗡𝗨 _baymax_`, rowId: `${prefix}othermenu`},
+{title: `�? 𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}ownermenu`},
+{title: `�? 𝗢𝗧𝗛𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}othermenu`},
+{title: `�? 𝗧𝗢𝗣𝗨𝗣𝗠𝗘𝗡𝗨`, rowId: `${prefix}topupmenu`},
 {title: `�? 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨`, rowId: `${prefix}downloadmenu`},
 {title: `�? 𝗕𝗨𝗚 𝗠𝗘𝗡𝗨`, rowId: `${prefix}bugmenu`},
 {title: `�? 𝗚𝗥𝗢𝗨𝗣 𝗠𝗘𝗡𝗨`, rowId: `${prefix}groupmenu`},
-{title: `�? 𝗙𝗨𝗡 𝗠𝗘𝗡𝗨`, rowId: `${prefix}funmenu`},
-{title: `�? 𝗦𝗧𝗔𝗟𝗞𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}stalkermenu`},
-{title: `�? 𝗙𝗢𝗧𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}randfotomenu`},
-{title: `�? 𝗩𝗜𝗗𝗘𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}randvideomenu`},
-{title: `�? 𝗧𝗘𝗫𝗧 𝗣𝗥𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}textpromenu`},
-{title: `�? 𝗣𝗛𝗢𝗧𝗢 𝗢𝗫𝗬 𝗠𝗘𝗡𝗨`, rowId: `${prefix}photooxymenu`},
-{title: `�? 𝗘𝗣𝗛𝗢𝗧𝗢 𝟯𝟲𝟬 𝗠𝗘𝗡𝗨`, rowId: `${prefix}ephoto360menu`},
-{title: `�? 𝗖𝗘𝗥𝗣𝗘𝗡 𝗠𝗘𝗡𝗨`, rowId: `${prefix}cerpenmenu`},
+{title: `𝗙𝗨𝗡 𝗠𝗘𝗡𝗨`, rowId: `${prefix}funmenu`},
+{title: `𝗦𝗧𝗔𝗟𝗞𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}stalkermenu`},
+{title: `𝗙𝗢𝗧𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}randfotomenu`},
+{title: `𝗩𝗜𝗗𝗘𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}randvideomenu`},
+{title: `𝗧𝗘𝗫𝗧 𝗣𝗥𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}textpromenu`},
+{title: `𝗣𝗛𝗢𝗧𝗢 𝗢𝗫𝗬 𝗠𝗘𝗡𝗨`, rowId: `${prefix}photooxymenu`},
+{title: `𝗘𝗣𝗛𝗢𝗧𝗢 𝟯𝟲𝟬 𝗠𝗘𝗡𝗨`, rowId: `${prefix}ephoto360menu`},
+{title: `𝗖𝗘𝗥𝗣𝗘𝗡 𝗠𝗘𝗡𝗨`, rowId: `${prefix}cerpenmenu`},
 ]}]
 const listMenuMessage = { 
-text: `Silahkan Kak @${sender.split("@")[0]} Pencet Button List Message Nya Di Bawah Ya`,
+text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
 mentions: [sender],
 footer: fake,
-buttonText: 'List Button By baymax',
+buttonText: 'LIST BAYMAX',
 sections: seactions,
 listType: 1}
 
@@ -1019,6 +1020,24 @@ mentionedJid:[sender],
 }
 }
 })
+case 'topupmenu':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${topupmenu(prefix)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyauser,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
 break
 case 'othermenu':
 sendbaymaxMessage(from, { 
@@ -1060,7 +1079,7 @@ mentionedJid:[sender],
 break
 case 'topupff':
 sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${downloadmenu(prefix)}`,
+text: `Hai Kak @${sender.split("@")[0]}\n\n${topupff(prefix)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
@@ -1932,15 +1951,15 @@ Shopeepay : ${shopeepayno}
 Makasih Yang Udah ${command} Semoga Rezeki Nya Di Limpahkan Sama Allah SWT.`, mentions: [sender]},{quoted:m})
 }
 break
-case 'buypremium': case 'jadiowner': case 'sewabot':{
+case 'topupff': case 'topupml': case 'topupsaldo':{
 const seactiones = [
 {
-title: `LIST SEWABOT`,
+title: `LIST TOPUP FREEFIRE`,
 rows: [
-{title: `1 MINGGU`, rowId: `${prefix}sewakay 1minggu`},
-{title: `1 BULAN`, rowId: `${prefix}sewakay 1bulan`},
-{title: `1 TAHUN`, rowId: `${prefix}sewakay 1tahun`},
-{title: `PERMANENT`, rowId: `${prefix}sewakay permanent`},
+{title: `50 DIAMOND = 10k`, rowId: `${prefix}topupff 50`},
+{title: `70 DIAMOND = 13K`, rowId: `${prefix}topupff 70`},
+{title: `100 DIAMOND = 16K`, rowId: `${prefix}topupff 100`},
+{title: `140 DIAMOND = 21K`, rowId: `${prefix}topupff 140`},
 ]
 },
 {
@@ -1965,36 +1984,36 @@ rows: [
 const listSw = { 
 text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
 mentions: [sender],
-footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
-buttonText: 'SELECT',
+footer: `Mau ${command} ya? Silahkan Pilih Di Bawah Ini`,
+buttonText: 'TOPUP',
 sections: seactiones,
 listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
 }
 break
-case 'sewakay':
-if ((args[0]) == '1minggu'){
+case 'topupff':
+if ((args[0]) == '50'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
 baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 10K �? Sewabot 1 Minggu
+📮 : *Pesan:* Topup FF 50 �? Diamond
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
-if ((args[0]) == '1bulan'){
+if ((args[0]) == '70'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
 baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 20K �? Sewabot 1 Bulan
+📮 : *Paket:* Topup FF 70 �? Diamond
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
-if ((args[0]) == '1tahun'){
+if ((args[0]) == '100'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
 baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 35K �? Sewabot 1 Tahun
+📮 : *Paket:* Topup FF 100 �? Diamond
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
-if ((args[0]) == 'permanent'){
+if ((args[0]) == '140'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
 baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 45K �? Sewabot Permanent
+📮 : *Paket:* Topup FF 140 �? Diamond
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 }
 break
