@@ -940,7 +940,7 @@ const seactions = [{
 title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀𝐖𝐀𝐇`,
 rows: [
 {title: `𝗔𝗟𝗟 𝗠𝗘𝗡𝗨`, rowId: `${prefix}allmenu`},
-{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗙𝗥𝗘𝗘 𝗙𝗜𝗥𝗘`, rowId: `${prefix}dmfreefire`},
+{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗙𝗥𝗘𝗘 𝗙𝗜𝗥𝗘`, rowId: `${prefix}topupdmff`},
 {title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗠𝗢𝗕𝗜𝗟𝗘 𝗟𝗘𝗚𝗘𝗡𝗗`, rowId: `${prefix}mldiamond`},
 {title: `💎 𝗧𝗢𝗣𝗨𝗣  𝗣𝗨𝗕𝗚`, rowId: `${prefix}dmpubg`},
 {title: `💳 𝗧𝗢𝗣𝗨𝗣 𝗦𝗔𝗟𝗗𝗢`, rowId: `${prefix}topupsaldo`},
@@ -953,7 +953,7 @@ rows: [
 {title: `𝗙𝗨𝗡 𝗠𝗘𝗡𝗨`, rowId: `${prefix}funmenu`},
 {title: `𝗦𝗧𝗔𝗟𝗞𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}stalkermenu`},
 {title: `𝗙𝗢𝗧𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}randfotomenu`},
-{title: `𝗩𝗜𝗗𝗘𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}randvideomenu`},
+{title: `𝗩𝗜𝗗𝗘𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}topupdmff`},
 {title: `𝗧𝗘𝗫𝗧 𝗣𝗥𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}textpromenu`},
 {title: `𝗣𝗛𝗢𝗧𝗢 𝗢𝗫𝗬 𝗠𝗘𝗡𝗨`, rowId: `${prefix}photooxymenu`},
 {title: `𝗘𝗣𝗛𝗢𝗧𝗢 𝟯𝟲𝟬 𝗠𝗘𝗡𝗨`, rowId: `${prefix}ephoto360menu`},
@@ -1005,7 +1005,7 @@ mentionedJid:[sender],
 }
 }
 })
-case 'dmfreefire':
+case 'topup':
 sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${dmfreefire(prefix, hituet)}`,
 mentions:[sender],
@@ -1175,9 +1175,9 @@ mentionedJid:[sender],
 }
 })
 break
-case 'topupff':
+case 'topupdmff':
 sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${topupff(prefix)}`,
+text: `Hai Kak @${sender.split("@")[0]}\n\n${topupffdmff(prefix)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
