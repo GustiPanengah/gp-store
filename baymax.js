@@ -530,7 +530,7 @@ const timestamp = speed()
 const latensi = speed() - timestamp
 const butlocNye = [
 {buttonId: `${prefix}owner`, buttonText: {displayText: '𝗢𝗪𝗡𝗘𝗥'}, type: 1},
-{buttonId: `${prefix}topupmenu`, buttonText: {displayText: '𝗧𝗢𝗣𝗨𝗣'}, type: 1}
+{buttonId: `${prefix}topupff`, buttonText: {displayText: '𝗧𝗢𝗣𝗨𝗣'}, type: 1}
 ]
 const buttonLocnya = {
 location: { jpegThumbnail: ppnyauser } ,
