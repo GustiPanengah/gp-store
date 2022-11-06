@@ -535,19 +535,7 @@ const butlocNye = [
 const buttonLocnya = {
 location: { jpegThumbnail: ppnyauser } ,
 caption: `Hai Kak @${sender.split("@")[0]} 
-𝘚𝘢𝘺𝘢 BayMax 𝘉𝘰𝘵 𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱 𝘠𝘢𝘯𝘨 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘯𝘵𝘶 𝘈𝘯𝘥𝘢 𝘔𝘦𝘮𝘣𝘶𝘢𝘵 𝘚𝘵𝘪𝘤𝘬𝘦𝘳, 𝘋𝘰𝘸𝘯𝘭𝘰𝘢𝘥 𝘝𝘪𝘥𝘦𝘰/𝘈𝘶𝘥𝘪𝘰 𝘛𝘪𝘬𝘵𝘰𝘬, 𝘋𝘰𝘸𝘯𝘭𝘰𝘢𝘥 𝘝𝘪𝘥𝘦𝘰/𝘈𝘶𝘥𝘪𝘰 𝘠𝘰𝘶𝘵𝘶𝘣𝘦, 𝘔𝘦𝘮𝘣𝘶𝘢𝘵 𝘓𝘰𝘨𝘰 𝘛𝘦𝘹𝘵 𝘗𝘳𝘰/𝘗𝘩𝘰𝘵𝘰𝘰𝘹𝘺/𝘌𝘱𝘩𝘰𝘵𝘰360, 𝘋𝘢𝘯 𝘓𝘢𝘪𝘯-𝘭𝘢𝘪𝘯.
-
-Nama ${itsMebaymax ? 'Owner' : 'User'} : ${pushname}
-Nomor ${itsMebaymax ? 'Owner' : 'User'} : ${sender.split("@")[0]}
-Jumlah User : ${pendaftar.length} User
-Status : ${itsMebaymax ? 'Owner' : 'User'}
-Status Premium : ${isPrem ? 'Premium User' : 'Free User'}
-Runtime Bot : ${runtime(process.uptime())}
-Speed Bot : ${latensi.toFixed(4)} 𝘋𝘦𝘵𝘪𝘬
-Otw Tahun Baru : ${jhari} 𝑯𝒂𝒓𝒊 ${jjam} 𝑱𝒂𝒎 ${jmenit} 𝑴𝒆𝒏𝒊𝒕 ${jdetik} 𝑫𝒆𝒕𝒊𝒌
-Otw Idul Fitri : ${hahari} 𝑯𝒂𝒓𝒊 ${hajam} 𝑱𝒂𝒎 ${hamenit} 𝑴𝒆𝒏𝒊𝒕 ${hadetik} 𝑫𝒆𝒕𝒊𝒌
-Otw Idul Adha : ${hihari} 𝑯𝒂𝒓𝒊 ${hijam} 𝑱𝒂𝒎 ${himenit} 𝑴𝒆𝒏𝒊𝒕 ${hidetik} 𝑫𝒆𝒕𝒊𝒌
-Otw Ultah Creator : ${gushari} 𝑯𝒂𝒓𝒊 ${gusjam} 𝑱𝒂𝒎 ${gusmenit} 𝑴𝒆𝒏𝒊𝒕 ${gusdetik} 𝑫𝒆𝒕𝒊𝒌`,
+𝘏𝘢𝘪 𝘚𝘢𝘺𝘢 𝘉𝘈𝘠𝘔𝘈𝘟 𝘠𝘢𝘪𝘵𝘶 𝘉𝘰𝘵 𝘞𝘩𝘢𝘵𝘴𝘢𝘱𝘱 𝘠𝘢𝘯𝘨 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘯𝘵𝘶 𝘈𝘯𝘥𝘢 𝘒𝘦𝘵𝘪𝘬 #𝘈𝘓𝘓𝘮𝘦𝘯𝘶 𝘜𝘯𝘵𝘶𝘬 𝘔𝘦𝘯𝘢𝘮𝘱𝘪𝘭𝘬𝘢𝘯 𝘚𝘦𝘮𝘶𝘢 𝘔𝘦𝘯𝘶,
 mentions : [sender, botzbaymax, mark],
 footer: `Created By @${botzbaymax.split("@")[0]}
 WhatsApp By @${mark.split("@")[0]}`,
@@ -861,7 +849,7 @@ async function replyprem(teks) {
     let buttons = [
     { buttonId: '.buypremium', buttonText: { displayText: '⬆️ Upgrade Premium' }, type: 1 }
     ]
-    return baymax.sendButtonText(m.chat, buttons, teks, `Jangan Mau Free Yah :(`, m)
+    return baymax.sendButtonText(m.chat, buttons, teks, `𝘉𝘺 𝘒𝘳𝘪𝘴𝘏𝘰𝘴𝘵𝘪𝘯𝘨:(`, m)
 }
 
 if (/hehe/g.test(m.body)) {
@@ -944,7 +932,7 @@ rows: [
 {title: `𝗧𝗢𝗣𝗨𝗣 𝗠𝗢𝗕𝗜𝗟𝗘 𝗟𝗘𝗚𝗘𝗡𝗗`, rowId: `${prefix}mobiledm`},
 {title: `𝗧𝗢𝗣𝗨𝗣  𝗣𝗨𝗕𝗚`, rowId: `${prefix}pubg`},
 {title: `𝗧𝗢𝗣𝗨𝗣 𝗖𝗔𝗟 𝗢𝗙 𝗗𝗨𝗧𝗬`, rowId: `${prefix}calof`},
-{title: `𝗧𝗢𝗣𝗨𝗣 𝗘-𝗪𝗔𝗟𝗟𝗘`, rowId: `${prefix}saldo`},
+{title: `𝗧𝗢𝗣𝗨𝗣 𝗘-𝗪𝗔𝗟𝗟𝗘𝘛`, rowId: `${prefix}saldo`},
 {title: `𝗞𝗘𝗕𝗨𝗧𝗨𝗛𝗔𝗡 𝗦𝗢𝗦𝗜𝗔𝗟 𝗠𝗘𝗗𝗜𝗔`, rowId: `${prefix}suntik`},
 {title: `𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}ownermenu`},
 {title: `𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨`, rowId: `${prefix}downloadmenu`},
@@ -1015,9 +1003,48 @@ mentionedJid:[sender],
 }
 })
 break
+break
+case 'downloadmenu':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${downloadmenu(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyauser,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'suntik':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${suntik(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyauser,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
 case 'calof':
 sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${cutof(prefix, hituet)}`,
+text: `Hai Kak @${sender.split("@")[0]}\n\n${calof(prefix, hituet)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
@@ -1501,6 +1528,26 @@ let buttons = [
 { buttonId: '.antilink off', buttonText: { displayText: 'Off' }, type: 1 }
 ]
 await baymax.sendButtonText(m.chat, buttons, `Mode Antilink`, `Pilih On Atau Off`, m)
+}
+break
+case 'welcome':
+if (!m.isGroup) return reply(mess.group)
+if (!isAdmins && !itsMebaymax) return reply(mess.admin)
+if (!isBotAdmins) return reply(mess.botAdmin)
+if (args[0] == 'on') {
+if (welcome) return reply('*Sudah Aktif!*')
+welcome = true
+reply('*Berhasil Mengaktifkan welcome*')
+} else if (args[0] == 'off') {
+if (!welcome) return reply('*Belum Aktif!*')
+welcome = false
+reply('*Berhasil Mematikan welcome*')
+} else {
+let buttons = [
+{ buttonId: '.welcome on', buttonText: { displayText: 'On' }, type: 1 },
+{ buttonId: '.welcome off', buttonText: { displayText: 'Off' }, type: 1 }
+]
+await baymax.sendButtonText(m.chat, buttons, `Mode welcome`, `Pilih On Atau Off`, m)
 }
 break
 case 'antiwame':
