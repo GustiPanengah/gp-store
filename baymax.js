@@ -536,6 +536,17 @@ const buttonLocnya = {
 location: { jpegThumbnail: ppnyauser } ,
 caption: `Hai Kak @${sender.split("@")[0]} 
 𝘏𝘢𝘪 𝘚𝘢𝘺𝘢 𝘉𝘈𝘠𝘔𝘈𝘟 𝘠𝘢𝘪𝘵𝘶 𝘉𝘰𝘵 𝘞𝘩𝘢𝘵𝘴𝘢𝘱𝘱 𝘠𝘢𝘯𝘨 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘯𝘵𝘶 𝘈𝘯𝘥𝘢 𝘒𝘦𝘵𝘪𝘬 #𝘈𝘓𝘓𝘮𝘦𝘯𝘶 𝘜𝘯𝘵𝘶𝘬 𝘔𝘦𝘯𝘢𝘮𝘱𝘪𝘭𝘬𝘢𝘯 𝘚𝘦𝘮𝘶𝘢 𝘔𝘦𝘯𝘶,
+Nama ${itsMebaymax ? 'Owner' : 'User'} : ${pushname}
+Nomor ${itsMebaymax ? 'Owner' : 'User'} : ${sender.split("@")[0]}
+Jumlah User : ${pendaftar.length} User
+Status : ${itsMebaymax ? 'Owner' : 'User'}
+Status Premium : ${isPrem ? 'Premium User' : 'Free User'}
+Runtime Bot : ${runtime(process.uptime())}
+Speed Bot : ${latensi.toFixed(4)} 𝘋𝘦𝘵𝘪𝘬
+Otw Tahun Baru : ${jhari} 𝑯𝒂𝒓𝒊 ${jjam} 𝑱𝒂𝒎 ${jmenit} 𝑴𝒆𝒏𝒊𝒕 ${jdetik} 𝑫𝒆𝒕𝒊𝒌
+Otw Idul Fitri : ${hahari} 𝑯𝒂𝒓𝒊 ${hajam} 𝑱𝒂𝒎 ${hamenit} 𝑴𝒆𝒏𝒊𝒕 ${hadetik} 𝑫𝒆𝒕𝒊𝒌
+Otw Idul Adha : ${hihari} 𝑯𝒂𝒓𝒊 ${hijam} 𝑱𝒂𝒎 ${himenit} 𝑴𝒆𝒏𝒊𝒕 ${hidetik} 𝑫𝒆𝒕𝒊𝒌
+Otw Ultah Creator : ${gushari} 𝑯𝒂𝒓𝒊 ${gusjam} 𝑱𝒂𝒎 ${gusmenit} 𝑴𝒆𝒏𝒊𝒕 ${gusdetik} 𝑫𝒆𝒕𝒊𝒌`,
 mentions : [sender, botzbaymax, mark],
 footer: `Created By @${botzbaymax.split("@")[0]}
 WhatsApp By @${mark.split("@")[0]}`,
