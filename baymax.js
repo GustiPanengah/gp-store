@@ -1248,10 +1248,6 @@ mentionedJid:[sender],
 }
 })
 break
-case 'donasi':
-hem = fs.readFileSync:('./kris/kris.mp3')
-baymax.sendMessage(from, hem, messageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-break
 case 'caridoi':
 case 'cariteman':
 if (!isPrem) return replyprem(mess.premium)
