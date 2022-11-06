@@ -939,13 +939,38 @@ baymax.sendImage(m.chat, buff, `${getkaydata.response}`, m)
 const seactions = [{
 title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀𝐖𝐀𝐇`,
 rows: [
-{title: `�? 𝗔𝗟𝗟 𝗠𝗘𝗡𝗨`, rowId: `${prefix}allmenu`},
-{title: `�? 𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}ownermenu`},
-{title: `�? 𝗢𝗧𝗛𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}othermenu`},
-{title: `�? 𝗧𝗢𝗣𝗨𝗣𝗠𝗘𝗡𝗨`, rowId: `${prefix}topupmenu`},
-{title: `�? 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨`, rowId: `${prefix}downloadmenu`},
-{title: `�? 𝗕𝗨𝗚 𝗠𝗘𝗡𝗨`, rowId: `${prefix}bugmenu`},
-{title: `�? 𝗚𝗥𝗢𝗨𝗣 𝗠𝗘𝗡𝗨`, rowId: `${prefix}groupmenu`},
+{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗦𝗔𝗟𝗗𝗢`, rowId: `${prefix}randfotomenu`, description: "TopUp Saldo!"},
+{title: `💎 𝗦𝗨𝗡𝗧𝗜𝗞 𝗙𝗢𝗟𝗢𝗪𝗘𝗥`, rowId: `${prefix}randfotomenu`, description: "Buy Wollowers!"},
+{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗠𝗢𝗕𝗜𝗟𝗘 𝗟𝗘𝗚𝗘𝗡𝗗`, rowId: `${prefix}randfotomenu`, description: "TopUp mobile Legend!"},
+{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗣𝗨𝗕𝗚`, rowId: `${prefix}randfotomenu`, description: "TopUp Pubg!"},
+{title: `💎 𝗧𝗢𝗣𝗨𝗣 𝗙𝗥𝗘𝗘 𝗙𝗜𝗥𝗘`, rowId: `${prefix}randfotomenu`, description: "TopUp FreeFire!"},
+]}]
+const listMenuMessage = { 
+text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
+mentions: [sender],
+footer: fake,
+buttonText: '𝗟𝗜𝗦𝗧 𝗧𝗢𝗣𝗨𝗣',
+sections: seactions,
+listType: 1}
+
+switch (command) {
+case 'shutdown':
+if (!itsMebaymax) return reply(mess.owner)
+reply(`Bye...`)
+await sleep(3000)
+process.exit()
+break
+
+const seactions = [{
+title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀𝐖𝐀𝐇`,
+rows: [
+{title: `𝗔𝗟𝗟 𝗠𝗘𝗡𝗨`, rowId: `${prefix}allmenu`},
+{title: `𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}ownermenu`},
+{title: `𝗢𝗧𝗛𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}othermenu`},
+{title: `𝗧𝗢𝗣𝗨𝗣𝗠𝗘𝗡𝗨`, rowId: `${prefix}topupmenu`},
+{title: `𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨`, rowId: `${prefix}downloadmenu`},
+{title: `𝗕𝗨𝗚 𝗠𝗘𝗡𝗨`, rowId: `${prefix}bugmenu`},
+{title: `𝗚𝗥𝗢𝗨𝗣 𝗠𝗘𝗡𝗨`, rowId: `${prefix}groupmenu`},
 {title: `𝗙𝗨𝗡 𝗠𝗘𝗡𝗨`, rowId: `${prefix}funmenu`},
 {title: `𝗦𝗧𝗔𝗟𝗞𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}stalkermenu`},
 {title: `𝗙𝗢𝗧𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}randfotomenu`},
