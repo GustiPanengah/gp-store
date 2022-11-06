@@ -946,18 +946,6 @@ rows: [
 {title: `💳 𝗧𝗢𝗣𝗨𝗣 𝗦𝗔𝗟𝗗𝗢`, rowId: `${prefix}topupsaldo`},
 {title: `📌 𝗦𝗨𝗡𝗧𝗜𝗞 𝗙𝗢𝗟𝗟𝗢𝗪𝗘𝗥`, rowId: `${prefix}wollowersig`},
 {title: `𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}ownermenu`},
-{title: `𝗢𝗧𝗛𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}othermenu`},
-{title: `𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨`, rowId: `${prefix}downloadmenu`},
-{title: `𝗕𝗨𝗚 𝗠𝗘𝗡𝗨`, rowId: `${prefix}bugmenu`},
-{title: `𝗚𝗥𝗢𝗨𝗣 𝗠𝗘𝗡𝗨`, rowId: `${prefix}groupmenu`},
-{title: `𝗙𝗨𝗡 𝗠𝗘𝗡𝗨`, rowId: `${prefix}funmenu`},
-{title: `𝗦𝗧𝗔𝗟𝗞𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}stalkermenu`},
-{title: `𝗙𝗢𝗧𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}randfotomenu`},
-{title: `𝗩𝗜𝗗𝗘𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}topupdmff`},
-{title: `𝗧𝗘𝗫𝗧 𝗣𝗥𝗢 𝗠𝗘𝗡𝗨`, rowId: `${prefix}textpromenu`},
-{title: `𝗣𝗛𝗢𝗧𝗢 𝗢𝗫𝗬 𝗠𝗘𝗡𝗨`, rowId: `${prefix}photooxymenu`},
-{title: `𝗘𝗣𝗛𝗢𝗧𝗢 𝟯𝟲𝟬 𝗠𝗘𝗡𝗨`, rowId: `${prefix}ephoto360menu`},
-{title: `𝗖𝗘𝗥𝗣𝗘𝗡 𝗠𝗘𝗡𝗨`, rowId: `${prefix}cerpenmenu`},
 ]}]
 const listMenuMessage = { 
 text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
@@ -1005,9 +993,10 @@ mentionedJid:[sender],
 }
 }
 })
-case 'topup':
+break
+case 'mllist':
 sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${dmfreefire(prefix, hituet)}`,
+text: `Hai Kak @${sender.split("@")[0]}\n\n${mllist(prefix, hituet)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
@@ -1024,28 +1013,9 @@ mentionedJid:[sender],
 }
 })
 break
-case 'mldiamond':
+case 'pubglist':
 sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${mldiamond(prefix, hituet)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-break
-case 'dmpubg':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${dmpubg(prefix, hituet)}`,
+text: `Hai Kak @${sender.split("@")[0]}\n\n${pubglist(prefix, hituet)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
@@ -1081,9 +1051,9 @@ mentionedJid:[sender],
 }
 })
 break
-case 'wollowersig':
+case 'freefiremenu':
 sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${followersig(prefix, hituet)}`,
+text: `Hai Kak @${sender.split("@")[0]}\n\n${freefiremenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
@@ -1103,270 +1073,6 @@ break
 case 'ownermenu':
 sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${ownermenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-case 'topupmenu':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${topupmenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-break
-case 'othermenu':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${othermenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-break
-case 'downloadmenu':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${downloadmenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-break
-case 'topupdmff':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${topupffdmff(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-case 'bugmenu':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${bugmenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-break
-case 'groupmenu':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${groupmenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-break
-case 'funmenu':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${funmenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-break
-case 'stalkermenu':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${stalkermenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-break
-case 'randfotomenu':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${randfotomenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-break
-case 'randvideomenu':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${randvideomenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-break
-case 'textpromenu':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${textpromenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-break
-case 'photooxymenu':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${photooxymenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-break
-case 'ephoto360menu':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${ephoto360menu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyauser,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
-}
-}
-})
-break
-case 'cerpenmenu':
-sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${cerpenmenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
