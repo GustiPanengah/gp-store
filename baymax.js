@@ -1851,44 +1851,28 @@ baymax.sendMessage(from,{image:qrisdonate, caption:`Hai Kak @${sender.split("@")
 𝗧𝗘𝗥𝗜𝗠𝗔𝗞𝗔𝗦𝗜𝗛.`, mentions: [sender]},{quoted:m})
 }
 break
-case 'topupff': case 'topupml': case 'topuppubg':{
-const seactiones = [
-{
-title: `LIST PULSA OPERATOR`,
-rows: [
-{title: `𝗜𝗡𝗗𝗢𝗦𝗔𝗧`, rowId: `${prefix}pulsaindosat`},
-{title: `𝗦𝗠𝗔𝗥𝗧𝗙𝗥𝗘𝗡`, rowId: `${prefix}pulsasmartfren`},
-{title: `𝗔𝗫𝗜𝗦`, rowId: `${prefix}pulsaaxis`},
-{title: `𝗧𝗘𝗟𝗞𝗢𝗠𝗦𝗘𝗟`, rowId: `${prefix}pulsatelkomsel`},
-{title: `𝗫𝗟`, rowId: `${prefix}pulsaxl`},`
-]
-},
-{
-title: `beh`,
-rows: [
-{title: `1 MINGGU`, rowId: `${prefix}premkay 1minggu`},
-{title: `1 BULAN`, rowId: `${prefix}premkay 1bulan`},
-{title: `1 TAHUN`, rowId: `${prefix}premkay 1tahun`},
-{title: `PERMANENT`, rowId: `${prefix}premkay permanent`},
-]
-},
-{
-title: `LIST JADI OWNER`,
-rows: [
-{title: `1 MINGGU`, rowId: `${prefix}ownkay 1minggu`},
-{title: `1 BULAN`, rowId: `${prefix}ownkay 1bulan`},
-{title: `1 TAHUN`, rowId: `${prefix}ownkay 1tahun`},
-{title: `PERMANENT`, rowId: `${prefix}ownkay permanent`},
-]
-}
-]
-const listMenuMessage = { 
-text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
-mentions: [sender],
-footer: fake,
-buttonText: 'LIST MENU',
-sections: seactions,
-listType: 1},
+case 'buypulsa':
+let dokid = text.split("|")[0]
+let cusid = text.split("|")[1]
+if (isNaN(parseInt(cusid))) return reply('Nomor Hp Harus Berupa Angka!')
+
+let anuni = await fetchJson(`https://trendtoday.my.id/api/transaction?username=manik729828YWOD&apikey=lq7ae3b7j6n0wgrz5arcqdh0c5o7cx&product=pulsa&nominal=${dokid}&id_costumer=${cusid}`)
+let suksess = `*─ 「 LANJUTKAN PEMBAYARAN 」 ─*
+                
+_Silahkan Scan Qris Dan Transfer Sesuai Harga:_
+_》Harga : Rp${anuni.amount}_
+_》Provider : ${anuni.provider}_
+_》Nomor : ${cusid} ( Pulsa )_
+_》Code Trx : ${anuni.transaction_id}_
+
+_Qr Scan Berlaku 5 Menit, Setelah 5 Menit Pesan Ini Akan Dihapus!._  
+
+_Note: Pulsa Akan Otomatis Masuk Setelah Pembayaran Berhasil._`
+let inina = await baymax.sendMessage(m.chat, { image: { url: anuni.qr_payment }, caption: `${suksess}` }, { quoted: m })
+setTimeout(() => {
+baymax.sendMessage(from, { delete:inina.key })
+}, 500000)
+break
 break
 case 'addprem':
 if (!itsMebaymax) return reply(mess.owner)
