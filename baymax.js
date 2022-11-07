@@ -541,8 +541,6 @@ Nomor ${itsMebaymax ? 'Owner' : 'User'} : ${sender.split("@")[0]}
 Status : ${itsMebaymax ? 'Owner' : 'User'}
 Runtime Bot : ${runtime(process.uptime())}
 mentions : [sender, botzbaymax, mark],
-footer: `Created By @${botzbaymax.split("@")[0]}
-WhatsApp By @${mark.split("@")[0]}`,
 buttons: butlocNye,
 headerType: "LOCATION"
 }
