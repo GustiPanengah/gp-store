@@ -233,7 +233,7 @@ baymax.sendImageAsSticker(m.chat, pesan, m, { packname: global.packname, author:
 try {
 ppimg = await baymax.profilePictureUrl(m.sender, 'image')
 } catch (err) {
-ppimg = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
+ppimg = 'https://telegra.ph/file/8441f8eb9faafc71eaadf.jpg'
 }
 ppnyaimg = await reSize(ppimg, 300, 300)
 
@@ -538,15 +538,8 @@ caption: `Hai Kak @${sender.split("@")[0]}
 𝘏𝘢𝘪 𝘚𝘢𝘺𝘢 𝘉𝘈𝘠𝘔𝘈𝘟 𝘠𝘢𝘪𝘵𝘶 𝘉𝘰𝘵 𝘞𝘩𝘢𝘵𝘴𝘢𝘱𝘱 𝘠𝘢𝘯𝘨 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘯𝘵𝘶 𝘈𝘯𝘥𝘢 𝘒𝘦𝘵𝘪𝘬 #𝘈𝘓𝘓𝘮𝘦𝘯𝘶 𝘜𝘯𝘵𝘶𝘬 𝘔𝘦𝘯𝘢𝘮𝘱𝘪𝘭𝘬𝘢𝘯 𝘚𝘦𝘮𝘶𝘢 𝘔𝘦𝘯𝘶,
 Nama ${itsMebaymax ? 'Owner' : 'User'} : ${pushname}
 Nomor ${itsMebaymax ? 'Owner' : 'User'} : ${sender.split("@")[0]}
-Jumlah User : ${pendaftar.length} User
 Status : ${itsMebaymax ? 'Owner' : 'User'}
-Status Premium : ${isPrem ? 'Premium User' : 'Free User'}
 Runtime Bot : ${runtime(process.uptime())}
-Speed Bot : ${latensi.toFixed(4)} 𝘋𝘦𝘵𝘪𝘬
-Otw Tahun Baru : ${jhari} 𝑯𝒂𝒓𝒊 ${jjam} 𝑱𝒂𝒎 ${jmenit} 𝑴𝒆𝒏𝒊𝒕 ${jdetik} 𝑫𝒆𝒕𝒊𝒌
-Otw Idul Fitri : ${hahari} 𝑯𝒂𝒓𝒊 ${hajam} 𝑱𝒂𝒎 ${hamenit} 𝑴𝒆𝒏𝒊𝒕 ${hadetik} 𝑫𝒆𝒕𝒊𝒌
-Otw Idul Adha : ${hihari} 𝑯𝒂𝒓𝒊 ${hijam} 𝑱𝒂𝒎 ${himenit} 𝑴𝒆𝒏𝒊𝒕 ${hidetik} 𝑫𝒆𝒕𝒊𝒌
-Otw Ultah Creator : ${gushari} 𝑯𝒂𝒓𝒊 ${gusjam} 𝑱𝒂𝒎 ${gusmenit} 𝑴𝒆𝒏𝒊𝒕 ${gusdetik} 𝑫𝒆𝒕𝒊𝒌`,
 mentions : [sender, botzbaymax, mark],
 footer: `Created By @${botzbaymax.split("@")[0]}
 WhatsApp By @${mark.split("@")[0]}`,
@@ -1856,10 +1849,10 @@ const seactiones = [
 {
 title: `LIST TOPUP FREEFIRE`,
 rows: [
-{title: `50 DIAMOND = 10k`, rowId: `${prefix}topupff 50`},
-{title: `70 DIAMOND = 13K`, rowId: `${prefix}topupff 70`},
-{title: `100 DIAMOND = 16K`, rowId: `${prefix}topupff 100`},
-{title: `140 DIAMOND = 21K`, rowId: `${prefix}topupff 140`},
+{title: `50 DIAMOND = 10k`, rowId: `${prefix}freefire 50`},
+{title: `70 DIAMOND = 13K`, rowId: `${prefix}freefire 70`},
+{title: `100 DIAMOND = 16K`, rowId: `${prefix}freefire 100`},
+{title: `140 DIAMOND = 21K`, rowId: `${prefix}freefire 140`},
 ]
 },
 {
@@ -1891,37 +1884,7 @@ listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
 }
 break
-case 'topupff': case 'topupml': case 'topuppubg':{
-const seactiones = [
-{
-title: `LIST TOPUP FF`,
-rows: [
-{title: `50 DIAMOND = 10k`, rowId: `${prefix}sewakay 1minggu`},
-{title: `70 DIAMOND = 13K`, rowId: `${prefix}sewakay 1bulan`},
-{title: `100 DIAMOND = 16K`, rowId: `${prefix}sewakay 1tahun`},
-{title: `140 DIAMOND = 21K`, rowId: `${prefix}sewakay permanent`},
-]
-},
-{
-title: `LIST PREMIUM`,
-rows: [
-{title: `1 MINGGU`, rowId: `${prefix}premkay 1minggu`},
-{title: `1 BULAN`, rowId: `${prefix}premkay 1bulan`},
-{title: `1 TAHUN`, rowId: `${prefix}premkay 1tahun`},
-{title: `PERMANENT`, rowId: `${prefix}premkay permanent`},
-]
-},
-{
-title: `LIST JADI OWNER`,
-rows: [
-{title: `1 MINGGU`, rowId: `${prefix}ownkay 1minggu`},
-{title: `1 BULAN`, rowId: `${prefix}ownkay 1bulan`},
-{title: `1 TAHUN`, rowId: `${prefix}ownkay 1tahun`},
-{title: `PERMANENT`, rowId: `${prefix}ownkay permanent`},
-]
-}
-]
-const listSw = { 
+const listSokw = { 
 text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
 mentions: [sender],
 footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
@@ -1931,26 +1894,26 @@ listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
 }
 break
-case 'sewakay':
-if ((args[0]) == '1minggu'){
+case 'freefire':
+if ((args[0]) == '50'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
 baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
 馃摦 : *Paket:* 50 Diamond FreeFire 鈥? Ada Yang Mau Buy Diamond
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
-if ((args[0]) == '1bulan'){
+if ((args[0]) == '70'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
 baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
 馃摦 : *Paket:* 70 Diamond FreeFire 鈥? Ada Yang Buy Diamond
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
-if ((args[0]) == '1tahun'){
+if ((args[0]) == '100'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
 baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
   : *Paket:* 100 Diamond Freefire 鈥? Ada Yang Buy Diamond
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
-if ((args[0]) == 'permanent'){
+if ((args[0]) == '140'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
 baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
 📮 : *Paket:* 140 Diamond Freefire 鈥? Ada Yang Buy Diamond
