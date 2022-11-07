@@ -1850,6 +1850,125 @@ let krt = await scp1.ssweb(q)
 baymax.sendMessage(m.chat,{image:krt.result,caption:mess.succes},{quoted:m})
 }
 break
+case 'ovo':{
+if (isGroup) return reply('Fitur Ini Hanya Bisa Digunakan Di Private Chat!')
+let noshp = text
+if (isNaN(parseInt(noshp))) return reply(`${command} 6285737134572`)
+const sections = [
+    {
+	title: `Convert Ovo`,
+	rows: [
+	    {title: "Rp20.000", rowId: `${prefix}cvspay ${noshp}|11`}
+	]
+    },
+    {
+	title: `Convert Ovo`,
+	rows: [
+	    {title: "Rp25.000", rowId: `${prefix}cvspay ${noshp}|12`}
+	]
+    },
+    {
+	title: `Convert Ovo`,
+	rows: [
+	    {title: "Rp30.000", rowId: `${prefix}cvspay ${noshp}|13`}
+	]
+    },
+    {
+	title: `Convert Ovo`,
+	rows: [
+	    {title: "Rp40.000", rowId: `${prefix}cvspay ${noshp}|14`}
+	]
+    },
+    {
+	title: `Convert Ovo`,
+	rows: [
+	    {title: "Rp50.000", rowId: `${prefix}cvspay ${noshp}|15`}
+	]
+    },
+    {
+	title: `Convert Ovo`,
+	rows: [
+	    {title: "Rp60.000", rowId: `${prefix}cvspay ${noshp}|16`}
+	]
+    },
+    {
+	title: `Convert Ovo`,
+	rows: [
+	    {title: "Rp70.000", rowId: `${prefix}cvspay ${noshp}|17`}
+	]
+    },
+    {
+	title: `Convert Ovo`,
+	rows: [
+	    {title: "Rp75.000", rowId: `${prefix}cvspay ${noshp}|18`}
+	]
+    },
+    {
+	title: `Convert Ovo`,
+	rows: [
+	    {title: "Rp90.000", rowId: `${prefix}cvspay ${noshp}|19`}
+	]
+    },
+    {
+	title: `Convert Ovo`,
+	rows: [
+	    {title: "Rp100.000", rowId: `${prefix}cvspay ${noshp}|20`}
+	]
+    },
+    {
+	title: `Convert Ovo`,
+	rows: [
+	    {title: "Rp125.000", rowId: `${prefix}cvspay ${noshp}|21`}
+	]
+    },
+     {
+	title: `Convert Ovo`,
+	rows: [
+	    {title: "Rp150.000", rowId: `${prefix}cvspay ${noshp}|22`}
+	]
+    },
+    {
+	title: `Convert Ovo`,
+	rows: [
+	    {title: "Rp200.000", rowId: `${prefix}cvspay ${noshp}|22`}
+	]
+    },
+]
+let isian = `    
+Silahkan Pilih Nominal Saldo E-wallet Yang Akan Anda Convert Ke Ovo!.
+
+Note: Pembayaran Disini Hanya Menggunakan Server, Owner Tidak Mendapatkan Hasil Apapun Disini Karena Diproses Langsung Dari Server!.
+
+Jika Sudah Melakukan Pemilihan Nominal, Anda Akan Dikirimkan Qris Pembayaran Dan Anda Harus Membayar Melalu Aplikasi E-wallet Yang Mendukung Qris, Pastikan Nominal Yang Anda Krimkan Harus Sama Dengan Nominal Yang Diminta!.
+
+Jika Anda Sudah Melakukan Pembayaran, Silahkan Tunggu 1-2 Menit Dan Melakukan Pengecekan Secara Berkala Pada Saldo Anda!.`
+const listMessage = {
+  text: isian,
+  footer: "Powered By @Aryabaymax",
+  title: "━━[ Nominal saldo Ovo ]━━",
+  buttonText: "Klik Disini",
+  sections
+}
+const tessgh = await baymax.sendMessage(from, listMessage)
+break
+}
+case 'cvspay':{
+if (isGroup) return reply('Fitur Ini Hanya Bisa Digunakan Di Private Chat!')
+let idff = text.split("|")[0]
+let produkid = text.split("|")[1]
+let cvnya = await convertSaldo(`${produkid}`, `${idff}`)
+let byr = `*─ 「 CEK TRANSAKSIMU 」 ─*
+     
+_Berikut Adalah Transaksi Anda_
+_》Saldo : ${cvnya.product}_
+_》No Tujuan : ${idff}_
+_》Total Tagihan : ${cvnya.tagihan}_
+_》Id Trx : ${cvnya.order_id}_
+
+Silahkan Scan Qris Diatas Untuk Melakukan Pembayaran
+Saldo Akan Masuk Otomatis Dalam Waktu 1-5 Menit Setelah Melakukan Pembayaran!.`
+baymax.sendMessage(m.chat, { image: { url: cvnya.img }, caption: `${byr}` }, { quoted: m })
+break
 case 'join': {
 if (!itsMebaymax) return reply(mess.owner)
 if (!text) return reply(`Contoh ${prefix+command} linkgc`)
