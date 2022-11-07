@@ -51,6 +51,564 @@ users: {},
 chats: {},
 ...(global.db || {})
 }
+let list = {
+  "ff": {
+    "FF5": {
+    "nama": "5 Diamond",
+    "hargaid": 900,
+    "harga":"Rp900",
+    },
+        "FF10": {
+    "nama": "10 Diamond",
+    "hargaid": 1800,
+    "harga":"Rp1.800",
+    },
+        "FF15": {
+    "nama": "15 Diamond",
+    "hargaid": 2700,
+    "harga":"Rp2.700",
+    },
+        "FF20": {
+    "nama": "20 Diamond",
+    "hargaid": 3000,
+    "harga":"Rp3.000",
+    },
+        "FF25": {
+    "nama": "25 Diamond",
+    "hargaid": 3900,
+    "harga":"Rp3.900",
+    },
+        "FF30": {
+    "nama": "30 Diamond",
+    "hargaid": 4800,
+    "harga":"Rp4.800",
+    },
+        "FF40": {
+    "nama": "40 Diamond",
+    "hargaid": 6000,
+    "harga":"Rp6.000",
+    },
+        "FF50": {
+    "nama": "50 Diamond",
+    "hargaid": 7200,
+    "harga":"Rp7.200",
+    },
+        "FF55": {
+    "nama": "55 Diamond",
+    "hargaid": 8100,
+    "harga":"Rp8.100",
+    },
+        "FF60": {
+    "nama": "60 Diamond",
+    "hargaid": 9000,
+    "harga":"Rp9.000",
+    },
+        "FF70": {
+    "nama": "70 Diamond",
+    "hargaid": 9900,
+    "harga":"Rp9.900",
+    },
+        "FF75": {
+    "nama": "75 Diamond",
+    "hargaid": 10800,
+    "harga":"Rp10.800",
+    },
+"FF80": {
+"nama": "80 Diamond",	
+"hargaid":11700,
+"harga":"Rp11.700",
+},
+"FF90": {
+"nama": "90 Diamond",	
+"hargaid":12900,
+"harga":"Rp12.900",
+},
+"FF95": {
+"nama": "95 Diamond",	
+"hargaid":13800,
+"harga":"Rp13.800",	
+},
+"FF100": {
+"nama": "100 Diamond",	
+"hargaid": 14400,
+"harga":"Rp14.400",
+},
+"FF120": {
+"nama": "120 Diamond",	
+"hargaid":17100,
+"harga":"Rp17.100",
+},
+"FF130": {
+"nama": "130 Diamond",	
+"hargaid":18900,
+"harga":"Rp18.900",
+},
+"FF140": {
+"nama": "140 Diamond",	
+"hargaid":19800,
+"harga":"Rp19.800",	
+},
+"FF145": {
+"nama": "145 Diamond",	
+"hargaid":20700,
+"harga":"Rp20.700",
+},
+"FF150": {
+"nama": "150 Diamond",	
+"hargaid":21600,
+"harga":"Rp21.600",
+},
+"FF160": {
+"nama": "160 Diamond",	
+"hargaid":22800,
+"harga":"Rp22.800",
+},
+"FF180": {
+"nama": "180 Diamond",	
+"hargaid":25800,
+"harga":"Rp25.800",
+},
+"FF190": {
+"nama": "190 Diamond",	
+"hargaid":27000,
+"harga":"Rp27.000",
+},
+"FF200": {
+"nama": "200 Diamond",	
+"hargaid":28800,
+"harga":"Rp28.800",
+},
+"FF210": {
+"nama": "210 Diamond",	
+"hargaid":29700,
+"harga":"Rp29.700",
+},
+"FFM": {
+"nama": "Member Mingguan",
+"hargaid":30000,
+"harga":"Rp30.000",
+},
+"FF250": {
+"nama": "250 Diamond",	
+"hargaid":35700,
+"harga":"Rp35.700",
+},
+"FF280": {
+"nama": "280 Diamond",	
+"hargaid":39600,
+"harga":"Rp39.600",
+},
+"FF300": {
+"nama": "300 Diamond",	
+"hargaid":42600,
+"harga":"Rp42.600",
+},
+"FF355": {
+"nama": "355 Diamond",	
+"hargaid":49900,
+"harga":"Rp49.900",
+},
+"FF350": {
+"nama": "350 Diamond",	
+"hargaid":49500,
+"harga":"Rp49.500",
+},
+"FF375": {
+"nama": "375 Diamond",	
+"hargaid":52500,
+"harga":"Rp52.500",
+},
+"FF400": {
+"nama": "400 Diamond",	
+"hargaid":56400,
+"harga":"Rp56.400",
+},
+"FF405": {
+"nama": "405 Diamond",	
+"hargaid":56700,
+"harga":"Rp56.700",
+},
+"FF425": {
+"nama": "425 Diamond",	
+"hargaid":59400,
+"harga":"Rp59.400",
+},
+"FF475": {
+"nama": "475 Diamond",	
+"hargaid":66600,
+"harga":"Rp66.600",
+},
+"FF500": {
+"nama": "500 Diamond",	
+"hargaid":70200,
+"harga":"Rp70.200",
+},
+"FF510": {
+"nama": "510 Diamond",	
+"hargaid": 72000,
+"harga":"Rp72.000",
+},
+"FF515": {
+"nama": "515 Diamond",	
+"hargaid": 72300,
+"harga":"Rp72.300",
+},
+
+"FF512": {
+"nama": "512+3 Diamond",	
+"hargaid":72300,
+"harga":"Rp72.300",
+},
+"FF545": {
+"nama": "545 Diamond",	
+"hargaid":76500,
+"harga":"Rp76.500",
+},
+"FF565": {
+"nama": "565 Diamond",	
+"hargaid":79200,
+"harga":"Rp79.200",	
+},
+"FF600": {
+"nama": "600 Diamond",	
+"hargaid":84600,
+"harga":"Rp84.600",
+},
+"FF635": {
+"nama": "635 Diamond",	
+"hargaid": 89100,
+"harga":"Rp89.100",
+},
+"FF645": {
+"nama": "645 Diamond",	
+"hargaid":90900,
+"harga":"Rp90.900",
+},
+"FF655": {
+"nama": "655 Diamond",	
+"hargaid":92100,
+"harga":"Rp92.100",
+},
+"FF720": {
+"nama": "720 Diamond",	
+"hargaid": 99000,
+"harga":"Rp99.000",
+},
+"FF700": {
+"nama": "700 Diamond",	
+"hargaid":99000,
+"harga":"Rp99.000",
+},
+"FF770": {
+"nama": "770 Diamond",	
+"hargaid":106200,
+"harga":"Rp106.200",	
+},
+"FF790": {
+"nama": "790 Diamond",	
+"hargaid": 108900,
+"harga":"Rp108.900",
+},
+"FF800": {
+"nama": "800 Diamond",	
+"hargaid": 110700,
+"harga":"Rp110.700",
+},
+"FF860": {
+"nama": "860 Diamond",	
+"hargaid": 118800,
+"harga":"Rp118.800",
+},
+"FF930": {
+"nama": "930 Diamond",	
+"hargaid":128700,
+"harga":"Rp128.700",
+},
+"FF1000": {
+"nama": "1000 Diamond",	
+"hargaid":138600,
+"harga":"Rp138.600",	
+},
+"FF1050": {
+"nama": "1050 Diamond",	
+"hargaid":145800,
+"harga":"Rp145.800",
+},
+"FF1075": {
+"nama": "1075 Diamond",	
+"hargaid":148500,
+"harga":"Rp148.500",
+},
+"FF1080": {
+"nama": "1080 Diamond",	
+"hargaid":149400,
+"harga":"Rp149.400",
+},
+"FFB": {
+"nama": "Member Bulanan",
+"hargaid":150000,
+"harga":"Rp150.000",
+},
+"FF1200": {
+"nama": "1200 Diamond",	
+"hargaid":166800,
+"harga":"Rp166.800",
+},
+"FF1215": {
+"nama": "1215 Diamond",	
+"hargaid":16830,
+"harga":"Rp168.300",
+},
+"FF1300": {
+"nama": "1300 Diamond",	
+"hargaid":180900,
+"harga":"Rp180.900",
+},
+"FF1440": {
+"nama": "1440 Diamond",	
+"hargaid":198000,
+"harga":"Rp198.000",
+},
+"FF1450": {
+"nama": "1450 Diamond",	
+"hargaid":199800,
+"harga":"Rp199.800",
+},
+"FF1490": {
+"nama": "1490 Diamond",	
+"hargaid":205200,
+"harga":"Rp205.200",
+},
+"FF1510": {
+"nama": "1510 Diamond",	
+"hargaid":207900,
+"harga":"Rp207.900",
+},
+"FF1580": {
+"nama": "1580 Diamond",	
+"hargaid":217800,
+"harga":"Rp217.800",
+},
+"FF1795": {
+"nama": "1795 Diamond",	
+"hargaid":247500,
+"harga":"Rp247.500",
+},
+"FF1800": {
+"nama": "1800, Diamond",	
+"hargaid": 248400,
+"harga":"Rp248.400",
+},
+"FF2000": {
+"nama": "2000 Diamond",	
+"hargaid":270000,
+"harga":"Rp270.000",
+},
+"FF2140": {
+"nama": "2140 Diamond",	
+"hargaid": 289800,
+"harga":"Rp289.800",
+},
+"FF2190": {
+"nama": "2190 Diamond",	
+"hargaid": 297000,
+"harga":"Rp297.000",
+},
+"FF2210": {
+"nama": "2210 Diamond",	
+"hargaid": 299700,
+"harga":"Rp299.700",
+},
+"FF2280": {
+"nama": "2280 Diamond",	
+"hargaid": 309600,
+"harga":"Rp309.600",
+},
+"FF2355": {
+"nama": "2355 Diamond",	
+"hargaid": 319500,
+"harga":"Rp319.500",
+},
+"FF2720": {
+"nama": "2720 Diamond",	
+"hargaid": 369000,
+"harga":"Rp369.000",
+},
+"FF4000": {
+"nama": "4000 Diamond",	
+"hargaid": 540000,
+"harga":"Rp540.000",
+},
+"FF77290": {
+"nama": "7290 Diamond",	
+"hargaid": 990000,
+"harga":"Rp990.000",
+},
+},
+};
+let listml = {
+  "ml": {
+    "UPMBL5": {
+    "nama": "5 Diamond",
+    "hargaid": 1700,
+    "harga":"Rp1.700",
+    },
+        "UPMBL12": {
+    "nama": "12 Diamond",
+    "hargaid": 4000,
+    "harga":"Rp4.000",
+    },
+    "ZIDMBL17": {
+    "nama": "17 Diamond",
+    "hargaid": 4500,
+    "harga":"Rp4.500",
+    },
+        "UPMBL19": {
+    "nama": "19 Diamond",
+    "hargaid": 7000,
+    "harga":"Rp7.000",
+    },
+        "UPMBL28": {
+    "nama": "28 Diamond",
+    "hargaid": 10500,
+    "harga":"Rp10.500",
+    },
+        "UPMBL36": {
+    "nama": "36 Diamond",
+    "hargaid": 13000,
+    "harga":"Rp13.000",
+    },
+        "UPMBL44": {
+    "nama": "44 Diamond",
+    "hargaid": 15000,
+    "harga":"Rp15.000",
+    },
+        "UPMBL59": {
+    "nama": "59 Diamond",
+    "hargaid": 18500,
+    "harga":"Rp18.500",
+    },
+        "UPMBL74": {
+    "nama": "74 Diamond",
+    "hargaid": 22500,
+    "harga":"Rp22.500",
+    },
+        "UPMBL85": {
+    "nama": "85 Diamond",
+    "hargaid": 26500,
+    "harga":"Rp26.500",
+    },
+        "UPMBL170": {
+    "nama": "170 Diamond",
+    "hargaid": 51500,
+    "harga":"Rp51.500",
+    },
+        "UPMBL185": {
+    "nama": "185 Diamond",
+    "hargaid": 56500,
+    "harga":"Rp56.500",
+    },
+        "UPMBL222": {
+    "nama": "222 Diamond",
+    "hargaid": 67500,
+    "harga":"Rp67.500",
+    },
+        "UPMBL240": {
+    "nama": "240 Diamond",
+    "hargaid": 72500,
+    "harga":"Rp72.500",
+    },
+        "UPMBL296": {
+    "nama": "296 Diamond",
+    "hargaid": 89500,
+    "harga":"Rp89.500",
+    },
+        "UPMBL370": {
+    "nama": "370 Diamond",
+    "hargaid": 111500,
+    "harga":"Rp111.500",
+    },
+        "UPMBL408": {
+    "nama": "408 Diamond",
+    "hargaid": 123500,
+    "harga":"Rp123.500",
+    },
+        "UPMBL568": {
+    "nama": "568 Diamond",
+    "hargaid": 167500,
+    "harga":"Rp167.500",
+    },
+        "UPMBL875": {
+    "nama": "875 Diamond",
+    "hargaid": 256500,
+    "harga":"Rp256.500",
+    },
+        "UPMBL1159": {
+    "nama": "1159 Diamond",
+    "hargaid": 333500,
+    "harga":"Rp333.500",
+    },
+        "UPMBL2010": {
+    "nama": "2010 Diamond",
+    "hargaid": 555.500,
+    "harga":"Rp555.500",
+    },
+        "UPMBL4830": {
+    "nama": "4830 Diamond",
+    "hargaid": 1322500,
+    "harga":"Rp1322.500",
+    },
+ },
+};
+let listmlbb = {
+  "ml": {
+    "ZIDMBL17": {
+    "nama": "17 Diamond",
+    "hargaid": 4500,
+    "harga":"Rp4.500",
+    },
+        "ZIDMBL34": {
+    "nama": "34 Diamond",
+    "hargaid": 9000,
+    "harga":"Rp9.000",
+    },
+    "ZIDMBL50": {
+    "nama": "50 Diamond",
+    "hargaid": 13500,
+    "harga":"Rp13.500",
+    },
+        "ZIDMBL66": {
+    "nama": "66 Diamond",
+    "hargaid": 18000,
+    "harga":"Rp18.000",
+    },
+        "ZIDMBL74": {
+    "nama": "74 Diamond",
+    "hargaid": 20000,
+    "harga":"Rp20.000",
+    },
+        "ZIDMBL83": {
+    "nama": "83 Diamond",
+    "hargaid": 22500,
+    "harga":"Rp22.500",
+    },
+        "ZIDMBL184": {
+    "nama": "184 Diamond",
+    "hargaid": 5000,
+    "harga":"Rp50.000",
+    },
+        "ZIDMBL366": {
+    "nama": "366 Diamond",
+    "hargaid": 100000,
+    "harga":"Rp100.000",
+    },
+        "ZIDMBL758": {
+    "nama": "758 Diamond",
+    "hargaid": 200000,
+    "harga":"Rp200.000",
+    },
+ },
+}
 
 module.exports = baymax = async (baymax, m, chatUpdate, store) => {
 try {
