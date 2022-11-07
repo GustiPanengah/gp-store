@@ -1864,7 +1864,7 @@ rows: [
 ]
 },
 {
-title: `𝗟𝗜𝗦𝗧 𝗛𝗔𝗥𝗚𝗔 𝗣𝗔𝗞𝗘𝗧 𝗗𝗔𝗧𝗔`,
+title: `beh`,
 rows: [
 {title: `1 MINGGU`, rowId: `${prefix}premkay 1minggu`},
 {title: `1 BULAN`, rowId: `${prefix}premkay 1bulan`},
