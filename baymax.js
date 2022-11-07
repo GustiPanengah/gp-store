@@ -1840,17 +1840,6 @@ if (!text) return reply('Masukan Link Nya!!!')
 downloadMp3(text)
 }
 break
-case 'payment': case 'bayar' 'Q9BtND5E4wtxeBLTQYEpMFK1MWtUscsJ7Y7jCogkixI':{
-baymax.sendMessage(from,{image:qrisbayar, caption:`Hai Kak @${sender.split("@")[0]} Mau ${command}?
-
-💸𝗣𝗔𝗬𝗠𝗘𝗡𝗧
-𝚂𝙲𝙴𝙽𝙳 𝚀𝚁 𝙳𝙸 𝙰𝚃𝙰𝚂 𝙿𝙰𝙳𝙰 𝙰𝙿𝙻𝙸𝙺𝙰𝚂𝙸 𝙴-𝚆𝙰𝙻𝙻𝙴𝚃 𝚄𝙽𝚃𝚄𝙺 𝙼𝙴𝙻𝙰𝙺𝚄𝙺𝙰𝙽 𝙿𝙴𝙼𝙱𝙰𝚈𝙰𝚁𝙰𝙽 
-𝙉𝙊𝙏𝙀 : 
-𝙹𝙰𝙽𝙶𝙰𝙽 𝙻𝚄𝙿𝙰 𝙺𝙸𝚁𝙸𝙼 𝙱𝚄𝙺𝚃𝙸 𝚃𝚁𝙰𝙽𝙵𝙴𝚁 𝙺𝙴 𝙰𝙳𝙼𝙸𝙽 𝙰𝙶𝙰𝚁 𝚂𝙴𝙶𝙴𝚁𝙰 𝙳𝙸 𝙿𝚁𝙾𝚂𝙴𝚂 𝙾𝙻𝙴𝙷 𝙰𝙳𝙼𝙸𝙽 
-
-𝗧𝗘𝗥𝗜𝗠𝗔𝗞𝗔𝗦𝗜𝗛.`, mentions: [sender]},{quoted:m})
-}
-break
 case 'payment': case 'pay':{
 baymax.sendMessage(from,{image:qrisdonate, caption:`Hai Kak @${sender.split("@")[0]} Mau ${command}?
 
