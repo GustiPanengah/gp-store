@@ -1936,17 +1936,14 @@ rows: [
 {title: `SMARTFREN`, rowId: `${prefix}freefire 70`},
 {title: `AXIS`, rowId: `${prefix}freefire 100`},
 {title: `TELKOMSEL`, rowId: `${prefix}freefire 140`},
-title: `XL`, rowId: `${prefix}allmenu`},
-title: `THERE 3`, rowId: `${prefix}suntik`},
 ]}]
-const listSw = { 
-text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
+const listMenuMessage = { 
+text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
 mentions: [sender],
-footer: `Mau ${command} ya? Silahkan Pilih Di Bawah Ini`,
-buttonText: 'PAKET DATA',
-sections: seactiones,
+footer: fake,
+buttonText: 'LIST MENU',
+sections: seactions,
 listType: 1}
-baymax.sendMessage(from, listSw, { quoted: m })
 }
 break
 case 'addprem':
