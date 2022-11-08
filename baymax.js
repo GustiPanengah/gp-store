@@ -529,7 +529,7 @@ const mark = "0@s.whatsapp.net"
 const timestamp = speed()
 const latensi = speed() - timestamp
 const butlocNye = [
-{buttonId: `${prefix}owner`, buttonText: {displayText: '𝗢𝗪𝗡𝗘𝗥'}, type: 1},
+{buttonId: `${prefix}paketdata`, buttonText: {displayText: 'PAKET DATA & PULSA'}, type: 1},
 {buttonId: `${prefix}payment`, buttonText: {displayText: 'PAYMENT'}, type: 1}
 ]
 const buttonLocnya = {
@@ -939,13 +939,8 @@ const seactions = [{
 title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀𝐖𝐀𝐇`,
 rows: [
 {title: `𝗔𝗟𝗟 𝗠𝗘𝗡𝗨`, rowId: `${prefix}allmenu`},
-{title: `𝗧𝗢𝗣𝗨𝗣 𝗙𝗥𝗘𝗘 𝗙𝗜𝗥𝗘`, rowId: `${prefix}freefiremenu`},
-{title: `𝗧𝗢𝗣𝗨𝗣 𝗠𝗢𝗕𝗜𝗟𝗘 𝗟𝗘𝗚𝗘𝗡𝗗`, rowId: `${prefix}mobiledm`},
-{title: `𝗧𝗢𝗣𝗨𝗣  𝗣𝗨𝗕𝗚`, rowId: `${prefix}pubg`},
-{title: `𝗧𝗢𝗣𝗨𝗣 𝗖𝗔𝗟 𝗢𝗙 𝗗𝗨𝗧𝗬`, rowId: `${prefix}calof`},
-{title: `𝗧𝗢𝗣𝗨𝗣 𝗘-𝗪𝗔𝗟𝗟𝗘𝘛`, rowId: `${prefix}saldo`},
-{title: `𝗞𝗘𝗕𝗨𝗧𝗨𝗛𝗔𝗡 𝗦𝗢𝗦𝗜𝗔𝗟 𝗠𝗘𝗗𝗜𝗔`, rowId: `${prefix}suntik`},
-{title: `𝗩𝗢𝗨𝗖𝗛𝗘𝗥 𝗧𝗥𝗜`, rowId: `${prefix}pulsa`},
+{title: `𝗣𝗔𝗞𝗘𝗧 𝗗𝗔𝗧𝗔`, rowId: `${prefix}paketdata`},
+{title: `𝗧𝗢𝗣𝗨𝗣 𝗠𝗘𝗡𝗨`, rowId: `${prefix}mobiledm`},
 ]}]
 const listMenuMessage = { 
 text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
@@ -2040,21 +2035,39 @@ baymax.sendMessage(from,{image:qrisdonate, caption:`Hai Kak @${sender.split("@")
 𝗧𝗘𝗥𝗜𝗠𝗔𝗞𝗔𝗦𝗜𝗛.`, mentions: [sender]},{quoted:m})
 }
 break
-case 'paketinternet': case 'kuotasmartfren': case 'paketdata':{
+case 'paketdata': case 'paketdatadanpulsa': case 'pulsa':{
 const seactiones = [
 {
-title: `PAKET INTERNET`,
+title: `PAKET DATA INTERNET`,
 rows: [
-{title: `INDOSAT`, rowId: `${prefix}dataindosat`},
 {title: `SMARTFREN`, rowId: `${prefix}smartfrendata`},
+{title: `INDOSAT`, rowId: `${prefix}dataindosat`},
+{title: `THREE`, rowId: `${prefix}premkay 1tahun`},
+{title: `TELKOMSEL`, rowId: `${prefix}premkay permanent`},
+]
+},
+{
+title: `LAINNYA`,
+rows: [
 {title: `XL`, rowId: `${prefix}dataxl`},
-{title: `TELKOMSEL`, rowId: `${prefix}krisdi`},
-]}]
+{title: `AXIS`, rowId: `${prefix}premkay 1bulan`},
+]
+},
+{
+title: `PULSA ALL OPERATOR`,
+rows: [
+{title: `AXIS`, rowId: `${prefix}ownkay 1minggu`},
+{title: `TELKOMSEL`, rowId: `${prefix}ownkay 1bulan`},
+{title: `INDOSAT`, rowId: `${prefix}ownkay 1bulan`},
+{title: `THREE`, rowId: `${prefix}ownkay 1bulan`},
+]
+}
+]
 const listSw = { 
 text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
 mentions: [sender],
 footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
-buttonText: 'PAKET DATA',
+buttonText: 'PAKET DATA & PULAA',
 sections: seactiones,
 listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
