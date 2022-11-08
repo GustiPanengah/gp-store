@@ -1927,51 +1927,26 @@ baymax.sendMessage(from,{image:qrisdonate, caption:`Hai Kak @${sender.split("@")
 𝗧𝗘𝗥𝗜𝗠𝗔𝗞𝗔𝗦𝗜𝗛.`, mentions: [sender]},{quoted:m})
 }
 break
-case 'topupff': case 'topupml': case 'topupsaldo':{
+case 'paketinternet': case 'kuotasmartfren': case 'paketdata':{
 const seactiones = [
 {
-title: `LIST TOPUP FREEFIRE`,
+title: `PAKET INTERNET`,
 rows: [
-{title: `50 DIAMOND = 10k`, rowId: `${prefix}freefire 50`},
-{title: `70 DIAMOND = 13K`, rowId: `${prefix}freefire 70`},
-{title: `100 DIAMOND = 16K`, rowId: `${prefix}freefire 100`},
-{title: `140 DIAMOND = 21K`, rowId: `${prefix}freefire 140`},
+{title: `INDOSAT`, rowId: `${prefix}freefire 50`},
+{title: `SMARTFREN`, rowId: `${prefix}freefire 70`},
+{title: `AXIS`, rowId: `${prefix}freefire 100`},
+{title: `TELKOMSEL`, rowId: `${prefix}freefire 140`},
+title: `XL`, rowId: `${prefix}allmenu`},
+title: `THERE 3`, rowId: `${prefix}suntik`},
 ]}]
 const listSw = { 
 text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
 mentions: [sender],
 footer: `Mau ${command} ya? Silahkan Pilih Di Bawah Ini`,
-buttonText: 'TOPUP',
+buttonText: 'PAKET DATA',
 sections: seactiones,
 listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
-}
-break
-case 'freefire':
-if ((args[0]) == '50'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
-馃摦 : *Paket:* 50 Diamond FreeFire 鈥? Ada Yang Mau Buy Diamond
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == '70'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
-馃摦 : *Paket:* 70 Diamond FreeFire 鈥? Ada Yang Buy Diamond
-
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == '100'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
-  : *Paket:* 100 Diamond Freefire 鈥? Ada Yang Buy Diamond
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == '140'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
-📮 : *Paket:* 140 Diamond Freefire 鈥? Ada Yang Buy Diamond
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 }
 break
 case 'addprem':
