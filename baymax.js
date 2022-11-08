@@ -538,9 +538,19 @@ caption: `Hai Kak @${sender.split("@")[0]}
 𝘏𝘢𝘪 𝘚𝘢𝘺𝘢 𝘉𝘈𝘠𝘔𝘈𝘟 𝘠𝘢𝘪𝘵𝘶 𝘉𝘰𝘵 𝘞𝘩𝘢𝘵𝘴𝘢𝘱𝘱 𝘠𝘢𝘯𝘨 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘯𝘵𝘶 𝘈𝘯𝘥𝘢 𝘒𝘦𝘵𝘪𝘬 #𝘈𝘓𝘓𝘮𝘦𝘯𝘶 𝘜𝘯𝘵𝘶𝘬 𝘔𝘦𝘯𝘢𝘮𝘱𝘪𝘭𝘬𝘢𝘯 𝘚𝘦𝘮𝘶𝘢 𝘔𝘦𝘯𝘶,
 Nama ${itsMebaymax ? 'Owner' : 'User'} : ${pushname}
 Nomor ${itsMebaymax ? 'Owner' : 'User'} : ${sender.split("@")[0]}
+Jumlah User : ${pendaftar.length} User
 Status : ${itsMebaymax ? 'Owner' : 'User'}
+Status Premium : ${isPrem ? 'Premium User' : 'Free User'}
 Runtime Bot : ${runtime(process.uptime())}
+Speed Bot : ${latensi.toFixed(4)} ?????
+Otw Tahun Baru : ${jhari} 𝙃𝙖𝙧𝙞 ${jjam 𝙅𝙖𝙢
+ ${jmenit} 𝙈𝙚𝙣𝙞𝙩 ${jdetik} 𝘿𝙚𝙩𝙞𝙠
+Otw Idul Fitri : ${hahari} 𝙃𝙖𝙧𝙞 ${hajam} 𝙅𝙖𝙢 ${hamenit 𝙈𝙚𝙣𝙞𝙩 ${hadetik} 𝘿𝙚𝙩𝙞𝙠
+Otw Idul Adha : ${hihari} 𝙃𝙖𝙧𝙞 ${hijam} 𝙅𝙖𝙢 ${himenit} 𝙈𝙚𝙣𝙞𝙩 ${hidetik} 𝘿𝙚𝙩𝙞𝙠
+Otw Ultah Creator : ${gushari} 𝙃𝙖𝙧𝙞 ${gusjam} 𝙅𝙖𝙢 ${gusmenit} 𝙈𝙚𝙣𝙞𝙩 ${gusdetik} 𝙏𝙚𝙙𝙩𝙞𝙠`,
 mentions : [sender, botzbaymax, mark],
+footer: `Created By @${botzbaymax.split("@")[0]}
+WhatsApp By @${mark.split("@")[0]}`,
 buttons: butlocNye,
 headerType: "LOCATION"
 }
@@ -1877,16 +1887,6 @@ text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
 mentions: [sender],
 footer: `Mau ${command} ya? Silahkan Pilih Di Bawah Ini`,
 buttonText: 'TOPUP',
-sections: seactiones,
-listType: 1}
-baymax.sendMessage(from, listSw, { quoted: m })
-}
-break
-const listSokw = { 
-text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
-mentions: [sender],
-footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
-buttonText: 'SELECT',
 sections: seactiones,
 listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
