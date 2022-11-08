@@ -994,9 +994,9 @@ mentionedJid:[sender],
 }
 })
 break
-case 'paketindosat':
+case 'smartunlimited':
 sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${paketindosat(prefix, hituet)}`,
+text: `Hai Kak @${sender.split("@")[0]}\n\n${smartunlimited(prefix, hituet)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
@@ -1933,7 +1933,7 @@ const seactiones = [
 title: `PAKET INTERNET`,
 rows: [
 {title: `INDOSAT`, rowId: `${prefix}allmenu`},
-{title: `SMARTFREN`, rowId: `${prefix}suntik`},
+{title: `SMARTFREN`, rowId: `${prefix}smartunlimited`},
 {title: `AXIS`, rowId: `${prefix}ownermenu`},
 {title: `TELKOMSEL`, rowId: `${prefix}krisdi`},
 ]}]
@@ -1947,32 +1947,25 @@ listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
 }
 break
-case 'krisdi': {
-goup = `╭──❍ *Group Menu*
-│
-│⭔ ${prefix}linkgroup
-│⭔ ${prefix}ephemeral [option]
-│⭔ ${prefix}setppgc [image]
-│⭔ ${prefix}setname [text]
-│⭔ ${prefix}setdesc [text]
-│⭔ ${prefix}group [option]
-│⭔ ${prefix}editinfo [option]
-│⭔ ${prefix}add @user
-│⭔ ${prefix}kick @user
-│⭔ ${prefix}hidetag [text]
-│⭔ ${prefix}tagall [text]
-│⭔ ${prefix}antilink [on/off]
-│⭔ ${prefix}mute [on/off]
-│⭔ ${prefix}promote @user
-│⭔ ${prefix}demote @user
-│⭔ ${prefix}vote [text]
-│⭔ ${prefix}devote
-│⭔ ${prefix}upvote
-│⭔ ${prefix}cekvote
-│⭔ ${prefix}hapusvote
-│
-╰─────❍
-`}
+case 'smartunlimited': case 'kuotasmartfren': case 'paketdata':{
+const seactiones = [
+{
+title: `PAKET INTERNET SMARTFREN`,
+rows: [
+{title: `SMART DATA UNLIMITED`, rowId: `${prefix}smartunlimited`},
+{title: `SMARTFREN`, rowId: `${prefix}suntik`},
+{title: `AXIS`, rowId: `${prefix}ownermenu`},
+{title: `TELKOMSEL`, rowId: `${prefix}krisdi`},
+]}]
+const listSw = { 
+text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
+mentions: [sender],
+footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
+buttonText: 'PAKET DATA',
+sections: seactiones,
+listType: 1}
+baymax.sendMessage(from, listSw, { quoted: m })
+}
 break
 case 'addprem':
 if (!itsMebaymax) return reply(mess.owner)
@@ -3781,7 +3774,7 @@ let e = String(err)
 baymax.sendMessage("6281390368580@s.whatsapp.net", { text: "Hallo Owner Sepertinya Ada Yang Error Harap Di Perbaiki " + util.format(e), 
 contextInfo:{
 forwardingScore: 5, 
-isForwarded: true
+isForwarded: true𝙭
 }})
 }
 }
