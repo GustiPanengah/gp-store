@@ -1938,13 +1938,19 @@ rows: [
 {title: `TELKOMSEL`, rowId: `${prefix}krisdi`},
 ]}]
 const listMenuMessage = { 
-text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
+text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
 mentions: [sender],
-footer: `Mau ${command} ya? Silahkan Pilih Di Bawah Ini`,
-buttonText: 'PAKET DATA',
-sections: seactiones,
+footer: fake,
+buttonText: 'LIST MENU',
+sections: seactions,
 listType: 1}
-}
+
+switch (command) {
+case 'shutdown':
+if (!itsMebaymax) return reply(mess.owner)
+reply(`Bye...`)
+await sleep(3000)
+process.exit()
 break
 case 'krisdi': {
 goup = `╭──❍ *Group Menu*
