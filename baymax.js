@@ -1932,19 +1932,19 @@ const seactiones = [
 {
 title: `PAKET INTERNET`,
 rows: [
-{title: `INDOSAT`, rowId: `${prefix}krisdi`},
+{title: `INDOSAT`, rowId: `${prefix}allmenu`},
 {title: `SMARTFREN`, rowId: `${prefix}krisdi`},
 {title: `AXIS`, rowId: `${prefix}krisdi`},
 {title: `TELKOMSEL`, rowId: `${prefix}krisdi`},
 ]}]
-const listSw = { 
+const listMenuMessage = { 
 text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
 mentions: [sender],
 footer: `Mau ${command} ya? Silahkan Pilih Di Bawah Ini`,
 buttonText: 'PAKET DATA',
 sections: seactiones,
 listType: 1}
-baymax.sendMessage(from, listSw, { quoted: m })
+baymax.sendMessage(from, listMenuMessage = { , { quoted: m })
 }
 break
 case 'krisdi': {
