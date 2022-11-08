@@ -1933,24 +1933,19 @@ const seactiones = [
 title: `PAKET INTERNET`,
 rows: [
 {title: `INDOSAT`, rowId: `${prefix}allmenu`},
-{title: `SMARTFREN`, rowId: `${prefix}krisdi`},
-{title: `AXIS`, rowId: `${prefix}krisdi`},
+{title: `SMARTFREN`, rowId: `${prefix}suntik`},
+{title: `AXIS`, rowId: `${prefix}ownermenu`},
 {title: `TELKOMSEL`, rowId: `${prefix}krisdi`},
 ]}]
-const listMenuMessage = { 
-text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
+const listSw = { 
+text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
 mentions: [sender],
-footer: fake,
-buttonText: 'LIST MENU',
-sections: seactions,
+footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
+buttonText: 'PAKET DATA',
+sections: seactiones,
 listType: 1}
-
-switch (command) {
-case 'shutdown':
-if (!itsMebaymax) return reply(mess.owner)
-reply(`Bye...`)
-await sleep(3000)
-process.exit()
+baymax.sendMessage(from, listSw, { quoted: m })
+}
 break
 case 'krisdi': {
 goup = `╭──❍ *Group Menu*
