@@ -1971,7 +1971,8 @@ goup = `╭──❍ *Group Menu*
 │⭔ ${prefix}cekvote
 │⭔ ${prefix}hapusvote
 │
-╰─────❍`
+╰─────❍
+`}
 break
 case 'addprem':
 if (!itsMebaymax) return reply(mess.owner)
