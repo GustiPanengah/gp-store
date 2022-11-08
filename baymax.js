@@ -1863,24 +1863,6 @@ rows: [
 ]
 },
 {
-title: `LIST PREMIUM`,
-rows: [
-{title: `1 MINGGU`, rowId: `${prefix}premkay 1minggu`},
-{title: `1 BULAN`, rowId: `${prefix}premkay 1bulan`},
-{title: `1 TAHUN`, rowId: `${prefix}premkay 1tahun`},
-{title: `PERMANENT`, rowId: `${prefix}premkay permanent`},
-]
-},
-{
-title: `LIST JADI OWNER`,
-rows: [
-{title: `1 MINGGU`, rowId: `${prefix}ownkay 1minggu`},
-{title: `1 BULAN`, rowId: `${prefix}ownkay 1bulan`},
-{title: `1 TAHUN`, rowId: `${prefix}ownkay 1tahun`},
-{title: `PERMANENT`, rowId: `${prefix}ownkay permanent`},
-]
-}
-]
 const listSw = { 
 text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
 mentions: [sender],
@@ -1895,14 +1877,8 @@ case 'freefire':
 if ((args[0]) == '50'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
 baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
-┏━ꕥ〔 llı ORDERAN ıll 〕ꕥ━⬣
-  ┃✾ Halo Owner Ada Yang Pesan Diamond FreeFire
-  ┗━ꕥ
-┃   ┏━ꕥ
-┃   ┃✾ ITEM : DIAMOND FREEFIRE
-┃   ┃✾ JUMLAH : 💎50 DIAMOND
-┃   ┃✾ PEMBELI : @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-┃   ┗━ꕥ
+馃摦 : *Paket:* 50 Diamond FreeFire 鈥? Ada Yang Mau Buy Diamond
+- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '70'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
@@ -1921,84 +1897,6 @@ if ((args[0]) == '140'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
 baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
 📮 : *Paket:* 140 Diamond Freefire 鈥? Ada Yang Buy Diamond
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-}
-break
-case 'premkay':
-if ((args[0]) == '1minggu'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 10K �? Premium 1 Minggu
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == '1bulan'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 20K �? Premium 1 Bulan
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == '1tahun'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 35K �? Premium 1 Tahun
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == 'permanent'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 45K �? Premium Permanent
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-}
-break
-case 'botkay':
-if ((args[0]) == '1minggu'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 10K �? Jadibot 1 Minggu
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == '1bulan'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 20K �? Jadibot 1 Bulan
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == '1tahun'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 35K �? Jadibot 1 Tahun
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == 'permanent'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 45K �? Jadibot Permanent
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-}
-break
-case 'ownkay':
-if ((args[0]) == '1minggu'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 10K �? Jadi Owner 1 Minggu
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == '1bulan'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 20K �? Jadi Owner 1 Bulan
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == '1tahun'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 35K �? Jadi Owner 1 Tahun
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
-} else
-if ((args[0]) == 'permanent'){
-reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
-baymax.sendMessage(creator,{text:`*�? ORDER �?*
-📮 : *Paket:* 45K �? Jadi Owner Permanent
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 }
 break
