@@ -1895,13 +1895,20 @@ case 'freefire':
 if ((args[0]) == '50'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
 baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
-馃摦 : *Paket:* 50 Diamond FreeFire 鈥? Ada Yang Mau Buy Diamond
-- @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+┏━ꕥ〔 llı ORDERAN ıll 〕ꕥ━⬣
+  ┃✾ Halo Owner Ada Yang Pesan Diamond FreeFire
+  ┗━ꕥ
+┃   ┏━ꕥ
+┃   ┃✾ ITEM : DIAMOND FREEFIRE
+┃   ┃✾ JUMLAH : 💎50 DIAMOND
+┃   ┃✾ PEMBELI : @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
+┃   ┗━ꕥ
 } else
 if ((args[0]) == '70'){
 reply(`Pesanan Kamu Sedang Di Proses Oleh Bot, Silahkan Tunggu Nanti Juga Di Chat Owner Untuk Di Konfirmasi`)
 baymax.sendMessage(creator,{text:`*鉂? ORDER 鉂?*
 馃摦 : *Paket:* 70 Diamond FreeFire 鈥? Ada Yang Buy Diamond
+
 - @${sender.split("@")[0]}`,mentions: [sender], },{quoted:m})
 } else
 if ((args[0]) == '100'){
