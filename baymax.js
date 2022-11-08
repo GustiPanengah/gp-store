@@ -940,7 +940,7 @@ title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀�
 rows: [
 {title: `𝗔𝗟𝗟 𝗠𝗘𝗡𝗨`, rowId: `${prefix}allmenu`},
 {title: `𝗣𝗔𝗞𝗘𝗧 𝗗𝗔𝗧𝗔`, rowId: `${prefix}paketdata`},
-{title: `𝗧𝗢𝗣𝗨𝗣 𝗠𝗘𝗡𝗨`, rowId: `${prefix}mobiledm`},
+{title: `𝗧𝗢𝗣𝗨𝗣 𝗠𝗘𝗡𝗨`, rowId: `${prefix}topup`},
 ]}]
 const listMenuMessage = { 
 text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
@@ -2128,6 +2128,40 @@ text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
 mentions: [sender],
 footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
 buttonText: 'PAKET XL',
+sections: seactiones,
+listType: 1}
+baymax.sendMessage(from, listSw, { quoted: m })
+}
+break
+case 'topup': case 'listtopup': case 'topup&lainnya':{
+const seactiones = [
+{
+title: `TOPUP ALLGAME & LAINNYA`,
+rows: [
+{title: `💎 TOPUP FREE FIRE`, rowId: `${prefix}freefiremenu`},
+{title: `💎 TOPUP MOBILE LEGEND`, rowId: `${prefix}mobiledm`},
+{title: `💎 TOPUP PUBG`, rowId: `${prefix}pubg`},
+    {title: `💎 TOPUP CAL OF DUTY`, rowId: `${prefix}calof`},
+]
+},
+{
+title: `LAINNYA`,
+rows: [
+{title: `TOPUP E-WALLET`, rowId: `${prefix}saldo`},
+]
+},
+{
+title: `SOSIAL MEDIA`,
+rows: [
+{title: `KEBUTUHAN SOSIAL MEDIA`, rowId: `${prefix}suntik`},
+]
+}
+]
+const listSw = { 
+text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
+mentions: [sender],
+footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
+buttonText: 'LIST TOPUP & LAINNYA',
 sections: seactiones,
 listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
