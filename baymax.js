@@ -1013,9 +1013,9 @@ mentionedJid:[sender],
 }
 })
 break
-case 'pakettelkomsel':
+case 'indosatyelow':
 sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${pakettelkomsel(prefix, hituet)}`,
+text: `Hai Kak @${sender.split("@")[0]}\n\n${indosatyelow(prefix, hituet)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
@@ -1032,9 +1032,9 @@ mentionedJid:[sender],
 }
 })
 break
-case 'paketsmartfren':
+case 'indosatharian':
 sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${paketsmartfren(prefix, hituet)}`,
+text: `Hai Kak @${sender.split("@")[0]}\n\n${indosatharian(prefix, hituet)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
@@ -1051,9 +1051,122 @@ mentionedJid:[sender],
 }
 })
 break
-case 'paketaxis':
+case 'indosatfreedomcombo':
 sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${paketaxis(prefix, hituet)}`,
+text: `Hai Kak @${sender.split("@")[0]}\n\n${indosatfreedomcombo(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'smartpaketkuota':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${indosatyelow(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+case 'indosatfreedomu':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${indosatfreedomu(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'xlxtramini':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${xlxtramini(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'smartpaketkuota':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${smartpaketkuota(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'smartnonstop':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${smartnonstop(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'xlxtracombo':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${xlxtracombo(prefix, hituet)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
@@ -1932,9 +2045,9 @@ const seactiones = [
 {
 title: `PAKET INTERNET`,
 rows: [
-{title: `INDOSAT`, rowId: `${prefix}allmenu`},
+{title: `INDOSAT`, rowId: `${prefix}dataindosat`},
 {title: `SMARTFREN`, rowId: `${prefix}smartfrendata`},
-{title: `AXIS`, rowId: `${prefix}ownermenu`},
+{title: `XL`, rowId: `${prefix}dataxl`},
 {title: `TELKOMSEL`, rowId: `${prefix}krisdi`},
 ]}]
 const listSw = { 
@@ -1947,21 +2060,61 @@ listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
 }
 break
-case 'smartfrendata': case 'kuotasmartfren': case 'paketdata':{
+case 'smartfrendata': case 'kuotasmartfren': case 'paketdatasmarfren':{
 const seactiones = [
 {
 title: `PAKET INTERNET SMARTFREN`,
 rows: [
-{title: `SMART DATA UNLIMITED`, rowId: `${prefix}smartunlimited`},
-{title: `SMARTFREN`, rowId: `${prefix}suntik`},
-{title: `AXIS`, rowId: `${prefix}ownermenu`},
-{title: `TELKOMSEL`, rowId: `${prefix}krisdi`},
+{title: `DATA SMARTFREEN UNLIMITED`, rowId: `${prefix}smartunlimited`},
+{title: `DATA SMARTFREN NONSTOP`, rowId: `${prefix}smartnonstop`},
+{title: `SMARTFREN PAKET KUOTA`, rowId: `${prefix}smartpaketkuota`},
+{title: `KOSONG`, rowId: `${prefix}krisdi`},
 ]}]
 const listSw = { 
 text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
 mentions: [sender],
 footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
-buttonText: 'PAKET DATA',
+buttonText: 'PAKET SMARTFREN',
+sections: seactiones,
+listType: 1}
+baymax.sendMessage(from, listSw, { quoted: m })
+}
+break
+case 'dataindosat': case 'paketindosat': case 'paketdataindosat':{
+const seactiones = [
+{
+title: `PAKET INTERNET INDOSAT`,
+rows: [
+{title: `INDOSAT DATA YELOW`, rowId: `${prefix}indosatyelow`},
+{title: `INDOSAT UNLIMITED HARIAN`, rowId: `${prefix}indosatharian`},
+{title: `INDOSAT FREEDOM U`, rowId: `${prefix}indosatfreedomu`},
+{title: `INDOSAT FREEDOM COMBO`, rowId: `${prefix}indosatfreedomcombo`},
+]}]
+const listSw = { 
+text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
+mentions: [sender],
+footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
+buttonText: 'PAKET INDOSAT',
+sections: seactiones,
+listType: 1}
+baymax.sendMessage(from, listSw, { quoted: m })
+}
+break
+case 'dataxl': case 'paketxl': case 'paketdataxl':{
+const seactiones = [
+{
+title: `PAKET INTERNET XL`,
+rows: [
+{title: `XL XTRA MINI`, rowId: `${prefix}xlxtramini`},
+{title: `XL EXTRA COMBO`, rowId: `${prefix}xlxtracombo`},
+{title: `KOSONG`, rowId: `${prefix}ownermenu`},
+{title: `KOSONG`, rowId: `${prefix}krisdi`},
+]}]
+const listSw = { 
+text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
+mentions: [sender],
+footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
+buttonText: 'PAKET XL',
 sections: seactiones,
 listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
