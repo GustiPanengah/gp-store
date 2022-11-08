@@ -1933,7 +1933,7 @@ const seactiones = [
 title: `PAKET INTERNET`,
 rows: [
 {title: `INDOSAT`, rowId: `${prefix}allmenu`},
-{title: `SMARTFREN`, rowId: `${prefix}smartunlimited`},
+{title: `SMARTFREN`, rowId: `${prefix}smartfrendata`},
 {title: `AXIS`, rowId: `${prefix}ownermenu`},
 {title: `TELKOMSEL`, rowId: `${prefix}krisdi`},
 ]}]
@@ -1947,7 +1947,7 @@ listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
 }
 break
-case 'smartunlimited': case 'kuotasmartfren': case 'paketdata':{
+case 'smartfrendata': case 'kuotasmartfren': case 'paketdata':{
 const seactiones = [
 {
 title: `PAKET INTERNET SMARTFREN`,
