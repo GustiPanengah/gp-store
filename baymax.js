@@ -530,7 +530,7 @@ const timestamp = speed()
 const latensi = speed() - timestamp
 const butlocNye = [
 {buttonId: `${prefix}owner`, buttonText: {displayText: '𝗢𝗪𝗡𝗘𝗥'}, type: 1},
-{buttonId: `${prefix}topupff`, buttonText: {displayText: '𝗧𝗢𝗣𝗨𝗣'}, type: 1}
+{buttonId: `${prefix}payment`, buttonText: {displayText: 'PAYMENT'}, type: 1}
 ]
 const buttonLocnya = {
 location: { jpegThumbnail: ppnyaimg } ,
@@ -544,7 +544,7 @@ Status Premium : ${isPrem ? 'Premium User' : 'Free User'}
 Runtime Bot : ${runtime(process.uptime())}
 Otw Tahun Baru : ${jhari} Hari ${jjam} Jam
  ${jmenit}  ${jdetik} Detik
-Otw Idul Fitri : ${hahari} Hari ${hajam} Jam ${hamenit Menit ${hadetik} Detik
+Otw Idul Fitri : ${hahari} Hari ${hajam} Jam ${hamenit} Menit ${hadetik} Detik
 Otw Idul Adha : ${hihari} Hari ${hijam} Jam ${himenit} Menit ${hidetik} Detik
 Otw Ultah Creator : ${gushari} Hari ${gusjam} Jam ${gusmenit} Menit ${gusdetik} Detik`,
 mentions : [sender, botzbaymax, mark],
