@@ -1944,7 +1944,6 @@ footer: `Mau ${command} ya? Silahkan Pilih Di Bawah Ini`,
 buttonText: 'PAKET DATA',
 sections: seactiones,
 listType: 1}
-baymax.sendMessage(from, listMenuMessage = { , { quoted: m })
 }
 break
 case 'krisdi': {
