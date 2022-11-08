@@ -542,7 +542,7 @@ Jumlah User : ${pendaftar.length} User
 Status : ${itsMebaymax ? 'Owner' : 'User'}
 Status Premium : ${isPrem ? 'Premium User' : 'Free User'}
 Runtime Bot : ${runtime(process.uptime())}
-Otw Tahun Baru : ${jhari} Hari ${jjam Jam
+Otw Tahun Baru : ${jhari} Hari ${jjam} Jam
  ${jmenit}  ${jdetik} Detik
 Otw Idul Fitri : ${hahari} Hari ${hajam} Jam ${hamenit Menit ${hadetik} Detik
 Otw Idul Adha : ${hihari} Hari ${hijam} Jam ${himenit} Menit ${hidetik} Detik
