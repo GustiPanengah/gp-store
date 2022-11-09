@@ -976,15 +976,20 @@ text: `Hai Kak @${sender.split("@")[0]}\n\n${allmenu(prefix, hituet)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": fake, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": ppnyaimg,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"imageMessage": {
+"url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc",
+"mimetype": "image/jpeg",
+"caption": faketeks,
+"fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=",
+"fileLength": "28777",
+"height": 1080,
+"width": 1079,
+"mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=",
+"fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=",
+"directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69",
+"mediaKeyTimestamp": "1610993486",
+"jpegThumbnail": fs.readFileSync('./image/qris.jpg'),
+"scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
 }
 }
 })
@@ -2116,6 +2121,19 @@ let eb = await eBinary(q)
 reply(eb)
 }
 break
+case 'simplemenu': case 'help':
+if (cekUser("id", sender) !== sender) return Notdaftar()
+rimurubotz.sendMessage(from, {image:{url: "https://images.wallpaperscraft.com/image/single/girl_kitten_flower_141058_1920x1080.jpg"},
+mentions:[sender],
+caption: `> Haloo @${sender.split("@")[0]}!!
+╭━─━•[ *${namabot}* ]⊱
+┃• *User* : @${sender.split("@")[0]}
+┃• *Hit* : ${cekUser("hit", sender)}
+┃• *Emote* : ${cekUser("emote", sender)}
+┃• *Star* : ${cekUser("star", sender)}⭐
+┃• *Ban* : ${cekUser("ban", sender)}
+┃• *Premium* : ${cekUser("premium", sender)}
+╰━─━─━─━─━─━─━─•
 case 'dbinary': {
 if (!q) return reply(`Kirim/reply text dengan caption ${prefix + command}`)
 let { dBinary } = require('./scrape/binary')
@@ -2124,7 +2142,11 @@ reply(db)
 }
 break
 case 'tiktokvideo':{
-if (!q) return reply(`Link Nya Kak???\nContoh ${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
+if (!q) return reply(`Link Nya Kak???\nContoh
+yu𓂀
+${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
+yu${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
+y${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
 let res = await tiktokdl(q)
 baymax.sendMessage(m.chat,{video:{url: res.media[1].url},caption: `${mess.succes}`},{quoted:m})
 }
