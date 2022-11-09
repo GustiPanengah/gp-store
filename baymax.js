@@ -989,6 +989,253 @@ mentionedJid:[sender],
 }
 })
 break
+case 'threedatah3pro':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${threedatah3pro(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'threedatakompak':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${threedatakompak(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'threedataaon':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${threedataaon(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'threedatahappy':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${threedatahappy(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'pulsaaxis':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${pulsaaxis(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'pulsathree':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${pulsathree(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'pulsaindosat':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${pulsaindosat(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'pulsatelkomsel':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${pulsatelkomsel(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'axisdataowsem':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${axisdataowsem(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'axisdataboostr':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${axisdataboostr(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'axisdataobor':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${axisdataobor(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'axisdatawarnet':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${axisdatawarnet(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
+case 'axisdatabronet':
+sendbaymaxMessage(from, { 
+text: `Hai Kak @${sender.split("@")[0]}\n\n${axisdatabronet(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fake, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": ppnyaimg,
+"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
+"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+}
+}
+})
+break
 case 'smartunlimited':
 sendbaymaxMessage(from, { 
 text: `Hai Kak @${sender.split("@")[0]}\n\n${smartunlimited(prefix, hituet)}`,
@@ -1190,7 +1437,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-baymax.sendMessage(from, {image:{url: "https://i.ibb.co/yhRDQ1V/698308-1.jpg"},
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -2042,7 +2289,7 @@ title: `PAKET DATA INTERNET`,
 rows: [
 {title: `SMARTFREN`, rowId: `${prefix}smartfrendata`},
 {title: `INDOSAT`, rowId: `${prefix}dataindosat`},
-{title: `THREE`, rowId: `${prefix}premkay 1tahun`},
+{title: `THREE`, rowId: `${prefix}datathree`},
 {title: `TELKOMSEL`, rowId: `${prefix}premkay permanent`},
 ]
 },
@@ -2050,16 +2297,16 @@ rows: [
 title: `LAINNYA`,
 rows: [
 {title: `XL`, rowId: `${prefix}dataxl`},
-{title: `AXIS`, rowId: `${prefix}premkay 1bulan`},
+{title: `AXIS`, rowId: `${prefix}dataaxis`},
 ]
 },
 {
 title: `PULSA ALL OPERATOR`,
 rows: [
-{title: `AXIS`, rowId: `${prefix}ownkay 1minggu`},
-{title: `TELKOMSEL`, rowId: `${prefix}ownkay 1bulan`},
-{title: `INDOSAT`, rowId: `${prefix}ownkay 1bulan`},
-{title: `THREE`, rowId: `${prefix}ownkay 1bulan`},
+{title: `AXIS`, rowId: `${prefix}pulsaaxis`},
+{title: `TELKOMSEL`, rowId: `${prefix}pulsatelkomsel`},
+{title: `INDOSAT`, rowId: `${prefix}pulsaindosat`},
+{title: `THREE`, rowId: `${prefix}pulsathree`},
 ]
 }
 ]
@@ -2133,27 +2380,41 @@ listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
 }
 break
-case 'topup': case 'listtopup': case 'topup&lainnya':{
+case 'datathree': case 'kuotthree': case 'paketdatathre':{
 const seactiones = [
 {
-title: `TOPUP ALLGAME & LAINNYA`,
+title: `PAKET INTERNET THREE`,
 rows: [
-{title: `💎 TOPUP FREE FIRE`, rowId: `${prefix}freefiremenu`},
-{title: `💎 TOPUP MOBILE LEGEND`, rowId: `${prefix}mobiledm`},
-{title: `💎 TOPUP PUBG`, rowId: `${prefix}pubg`},
-    {title: `💎 TOPUP CAL OF DUTY`, rowId: `${prefix}calof`},
+{title: `THREE PAKET DATA AON`, rowId: `${prefix}threedataaon`},
+{title: `THREE DATA H3PRO`, rowId: `${prefix}threedatah3pro`},
+{title: `THREE PAKET DATA KOMPAK`, rowId: `${prefix}threedatakompak`},
+{title: `THREE PAKET DATA HAPPY`, rowId: `${prefix}threedatahappy`},
+]}]
+const listSw = { 
+text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
+mentions: [sender],
+footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
+buttonText: 'PAKET SMARTFREN',
+sections: seactiones,
+listType: 1}
+baymax.sendMessage(from, listSw, { quoted: m })
+}
+break
+case 'dataaxis': case 'listdataaxis': case 'datapaketaxis':{
+const seactiones = [
+{
+title: `LIST DATA INTERNET AXIS`,
+rows: [
+{title: `AXIS DATA WARNET`, rowId: `${prefix}axisdatawarnet`},
+{title: `AXIS DATA OBOR`, rowId: `${prefix}axisdataobor`},
+{title: `AXIS DATA OWSEM`, rowId: `${prefix}axisdataowsem`},
+    {title: `AXIS DATA BRONET`, rowId: `${prefix}axisdatabronet`},
 ]
 },
 {
 title: `LAINNYA`,
 rows: [
-{title: `TOPUP E-WALLET`, rowId: `${prefix}saldo`},
-]
-},
-{
-title: `SOSIAL MEDIA`,
-rows: [
-{title: `KEBUTUHAN SOSIAL MEDIA`, rowId: `${prefix}suntik`},
+{title: `AXIS DATA BOSTER`, rowId: `${prefix}axisdataboostr`},
 ]
 }
 ]
@@ -2161,7 +2422,7 @@ const listSw = {
 text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
 mentions: [sender],
 footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
-buttonText: 'LIST TOPUP & LAINNYA',
+buttonText: 'PAKET INTERNET AXIS',
 sections: seactiones,
 listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
