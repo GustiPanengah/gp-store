@@ -938,9 +938,9 @@ baymax.sendImage(m.chat, buff, `${getkaydata.response}`, m)
 const seactions = [{
 title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀𝐖𝐀𝐇`,
 rows: [
-{title: `〔 𝗔𝗟𝗟 𝗠𝗘𝗡𝗨 〕`, rowId: `${prefix}allmenu`},
-{title: `〔 𝗣𝗔𝗞𝗘𝗧 𝗗𝗔𝗧𝗔 & 𝗣𝗨𝗟𝗦𝗔 〕`, rowId: `${prefix}paketdata`},
-{title: `〔 𝗧𝗢𝗣𝗨𝗣 𝗠𝗘𝗡𝗨 〕`, rowId: `${prefix}topup`},
+{title: `𝗔𝗟𝗟 𝗠𝗘𝗡𝗨`, rowId: `${prefix}allmenu`},
+{title: `𝗣𝗔𝗞𝗘𝗧 𝗗𝗔𝗧𝗔`, rowId: `${prefix}paketdata`},
+{title: `𝗧𝗢𝗣𝗨𝗣 𝗠𝗘𝗡𝗨`, rowId: `${prefix}topup`},
 ]}]
 const listMenuMessage = { 
 text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
@@ -1065,9 +1065,9 @@ mentionedJid:[sender],
 }
 })
 break
-case 'indosatfreedominternet':
+case 'smartpaketkuota':
 sendbaymaxMessage(from, { 
-text: `Hai Kak @${sender.split("@")[0]}\n\n${indosatfreedominternet(prefix, hituet)}`,
+text: `Hai Kak @${sender.split("@")[0]}\n\n${indosatyelow(prefix, hituet)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
@@ -1190,7 +1190,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": ppnyaimg,
+baymax.sendMessage(from, {image:{url: "https://i.ibb.co/yhRDQ1V/698308-1.jpg"},
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -2093,7 +2093,7 @@ listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
 }
 break
-case 'dataindosat': case 'paketdataindosat': case 'paketindosat':{
+case 'dataindosat': case 'paketindosat': case 'paketdataindosat':{
 const seactiones = [
 {
 title: `PAKET INTERNET INDOSAT`,
@@ -2102,27 +2102,12 @@ rows: [
 {title: `INDOSAT UNLIMITED HARIAN`, rowId: `${prefix}indosatharian`},
 {title: `INDOSAT FREEDOM U`, rowId: `${prefix}indosatfreedomu`},
 {title: `INDOSAT FREEDOM COMBO`, rowId: `${prefix}indosatfreedomcombo`},
-]
-},
-{
-title: `LAINNYA`,
-rows: [
-{title: `INDOSAT FREEDOM INTERNET`, rowId: `${prefix}indosatfreedominternet`},
-{title: `KOSONG`, rowId: `${prefix}premkay 1bulan`},
-]
-},
-{
-title: `LAINNYA1`,
-rows: [
-{title: `KOSONG`, rowId: `${prefix}ownkay 1minggu`},
-]
-}
-]
+]}]
 const listSw = { 
 text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
 mentions: [sender],
 footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
-buttonText: 'PAKET DATA INDOSAT',
+buttonText: 'PAKET INDOSAT',
 sections: seactiones,
 listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
