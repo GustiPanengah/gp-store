@@ -938,9 +938,9 @@ baymax.sendImage(m.chat, buff, `${getkaydata.response}`, m)
 const seactions = [{
 title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀𝐖𝐀𝐇`,
 rows: [
-{title: `𝗔𝗟𝗟 𝗠𝗘𝗡𝗨`, rowId: `${prefix}allmenu`},
-{title: `𝗣𝗔𝗞𝗘𝗧 𝗗𝗔𝗧𝗔`, rowId: `${prefix}paketdata`},
-{title: `𝗧𝗢𝗣𝗨𝗣 𝗠𝗘𝗡𝗨`, rowId: `${prefix}topup`},
+ {title: "✦  「 𝖺𝗅𝗅𝗆𝖾𝗇𝗎 」",rowId: `${prefix}allmenu`},description: `╰ ► 𝑴𝒆𝒏𝒂𝒎𝒑𝒊𝒍𝒌𝒂𝒏 𝑺𝒆𝒎𝒖𝒂 𝑪𝒐𝒎𝒎𝒂𝒏𝒅 𝑩𝒐𝒕`},
+{title: "✦  「 𝗉𝖺𝗄𝖾𝗍 𝖽𝖺𝗍𝖺 & 𝗉𝗎𝗅𝗌𝖺 」",rowId: `${prefix}paketdata`},description: `╰ ► 𝑴𝒂𝒖 𝑩𝒆𝒍𝒊 𝑲𝒖𝒐𝒕𝒂 / 𝑷𝒖𝒍𝒔𝒂 𝒀𝒂`},
+{title: "✦  「 𝗍𝗈𝗉𝗎𝗉 𝗆𝖾𝗇𝗎 & 𝗅𝖺𝗂𝗇𝗇𝗒𝖺 」",rowId: `${prefix}topup`},description: `╰ ► 𝑴𝒆𝒏𝒂𝒎𝒑𝒊𝒍𝒌𝒂𝒏 𝑳𝒊𝒔𝒕 𝑴𝒆𝒏𝒖 & 𝑳𝒂𝒊𝒏 𝒏𝒚𝒂`},
 ]}]
 const listMenuMessage = { 
 text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
@@ -2394,7 +2394,7 @@ const listSw = {
 text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
 mentions: [sender],
 footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
-buttonText: 'PAKET SMARTFREN',
+buttonText: 'LIST PAKET THREE',
 sections: seactiones,
 listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
