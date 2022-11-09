@@ -939,8 +939,8 @@ const seactions = [{
 title: `𝐒𝐈𝐋𝐀𝐇𝐊𝐀𝐍 𝐏𝐈𝐋𝐈𝐇 𝐃𝐈 𝐁𝐀𝐖𝐀𝐇`,
 rows: [
 {title: `「 𝖺𝗅𝗅𝗆𝖾𝗇𝗎 」`, rowId: `${prefix}allmenu`},
-{title: `「 𝗉𝖺𝗄𝖾𝗍 𝖽𝖺𝗍𝖺 & 𝗉𝗎𝗅𝗌𝖺 」`, rowId: `${prefix}allmenu`},
-{title: `「 𝗍𝗈𝗉𝗎𝗉 𝗆𝖾𝗇𝗎 & 𝗅𝖺𝗂𝗇𝗇𝗒𝖺 」`, rowId: `${prefix}allmenu`},
+{title: `「 𝗉𝖺𝗄𝖾𝗍 𝖽𝖺𝗍𝖺 & 𝗉𝗎𝗅𝗌𝖺 」`, rowId: `${prefix}paketdata`},
+{title: `「 𝗍𝗈𝗉𝗎𝗉 𝗆𝖾𝗇𝗎 & 𝗅𝖺𝗂𝗇𝗇𝗒𝖺 」`, rowId: `${prefix}topup`},
 ]}]
 const listMenuMessage = { 
 text: `Silahkan @${sender.split("@")[0]} Pilih List Menu DI Bawah`,
