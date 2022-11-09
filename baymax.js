@@ -2428,6 +2428,35 @@ listType: 1}
 baymax.sendMessage(from, listSw, { quoted: m })
 }
 break
+case 'topup': case 'listtopup': case 'topupgame':{
+const seactiones = [
+{
+title: `TOPUP ALLGAME & LAINNYA`,
+rows: [
+{title: `💎 TOPUP FREE FIRE`, rowId: `${prefix}freefiremenu`},
+{title: `💎 TOPUP MOBILE LEGEND`, rowId: `${prefix}mobiledm`},
+{title: `💎 TOPUP PUBG`, rowId: `${prefix}pubg`},
+    {title: `💎 TOPUP CALL OF DUTY`, rowId: `${prefix}calof`},
+]
+},
+{
+title: `LAINNYA`,
+rows: [
+{title: `💳 TOPUP E-WALLET`, rowId: `${prefix}saldo`},
+{title: `📌 JASA SUNTIK SOSMED`, rowId: `${prefix}suntik`},
+]
+}
+]
+const listSw = { 
+text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
+mentions: [sender],
+footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
+buttonText: 'LIST TOPUP & LAINNYA',
+sections: seactiones,
+listType: 1}
+baymax.sendMessage(from, listSw, { quoted: m })
+}
+break
 case 'addprem':
 if (!itsMebaymax) return reply(mess.owner)
 if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
