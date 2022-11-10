@@ -982,9 +982,9 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": ppnyaimg,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"thumbnail": fs.readFileSync('./image/qris.jpg'),,
+"mediaUrl": 'https://telegra.ph/file/5eab587ad65bd1ec5fc1a.jpg',
+"sourceUrl": 'https://telegra.ph/file/5eab587ad65bd1ec5fc1a.jpg'
 }
 }
 })
