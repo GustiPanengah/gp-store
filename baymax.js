@@ -982,7 +982,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"jpegThumbnail": fs.readFileSync('./image/qris.jpg'),
+"thumbnail": ppnyaimg,
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }
