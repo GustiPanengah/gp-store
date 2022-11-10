@@ -2117,15 +2117,10 @@ reply(eb)
 }
 break
 case 'tiktokvideo':{
-if (!q) return reply(`Link Nya Kak???\nContoh
-yu𓂀
-${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
-yu${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
-y${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
+if (!q) return reply(`Link Nya Kak???\nContoh ${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
 let res = await tiktokdl(q)
 baymax.sendMessage(m.chat,{video:{url: res.media[1].url},caption: `${mess.succes}`},{quoted:m})
 }
-break
 case 'tiktokaudio':{
 if (!q) return reply(`Link Nya Kak???\nContoh ${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
 let tytyd = await tiktokdl(q)
