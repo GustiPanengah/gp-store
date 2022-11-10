@@ -98,9 +98,9 @@ let participants = anu.participants
 let memb = metadata.participants.length
 for (let num of participants) {
 try {
-ppuser = await baymax.profilePictureUrl(num, 'image')
+ppowner = await baymax.profilePictureUrl(num, 'image')
 } catch {
-ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+ppowner = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 }
 try {
 ppgroup = await baymax.profilePictureUrl(anu.id, 'image')
@@ -108,8 +108,8 @@ ppgroup = await baymax.profilePictureUrl(anu.id, 'image')
 ppgroup = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 }
 if (anu.action == 'add') {
-baymax.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Hello Sis @${num.split("@")[0]}, Welcome To The Group ${metadata.subject}, I Hope You Enjoy It, Sis`, 
-jpegThumbnail: await reSize(ppuser, 200, 200), 
+baymax.sendMessage(anu.id, { image: { url: ppowner }, contextInfo: { mentionedJid: [num] }, caption: `Hello Sis @${num.split("@")[0]}, Welcome To The Group ${metadata.subject}, I Hope You Enjoy It, Sis`, 
+jpegThumbnail: await reSize(ppowner, 200, 200), 
 contextInfo: {
 "mentionedJid": [num],
 "externalAdReply": {
@@ -118,13 +118,13 @@ contextInfo: {
 "title": `Welcome Kak`, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": await reSize(ppuser, 200, 200),
-"mediaUrl": 'https://chat.whatsapp.com/CswK4kvQD1u7SfSmsYfMHZ',
-"sourceUrl": 'https://chat.whatsapp.com/CswK4kvQD1u7SfSmsYfMHZ'
+"thumbnail": await reSize(ppowner, 200, 200),
+"mediaUrl": 'https://telegra.ph/file/886bef2ade7c759c377f6.jpg',
+"sourceUrl": 'https://telegra.ph/file/886bef2ade7c759c377f6.jpg'
 }}})
 } else if (anu.action == 'remove') {
-baymax.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Goodbye Sis @${num.split("@")[0]}, I Hope You Feel At Home In Nature`,
-jpegThumbnail: await reSize(ppuser, 200, 200), 
+baymax.sendMessage(anu.id, { image: { url: ppowner }, contextInfo: { mentionedJid: [num] }, caption: `Goodbye Sis @${num.split("@")[0]}, I Hope You Feel At Home In Nature`,
+jpegThumbnail: await reSize(ppowner, 200, 200), 
 contextInfo: {
 "mentionedJid": [num],
 "externalAdReply": {
@@ -133,9 +133,9 @@ contextInfo: {
 "title": `Good Bye Kak`, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": await reSize(ppuser, 200, 200),
-"mediaUrl": 'https://chat.whatsapp.com/CswK4kvQD1u7SfSmsYfMHZ',
-"sourceUrl": 'https://chat.whatsapp.com/CswK4kvQD1u7SfSmsYfMHZ'
+"thumbnail": await reSize(ppowner, 200, 200),
+"mediaUrl": 'https://telegra.ph/file/886bef2ade7c759c377f6.jpg',
+"sourceUrl": 'https://telegra.ph/file/886bef2ade7c759c377f6.jpg'
 }}})
 }
 }
