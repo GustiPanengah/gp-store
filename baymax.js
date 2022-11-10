@@ -644,7 +644,7 @@ async function genProfile(baymax, m) {
    let font = await Jimp.loadFont('./name.fnt'), 
      mask = await Jimp.read('https://i.imgur.com/552kzaW.png'), 
      welcome = await Jimp.read("https://telegra.ph/file/81260a8b9e8cff26d2b48.jpg"), 
-     avatar = await Jimp.read(await baymax.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')), 
+     avatar = await Jimp.read(await baymax.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/886bef2ade7c759c377f6.jpg')), 
      status = (await baymax.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected' 
      await avatar.resize(460, 460) 
      await mask.resize(460, 460) 
@@ -817,13 +817,13 @@ async function igstalk(Username) {
     }).then(res => {
       const $ = cheerio.load(res.data)
       const result = {
-        profile: $('#user-page > div.user > div.row > div > div.user__img').attr('style').replace(/(background-image: url\(\'|\'\);)/gi, ''),
-        fullname: $('#user-page > div.user > div > div.col-md-4.col-8.my-3 > div > a > h1').text(),
-        username: $('#user-page > div.user > div > div.col-md-4.col-8.my-3 > div > h4').text(),
-        post: $('#user-page > div.user > div > div.col-md-4.col-8.my-3 > ul > li:nth-child(1)').text().replace(' Posts',''),
-        followers: $('#user-page > div.user > div > div.col-md-4.col-8.my-3 > ul > li:nth-child(2)').text().replace(' Followers',''),
-        following: $('#user-page > div.user > div > div.col-md-4.col-8.my-3 > ul > li:nth-child(3)').text().replace(' Following',''),
-        bio: $('#user-page > div.user > div > div.col-md-5.my-3 > div').text()
+        profile: $('#owner-page > div.user > div.row > div > div.user__img').attr('style').replace(/(background-image: url\(\'|\'\);)/gi, ''),
+        fullname: $('#owner-page > div.user > div > div.col-md-4.col-8.my-3 > div > a > h1').text(),
+        username: $('#owner-page > div.user > div > div.col-md-4.col-8.my-3 > div > h4').text(),
+        post: $('#owner-page > div.user > div > div.col-md-4.col-8.my-3 > ul > li:nth-child(1)').text().replace(' Posts',''),
+        followers: $('#owner-page > div.user > div > div.col-md-4.col-8.my-3 > ul > li:nth-child(2)').text().replace(' Followers',''),
+        following: $('#owner-page > div.user > div > div.col-md-4.col-8.my-3 > ul > li:nth-child(3)').text().replace(' Following',''),
+        bio: $('#owner-page > div.user > div > div.col-md-5.my-3 > div').text()
       }
       resolve(result)
     })
@@ -3857,7 +3857,7 @@ contextInfo: {
 "title": `Hai Kak ${pushname}`, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": { url: yeha },
+"thumbnail": { url: https://telegra.ph/file/886bef2ade7c759c377f6.jpg },
 "mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }}
