@@ -2116,26 +2116,6 @@ let eb = await eBinary(q)
 reply(eb)
 }
 break
-case 'simplemenu': case 'help':
-if (cekUser("id", sender) !== sender) return Notdaftar()
-rimurubotz.sendMessage(from, {image:{url: "https://images.wallpaperscraft.com/image/single/girl_kitten_flower_141058_1920x1080.jpg"},
-mentions:[sender],
-caption: `> Haloo @${sender.split("@")[0]}!!
-╭━─━•[ *${namabot}* ]⊱
-┃• *User* : @${sender.split("@")[0]}
-┃• *Hit* : ${cekUser("hit", sender)}
-┃• *Emote* : ${cekUser("emote", sender)}
-┃• *Star* : ${cekUser("star", sender)}⭐
-┃• *Ban* : ${cekUser("ban", sender)}
-┃• *Premium* : ${cekUser("premium", sender)}
-╰━─━─━─━─━─━─━─•
-case 'dbinary': {
-if (!q) return reply(`Kirim/reply text dengan caption ${prefix + command}`)
-let { dBinary } = require('./scrape/binary')
-let db = await dBinary(q)
-reply(db)
-}
-break
 case 'tiktokvideo':{
 if (!q) return reply(`Link Nya Kak???\nContoh
 yu𓂀
