@@ -982,7 +982,7 @@ mentionedJid:[sender],
 "title": fake, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync('./image/qris.jpg'),,
+"thumbnail": ppnyaimg,
 "mediaUrl": 'https://telegra.ph/file/5eab587ad65bd1ec5fc1a.jpg',
 "sourceUrl": 'https://telegra.ph/file/5eab587ad65bd1ec5fc1a.jpg'
 }
