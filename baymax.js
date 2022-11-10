@@ -1002,8 +1002,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1021,8 +1021,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1040,8 +1040,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1059,8 +1059,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1078,8 +1078,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1097,8 +1097,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1116,8 +1116,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1135,8 +1135,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1154,8 +1154,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1173,8 +1173,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1192,8 +1192,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1211,8 +1211,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1230,8 +1230,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1249,8 +1249,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1268,8 +1268,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1287,8 +1287,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1306,8 +1306,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1325,8 +1325,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1343,8 +1343,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1362,8 +1362,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1381,8 +1381,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1400,8 +1400,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1419,8 +1419,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1438,8 +1438,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1458,8 +1458,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1477,8 +1477,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1496,8 +1496,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1515,8 +1515,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1534,8 +1534,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1553,8 +1553,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1572,8 +1572,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -1591,8 +1591,8 @@ mentionedJid:[sender],
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }
 }
 })
@@ -2230,8 +2230,8 @@ contextInfo: {
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": eek,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }}
 }
 baymax.sendMessage(m.chat, buttonMessages, { quoted: {
@@ -2757,8 +2757,8 @@ contextInfo: {
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": ppnyaowner,
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }}
 }, { quoted: m })
 fs.unlinkSync(ran)
@@ -3857,9 +3857,9 @@ contextInfo: {
 "title": `Hai Kak ${pushname}`, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": { url: https://telegra.ph/file/886bef2ade7c759c377f6.jpg },
-"mediaUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX',
-"sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
+"thumbnail":  { url: yeha },
+"mediaUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg',
+"sourceUrl": 'https://telegra.ph/file/c103852fe34e948f58029.jpg'
 }}
 }
 baymax.sendMessage(m.chat, buttonMessaage, { quoted: m })
