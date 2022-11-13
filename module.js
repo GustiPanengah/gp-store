@@ -1,7 +1,6 @@
 module.exports = {
 modul: {
 	axios: require('axios'),
-	boom: require('@hapi/boom'),
 	baileys: require('@adiwajshing/baileys'), 
 	chalk: require('chalk'),
 	crypto: require('crypto'),
