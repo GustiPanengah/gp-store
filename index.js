@@ -4,7 +4,6 @@
 
 const { modul } = require('./module');
 const { baileys, boom, chalk, fs, figlet, FileType, path, pino, process, PhoneNumber } = modul;
-const { Boom } = boom
 const { default: krisConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, generateWAMessage, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = baileys
 const { color, bgcolor } = require('./lib/color')
 const { uncache, nocache } = require('./lib/loader')
