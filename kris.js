@@ -966,34 +966,82 @@ if (!wokwol.quoted) return reply('Pesan Yang anda reply tidak mengandung reply')
 await wokwol.quoted.copyNForward(m.chat, true)
 }
 break
-case '':{
+case 'menu':{
 const seactiones = [
 {
- title: "⚠︎  ∫ » CHANGE  BOT « ✧",
+ title: "⚠︎  𝙻𝙸𝚂𝚃 𝙼𝙴𝙽𝚄 « ✧",
                 rows: [
-                {title: "✦  「 Group 」", rowId: `mgroup`, description: `╰ ► 👥Fitur Buat Grup, Tapi Hati Hati Admin :v`},
-                {title: "✦  「 Webzone 」", rowId: `mwebzone`, description: `╰ ► 📹Cari Film? Sini Tempatnya 🤫`},
-                {title: "✦  「 Downloader 」", rowId: `mdownloader`, description: `╰ ► 📥Buat Download Apaan? 🤨`},
-                {title: "✦  「 Search 」", rowId: `msearch`, description: `╰ ► 🔍Cari Apa Hayo`},
-                {title: "✦  「 Random 」", rowId: `mrandom`, description: `╰ ► ❔Random Moment🗿`},
-                {title: "✦  「 Text Pro 」", rowId: `mtextpro`, description: `╰ ► ❇Teksnya Keren Kan?`},
-                {title: "✦  「 Photo Oxy 」", rowId: `mphotooxy`, description: `╰ ► ♻️Gabut Amat`},
-                {title: "✦  「 Ephoto 」", rowId: `mephoto`, description: `╰ ► 🗳Buat Edit Apaan?`},
-                {title: "✦  「 Fun 」", rowId: `mfun`, description: `╰ ► 🔫Buat Fun² Bro`},
-                {title: "✦  「 Primbon 」", rowId: `mprimbon`, description: `╰ ► 😂Ngakak`},
-                {title: "✦  「 Convert 」", rowId: `mconvert`, description: `╰ ► 🛠Mau Buat Apa?`},
-                {title: "✦  「 Main 」", rowId: `mmain`, description: `╰ ► 💾Senjata Admin & Owner`},
-                {title: "✦  「 Database 」", rowId: `mdatabase`, description: `╰ ► 📁Engak Ada Apa² Disini`},
-                {title: "✦  「 Anonymous 」", rowId: `manonymous`, description: `╰ ► 🎭Fitur Rahasia Jangan Dipake !`},
-                {title: "✦  「 Islamic 」", rowId: `mislamic`, description: `╰ ► 🕌Masyaallah Brother`},
-                {title: "✦  「 Voice 」", rowId: `mvoice`, description: `╰ ► 🎶Req Lagu Apa Ngab?`},
-                {title: "✦  「 Owner 」", rowId: `mowner`, description: `╰ ► 🎟Jangan Ganggu Ownerku😡`}
+                {title: "✦  「 𝙋𝙪𝙡𝙨𝙖 𝙉𝙖𝙨𝙞𝙤𝙣𝙖𝙡 」", rowId: `.buypulsa`, description: `╰ ► 👜 𝘔𝘢𝘶 𝘉𝘶𝘺 𝘗𝘶𝘭𝘴𝘢 𝘠𝘢 𝘉𝘳𝘰 :v`},
+                {title: "✦  「 𝘼𝙡𝙡 𝙈𝙚𝙣𝙪 」", rowId: `.allmenu`, description: `╰ ► 📹𝘔𝘦𝘯𝘢𝘮𝘪𝘱𝘬𝘢𝘯 𝘚𝘦𝘮𝘶𝘢 𝘔𝘦𝘯𝘶 𝘉𝘰𝘵 🤫`},
+                {title: "✦  「 𝙏𝙤𝙥𝙐𝙥 𝙀-𝙒𝙖𝙡𝙡𝙚𝙩 」", rowId: `.saldoewallet`, description: `╰ ► 💳 𝘛𝘰𝘱𝘜𝘱 𝘚𝘢𝘭𝘥𝘰 𝘕𝘪𝘩 𝘉𝘢𝘯𝘨? 🤨`},
+                {title: "✦  「 𝙆𝙚𝙗𝙪𝙩𝙪𝙝𝙖𝙣 𝙎𝙤𝙨𝙞𝙖𝙡 𝙈𝙚𝙙𝙞𝙖 」", rowId: `.jasasuntik`, description: `╰ ► 📌 𝘔𝘢𝘶 𝘖𝘳𝘥𝘦𝘳 𝘑𝘢𝘴𝘢 𝘚𝘶𝘯𝘵𝘪𝘬 𝘉𝘢𝘯𝘨`},
+                {title: "✦  「 𝙏𝙤𝙥𝙐𝙥 𝙂𝙖𝙢𝙚 」", rowId: `.topupgame`, description: `╰ ► 💎 𝘔𝘢𝘶 𝘛𝘰𝘱𝘜𝘱 𝘎𝘢𝘮𝘦🗿`},       
+                {title: "✦  「 𝙋𝙖𝙮𝙢𝙚𝙣𝙩 」", rowId: `.payment`, description: `╰ ► ❔Random 𝘔𝘢𝘶 𝘉𝘢𝘺𝘢𝘳 𝘕𝘪𝘩`},            
 ]}]
 const listSw = { 
 text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
 mentions: [sender],
-footer: `Mau ${command} ya? Silahkan Pencet Di Bawah Ya Kak`,
-buttonText: 'LIST ',
+footer: `𝚂𝚒𝚕𝚊𝚑𝚔𝚊𝚗 𝙿𝚒𝚕𝚒𝚑 𝙼𝚎𝚗𝚞 𝙳𝚒 𝙱𝚊𝚠𝚊𝚑 𝙸𝚗𝚒`,
+buttonText: '𝗟𝗜𝗦𝗧 𝗠𝗘𝗡𝗨 ',
+sections: seactiones,
+listType: 1}
+kris.sendMessage(from, listSw, { quoted: m })
+}
+break
+case 'jasasuntik':{
+const seactiones = [
+{
+ title: "⚠︎  𝙺𝙴𝙱𝚄𝚃𝚄𝙷𝙰𝙽 𝚂𝙾𝚂𝙸𝙰𝙻 𝙼𝙴𝙳𝙸𝙰 « ✧",
+                rows: [
+                {title: "✦  「 𝙅𝙖𝙨𝙖 𝙎𝙪𝙣𝙩𝙞𝙠 𝙏𝙞𝙠𝙏𝙤𝙠 」", rowId: `.suntiktiktok`, description: `╰ ► 📌 𝘔𝘢𝘶 𝘖𝘳𝘥𝘦𝘳 𝘑𝘢𝘴𝘢 𝘚𝘶𝘯𝘵𝘪𝘬 𝘛𝘪𝘬𝘵𝘰𝘬 𝘠𝘢? :v`},
+                {title: "✦  「 𝙅𝙖𝙨𝙖 𝙎𝙪𝙣𝙩𝙞𝙠 𝙄𝙂」", rowId: `.suntikig`, description: `╰ ► 📌 𝘔𝘢𝘶 𝘖𝘳𝘥𝘦𝘳 𝘑𝘢𝘴𝘢 𝘚𝘶𝘯𝘵𝘪𝘬 𝘐𝘎 𝘠𝘢? 🤫`},
+                {title: "✦  「 𝙋𝙖𝙮𝙢𝙚𝙣𝙩 」", rowId: `.payment`, description: `╰ ► 💳 𝘔𝘢𝘶 𝘉𝘢𝘺𝘢𝘳 𝘠𝘢? 🤨`},      
+]}]
+const listSw = { 
+text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
+mentions: [sender],
+footer: `𝚂𝚒𝚕𝚊𝚑𝚔𝚊𝚗 𝙿𝚒𝚕𝚒𝚑 𝙼𝚎𝚗𝚞 𝙳𝚒 𝙱𝚊𝚠𝚊𝚑 𝙸𝚗𝚒`,
+buttonText: '𝙋𝙄𝙇𝙄𝙃 𝘿𝙄 𝙎𝙄𝙉𝙄',
+sections: seactiones,
+listType: 1}
+kris.sendMessage(from, listSw, { quoted: m })
+}
+break
+case 'topupgame':{
+const seactiones = [
+{
+ title: "⚠︎  𝚃𝙾𝙿𝚄𝙿 𝙶𝙰𝙼𝙴 « ✧",
+                rows: [
+                {title: "✦  「 𝙏𝙤𝙥𝙐𝙥 𝙁𝙧𝙚𝙚 𝙁𝙞𝙧𝙚 」", rowId: `.diamondff`, description: `╰ ► 💎 𝘛𝘰𝘱𝘜𝘱 𝘋𝘪𝘢𝘮𝘰𝘯𝘥 𝘍𝘳𝘦𝘦𝘍𝘪𝘳𝘦 𝘉𝘢𝘯𝘨`},
+                {title: "✦  「 𝙏𝙤𝙥𝙐𝙥 𝙋𝙪𝙗𝙜 𝙈𝙤𝙗𝙞𝙡𝙚 」", rowId: `.diamondpubg`, description: `╰ ► 💎 𝘛𝘰𝘱𝘶𝘱 𝘋𝘪𝘢𝘮𝘰𝘯𝘥 𝘗𝘶𝘣𝘨 𝘔𝘰𝘣𝘪𝘭𝘦`},
+                {title: "✦  「 𝙏𝙤𝙥𝙐𝙥 𝙈𝙤𝙗𝙞𝙡𝙚 𝙇𝙚𝙜𝙚𝙣𝙙 」", rowId: `.diamondml`, description: `╰ ► 💎 𝘛𝘰𝘱𝘜𝘱 𝘋𝘪𝘢𝘮𝘰𝘯𝘥 𝘔𝘰𝘣𝘪𝘭𝘦 𝘓𝘦𝘨𝘦𝘯𝘥`},
+                {title: "✦  「 𝙏𝙤𝙥𝙐𝙥 𝘾𝙖𝙡𝙡 𝙊𝙛 𝘿𝙪𝙩𝙮 」", rowId: `.diamondcalof`, description: `╰ ► 💎 𝘛𝘰𝘱𝘶𝘱 𝘋𝘪𝘢𝘮𝘰𝘯𝘥 𝘊𝘢𝘭𝘭 𝘖𝘧 𝘋𝘶𝘵𝘺 𝘕𝘨𝘢𝘣`},     
+]}]
+const listSw = { 
+text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
+mentions: [sender],
+footer: `𝚂𝚒𝚕𝚊𝚑𝚔𝚊𝚗 𝙿𝚒𝚕𝚒𝚑 𝙼𝚎𝚗𝚞 𝙳𝚒 𝙱𝚊𝚠𝚊𝚑 𝙸𝚗𝚒`,
+buttonText: '𝙏𝙊𝙋𝙐𝙋 𝙂𝘼𝙈𝙀',
+sections: seactiones,
+listType: 1}
+kris.sendMessage(from, listSw, { quoted: m })
+}
+break
+case 'payment':{
+const seactiones = [
+{
+ title: "⚠︎  𝙿𝙰𝚈𝙼𝙴𝙽𝚃 𝙼𝙴𝙽𝚄 « ✧",
+                rows: [
+                {title: "✦  「 𝙌𝙧𝙞𝙨 」", rowId: `.bayarqris`, description: `╰ ► 𝘉𝘢𝘺𝘢𝘳 𝘓𝘦𝘸𝘢𝘵 𝘘𝘳𝘪𝘴 𝘈𝘭𝘱𝘢𝘺𝘮𝘦𝘯𝘵`},
+                {title: "✦  「 𝘿𝙖𝙣𝙖 」", rowId: `.diamondpubg`, description: `╰ ► 💎 𝘉𝘢𝘺𝘢𝘳 𝘓𝘦𝘸𝘢𝘵 𝘋𝘢𝘯𝘢`},
+                {title: "✦  「 𝙂𝙤𝙥𝙖𝙮 」", rowId: `.diamondml`, description: `╰ ► 💎 𝘉𝘢𝘺𝘢𝘳 𝘓𝘦𝘸𝘢𝘵 𝘎𝘰𝘱𝘢𝘺`},
+                {title: "✦  「 𝙊𝙫𝙤 」", rowId: `.diamondcalof`, description: `╰ ► 𝘉𝘢𝘺𝘢𝘳 𝘓𝘦𝘸𝘢𝘵 𝘖𝘷𝘰 𝘕𝘨𝘢𝘣`},     
+]}]
+const listSw = { 
+text: `Hai Kak @${sender.split("@")[0]} ${ucapanWaktu}`,
+mentions: [sender],
+footer: `𝚂𝚒𝚕𝚊𝚑𝚔𝚊𝚗 𝙿𝚒𝚕𝚒𝚑 𝙼𝚎𝚗𝚞 𝙳𝚒 𝙱𝚊𝚠𝚊𝚑 𝙸𝚗𝚒`,
+buttonText: '𝗣𝗔𝗬𝗠𝗘𝗡𝗧',
 sections: seactiones,
 listType: 1}
 kris.sendMessage(from, listSw, { quoted: m })
@@ -1648,554 +1696,320 @@ if (!text) return reply('Masukan Link Nya!!!')
 downloadMp3(text)
 }
 break
-case 'all': case 'all':{
+case 'allmenu':{
 kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
 
-〔 llı 𝖴𝗌𝖾𝗋 𝖨𝗇𝖿𝗈 ıll 〕
-  • Nama ${itsMekris ? 'Owner' : 'User'} : ${pushname}
-  • Nomor ${itsMekris ? 'Owner' : 'User'} : ${sender.split("@")[0]}
-  • Jumlah User : ${pendaftar.length} User
-  • Status : ${itsMekris ? 'Owner' : 'User'}
-  • Status Premium : ${isPrem ? 'Premium User' : 'Free User'}
+𝗕𝘆 𝗚𝘂𝘀𝘁𝗶 𝗣𝗮𝗻𝗲𝗻𝗴𝗮𝗵
 
-〔 llı 𝙾𝚆𝙽𝙴𝚁 𝙼𝙴𝙽𝚄 ıll 〕
-➪ .bc
-➪ .join
-➪ .shutdown
-➪ .autodltt
-➪ .autosticker
-➪ .setppbot
-➪ .addprem
-➪ .delprem
-➪ .addowner
-➪ .delowner
-➪ .addlist
-➪ .dellist
-➪ .updatelist
-➪ .listnya
-➪ .addvn
-➪ .delvn
-➪ .listvn
-➪ .ban add
-➪ .ban del
+┏━ꕥ〔 llı 𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨 ıll 〕ꕥ━⬣
+┃✾ .𝚋𝚌 
+┃✾ .𝚓𝚘𝚒𝚗 
+┃✾ .𝚜𝚑𝚞𝚝𝚍𝚘𝚠𝚗 
+┃✾ .𝚊𝚞𝚝𝚘𝚍𝚕𝚝𝚝
+┃✾ .𝚊𝚞𝚝𝚘𝚜𝚝𝚒𝚌𝚔𝚎𝚛
+┃✾ .𝚜𝚎𝚝𝚙𝚙𝚋𝚘𝚝
+┃✾ .𝚊𝚍𝚍𝚙𝚛𝚎𝚖
+┃✾ .𝚍𝚎𝚕𝚙𝚛𝚎𝚖
+┃✾ .𝚊𝚍𝚍𝚘𝚠𝚗𝚎𝚛
+┃✾ .𝚍𝚎𝚕𝚘𝚠𝚗𝚎𝚛
+┃✾ .𝚊𝚍𝚍𝚕𝚒𝚜𝚝
+┃✾ .𝚍𝚎𝚕𝚕𝚒𝚜𝚝
+┃✾ .𝚞𝚙𝚍𝚊𝚝𝚎𝚕𝚒𝚜𝚝
+┃✾ .𝚕𝚒𝚜𝚝𝚗𝚢𝚊
+┃✾ .𝚊𝚍𝚍𝚟𝚗
+┃✾ .𝚍𝚎𝚕𝚟𝚗
+┃✾ .𝚕𝚒𝚜𝚝𝚟𝚗
+┃✾ .𝚋𝚊𝚗 𝚊𝚍𝚍
+┃✾ .𝚋𝚊𝚗 𝚍𝚎𝚕
+┗━ꕥ
 
-〔 llı 𝙾𝚃𝙷𝙴𝚁 𝙼𝙴𝙽𝚄 ıll 〕
-➪ .owner
-➪ .jadibot
-➪ .listjadibot
-➪ .donasi
-➪ .listpremium
-➪ .buypremium
-➪ .jadiowner
-➪ .sewabot
-➪ .cekme
-➪ .obfus
-➪ .styletext
-➪ .gttees
-➪ .tourl
-➪ .tovn
-➪ .toaudio
-➪ .tomp3
-➪ .toimg
-➪ .toonce
-➪ .sticker
-➪ .smeme
-➪ .snobg
-➪ .menfes
-➪ .leave
-➪ .ebinary
-➪ .dbinary
-➪ .cariresep
-➪ .bacaresep
-➪ .ssweb
-➪ .wasted
-➪ .comrade
-➪ .horny
-➪ .blur
-➪ .pixelate
-➪ .simpcard
-➪ .lolice
-➪ .gay
-➪ .jail
-➪ .quoted
-➪ .caridoi
-➪ .cariteman
+┏━ꕥ〔 llı 𝗚𝗥𝗢𝗨𝗣 𝗠𝗘𝗡𝗨 ıll 〕ꕥ━⬣
+┃✾ .𝚊𝚗𝚝𝚒𝚕𝚒𝚗𝚔 (𝚘𝚗/𝚘𝚏𝚏)
+┃✾ .𝚠𝚎𝚕𝚌𝚘𝚖𝚎 (𝚘𝚗/𝚘𝚏𝚏
+┃✾ .𝚊𝚍𝚍 𝟼𝟸𝚇𝚇𝚇-𝚇𝚇𝚇𝚇-𝚇𝚇𝚇𝚇
+┃✾ .𝚔𝚒𝚌𝚔 @𝚝𝚊𝚐𝚜
+┃✾ .𝚙𝚛𝚘𝚖𝚘𝚝𝚎
+┃✾ .𝚝𝚊𝚐𝚊𝚕𝚕
+┃✾ .𝚊𝚗𝚝𝚒𝚠𝚊𝚖𝚎
+┃✾ .𝚌𝚕𝚘𝚜𝚎𝚝𝚒𝚖𝚎
+┃✾ .𝚘𝚙𝚎𝚗𝚝𝚒𝚖𝚎
+┗━ꕥ
 
-〔 llı 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳 𝙼𝙴𝙽𝚄 ıll 〕
-➪ .tiktokvideo
-➪ .tiktokaudio
-➪ .ytsearch
-➪ .play
-➪ .mp3
-➪ .mp4
-➪ .googles
-➪ .happymod
+┏━ꕥ〔 llı 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨  ıll 〕
+┃✾ .𝚝𝚒𝚔𝚝𝚘𝚔𝚟𝚒𝚍𝚎𝚘
+┃✾ .𝚝𝚒𝚔𝚝𝚘𝚔𝚊𝚞𝚍𝚒𝚘
+┃✾ .𝚢𝚝𝚜𝚎𝚊𝚛𝚌𝚑
+┃✾ .𝚙𝚕𝚊𝚢
+┃✾ .𝚢𝚝𝚖𝚙𝟹
+┃✾ .𝚐𝚘𝚘𝚐𝚕𝚎𝚜
+┃✾ .𝚑𝚊𝚙𝚙𝚢𝚖𝚘𝚍
+┗━ꕥ
 
-〔 llı 𝙱𝚄𝙶 𝙼𝙴𝙽𝚄 ıll 〕
-➪ .send
-➪ .spambugvip
-➪ .santetpc
-➪ .santetgc
-➪ .sendbug
-➪ .senddoc
-➪ .sendloc
-➪ .kaystick
-➪ .kayteks
-➪ .kayitem
-➪ .kaylog
-➪ .kaykontak
-➪ .kayloc
-➪ .kaydoc
-➪ .kayvn
-➪ .vote
-➪ .stickgas
-➪ .itemgas
-➪ .cataloggas
-➪ .docgas
-➪ .kongas
-➪ .vngas
-➪ .teksgas
-➪ .locgas
-➪ .crash
-➪ .jagoan
-➪ .jagoanneon
-
-〔 llı 𝙶𝚁𝙾𝚄𝙿 𝙼𝙴𝙽𝚄 ıll 〕
-➪ .antilink 
-➪ .antiwame 
-➪ .add 
-➪ .kick 
-➪ .promote 
-➪ .demote 
-➪ .hidetag 
-➪ .tagall 
-➪ .opentime 
-➪ .closetime 
-
-〔 llı 𝙵𝚄𝙽 𝙶𝚁𝙾𝚄𝙿 ıll 〕
-➪ .memek 
-➪ .bego 
-➪ .goblok 
-➪ .janda 
-➪ .perawan 
-➪ .babi 
-➪ .tolol 
-➪ .pinter 
-➪ .pintar 
-➪ .asu 
-➪ .bodoh 
-➪ .gay 
-➪ .lesby 
-➪ .bajingan 
-➪ .jancok 
-➪ .anjing 
-➪ .ngentod 
-➪ .ngentot 
-➪ .monyet 
-➪ .mastah 
-➪ .newbie 
-➪ .bangsat 
-➪ .bangke 
-➪ .sange 
-➪ .sangean 
-➪ .dakjal 
-➪ .horny 
-➪ .wibu 
-➪ .puki 
-➪ .peak 
-➪ .pantex 
-➪ .pantek 
-➪ .setan 
-➪ .iblis 
-➪ .cacat 
-➪ .yatim 
-➪ .piatu 
-➪ .goblokcek 
-➪ .jelekcek 
-➪ .gaycek 
-➪ .rate 
-➪ .lesbicek 
-➪ .gantengcek 
-➪ .cantikcek 
-➪ .begocek 
-➪ .suhucek 
-➪ .pintercek 
-➪ .jagocek 
-➪ .nolepcek 
-➪ .babicek 
-➪ .bebancek 
-➪ .baikcek 
-➪ .jahatcek 
-➪ .anjingcek 
-➪ .haramcek 
-➪ .pakboycek 
-➪ .pakgirlcek 
-➪ .sangecek 
-➪ .bapercek 
-➪ .fakboycek 
-➪ .alimcek 
-➪ .suhucek 
-➪ .fakgirlcek 
-➪ .kerencek 
-➪ .wibucek 
-➪ .pasarkascek 
-➪ .kulcek                 
-➪ .cekgoblok 
-➪ .cekjelek 
-➪ .cekgay                 
-➪ .ceklesbi 
-➪ .cekganteng 
-➪ .cekcantik 
-➪ .cekbego 
-➪ .ceksuhu 
-➪ .cekpinter 
-➪ .cekjago 
-➪ .ceknolep 
-➪ .cekbabi 
-➪ .cekbeban 
-➪ .cekbaik 
-➪ .cekjahat 
-➪ .cekanjing 
-➪ .cekharam 
-➪ .cekpakboy 
-➪ .cekpakgirl 
-➪ .ceksange 
-➪ .cekbaper 
-➪ .cekfakboy 
-➪ .cekalim 
-➪ .ceksuhu 
-➪ .cekfakgirl 
-➪ .cekkeren 
-➪ .cekwibu 
-➪ .cekpasarkas 
-➪ .cekkul 
-➪ .cekbapak 
-
-〔 llı 𝚁𝙰𝙽𝙳𝙾𝙼 𝙵𝙾𝚃𝙾 ıll 〕
-➪ .aesthetic
-➪ .ahegao
-➪ .akira
-➪ .akiyama
-➪ .ana
-➪ .anjing
-➪ .art
-➪ .ass
-➪ .asuna
-➪ .ayuzawa
-➪ .bdsm
-➪ .boneka
-➪ .boruto
-➪ .bts
-➪ .cecan
-➪ .chiho
-➪ .chitoge
-➪ .cogan
-➪ .cosplay
-➪ .cosplayloli
-➪ .cosplaysagiri
-➪ .cuckold
-➪ .cum
-➪ .cyber
-➪ .darkjokes
-➪ .deidara
-➪ .doraemon
-➪ .eba
-➪ .elaina
-➪ .emilia
-➪ .ero
-➪ .erza
-➪ .exo
-➪ .femdom
-➪ .foot
-➪ .freefire
-➪ .gamewallpaper
-➪ .gangbang
-➪ .gifs
-➪ .glasses
-➪ .gremory
-➪ .hekel
-➪ .hentai
-➪ .hestia
-➪ .hijaber
-➪ .hinata
-➪ .husbu
-➪ .inori
-➪ .islamic
-➪ .isuzu
-➪ .itachi
-➪ .itori
-➪ .jahy
-➪ .jeni
-➪ .jiso
-➪ .justina
-➪ .kaga
-➪ .kagura
-➪ .kakasih
-➪ .kaori
-➪ .kartun
-➪ .katakata
-➪ .keneki
-➪ .kotori
-➪ .kpop
-➪ .kucing
-➪ .kurumi
-➪ .lisa
-➪ .loli
-➪ .madara
-➪ .masturbation
-➪ .megumin
-➪ .mikasa
-➪ .mikey
-➪ .miku
-➪ .milf
-➪ .minato
-➪ .mobil
-➪ .motor
-➪ .mountain
-➪ .naruto
-➪ .neko
-➪ .neko2
-➪ .nekonime
-➪ .nezuko
-➪ .onepiece
-➪ .orgy
-➪ .panties
-➪ .pentol
-➪ .pokemon
-➪ .profil
-➪ .programming
-➪ .pubg
-➪ .pussy
-➪ .randblackpink
-➪ .randomnime
-➪ .randomnime2
-➪ .rize
-➪ .rose
-➪ .ryujin
-➪ .sagiri
-➪ .sakura
-➪ .sasuke
-➪ .satanic
-➪ .shina
-➪ .shinka
-➪ .shinomiya
-➪ .shizuka
-➪ .shota
-➪ .tatasurya
-➪ .technology
-➪ .tejina
-➪ .tentacles
-➪ .thighs
-➪ .toukachan
-➪ .tsunade
-➪ .waifu
-➪ .wallhp
-➪ .wallml
-➪ .wallnime
-➪ .yotsuba
-➪ .yuki
-➪ .yulibocil
-➪ .yumeko
-➪ .fox  
-➪ .dog  
-➪ .cat
-➪ .panda  
-➪ .birb 
-➪ .koala
-
-〔 llı 𝚃𝙴𝚇𝚃 𝙿𝚁𝙾 ıll 〕
-➪ .candy 
-➪ .christmas 
-➪ .3dchristmas 
-➪ .sparklechristmas
-➪ .deepsea 
-➪ .scifi 
-➪ .rainbow 
-➪ .waterpipe 
-➪ .spooky 
-➪ .pencil 
-➪ .circuit 
-➪ .discovery 
-➪ .metalic 
-➪ .fiction 
-➪ .demon 
-➪ .transformer 
-➪ .berry 
-➪ .thunder 
-➪ .magma 
-➪ .3dstone 
-➪ .neonlight 
-➪ .glitch 
-➪ .harrypotter 
-➪ .brokenglass 
-➪ .papercut 
-➪ .watercolor 
-➪ .multicolor 
-➪ .neondevil 
-➪ .underwater 
-➪ .graffitibike
-➪ .snow 
-➪ .cloud 
-➪ .honey 
-➪ .ice 
-➪ .fruitjuice 
-➪ .biscuit 
-➪ .wood 
-➪ .chocolate 
-➪ .strawberry 
-➪ .matrix 
-➪ .blood 
-➪ .dropwater 
-➪ .toxic 
-➪ .lava 
-➪ .rock 
-➪ .bloodglas 
-➪ .hallowen 
-➪ .darkgold 
-➪ .joker 
-➪ .wicker
-➪ .firework 
-➪ .skeleton 
-➪ .blackpink 
-➪ .sand 
-➪ .glue 
-➪ .1917 
-➪ .leaves
-
-〔 llı 𝙿𝙷𝙾𝚃𝙾 𝙾𝚇𝚈 ıll 〕
-➪ .shadow 
-➪ .write 
-➪ .romantic 
-➪ .burnpaper
-➪ .smoke 
-➪ .narutobanner 
-➪ .love 
-➪ .undergrass
-➪ .doublelove 
-➪ .coffecup
-➪ .underwaterocean
-➪ .smokyneon
-➪ .starstext
-➪ .rainboweffect
-➪ .balloontext
-➪ .metalliceffect
-➪ .embroiderytext
-➪ .flamingtext
-➪ .stonetext
-➪ .writeart
-➪ .summertext
-➪ .wolfmetaltext
-➪ .nature3dtext
-➪ .rosestext
-➪ .naturetypography
-➪ .quotesunder
-➪ .shinetext
-
-〔 llı 𝙴𝙿𝙷𝙾𝚃𝙾 𝟹𝟼𝟶 ıll 〕
-➪ .glitchtext
-➪ .writetext
-➪ .advancedglow
-➪ .typographytext
-➪ .pixelglitch
-➪ .neonglitch
-➪ .flagtext
-➪ .flag3dtext
-➪ .deletingtext
-➪ .blackpinkstyle
-➪ .glowingtext
-➪ .underwatertext
-➪ .logomaker
-➪ .cartoonstyle
-➪ .papercutstyle
-➪ .watercolortext
-➪ .effectclouds
-➪ .blackpinklogo
-➪ .gradienttext
-➪ .summerbeach
-➪ .luxurygold
-➪ .multicoloredneon
-➪ .sandsummer
-➪ .galaxywallpaper
-➪ .1917style
-➪ .makingneon
-➪ .royaltext
-➪ .freecreate
-➪ .galaxystyle
-➪ .lighteffects
-
-〔 llı 𝚁𝚊𝚗𝚍𝚘𝚖 𝙲𝚎𝚛𝚙𝚎𝚗 ıll 〕
-➪ .cerpen_sejarah
-➪ .cerpen_sedih
-➪ .cerpen_sastra
-➪ .cerpen_romantis
-➪ .cerpen_rohani
-➪ .cerpen_rindu
-➪ .cerpen_remaja
-➪ .cerpen_ramadhan
-➪ .cerpen_petualangan
-➪ .cerpen_persahabatan
-➪ .cerpen_perpisahan
-➪ .cerpen_perjuangan
-➪ .cerpen_penyesalan
-➪ .cerpen_pengorbanan
-➪ .cerpen_pengalaman
-➪ .cerpen_pendidikan
-➪ .cerpen_penantian
-➪ .cerpen_patahhati
-➪ .cerpen_olahraga
-➪ .cerpen_nasionalisme
-➪ .cerpen_nasihat
-➪ .cerpen_motivasi
-➪ .cerpen_misteri
-➪ .cerpen_mengharukan
-➪ .cerpen_malaysia
-➪ .cerpen_liburan
-➪ .cerpen_kristen
-➪ .cerpen_korea
-➪ .cerpen_kisahnyata
-➪ .cerpen_keluarga
-➪ .cerpen_kehidupan
-➪ .cerpen_jepang
-➪ .cerpen_inspiratif
-➪ .cerpen_gokil
-➪ .cerpen_galau
-➪ .cerpen_cintasejati
-➪ .cerpen_cintasegitiga
-➪ .cerpen_cintasedih
-➪ .cerpen_cintaromantis
-➪ .cerpen_cintapertama
-➪ .cerpen_cintaislami
-➪ .cerpen_cinta
-➪ .cerpen_budaya
-➪ .cerpen_bahasasunda
-➪ .cerpen_bahasajawa
-➪ .cerpen_bahasainggris
-➪ .cerpen_bahasadaerah
-➪ .cerpen_anak
-
-〔 llı 𝚁𝚊𝚗𝚍𝚘𝚖 𝚅𝚒𝚍𝚎𝚘 ıll 〕
-➪ .asupan
-➪ .bocil
-➪ .rikagusriani
-➪ .hentavid
-➪ .jjmeryani
-
-〔 llı 𝚂𝚝𝚊𝚕𝚔𝚎𝚛 𝙼𝚎𝚗𝚞 ıll 〕
-➪ .igstalk
-➪ .ffstalk
-➪ .mlstalk
-➪ .npmstalk
-➪ .ghstalk.`, mentions: [sender]},{quoted:m})
+┏━ꕥ〔 llı 𝗢𝗧𝗛𝗘𝗥 𝗠𝗘𝗡𝗨 ıll 〕ꕥ━⬣
+┃✾ .𝚘𝚠𝚗𝚎𝚛
+┃✾ .𝚓𝚊𝚍𝚒𝚋𝚘𝚝
+┃✾ .𝚜𝚝𝚒𝚌𝚔𝚎𝚛
+┃✾ .𝚝𝚘𝚟𝚗
+┃✾ .𝚝𝚘𝚞𝚛𝚕
+┃✾ .𝚝𝚘𝚖𝚙𝟹
+┃✾ .𝚝𝚘𝚒𝚖𝚐
+┃✾ .𝚝𝚘𝚘𝚗𝚌𝚎
+┃✾ .𝚜𝚖𝚎𝚖𝚎
+┃✾ .𝚜𝚗𝚘𝚋𝚐
+┃✾ .𝚖𝚎𝚗𝚏𝚎𝚜
+┃✾ .𝚕𝚎𝚊𝚟𝚎
+┃✾ .𝚎𝚋𝚒𝚗𝚎𝚛𝚢
+┃✾ .𝚍𝚋𝚒𝚗𝚊𝚛𝚢
+┃✾ .𝚜𝚜𝚠𝚎𝚋
+┃✾ .𝚠𝚊𝚜𝚝𝚎𝚍
+┃✾ .𝚌𝚊𝚛𝚒𝚍𝚘𝚒
+┃✾ .𝚌𝚊𝚛𝚒𝚝𝚎𝚖𝚊𝚗
+┃✾ .𝚓𝚊𝚒𝚕
+┃✾ .𝚐𝚊𝚢
+┃✾ .𝚙𝚒𝚡𝚎𝚕𝚊𝚝𝚎
+┃✾ .𝚐𝚒𝚝𝚝𝚎𝚜
+┗━ꕥ.`, mentions: [sender]},{quoted:m})
 }
 break
-case 'menu':{
+case 'saldoewallet':{
 kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
 
-Hai Kak @${sender.split("@")[0]} 
-𝘏𝘢𝘪 𝘚𝘢𝘺𝘢 𝖪𝗋𝗂𝗌𝖡𝗈𝗍𝗓-𝖬𝖽 𝘠𝘢𝘪𝘵𝘶 𝘉𝘰𝘵 𝘞𝘩𝘢𝘵𝘴𝘢𝘱𝘱 𝘠𝘢𝘯𝘨 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘯𝘵𝘶 𝖠𝗇𝖽𝖺 𝖴𝗇𝗍𝗎𝗄 𝖬𝖾𝗆𝖻𝗎𝖺𝗍 𝖲𝗍𝗂𝖼𝗄𝖾𝗋, 𝖬𝖾𝗇𝖽𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖬𝗎𝗌𝗂𝗄 / 𝖵𝗂𝖽𝖾𝗈 𝖴𝗇𝗍𝗎𝗄 𝖡𝖾𝗋𝗆𝖺𝗂𝗇 𝖦𝖺𝗆𝖾 𝖣𝖺𝗇 𝖱𝖺𝗍𝗎𝗌𝖺𝗇 𝖥𝗂𝗍𝗎𝗋 𝖫𝖺𝗂𝗇𝗇𝗒𝖺
-𝐾𝑒𝑡𝑖𝑘 #𝙖𝙡𝙡𝙢𝙚𝙣𝙪 𝗨𝗻𝘁𝘂𝗸 𝗠𝗲𝗻𝗮𝗺𝗽𝗶𝗹𝗸𝗮𝗻 𝗦𝗲𝗺𝘂𝗮 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗕𝗼𝘁,
+𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
+Minat? wa.me/6281390368580
+♚︎ 𝙱𝚈 𝙶𝚄𝚂𝚃𝙸 𝙿𝙰𝙽𝙴𝙽𝙶𝙰𝙷
 
-𝖻𝗒 @𝗄𝗋𝗂𝗌𝗁𝗈𝗌𝗍𝗂𝗇𝗀`, mentions: [sender]},{quoted:m})
+┏━ꕥ〔 llı 𝗘-𝗪𝗔𝗟𝗟𝗘𝗧 llı 〕ꕥ━⬣
+┃💳𝟷𝟶𝚔 = 𝗥𝗽.𝟭𝟯.𝟬𝟬𝟬
+┃💳𝟷𝟻𝙺 = 𝗥𝗽.𝟭𝟴.𝟬𝟬𝟬
+┃💳𝟸𝟶𝙺 = 𝗥𝗽.𝟮𝟯.𝟬𝟬𝟬
+┃💳𝟹𝟶𝙺 = 𝗥𝗽.𝟯𝟯.𝟬𝟬𝟬
+┃💳𝟺𝟶𝙺 = 𝗥𝗽.𝟰𝟯.𝟬𝟬𝟬
+┃💳𝟻𝟶𝙺 = 𝗥𝗽.𝟱𝟯.𝟬𝟬𝟬
+┃💳𝟼𝟶𝙺 = 𝗥𝗽.𝟲𝟯.𝟬𝟬𝟬
+┃💳𝟽𝟶𝙺 = 𝗥𝗽.𝟳𝟯.𝟬𝟬𝟬
+┃💳𝟾𝟶𝙺 = 𝗥𝗽.𝟴𝟯.𝟬𝟬𝟬
+┃💳𝟿𝟶𝙺 = 𝗥𝗽.𝟵𝟯.𝟬𝟬𝟬
+┃💳𝟷𝟶𝟶𝙺 = 𝗥𝗽.𝟭𝟬𝟯.𝟬𝟬𝟬
+┃💳𝟸𝟶𝟶𝙺 = 𝗥𝗽.𝟮𝟬𝟬𝟱.𝟬𝟬𝟬
+┗━ꕥ.`, mentions: [sender]},{quoted:m})
+}
+break
+case 'bayarqris':{
+kris.sendMessage(from,{image:qrisdonate, caption:`Hai Kak @${sender.split("@")[0]}
+
+Sɪʟᴀʜᴋᴀɴ Sᴄᴀɴ Qʀɪs Dɪ Aᴛᴀs Uɴᴛᴜᴋ Bᴀʏᴀʀ Dᴀɴ Kɪʀɪᴍ Bᴜᴋᴛɪ Tғ Kᴇ Aᴅᴍɪɴ
+https://wa.me/62882007324217 .`, mentions: [sender]},{quoted:m})
+}
+break
+case 'diamondff':{
+kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+
+𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
+Minat? wa.me/6281390368580
+♚︎ 𝙱𝚈 𝙶𝚄𝚂𝚃𝙸 𝙿𝙰𝙽𝙴𝙽𝙶𝙰𝙷
+
+┏━ꕥ〔 llı 𝗙𝗥𝗘𝗘 𝗙𝗜𝗥𝗘 ıll 〕ꕥ━⬣
+┃💎𝟻𝟶 = 𝗥𝗽. 
+┃💎𝟽𝟶 = 𝗥𝗽. 
+┃💎𝟷𝟶𝟶 = 𝗥𝗽. 
+┃💎𝟷𝟺𝟶 = 𝗥𝗽. 
+┃💎𝟸𝟷𝟶 = 𝗥𝗽. 
+┃💎𝟹𝟻𝟻 = 𝗥𝗽. 
+┃💎𝟻𝟶𝟶 = 𝗥𝗽. 
+┃💎𝟽𝟸𝟶 = 𝗥𝗽. 
+┃💎𝟷𝟶𝟶𝟶 = 𝗥𝗽.
+┃💎𝟷𝟺𝟻𝟶 = 𝗥𝗽. 
+┃💎𝟸𝟷𝟾𝟶 = 𝗥𝗽. 
+┃💎𝟹𝟼𝟺𝟶 = 𝗥𝗽. 
+┗━ꕥ.`, mentions: [sender]},{quoted:m})
+}
+break
+case 'diamondml':{
+kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+
+𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
+Minat? wa.me/6281390368580
+♚︎ 𝙱𝚈 𝙶𝚄𝚂𝚃𝙸 𝙿𝙰𝙽𝙴𝙽𝙶𝙰𝙷
+
+┏━ꕥ〔 llı 𝗠𝗢𝗕𝗜𝗟𝗘 𝗟𝗘𝗚𝗘𝗡𝗗𝗦 ıll 〕ꕥ━⬣
+┃💎𝟸𝟾 = 𝗥𝗽.
+┃💎𝟹𝟼 = 𝗥𝗽.
+┃💎𝟺𝟺 = 𝗥𝗽.
+┃💎𝟾𝟼 = 𝗥𝗽.
+┃💎𝟷𝟷𝟸 = 𝗥𝗽.
+┃💎𝟷𝟽𝟸 = 𝗥𝗽.
+┃💎𝟷𝟾𝟻 = 𝗥𝗽.
+┃💎𝟸𝟻𝟽 = 𝗥𝗽.
+┃💎𝟸𝟾𝟺 = 𝗥𝗽.
+┃💎𝟹𝟺𝟺 = 𝗥𝗽.
+┃💎𝟺𝟸𝟿 = 𝗥𝗽.
+┃💎𝟻𝟷𝟺 = 𝗥𝗽.
+┃💎𝟼𝟶𝟶 = 𝗥𝗽.
+┃💎𝟽𝟶𝟼 = 𝗥𝗽.
+┃💎𝟾𝟽𝟾 = 𝗥𝗽.
+┃💎𝟿𝟼𝟹 = 𝗥𝗽.
+┃💎𝟷𝟶𝟷𝟶 = 𝗥𝗽.
+┗━ꕥ.`, mentions: [sender]},{quoted:m})
+}
+break
+case 'diamondpubg':{
+kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+
+𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
+Minat? wa.me/6281390368580
+♚︎ 𝙱𝚈 𝙶𝚄𝚂𝚃𝙸 𝙿𝙰𝙽𝙴𝙽𝙶𝙰𝙷
+
+┏━ꕥ〔 𝗣𝗨𝗕𝗚 𝗠𝗢𝗕𝗜𝗟𝗘 ıll 〕ꕥ━⬣
+┃💸𝟹𝟻 𝚄𝙲 = 𝗥𝗽.𝟭𝟬.𝟬𝟬𝟬
+┃💸𝟻𝟶 𝚄𝙲 = 𝗥𝗽.𝟭𝟮.𝟬𝟬𝟬
+┃💸𝟽𝟶 𝚄𝙲 = 𝗥𝗽.𝟭𝟲.𝟬𝟬𝟬
+┃💸𝟷𝟶𝟶 𝚄𝙲 = 𝗥𝗽.𝟮𝟭.𝟬𝟬𝟬
+┃💸𝟷𝟸𝟻 𝚄𝙲 = 𝗥𝗽.𝟮𝟱.𝟬𝟬𝟬
+┃💸𝟷𝟻𝟶 𝚄𝙲 = 𝗥𝗽.𝟯𝟮.𝟬𝟬𝟬
+┃💸𝟸𝟶𝟶 𝚄𝙲 = 𝗥𝗽.𝟰𝟬.𝟬𝟬𝟬
+┃💸𝟸𝟻𝟶 𝚄𝙲 = 𝗥𝗽.𝟰𝟴.𝟬𝟬𝟬
+┃💸𝟹𝟶𝟶 𝚄𝙲 = 𝗥𝗽.𝟱𝟴.𝟬𝟬𝟬
+┃💸𝟹𝟻𝟶 𝚄𝙲 = 𝗥𝗽.𝟲𝟲.𝟬𝟬𝟬
+┃💸𝟽𝟶𝟶 𝚄𝙲 = 𝗥𝗽.𝟭𝟯𝟮.𝟬𝟬𝟬
+┃💸𝟽𝟻𝟶 𝚄𝙲 = 𝗥𝗽.𝟭𝟰𝟬.𝟬𝟬𝟬
+┃💸𝟷𝟶𝟶𝟶 𝚄𝙲 = 𝗥𝗽.𝟭𝟴𝟱.𝟬𝟬𝟬
+┃💸𝟷𝟸𝟻𝟶 𝚄𝙲 = 𝗥𝗽.𝟮𝟰𝟱.𝟬𝟬𝟬
+┗━ꕥ.`, mentions: [sender]},{quoted:m})
+}
+break
+case 'diamondcalof':{
+kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+
+𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
+Minat? wa.me/6281390368580
+♚︎ 𝙱𝚈 𝙶𝚄𝚂𝚃𝙸 𝙿𝙰𝙽𝙴𝙽𝙶𝙰𝙷
+
+┏━ꕥ〔 𝗣𝗨𝗕𝗚 𝗠𝗢𝗕𝗜𝗟𝗘 ıll 〕ꕥ━⬣
+┃💸𝟹𝟻 𝚄𝙲 = 𝗥𝗽.𝟭𝟬.𝟬𝟬𝟬
+┃💸𝟻𝟶 𝚄𝙲 = 𝗥𝗽.𝟭𝟮.𝟬𝟬𝟬
+┃💸𝟽𝟶 𝚄𝙲 = 𝗥𝗽.𝟭𝟲.𝟬𝟬𝟬
+┃💸𝟷𝟶𝟶 𝚄𝙲 = 𝗥𝗽.𝟮𝟭.𝟬𝟬𝟬
+┃💸𝟷𝟸𝟻 𝚄𝙲 = 𝗥𝗽.𝟮𝟱.𝟬𝟬𝟬
+┃💸𝟷𝟻𝟶 𝚄𝙲 = 𝗥𝗽.𝟯𝟮.𝟬𝟬𝟬
+┃💸𝟸𝟶𝟶 𝚄𝙲 = 𝗥𝗽.𝟰𝟬.𝟬𝟬𝟬
+┃💸𝟸𝟻𝟶 𝚄𝙲 = 𝗥𝗽.𝟰𝟴.𝟬𝟬𝟬
+┃💸𝟹𝟶𝟶 𝚄𝙲 = 𝗥𝗽.𝟱𝟴.𝟬𝟬𝟬
+┃💸𝟹𝟻𝟶 𝚄𝙲 = 𝗥𝗽.𝟲𝟲.𝟬𝟬𝟬
+┃💸𝟽𝟶𝟶 𝚄𝙲 = 𝗥𝗽.𝟭𝟯𝟮.𝟬𝟬𝟬
+┃💸𝟽𝟻𝟶 𝚄𝙲 = 𝗥𝗽.𝟭𝟰𝟬.𝟬𝟬𝟬
+┃💸𝟷𝟶𝟶𝟶 𝚄𝙲 = 𝗥𝗽.𝟭𝟴𝟱.𝟬𝟬𝟬
+┃💸𝟷𝟸𝟻𝟶 𝚄𝙲 = 𝗥𝗽.𝟮𝟰𝟱.𝟬𝟬𝟬
+┗━ꕥ.`, mentions: [sender]},{quoted:m})
+}
+break
+case 'buypulsa':{
+kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+
+❍ 𝗣𝗨𝗟𝗦𝗔 𝗡𝗔𝗦𝗜𝗢𝗡𝗔𝗟
+𝙼𝚒𝚗𝚊𝚝? wa.me/6281390368580
+
+┏━━━━━━━━━━━━━━━━━━━ꕥ
+┃❖ 𝙿𝚄𝙻𝚂𝙰    𝟻.𝟶𝟶𝟶 = 𝗥𝗽.𝟳.𝟬𝟬𝟬		
+┃❖ 𝙿𝚄𝙻𝚂𝙰    𝟷𝟶.𝟶𝟶𝟶 = 𝗥𝗽.𝟭𝟮.𝟬𝟬𝟬		
+┃❖ 𝙿𝚄𝙻𝚂𝙰    𝟷𝟻.𝟶𝟶𝟶 = 𝗥𝗽.𝟭𝟳.𝟬𝟬𝟬		
+┃❖ 𝙿𝚄𝙻𝚂𝙰 	𝟸𝟶.𝟶𝟶𝟶 = 𝗥𝗽.𝟮𝟮.𝟬𝟬𝟬		
+┃❖ 𝙿𝚄𝙻𝚂𝙰 	𝟸𝟻.𝟶𝟶𝟶 = 𝗥𝗽.𝟮𝟳.𝟬𝟬𝟬		
+┃❖ 𝙿𝚄𝙻𝚂𝙰 	𝟹𝟶.𝟶𝟶𝟶 = 𝗥𝗽.𝟯𝟮.𝟬𝟬𝟬	
+┃❖ 𝙿𝚄𝙻𝚂𝙰 	𝟹𝟻.𝟶𝟶𝟶 = 𝗥𝗽.𝟯𝟳.𝟬𝟬𝟬	
+┃❖ 𝙿𝚄𝙻𝚂𝙰 	𝟺𝟶.𝟶𝟶𝟶 = 𝗥𝗽.𝟰𝟮.𝟬𝟬𝟬		
+┃❖ 𝙿𝚄𝙻𝚂𝙰 	𝟺𝟻.𝟶𝟶𝟶 = 𝗥𝗽.𝟰𝟳.𝟬𝟬𝟬	
+┃❖ 𝙿𝚄𝙻𝚂𝙰 	𝟻𝟶.𝟶𝟶𝟶 = 𝗥𝗽.𝟱𝟮.𝟬𝟬𝟬
+┃❖ 𝙿𝚄𝙻𝚂𝙰 	𝟷𝟶𝟶.𝟶𝟶𝟶 = 𝗥𝗽.𝟭𝟬𝟮.𝟬𝟬𝟬
+┃❖ 𝙿𝚄𝙻𝚂𝙰 	𝟸𝟶𝟶.𝟶𝟶𝟶 = 𝗥𝗽.𝟮𝟬𝟮.𝟬𝟬𝟬
+┗━━━━━━━ꕥ.`, mentions: [sender]},{quoted:m})
+}
+break
+case 'suntiktiktok':{
+kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+
+𝗝𝗔𝗦𝗔 𝗦𝗨𝗡𝗧𝗜𝗞 𝗧𝗜𝗞 𝗧𝗢𝗞
+Minat? wa.me/6281390368580
+♚︎ 𝙱𝚈 𝙶𝚄𝚂𝚃𝙸 𝙿𝙰𝙽𝙴𝙽𝙶𝙰𝙷
+    
+┏━ꕥ〔 llı 𝗙𝗢𝗟𝗟𝗢𝗪𝗘𝗥𝗦 llı  〕ꕥ━⬣
+┃𝟷𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟸𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟺𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟻𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟼𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟽𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟾𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟿𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟷𝙺 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┗━ꕥ
+
+┏━ꕥ〔 llı 𝗟𝗜𝗞𝗘 llı  〕ꕥ━⬣
+┃𝟷𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟸𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟺𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟻𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟼𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟽𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟾𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟿𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟷𝙺 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┗━ꕥ
+
+┏━ꕥ〔 llı 𝗩𝗜𝗘𝗪 llı  〕ꕥ━⬣
+┃𝟷𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟸𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟺𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟻𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟼𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟽𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟾𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟿𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟷𝙺 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┗━ꕥ.`, mentions: [sender]},{quoted:m})
+}
+break
+case 'suntikig':{
+kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+
+𝗝𝗔𝗦𝗔 𝗦𝗨𝗡𝗧𝗜𝗞 𝗜𝗦𝗧𝗔𝗚𝗥𝗔𝗠
+Minat? wa.me/6281390368580
+♚︎ 𝙱𝚈 𝙶𝚄𝚂𝚃𝙸 𝙿𝙰𝙽𝙴𝙽𝙶𝙰𝙷
+
+┏━ꕥ〔 llı 𝗙𝗢𝗟𝗟𝗢𝗪𝗘𝗥𝗦 llı  〕ꕥ━⬣
+┃𝟷𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟸𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟺𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟻𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟼𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟽𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟾𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟿𝟶𝟶 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┃𝟷𝙺 𝙵𝙾𝙻𝙻𝙾𝚆𝙴𝚁𝚂 = 𝗥𝗽.
+┗━ꕥ
+
+┏━ꕥ〔 llı 𝗟𝗜𝗞𝗘 llı  〕ꕥ━⬣
+┃𝟷𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟸𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟺𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟻𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟼𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟽𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟾𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟿𝟶𝟶 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┃𝟷𝙺 𝙻𝙸𝙺𝙴 = 𝗥𝗽.
+┗━ꕥ
+
+┏━ꕥ〔 llı 𝗩𝗜𝗘𝗪 llı  〕ꕥ━⬣
+┃𝟷𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟸𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟺𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟻𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟼𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟽𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟾𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟿𝟶𝟶 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┃𝟷𝙺 𝚅𝙸𝙴𝚆 = 𝗥𝗽.
+┗━ꕥ.`, mentions: [sender]},{quoted:m})
 }
 break
 case 'addprem':
