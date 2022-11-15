@@ -7,7 +7,7 @@ const { baileys, boom, chalk, fs, figlet, FileType, path, pino, process, PhoneNu
 const { default: GpStoreConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, generateWAMessage, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = baileys
 const { color, bgcolor } = require('./lib/color')
 const { uncache, nocache } = require('./lib/loader')
-const { state } = useSingleFileAuthState(`./kayla.json`)
+const { state } = useSingleFileAuthState(`./GpStore.data.json`)
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep, reSize } = require('./lib/myfunc')
 
