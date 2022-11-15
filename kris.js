@@ -1772,7 +1772,7 @@ kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
 }
 break
 case 'saldoewallet':{
-kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+kris.sendMessage(from,{image:saldo, caption:`Hai Kak @${sender.split("@")[0]}
 
 𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
 Minat? wa.me/6281390368580
@@ -1802,7 +1802,7 @@ https://wa.me/62882007324217 .`, mentions: [sender]},{quoted:m})
 }
 break
 case 'diamondff':{
-kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+kris.sendMessage(from,{image:freefire, caption:`Hai Kak @${sender.split("@")[0]}
 
 𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
 Minat? wa.me/6281390368580
@@ -1825,7 +1825,7 @@ Minat? wa.me/6281390368580
 }
 break
 case 'diamondml':{
-kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+kris.sendMessage(from,{image:ml, caption:`Hai Kak @${sender.split("@")[0]}
 
 𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
 Minat? wa.me/6281390368580
@@ -1853,7 +1853,7 @@ Minat? wa.me/6281390368580
 }
 break
 case 'diamondpubg':{
-kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+kris.sendMessage(from,{image:pubg, caption:`Hai Kak @${sender.split("@")[0]}
 
 𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
 Minat? wa.me/6281390368580
@@ -1878,7 +1878,7 @@ Minat? wa.me/6281390368580
 }
 break
 case 'diamondcalof':{
-kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+kris.sendMessage(from,{image:calof, caption:`Hai Kak @${sender.split("@")[0]}
 
 𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
 Minat? wa.me/6281390368580
@@ -1903,7 +1903,7 @@ Minat? wa.me/6281390368580
 }
 break
 case 'buypulsa':{
-kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+kris.sendMessage(from,{image:pulsa, caption:`Hai Kak @${sender.split("@")[0]}
 
 ❍ 𝗣𝗨𝗟𝗦𝗔 𝗡𝗔𝗦𝗜𝗢𝗡𝗔𝗟
 𝙼𝚒𝚗𝚊𝚝? wa.me/6281390368580
